@@ -1,0 +1,19 @@
+# Copy to models.local.yaml. Exact provider model IDs must be verified before a run.
+# Existing legacy YAML configs remain untouched.
+models:
+  - name: vision_candidate
+    model_name: REPLACE_WITH_PROVIDER_MODEL_ID
+    vision: true
+    mode: cloud
+    base_url: https://REPLACE_WITH_PROVIDER/v1
+    api_key_env: LEGALHUB_API_KEY
+    max_tokens: 2048
+    timeout: 180
+    request_parameters: {}
+  - name: local_vision
+    model_name: REPLACE_WITH_SERVED_VISION_MODEL_ID
+    vision: true
+    mode: local
+    base_url: http://127.0.0.1:8000/v1
+    api_key_env: LEGALHUB_LOCAL_API_KEY
+    max_tokens: 2048

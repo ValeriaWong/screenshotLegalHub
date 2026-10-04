@@ -199,20 +199,26 @@ class CaseWorkspace:
         with self.lock: path=workspace_file(self.current['db']) if self.current else self.base_db
         return Retriever(path)
 
-    def state(self):
+    def analysis_snapshot(self):
+        """Read saved analysis without loading inference credentials or settings."""
         active_file=self.home/'active.json'
         if active_file.exists() and active_file.stat().st_mtime_ns!=self.active_mtime:
             active=b.read(active_file)
             if active['input_digest'] in self.readable_digests and workspace_file(active['db']).exists():
                 with self.lock:self.current=active
             self.active_mtime=active_file.stat().st_mtime_ns
+        with self.lock:
+            return copy.deepcopy(self.current)
+
+    def state(self):
+        analysis=self.analysis_snapshot()
         model,key=b.model_config(b.ROOT/'configs/models.local.yaml',self.model_alias,require_key=False)
         with self.lock:
             return {'case_id':self.material['metadata']['case_id'],'name':self.material['metadata']['case_name'],
                 'images':self.material['images'],'messages':self.material['records'],'message_count':len(self.material['records']),
-                'analysis':copy.deepcopy(self.current),'job':copy.deepcopy(self.job),
+                'analysis':analysis,'job':copy.deepcopy(self.job),
                 'model':{'alias':self.model_alias,'name':model['model_name'],'credentials_configured':bool(key),
-                         'last_real_response':self.current.get('request_proof') if self.current else None},
+                         'last_real_response':analysis.get('request_proof') if analysis else None},
                 'scope_note':self.material['metadata']['source_order'],'retrieval_model_requests':0}
 
     def search(self,query='',kind='all'):
@@ -230,7 +236,7 @@ class CaseWorkspace:
 
     def timeline(self):
         from legalhub.case_presentation import build_presentation
-        return build_presentation(self.material,self.state()['analysis'],self.home/'presentation.json')
+        return build_presentation(self.material,self.analysis_snapshot(),self.home/'presentation.json')
 
     def start(self):
         with self.lock:

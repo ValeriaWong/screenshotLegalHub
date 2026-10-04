@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 from legalhub import benchmark as b
 from legalhub.casework import default_material,grounded_terms
-from legalhub.case_registry import select_transcripts,retain_successful_images
+from legalhub.case_registry import CaseRegistry,select_transcripts,retain_successful_images
 from legalhub.case_chat import evidence_context,resolve_answer,citation_candidates
 
 class MultiCaseEvidenceTests(unittest.TestCase):
@@ -22,6 +22,23 @@ class MultiCaseEvidenceTests(unittest.TestCase):
         self.assertEqual(ref['quote'],'收到了')
         self.assertEqual(ref['source_refs'][0]['bbox'],evidence[key]['source_refs'][0]['bbox'])
         self.assertEqual(resolved['claims'][0]['citation_ids'],['C1'])
+
+    def test_review_scope_skips_unanalyzed_vision_reads_and_keeps_explicit_case(self):
+        with tempfile.TemporaryDirectory(dir=b.ROOT/'tmp') as d:
+            registry=CaseRegistry.__new__(CaseRegistry);registry.home=Path(d)
+            registry.images={'A':[{'image_id':'a'}],'B':[{'image_id':'b'}]}
+            registry.selected={'A':([],{}),'B':([],{})};registry.jobs={};registry.metadata={}
+            active=registry.folder('A')/'active.json';active.parent.mkdir();b.write(active,{'saved':True})
+            def vision(id):
+                if id=='B':raise AssertionError('Default review must not inspect unanalysed vision artifacts')
+                return None
+            with patch.object(registry,'vision_corpus',side_effect=vision):
+                self.assertEqual([x['case_id'] for x in registry.review_cases()],['A'])
+                registry.jobs['A']={'status':'running'}
+                self.assertEqual(registry.review_cases(),[])
+            with patch.object(registry,'vision_corpus',return_value=None):
+                self.assertEqual(registry.review_cases('B')[0]['status'],'originals')
+                self.assertEqual(registry.review_cases('unknown'),[])
 
     def test_unknown_or_cross_case_model_ids_cannot_be_published(self):
         _,evidence=evidence_context(self.material,'转账')

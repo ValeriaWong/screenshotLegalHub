@@ -1,0 +1,29 @@
+{
+  "server": "http://127.0.0.1:18420",
+  "registered_cases": 316,
+  "analyzed_cases_in_default_review": 2,
+  "review_items": 48,
+  "kinds": {
+    "contract_term": 16,
+    "legal_event": 13,
+    "meaning": 6,
+    "qa_claim": 5,
+    "fact": 8
+  },
+  "formal_pending_items": 48,
+  "formal_user_decisions_created_by_test": 0,
+  "source_refs_verified_against_transcripts_and_pixel_boxes": 100,
+  "unique_message_records_verified": 35,
+  "original_image_sha256_checks": 8,
+  "cross_case_reference_rejected": true,
+  "invalid_requests_and_cross_origin_rejected": true,
+  "unreviewed_items_not_exported_as_reviewed_text": true,
+  "model_requests_made_by_test": 0,
+  "queue_http_ms": {
+    "first_request": 1467.52,
+    "warm_samples": 20,
+    "median": 207.24,
+    "p95": 317.57,
+    "max": 327.03
+  }
+}

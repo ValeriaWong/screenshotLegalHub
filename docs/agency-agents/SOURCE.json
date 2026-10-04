@@ -1,0 +1,11 @@
+{
+  "repository": "ValeriaWong/agency-agents",
+  "ref": "main",
+  "retrieved_at": "2026-10-04",
+  "files": {
+    "design/design-ui-designer.md": "ca8886161000d62dd4429d1462b3fd473c031312",
+    "engineering/engineering-frontend-developer.md": "68cf7fe861d8af600b619d62c9cde1625e6e4578",
+    "engineering/engineering-backend-architect.md": "7c3125d61e53694ef1bb876e81040ffb84d57956"
+  },
+  "usage": "Role instructions applied to isolated task agents; project-global installation unnecessary. Evidence extraction remains with the primary agent."
+}

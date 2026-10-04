@@ -1,0 +1,39 @@
+{
+  "server": "http://127.0.0.1:18421",
+  "isolated_review_database": true,
+  "total_review_items": 48,
+  "analyzed_cases": 2,
+  "model_requests_made_by_test": 0,
+  "checks": {
+    "three_columns_original_quote_bbox_context": true,
+    "citation_centered_and_actions_visible": true,
+    "enlarge_original_with_bbox": true,
+    "typing_does_not_trigger_decision_shortcut": true,
+    "device_draft_restores_after_reload": true,
+    "amendment_durable_history_and_auto_advance": true,
+    "undo_reopens_item": true,
+    "revision_conflict_no_overwrite_and_draft_preserved": true,
+    "confirmation_explicit_and_reopen_audited": true,
+    "reject_defer_and_reopen": true,
+    "unbound_source_warning_without_fabricated_highlight": true,
+    "case_choices_export_and_stale_filter": true,
+    "legal_basis_in_page_with_applicability_check": true,
+    "bilingual_controls": true,
+    "mobile_no_overflow_and_keyboard_tabs": true,
+    "library_redesign_preserves_case_pagination": true,
+    "existing_qa_history_and_source_sidebar": true,
+    "completed_upload_and_contract_source_link_preserved": true,
+    "unanalyzed_case_originals_remain_honest": true,
+    "browser_runtime_exceptions": 0
+  },
+  "screenshots": [
+    "reports/v1.2.0_review_desktop.png",
+    "reports/v1.2.0_review_english.png",
+    "reports/v1.2.0_review_mobile.png",
+    "reports/v1.2.0_cases_desktop.png",
+    "reports/v1.2.0_cases_mobile.png",
+    "reports/v1.2.0_case_desktop.png",
+    "reports/v1.2.0_case_citation.png",
+    "reports/v1.2.0_case_citation_mobile.png"
+  ]
+}

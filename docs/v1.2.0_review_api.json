@@ -1,0 +1,786 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "LegalHub Human Review API",
+    "version": "1.2.0",
+    "description": "Loopback-only modular review service. Source/model content is immutable; annotations are separate. Review content comes only from legalhub.review_content. No network/model calls. Browser origin and Host checks are inherited from the existing local server. No public deployment authentication is implied."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18420"
+    }
+  ],
+  "x-reliability": {
+    "sqlite_busy_timeout_seconds": 10,
+    "transactions": "BEGIN IMMEDIATE; current snapshot and append-only history commit atomically",
+    "retries": "GET may retry; POST must use a freshly loaded expected_revision. Identical decision/text/note/reviewer at the current revision is a no-op.",
+    "pagination": "offset >= 0, limit 1..200; stable priority, case_id, item_id order",
+    "rate_limits": "No external dependency and no additional service rate limiter; local server only.",
+    "logging": "Do not log source or annotation payloads.",
+    "stale_policy": "Any same-item source fingerprint or content change increments revision, preserves former snapshot in audit, and marks stale until explicit review; removed content remains auditable but cannot be approved."
+  },
+  "paths": {
+    "/api/review/queue": {
+      "get": {
+        "operationId": "reviewQueue",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "confirmed",
+                "amended",
+                "rejected",
+                "deferred",
+                "stale",
+                "all"
+              ],
+              "default": "pending"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "legal_event",
+                "contract_term",
+                "meaning",
+                "fact",
+                "qa_claim",
+                "transcription_gap"
+              ]
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Queue: default scope includes analyzed cases only; explicit case can include original/transcribed sources.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "items",
+                    "total",
+                    "counts",
+                    "cases",
+                    "offset",
+                    "limit"
+                  ],
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ReviewItem"
+                      }
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Filtered total before pagination"
+                    },
+                    "counts": {
+                      "type": "object",
+                      "description": "Counts for current case/kind scope before status filtering",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        },
+                        "pending": {
+                          "type": "integer"
+                        },
+                        "confirmed": {
+                          "type": "integer"
+                        },
+                        "amended": {
+                          "type": "integer"
+                        },
+                        "rejected": {
+                          "type": "integer"
+                        },
+                        "deferred": {
+                          "type": "integer"
+                        },
+                        "stale": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "cases": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    },
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown case or item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Revision or source conflict; reload before review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/item": {
+      "get": {
+        "operationId": "reviewItem",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "item_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item with complete audit history",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown case or item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Revision or source conflict; reload before review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/decision": {
+      "post": {
+        "operationId": "reviewDecision",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "case_id",
+                  "item_id",
+                  "decision",
+                  "expected_revision"
+                ],
+                "properties": {
+                  "case_id": {
+                    "type": "string"
+                  },
+                  "item_id": {
+                    "type": "string"
+                  },
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "confirmed",
+                      "amended",
+                      "rejected",
+                      "deferred",
+                      "reopen"
+                    ]
+                  },
+                  "edited_text": {
+                    "type": "string",
+                    "maxLength": 50000,
+                    "default": "",
+                    "description": "Required and nonblank for amended; cleared for other decisions"
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 12000,
+                    "default": ""
+                  },
+                  "expected_revision": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated item with audit history; reopen sets pending",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewItem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown case or item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Revision or source conflict; reload before review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/export": {
+      "get": {
+        "operationId": "reviewExport",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Original content, review state, reviewed text, source references and audit history; no implicit update of evidence/claims.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "case_id": {
+                      "type": "string"
+                    },
+                    "exported_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "annotation_policy": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/ReviewItem"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "reviewed_text": {
+                                "oneOf": [
+                                  {
+                                    "oneOf": [
+                                      {
+                                        "type": "string"
+                                      },
+                                      {
+                                        "type": "object",
+                                        "properties": {
+                                          "zh": {
+                                            "type": "string"
+                                          },
+                                          "en": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "additionalProperties": false
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "reviewed_text_origin": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "enum": [
+                                  "user_amendment",
+                                  "user_confirmed_proposal",
+                                  null
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown case or item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Revision or source conflict; reload before review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": true
+      },
+      "Review": {
+        "type": "object",
+        "required": [
+          "status",
+          "revision",
+          "edited_text",
+          "note",
+          "reviewer",
+          "updated_at",
+          "source_fingerprint",
+          "available"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "amended",
+              "rejected",
+              "deferred",
+              "stale"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "edited_text": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "reviewer": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_fingerprint": {
+            "type": "string"
+          },
+          "available": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ReviewItem": {
+        "type": "object",
+        "required": [
+          "id",
+          "case_id",
+          "kind",
+          "source_fingerprint",
+          "review"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "case_id": {
+            "type": "string"
+          },
+          "case_name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "legal_event",
+              "contract_term",
+              "meaning",
+              "fact",
+              "qa_claim",
+              "transcription_gap"
+            ]
+          },
+          "title": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "zh": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "original_text": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "zh": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "proposed_text": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "zh": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "rationale": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "zh": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image_id": {
+                  "type": "string"
+                },
+                "message_id": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                },
+                "bbox": {
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image_id": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "page": {
+                  "type": "integer"
+                },
+                "conversation_name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "source_fingerprint": {
+            "type": "string"
+          },
+          "source_coverage": {},
+          "content_origin": {},
+          "review": {
+            "$ref": "#/components/schemas/Review"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HistoryEvent"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "HistoryEvent": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "revision",
+          "event",
+          "occurred_at",
+          "reviewer",
+          "before",
+          "after"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "integer"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "registered",
+              "source_changed",
+              "source_removed",
+              "confirmed",
+              "amended",
+              "rejected",
+              "deferred",
+              "reopen"
+            ]
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reviewer": {
+            "type": "string"
+          },
+          "before": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ReviewItem"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "after": {
+            "$ref": "#/components/schemas/ReviewItem"
+          }
+        }
+      }
+    }
+  }
+}

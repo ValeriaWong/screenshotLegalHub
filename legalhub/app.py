@@ -34,12 +34,14 @@ def merge_corpus(retriever, incoming):
     return merge(incoming, retriever.db)
 
 
-def serve(db=DEFAULT_DB, port=18420, model='kimi3_low'):
+def serve(db=DEFAULT_DB, port=18420, model='kimi3_low', review_db=None):
     retriever = Retriever(db)
     from legalhub.casework import DEFAULT_CASE
     from legalhub.case_registry import CaseRegistry
     from legalhub.case_chat import CaseChat, PROFILES
+    from legalhub.legal_review import ReviewStore, ReviewConflict, ReviewNotFound, ReviewValidation
     registry=CaseRegistry(retriever);chatwork=CaseChat(registry)
+    reviewstore=ReviewStore(registry,chatwork,db_path=review_db)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, format, *args):
             # Paths may contain query text. Log status only.
@@ -81,7 +83,11 @@ def serve(db=DEFAULT_DB, port=18420, model='kimi3_low'):
                 path = parsed.path
                 if path.startswith('/api/case/'):
                     case_id=q.get('case_id',[DEFAULT_CASE])[0];casework=registry.get(case_id)
-                if path == '/api/workspace/cases':self.send({'cases':registry.list(),'models':PROFILES})
+                if path == '/api/review/queue':
+                    self.send(reviewstore.queue(case_id=q.get('case_id',[None])[0] or None,status=q.get('status',['pending'])[0],kind=q.get('kind',[None])[0] or None,offset=int(q.get('offset',['0'])[0]),limit=int(q.get('limit',['50'])[0])))
+                elif path == '/api/review/item':self.send(reviewstore.get_item(q['case_id'][0],q['item_id'][0]))
+                elif path == '/api/review/export':self.send(reviewstore.export_review(q['case_id'][0]),headers={'Content-Disposition':'attachment; filename="legal-review.json"'})
+                elif path == '/api/workspace/cases':self.send({'cases':registry.list(),'models':PROFILES})
                 elif path == '/api/workspace/image':
                     case_id=q['case_id'][0];id=q['id'][0]
                     image=next((x for x in registry.images.get(case_id,[]) if x['image_id']==id),None)
@@ -148,10 +154,12 @@ def serve(db=DEFAULT_DB, port=18420, model='kimi3_low'):
                             writer.writerow(row)
                         self.send(b'\xef\xbb\xbf' + stream.getvalue().encode('utf-8'), mime='text/csv; charset=utf-8', headers={'Content-Disposition': 'attachment; filename="evidence.csv"'})
                     else: self.send(rows, headers={'Content-Disposition': 'attachment; filename="evidence.json"'})
-                elif path in ('/', '/index.html', '/app.js', '/style.css','/case','/case.html','/case.js','/case.css','/case-i18n.js','/case-chat.js','/hub.js','/hub.css','/library'):
-                    name = 'hub.html' if path=='/' else 'case.html' if path in ('/case','/case.html') else 'index.html' if path == '/library' else path[1:]
+                elif path in ('/', '/index.html', '/app.js', '/style.css','/case','/case.html','/case.js','/case.css','/case-i18n.js','/case-chat.js','/hub.js','/hub.css','/library','/review','/review.html','/review.js','/review.css','/workbench-theme.css'):
+                    name = 'hub.html' if path=='/' else 'case.html' if path in ('/case','/case.html') else 'review.html' if path in ('/review','/review.html') else 'index.html' if path == '/library' else path[1:]
                     self.send((STATIC / name).read_bytes(), mime={'html': 'text/html; charset=utf-8', 'js': 'text/javascript; charset=utf-8', 'css': 'text/css; charset=utf-8'}[name.rsplit('.', 1)[-1]])
                 else: self.send({'error': 'Not found'}, 404)
+            except ReviewConflict as error:self.send({'error':str(error),'code':'review_conflict'},409)
+            except ReviewNotFound as error:self.send({'error':str(error),'code':'review_not_found'},404)
             except KeyError: self.send({'error': '记录或参数不存在'}, 404)
             except (ValueError, TypeError) as error: self.send({'error': str(error)}, 400)
             except Exception: self.send({'error': '请求未完成，请检查本地运行记录'}, 500)
@@ -163,6 +171,8 @@ def serve(db=DEFAULT_DB, port=18420, model='kimi3_low'):
                 if not 0 < length <= 80 * 1024 * 1024: raise ValueError('Upload size out of range')
                 data = json.loads(self.rfile.read(length))
                 path=urlsplit(self.path).path
+                if path=='/api/review/decision':
+                    self.send(reviewstore.save(data['case_id'],data['item_id'],data['decision'],data.get('edited_text',''),data.get('note',''),data.get('expected_revision'),reviewer='user'));return
                 if path=='/api/workspace/create':
                     self.send(registry.create(data['files'],data.get('name',''),data.get('context','')),202);return
                 if path=='/api/case/chat':
@@ -227,7 +237,10 @@ def serve(db=DEFAULT_DB, port=18420, model='kimi3_low'):
                         with LOCK: JOBS[job].update(status='error', error_type=type(error).__name__)
                 threading.Thread(target=process, daemon=True).start()
                 self.send({'job_id': job, 'case_id': case, 'images': len(images)}, 202)
-            except (ValueError, TypeError, KeyError): self.send({'error': '导入未完成，请核对文件、案件名称和任务状态'}, 400)
+            except ReviewConflict as error:self.send({'error':str(error),'code':'review_conflict'},409)
+            except ReviewNotFound as error:self.send({'error':str(error),'code':'review_not_found'},404)
+            except ReviewValidation as error:self.send({'error':str(error),'code':'review_validation'},400)
+            except (ValueError, TypeError, KeyError): self.send({'error': '请求未完成，请核对输入和任务状态'}, 400)
             except Exception: self.send({'error': '导入未完成，请检查本地运行记录'}, 500)
     class WorkbenchServer(ThreadingHTTPServer):
         # Timeline views request several originals together; allow that local burst.
@@ -243,9 +256,10 @@ def main():
     parser.add_argument('command', choices=['serve', 'query', 'check'])
     parser.add_argument('--db', default=str(DEFAULT_DB)); parser.add_argument('--port', type=int, default=18420)
     parser.add_argument('--model', default='kimi3_low'); parser.add_argument('--query', default='')
+    parser.add_argument('--review-db', default=None, help='Optional isolated annotation database for local verification')
     parser.add_argument('--case'); parser.add_argument('--scope', default='evidence'); parser.add_argument('--limit', type=int, default=20)
     args = parser.parse_args()
-    if args.command == 'serve': serve(args.db, args.port, args.model)
+    if args.command == 'serve': serve(args.db, args.port, args.model,args.review_db)
     elif args.command == 'check': print(json.dumps(Retriever(args.db).metadata(), ensure_ascii=False))
     else: print(json.dumps(Retriever(args.db).search(args.query, args.case, args.scope, limit=args.limit), ensure_ascii=False))
 

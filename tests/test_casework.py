@@ -49,6 +49,19 @@ class CaseMeaningTests(unittest.TestCase):
         bad['meanings'][0]['support'][0]['message_id']='foreign'
         with self.assertRaisesRegex(ValueError,'Unknown'):grounded_records(self.material,bad,'r',self.laws)
 
+    def test_analysis_snapshot_refreshes_saved_version_without_loading_credentials(self):
+        with tempfile.TemporaryDirectory(dir=b.ROOT/'tmp') as d:
+            work=CaseWorkspace.__new__(CaseWorkspace);work.home=Path(d);work.lock=threading.RLock()
+            work.current={'run_id':'previous'};work.active_mtime=0;work.readable_digests={'valid-input'}
+            saved=work.home/'saved.sqlite3';saved.write_bytes(b'')
+            active={'run_id':'new-version','input_digest':'valid-input','db':saved.relative_to(b.ROOT).as_posix()}
+            b.write(work.home/'active.json',active)
+            with patch.object(b,'model_config',side_effect=AssertionError('Review reads must not load provider configuration')):
+                snapshot=work.analysis_snapshot()
+            self.assertEqual(snapshot['run_id'],'new-version')
+            snapshot['run_id']='local edit'
+            self.assertEqual(work.analysis_snapshot()['run_id'],'new-version')
+
     def test_cross_case_message_and_invented_statute_are_rejected(self):
         self.material['records'][0]['case_id']='B'
         with self.assertRaisesRegex(ValueError,'cross-case'):grounded_records(self.material,self.analysis,'r',self.laws)

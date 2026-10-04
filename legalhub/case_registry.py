@@ -116,14 +116,16 @@ class CaseRegistry:
             if id not in self.workspaces:
                 self.workspaces[id]=CaseWorkspace() if id==DEFAULT_CASE else CaseWorkspace(home=self.folder(id),material=self.material(id))
             return self.workspaces[id]
-    def list(self):
+    def list(self,case_id=None,analyzed_only=False):
         result=[]
         for id,images in self.images.items():
+            if case_id is not None and id!=case_id:continue
             folder=self.folder(id);active=HOME/'active.json' if id==DEFAULT_CASE else folder/'active.json'
+            has_analysis=active.exists();job=self.jobs.get(id)
+            if analyzed_only and (not has_analysis or (job and job['status'] in ('running','error'))):continue
             vision=self.vision_corpus(id);count=len(self.selected[id][0]);quality=self.selected[id][1]
             if vision:count=sum(r['kind']=='message' for r in b.read(vision)['records'])
-            status='analyzed' if active.exists() else 'transcribed' if count else 'originals'
-            job=self.jobs.get(id)
+            status='analyzed' if has_analysis else 'transcribed' if count else 'originals'
             if job and job['status']=='running':status='processing'
             elif job and job['status']=='error':status='error'
             meta=self.metadata.get(id,{})
@@ -131,6 +133,9 @@ class CaseRegistry:
                 'images':len(images),'messages':count,'status':status,'quality':quality,'thumbnail':images[0]['image_id'],
                 'context':meta.get('context',''),'created_at':meta.get('created_at'),'uploaded':id in self.metadata,'job':job})
         return sorted(result,key=lambda x:(x['case_id']!=DEFAULT_CASE,not x['uploaded'],x['case_id']))
+    def review_cases(self,case_id=None):
+        """Skip unrelated vision artifacts during source-bound human review."""
+        return self.list(case_id=case_id,analyzed_only=case_id is None)
     def vision_corpus(self,id):
         from legalhub.retrieval import workspace_file
         folder=self.folder(id);pointer=folder/'vision-active.json'

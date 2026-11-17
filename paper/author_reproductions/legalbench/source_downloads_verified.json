@@ -1,0 +1,190 @@
+{
+  "commit": "daec8237410aa23e3faf4bc41ad8b3a7e1696826",
+  "model_requests": 0,
+  "files": [
+    {
+      "blob": "9eceed7949ad880f7bfd78b50a27a6a98d22ba4b",
+      "size": 49701,
+      "path": "README.md",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/README.md",
+      "sha256": "b5ef37b47d836f746b3bbb082a6eab2d97342e1363a5816b19092b7b2ba6822d",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "e85237f2aa4b4c798b45115729f1b14478ffe82c",
+      "size": 5771,
+      "path": "data/abercrombie/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/abercrombie/test.tsv",
+      "sha256": "8e2e9051584fa6da66ba14a6a65310b03053af39869a5673ee43a9e378debab8",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "64a4327695e04c04070d6e1e06b032078006b586",
+      "size": 300,
+      "path": "data/abercrombie/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/abercrombie/train.tsv",
+      "sha256": "e06e9890ef74f5ecf84e8052c92c12311cd37451a3048bfa08e517d4adf419e9",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "ded67d7412c88e35ea57cdc13742f8223beddd31",
+      "size": 25201,
+      "path": "data/citation_prediction_classification/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/citation_prediction_classification/test.tsv",
+      "sha256": "6a932fbbb5d78a1c7d80ac1b2a453e42906d215d3ccbca391f472ea0f0df7884",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "f3f2d054b6bf89ba84f3129c8d7b7ca936105065",
+      "size": 667,
+      "path": "data/citation_prediction_classification/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/citation_prediction_classification/train.tsv",
+      "sha256": "9d0ae10b646b2425f50f5697cfc98328d5cf1135c9785b8adc07f77cd04587ce",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "f376a464eca3d51dc4970f507ce7c026ddc82572",
+      "size": 13023,
+      "path": "data/citation_prediction_open/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/citation_prediction_open/test.tsv",
+      "sha256": "7f63e995f36ce01edca3ecf7b089e7f7301a20fd73512ac0a4eb1ce1ddcbd368",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "bedf62080d72b078df08046e5f8fa86790678ac4",
+      "size": 565,
+      "path": "data/citation_prediction_open/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/citation_prediction_open/train.tsv",
+      "sha256": "8d5e7d7e6a1b076e48d6ad4f87e00781de8fff733d24c53b55e82cfa8424b363",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "0d95191d8cb66a2393cd42e2f1a1c051ac1d1899",
+      "size": 42886,
+      "path": "data/contract_nli_confidentiality_of_agreement/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/contract_nli_confidentiality_of_agreement/test.tsv",
+      "sha256": "d0179f33614bffd5c70ca473b71ccc03cb2e4f6bf45df3435cfe0e5daac67857",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "d460ecb05e12c442d287a21e9cf3a4f37ce15154",
+      "size": 4010,
+      "path": "data/contract_nli_confidentiality_of_agreement/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/contract_nli_confidentiality_of_agreement/train.tsv",
+      "sha256": "a4bc39019770cc91e4b067c472e793e94130d9d4a2a72f389c236c49ee75f6c1",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "2bcdd8e1ba3b19276fcdf0f151fb8d9103b5fedc",
+      "size": 360417,
+      "path": "data/definition_classification/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/definition_classification/test.tsv",
+      "sha256": "2508d4943b2b0d67b8ab5cefa732a4802c3201820e448a73697deb8fdbbde832",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "6dc1b3db91d13c7ca53c5b4e51260e4bbba0d0fc",
+      "size": 1772,
+      "path": "data/definition_classification/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/definition_classification/train.tsv",
+      "sha256": "9375082e81c47c3c46db40f11cdc33ff8fefa83886876fc6de72affcfcb090f4",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "5d18f59b765d002bab69615d9b26ec30d75d2a48",
+      "size": 249229,
+      "path": "data/definition_extraction/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/definition_extraction/test.tsv",
+      "sha256": "dbb05d4a0cc7eba457d1b1c5f0a13d9eaba199effdfffed982a9a296d4ebb549",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "b65a4508a42423f202289e6ee7bb58e6d03590bb",
+      "size": 2688,
+      "path": "data/definition_extraction/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/definition_extraction/train.tsv",
+      "sha256": "254d169ddf5f4978b5ac63749117f6b9b1d5c7f415fc2040a392d37c1056d634",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "46093f184901f954ca0de070f84a7359ad59a2bb",
+      "size": 790902,
+      "path": "data/learned_hands_consumer/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/learned_hands_consumer/test.tsv",
+      "sha256": "a21b2c2e812be4b15463fd8e98150ad1155de04da3f3352590f6a66d0c172f6e",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "293fe6d1be1ea6e7af371f8bc2051d8eb2ed54b6",
+      "size": 6330,
+      "path": "data/learned_hands_consumer/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/learned_hands_consumer/train.tsv",
+      "sha256": "321e0ebd1c2f939c851f2cf16e5c01270530178f921b6261c19ea6637b831d74",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "0b296687b859e835b255d6090ec767ab374d5a7c",
+      "size": 885,
+      "path": "data/rule_qa/README.MD",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/rule_qa/README.MD",
+      "sha256": "6236640bad20cbee6875b626178d3a36503921f872f58c5dd791590767330d46",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "e9021d7f9d34ae7e1e96c324488495ffe4a1f951",
+      "size": 12106,
+      "path": "data/rule_qa/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/rule_qa/test.tsv",
+      "sha256": "51ac692619e53152c19a3d28b66b8b868a2822c5f96ecb6b42cc1c6f0cdb2ab2",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "fcad6bec98361da23f3f4bf8bc1cefc46a4d8d4b",
+      "size": 5733415,
+      "path": "data/sara_numeric/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/sara_numeric/test.tsv",
+      "sha256": "8a2387c79048bfb5d82ccdaf60d638a489dbcb2d1ab020d4ddda391cf6a1a723",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "8b9984882ca9958530ee32d14243605b5712dafc",
+      "size": 238750,
+      "path": "data/sara_numeric/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/sara_numeric/train.tsv",
+      "sha256": "d258e56561efb23e297d6f415bc113032581dc920fd23ca5318ad1e06bdd87a6",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "1b5ac562de9f34a2ba0fb1155412339c1beb0359",
+      "size": 2305036,
+      "path": "data/ssla_company_defendants/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/ssla_company_defendants/test.tsv",
+      "sha256": "a2cec0b450a729809fa42cfb1724e2847e9038b221f72bc02075ba290c2ffbcf",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "2477d93e20e8080770b232a68d62423d8e9c0faa",
+      "size": 5870,
+      "path": "data/ssla_company_defendants/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/ssla_company_defendants/train.tsv",
+      "sha256": "d76097e7fd1307eb6e573c39e15ef7790b2cb2bdeb26973bf2e6692e94c76cad",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "59ecd087b6772dd5f463052dc44fa7a1beb75008",
+      "size": 26547,
+      "path": "data/successor_liability/test.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/successor_liability/test.tsv",
+      "sha256": "149d2326c66a5b509fec6ca099d2d514b7552f788971216d568d3d37a696568e",
+      "git_blob_verified": true
+    },
+    {
+      "blob": "08a0f88c40690f3a3d0a1f33071c8d9f5f85dd47",
+      "size": 1759,
+      "path": "data/successor_liability/train.tsv",
+      "url": "https://huggingface.co/datasets/nguha/legalbench/resolve/daec8237410aa23e3faf4bc41ad8b3a7e1696826/data/successor_liability/train.tsv",
+      "sha256": "28a1af7d1803be8ee23f98fde6598c5b4b76234b8d3e22cc674aa183e797c4b5",
+      "git_blob_verified": true
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "method": "e18_jurisma",
+  "paper_id": "L07",
+  "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+  "whole_paper_completed": false,
+  "author_code_executed": false,
+  "training_reproduced": false,
+  "local_model_inference": false,
+  "original_complete_benchmark": false,
+  "runs": [
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e18_jurisma/runs/710a1dd93bc80825__case_product",
+      "plan_id": "710a1dd93bc80825",
+      "track": "case_product",
+      "status": "completed",
+      "new_supplier_requests": 19,
+      "reused_exact_responses": 0,
+      "source_snapshots_verified": 20,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "case_product_schema_valid": true,
+          "literal_citations_valid": true,
+          "product_projection_separate": true,
+          "native_full_method_completed": false,
+          "final_fact_count": 4,
+          "training_reproduced": false,
+          "local_model_inference": false,
+          "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+          "author_code_executed": false,
+          "expert_legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "final_fact_count": 4
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e18_jurisma/runs/72bfa373de5519ef__native",
+      "plan_id": "72bfa373de5519ef",
+      "track": "native",
+      "status": "completed",
+      "new_supplier_requests": 1,
+      "reused_exact_responses": 21,
+      "source_snapshots_verified": 20,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "published_consultation_query_executed": true,
+          "manager_rounds": 5,
+          "stop_reason": "iteration_limit",
+          "maximum_rounds": 5,
+          "content_check_executed": true,
+          "retrieved_statutes": 3,
+          "full_article_literal_checks": true,
+          "training_reproduced": false,
+          "native_full_method_completed": false,
+          "expert_legal_accuracy": null,
+          "complete_inference_algorithm_execution": true,
+          "local_model_inference": false,
+          "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+          "author_code_executed": false
+        },
+        "original_complete_benchmark": false
+      }
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e18_jurisma/runs/895318ad8451837d__case_product",
+      "plan_id": "895318ad8451837d",
+      "track": "case_product",
+      "status": "failed",
+      "new_supplier_requests": 1,
+      "reused_exact_responses": 0,
+      "source_snapshots_verified": 20,
+      "tests": {
+        "status": "failed",
+        "checks": {},
+        "original_complete_benchmark": false
+      }
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e18_jurisma/runs/a3b46e386dda3dc2__native",
+      "plan_id": "a3b46e386dda3dc2",
+      "track": "native",
+      "status": "failed",
+      "new_supplier_requests": 22,
+      "reused_exact_responses": 0,
+      "source_snapshots_verified": 20,
+      "tests": {
+        "status": "failed",
+        "checks": {},
+        "original_complete_benchmark": false
+      }
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e18_jurisma/runs/fd6f6d0f533fc661__vqa_predicted_text",
+      "plan_id": "fd6f6d0f533fc661",
+      "track": "vqa_predicted_text",
+      "status": "completed",
+      "new_supplier_requests": 19,
+      "reused_exact_responses": 0,
+      "source_snapshots_verified": 20,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "product_text_VQA_controller_completed": true,
+          "reference_status": "legacy_unverified",
+          "score": {
+            "raw_exact": false,
+            "normalized_exact": false,
+            "score": 0,
+            "status": "abstained",
+            "prediction": {
+              "answer": null,
+              "evidence": "可见文本仅为发送方一侧消息（“不是”“在淘宝里”“不能发微信”“两字”及三条“微信（发送失败）”），未显示对方回复内容，是否构成对话尚不能确认；对话名称、时间戳及双方身份均未知，故无法确定四类标签。"
+            }
+          },
+          "source_context": "frozen_predicted_KIE_only",
+          "native_full_method_completed": false,
+          "training_reproduced": false,
+          "local_model_inference": false,
+          "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+          "author_code_executed": false,
+          "expert_legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "prediction": {
+        "answer": null,
+        "evidence": "可见文本仅为发送方一侧消息（“不是”“在淘宝里”“不能发微信”“两字”及三条“微信（发送失败）”），未显示对方回复内容，是否构成对话尚不能确认；对话名称、时间戳及双方身份均未知，故无法确定四类标签。"
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": "可见文本仅为发送方一侧消息（“不是”“在淘宝里”“不能发微信”“两字”及三条“微信（发送失败）”），未显示对方回复内容，是否构成对话尚不能确认；对话名称、时间戳及双方身份均未知，故无法确定四类标签。"
+        }
+      }
+    }
+  ],
+  "new_supplier_requests": 62
+}

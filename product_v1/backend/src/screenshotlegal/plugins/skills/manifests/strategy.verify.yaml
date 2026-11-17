@@ -1,0 +1,32 @@
+id: strategy.verify.generic.v1
+capability: strategy.verify
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions:
+  - '*'
+  matters:
+  - '*'
+  practice_areas:
+  - '*'
+input_schema:
+- proof_graph
+output_schema:
+- verification
+grounding:
+  require_source_refs: false
+dependencies:
+- strategy.generate
+- adversarial.analyze
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: true
+  authority_search: false
+stage: 8

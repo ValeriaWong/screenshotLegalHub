@@ -1,0 +1,26 @@
+{
+  "reproduction_name": "e19_scale",
+  "implementation_status": "implemented",
+  "unit_checks": [
+    {
+      "name": "test_original_task_and_adaptation_are_disclosed_without_claiming_paper_reproduction[e19_scale]",
+      "status": "passed",
+      "time_s": "0.063"
+    },
+    {
+      "name": "test_named_method_file_discloses_original_sources_and_extent[e19_scale]",
+      "status": "passed",
+      "time_s": "0.069"
+    },
+    {
+      "name": "test_dispatch_calls_the_named_module_or_rejects_planned[e19_scale]",
+      "status": "passed",
+      "time_s": "0.005"
+    }
+  ],
+  "behavior_equivalence": [],
+  "junit_source": "../../../reports/author_product_adaptation_20261028/pytest-final-all.xml",
+  "junit_sha256": "f0ee21a8e3dad5953eb9880a6b454312a47b0aec85803d4587e3588819c3d636",
+  "method_source_sha256": "5cc3022704d1a79832813b65398ea67b5bce13e8d8fc2849e3a62fc021f1655d",
+  "note": "Dispatch/header checks, offline equivalence and saved run states are distinct from legal-quality evaluation."
+}

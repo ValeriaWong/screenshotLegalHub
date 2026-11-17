@@ -1,0 +1,2272 @@
+{
+  "RunRequest": {
+    "$defs": {
+      "Limits": {
+        "additionalProperties": false,
+        "properties": {
+          "max_iterations": {
+            "default": 24,
+            "maximum": 1000,
+            "minimum": 1,
+            "title": "Max Iterations",
+            "type": "integer"
+          },
+          "max_repairs": {
+            "default": 2,
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Max Repairs",
+            "type": "integer"
+          },
+          "max_tool_calls": {
+            "default": 32,
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Tool Calls",
+            "type": "integer"
+          },
+          "max_model_calls": {
+            "default": 0,
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Max Model Calls",
+            "type": "integer"
+          },
+          "max_tokens": {
+            "default": 0,
+            "maximum": 10000000,
+            "minimum": 0,
+            "title": "Max Tokens",
+            "type": "integer"
+          },
+          "max_cost": {
+            "default": 0,
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Max Cost",
+            "type": "number"
+          },
+          "max_context_bytes": {
+            "default": 1000000,
+            "maximum": 10000000,
+            "minimum": 128,
+            "title": "Max Context Bytes",
+            "type": "integer"
+          },
+          "max_context_tokens": {
+            "default": 1000000,
+            "maximum": 10000000,
+            "minimum": 128,
+            "title": "Max Context Tokens",
+            "type": "integer"
+          },
+          "timeout_seconds": {
+            "default": 60,
+            "exclusiveMinimum": 0,
+            "maximum": 3600,
+            "title": "Timeout Seconds",
+            "type": "number"
+          }
+        },
+        "title": "Limits",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "workflow": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "title": "Workflow",
+        "type": "string"
+      },
+      "input": {
+        "additionalProperties": true,
+        "title": "Input",
+        "type": "object"
+      },
+      "idempotency_key": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "title": "Idempotency Key",
+        "type": "string"
+      },
+      "limits": {
+        "$ref": "#/$defs/Limits"
+      }
+    },
+    "required": [
+      "workflow",
+      "input",
+      "idempotency_key"
+    ],
+    "title": "RunRequest",
+    "type": "object"
+  },
+  "Run": {
+    "$defs": {
+      "ErrorInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "retryable": {
+            "default": false,
+            "title": "Retryable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorInfo",
+        "type": "object"
+      },
+      "Gate": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "output",
+              "effect"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "digest": {
+            "title": "Digest",
+            "type": "string"
+          },
+          "tool": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Tool"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Input"
+          },
+          "operation_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Key"
+          }
+        },
+        "required": [
+          "task_id",
+          "kind",
+          "digest"
+        ],
+        "title": "Gate",
+        "type": "object"
+      },
+      "Limits": {
+        "additionalProperties": false,
+        "properties": {
+          "max_iterations": {
+            "default": 24,
+            "maximum": 1000,
+            "minimum": 1,
+            "title": "Max Iterations",
+            "type": "integer"
+          },
+          "max_repairs": {
+            "default": 2,
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Max Repairs",
+            "type": "integer"
+          },
+          "max_tool_calls": {
+            "default": 32,
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Tool Calls",
+            "type": "integer"
+          },
+          "max_model_calls": {
+            "default": 0,
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Max Model Calls",
+            "type": "integer"
+          },
+          "max_tokens": {
+            "default": 0,
+            "maximum": 10000000,
+            "minimum": 0,
+            "title": "Max Tokens",
+            "type": "integer"
+          },
+          "max_cost": {
+            "default": 0,
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Max Cost",
+            "type": "number"
+          },
+          "max_context_bytes": {
+            "default": 1000000,
+            "maximum": 10000000,
+            "minimum": 128,
+            "title": "Max Context Bytes",
+            "type": "integer"
+          },
+          "max_context_tokens": {
+            "default": 1000000,
+            "maximum": 10000000,
+            "minimum": 128,
+            "title": "Max Context Tokens",
+            "type": "integer"
+          },
+          "timeout_seconds": {
+            "default": 60,
+            "exclusiveMinimum": 0,
+            "maximum": 3600,
+            "title": "Timeout Seconds",
+            "type": "number"
+          }
+        },
+        "title": "Limits",
+        "type": "object"
+      },
+      "Plan": {
+        "additionalProperties": false,
+        "properties": {
+          "tasks": {
+            "items": {
+              "$ref": "#/$defs/TaskSpec"
+            },
+            "maxItems": 256,
+            "minItems": 1,
+            "title": "Tasks",
+            "type": "array"
+          },
+          "stage_timeout_seconds": {
+            "default": 30,
+            "exclusiveMinimum": 0,
+            "maximum": 3600,
+            "title": "Stage Timeout Seconds",
+            "type": "number"
+          }
+        },
+        "required": [
+          "tasks"
+        ],
+        "title": "Plan",
+        "type": "object"
+      },
+      "Principal": {
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Subject",
+            "type": "string"
+          },
+          "permissions": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Permissions",
+            "type": "array",
+            "uniqueItems": true
+          },
+          "resources": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Resources",
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "subject"
+        ],
+        "title": "Principal",
+        "type": "object"
+      },
+      "RetryPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "max_attempts": {
+            "default": 2,
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Max Attempts",
+            "type": "integer"
+          },
+          "retryable_errors": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Retryable Errors",
+            "type": "array"
+          },
+          "backoff": {
+            "default": 0.05,
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Backoff",
+            "type": "number"
+          }
+        },
+        "title": "RetryPolicy",
+        "type": "object"
+      },
+      "ReviewResult": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "PASS",
+              "REWORK",
+              "BLOCKED",
+              "WAITING_REVIEW"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "score": {
+            "default": 1,
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Score",
+            "type": "number"
+          },
+          "findings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Findings",
+            "type": "array"
+          },
+          "suggested_actions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Suggested Actions",
+            "type": "array"
+          },
+          "reviewer_type": {
+            "default": "rule",
+            "enum": [
+              "schema",
+              "rule",
+              "human",
+              "llm"
+            ],
+            "title": "Reviewer Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "ReviewResult",
+        "type": "object"
+      },
+      "RunRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "workflow": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Workflow",
+            "type": "string"
+          },
+          "input": {
+            "additionalProperties": true,
+            "title": "Input",
+            "type": "object"
+          },
+          "idempotency_key": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "limits": {
+            "$ref": "#/$defs/Limits"
+          }
+        },
+        "required": [
+          "workflow",
+          "input",
+          "idempotency_key"
+        ],
+        "title": "RunRequest",
+        "type": "object"
+      },
+      "Status": {
+        "enum": [
+          "PENDING",
+          "RUNNING",
+          "WAITING_REVIEW",
+          "INTERRUPTED",
+          "COMPLETED",
+          "FAILED",
+          "CANCELLED",
+          "SKIPPED"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "TaskSpec": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "stage_id": {
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Stage Id",
+            "type": "integer"
+          },
+          "skill": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Skill",
+            "type": "string"
+          },
+          "dependencies": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Dependencies",
+            "type": "array"
+          },
+          "input": {
+            "additionalProperties": true,
+            "title": "Input",
+            "type": "object"
+          },
+          "retry_policy": {
+            "$ref": "#/$defs/RetryPolicy"
+          },
+          "timeout_seconds": {
+            "default": 15,
+            "exclusiveMinimum": 0,
+            "maximum": 3600,
+            "title": "Timeout Seconds",
+            "type": "number"
+          },
+          "human_review": {
+            "default": false,
+            "title": "Human Review",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "task_id",
+          "stage_id",
+          "skill"
+        ],
+        "title": "TaskSpec",
+        "type": "object"
+      },
+      "TaskState": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "stage_id": {
+            "title": "Stage Id",
+            "type": "integer"
+          },
+          "dependencies": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Dependencies",
+            "type": "array"
+          },
+          "status": {
+            "$ref": "#/$defs/Status",
+            "default": "PENDING"
+          },
+          "input": {
+            "additionalProperties": true,
+            "title": "Input",
+            "type": "object"
+          },
+          "output": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output"
+          },
+          "retry_policy": {
+            "$ref": "#/$defs/RetryPolicy"
+          },
+          "review_status": {
+            "default": "UNREVIEWED",
+            "title": "Review Status",
+            "type": "string"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/$defs/ReviewResult"
+            },
+            "title": "Reviews",
+            "type": "array"
+          },
+          "attempts": {
+            "default": 0,
+            "title": "Attempts",
+            "type": "integer"
+          },
+          "repairs": {
+            "default": 0,
+            "title": "Repairs",
+            "type": "integer"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ErrorInfo"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "output_digest": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Digest"
+          }
+        },
+        "required": [
+          "task_id",
+          "stage_id",
+          "dependencies",
+          "input",
+          "retry_policy"
+        ],
+        "title": "TaskState",
+        "type": "object"
+      },
+      "Usage": {
+        "additionalProperties": false,
+        "properties": {
+          "iterations": {
+            "default": 0,
+            "title": "Iterations",
+            "type": "integer"
+          },
+          "tool_calls": {
+            "default": 0,
+            "title": "Tool Calls",
+            "type": "integer"
+          },
+          "model_calls": {
+            "default": 0,
+            "title": "Model Calls",
+            "type": "integer"
+          },
+          "unsettled_model_calls": {
+            "default": 0,
+            "title": "Unsettled Model Calls",
+            "type": "integer"
+          },
+          "tokens": {
+            "default": 0,
+            "title": "Tokens",
+            "type": "integer"
+          },
+          "cost": {
+            "default": 0,
+            "title": "Cost",
+            "type": "number"
+          }
+        },
+        "title": "Usage",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "run_id": {
+        "title": "Run Id",
+        "type": "string"
+      },
+      "trace_id": {
+        "title": "Trace Id",
+        "type": "string"
+      },
+      "principal": {
+        "$ref": "#/$defs/Principal"
+      },
+      "request": {
+        "$ref": "#/$defs/RunRequest"
+      },
+      "fingerprint": {
+        "title": "Fingerprint",
+        "type": "string"
+      },
+      "plan": {
+        "$ref": "#/$defs/Plan"
+      },
+      "tasks": {
+        "additionalProperties": {
+          "$ref": "#/$defs/TaskState"
+        },
+        "title": "Tasks",
+        "type": "object"
+      },
+      "status": {
+        "$ref": "#/$defs/Status",
+        "default": "PENDING"
+      },
+      "usage": {
+        "$ref": "#/$defs/Usage"
+      },
+      "gate": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Gate"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "approvals": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Approvals",
+        "type": "array"
+      },
+      "stage_elapsed": {
+        "additionalProperties": {
+          "type": "number"
+        },
+        "title": "Stage Elapsed",
+        "type": "object"
+      },
+      "active_seconds": {
+        "default": 0,
+        "title": "Active Seconds",
+        "type": "number"
+      },
+      "result": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Result"
+      },
+      "error": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ErrorInfo"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null
+      },
+      "revision": {
+        "default": 0,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "created_at": {
+        "title": "Created At",
+        "type": "string"
+      },
+      "updated_at": {
+        "title": "Updated At",
+        "type": "string"
+      }
+    },
+    "required": [
+      "principal",
+      "request",
+      "fingerprint",
+      "plan",
+      "tasks"
+    ],
+    "title": "Run",
+    "type": "object"
+  },
+  "TaskSpec": {
+    "$defs": {
+      "RetryPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "max_attempts": {
+            "default": 2,
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Max Attempts",
+            "type": "integer"
+          },
+          "retryable_errors": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Retryable Errors",
+            "type": "array"
+          },
+          "backoff": {
+            "default": 0.05,
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Backoff",
+            "type": "number"
+          }
+        },
+        "title": "RetryPolicy",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "task_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "title": "Task Id",
+        "type": "string"
+      },
+      "stage_id": {
+        "maximum": 1000,
+        "minimum": 0,
+        "title": "Stage Id",
+        "type": "integer"
+      },
+      "skill": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "title": "Skill",
+        "type": "string"
+      },
+      "dependencies": {
+        "items": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "type": "string"
+        },
+        "title": "Dependencies",
+        "type": "array"
+      },
+      "input": {
+        "additionalProperties": true,
+        "title": "Input",
+        "type": "object"
+      },
+      "retry_policy": {
+        "$ref": "#/$defs/RetryPolicy"
+      },
+      "timeout_seconds": {
+        "default": 15,
+        "exclusiveMinimum": 0,
+        "maximum": 3600,
+        "title": "Timeout Seconds",
+        "type": "number"
+      },
+      "human_review": {
+        "default": false,
+        "title": "Human Review",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "task_id",
+      "stage_id",
+      "skill"
+    ],
+    "title": "TaskSpec",
+    "type": "object"
+  },
+  "ReviewResult": {
+    "additionalProperties": false,
+    "properties": {
+      "status": {
+        "enum": [
+          "PASS",
+          "REWORK",
+          "BLOCKED",
+          "WAITING_REVIEW"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "score": {
+        "default": 1,
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Score",
+        "type": "number"
+      },
+      "findings": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Findings",
+        "type": "array"
+      },
+      "suggested_actions": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Suggested Actions",
+        "type": "array"
+      },
+      "reviewer_type": {
+        "default": "rule",
+        "enum": [
+          "schema",
+          "rule",
+          "human",
+          "llm"
+        ],
+        "title": "Reviewer Type",
+        "type": "string"
+      }
+    },
+    "required": [
+      "status"
+    ],
+    "title": "ReviewResult",
+    "type": "object"
+  },
+  "CaseInput": {
+    "$defs": {
+      "Source": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "speaker": {
+            "default": "未核实主体",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Speaker",
+            "type": "string"
+          },
+          "time": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Time"
+          },
+          "time_precision": {
+            "default": "unknown",
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ],
+            "title": "Time Precision",
+            "type": "string"
+          },
+          "kind": {
+            "default": "chat",
+            "enum": [
+              "chat",
+              "document",
+              "bank_record"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "locator": {
+            "default": "调用方文本",
+            "maxLength": 200,
+            "title": "Locator",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "text"
+        ],
+        "title": "Source",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "case_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "title": "Case Id",
+        "type": "string"
+      },
+      "title": {
+        "maxLength": 200,
+        "minLength": 1,
+        "title": "Title",
+        "type": "string"
+      },
+      "question": {
+        "maxLength": 2000,
+        "minLength": 1,
+        "title": "Question",
+        "type": "string"
+      },
+      "sources": {
+        "items": {
+          "$ref": "#/$defs/Source"
+        },
+        "maxItems": 64,
+        "minItems": 1,
+        "title": "Sources",
+        "type": "array"
+      },
+      "synthetic": {
+        "default": false,
+        "title": "Synthetic",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "case_id",
+      "title",
+      "question",
+      "sources"
+    ],
+    "title": "CaseInput",
+    "type": "object"
+  },
+  "ReportData": {
+    "$defs": {
+      "AnalysisPlan": {
+        "additionalProperties": false,
+        "properties": {
+          "objective": {
+            "title": "Objective",
+            "type": "string"
+          },
+          "focus": {
+            "items": {
+              "enum": [
+                "identity",
+                "chronology",
+                "amounts",
+                "alternatives",
+                "source_quality"
+              ],
+              "type": "string"
+            },
+            "title": "Focus",
+            "type": "array"
+          },
+          "stages": {
+            "items": {
+              "enum": [
+                "planning",
+                "facts",
+                "assessment",
+                "gaps",
+                "synthesis"
+              ],
+              "type": "string"
+            },
+            "title": "Stages",
+            "type": "array"
+          },
+          "acceptance": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Acceptance",
+            "type": "array"
+          }
+        },
+        "required": [
+          "objective",
+          "focus",
+          "stages",
+          "acceptance"
+        ],
+        "title": "AnalysisPlan",
+        "type": "object"
+      },
+      "Assessment": {
+        "additionalProperties": false,
+        "properties": {
+          "checks": {
+            "items": {
+              "$ref": "#/$defs/Check"
+            },
+            "title": "Checks",
+            "type": "array"
+          },
+          "conclusion": {
+            "title": "Conclusion",
+            "type": "string"
+          },
+          "determination": {
+            "const": "insufficient",
+            "default": "insufficient",
+            "title": "Determination",
+            "type": "string"
+          }
+        },
+        "required": [
+          "checks",
+          "conclusion"
+        ],
+        "title": "Assessment",
+        "type": "object"
+      },
+      "CaseInput": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "question": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Question",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/$defs/Source"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Sources",
+            "type": "array"
+          },
+          "synthetic": {
+            "default": false,
+            "title": "Synthetic",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "case_id",
+          "title",
+          "question",
+          "sources"
+        ],
+        "title": "CaseInput",
+        "type": "object"
+      },
+      "Check": {
+        "additionalProperties": false,
+        "properties": {
+          "check_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Check Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "observed",
+              "candidate",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "detail": {
+            "title": "Detail",
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Source Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "check_id",
+          "title",
+          "status",
+          "detail",
+          "source_ids"
+        ],
+        "title": "Check",
+        "type": "object"
+      },
+      "Citation": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "quote": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Quote",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "quote"
+        ],
+        "title": "Citation",
+        "type": "object"
+      },
+      "Fact": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "quote": {
+            "title": "Quote",
+            "type": "string"
+          },
+          "speaker": {
+            "title": "Speaker",
+            "type": "string"
+          },
+          "time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time"
+          },
+          "time_precision": {
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ],
+            "title": "Time Precision",
+            "type": "string"
+          },
+          "source_kind": {
+            "enum": [
+              "chat",
+              "document",
+              "bank_record"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Labels",
+            "type": "array"
+          },
+          "amounts": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Amounts",
+            "type": "array"
+          },
+          "source_digest": {
+            "title": "Source Digest",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "quote",
+          "speaker",
+          "time",
+          "time_precision",
+          "source_kind",
+          "labels",
+          "amounts",
+          "source_digest"
+        ],
+        "title": "Fact",
+        "type": "object"
+      },
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "observation",
+              "inference"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/Citation"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Citations",
+            "type": "array"
+          },
+          "uncertainty": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Uncertainty",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "kind",
+          "citations",
+          "uncertainty"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "Gap": {
+        "additionalProperties": false,
+        "properties": {
+          "gap_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Gap Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "code",
+              "prompt",
+              "model",
+              "evidence",
+              "human"
+            ],
+            "title": "Method",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "completed",
+              "candidate",
+              "needs_evidence",
+              "needs_review"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Source Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "gap_id",
+          "title",
+          "method",
+          "status",
+          "rationale",
+          "action",
+          "source_ids"
+        ],
+        "title": "Gap",
+        "type": "object"
+      },
+      "GapProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "action": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Action",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/Citation"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Citations",
+            "type": "array"
+          },
+          "method": {
+            "enum": [
+              "code",
+              "prompt",
+              "model",
+              "evidence",
+              "human"
+            ],
+            "title": "Method",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "action",
+          "citations",
+          "method"
+        ],
+        "title": "GapProposal",
+        "type": "object"
+      },
+      "Gaps": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/Gap"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Gaps",
+        "type": "object"
+      },
+      "Ledger": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "items": {
+              "$ref": "#/$defs/Fact"
+            },
+            "title": "Facts",
+            "type": "array"
+          },
+          "undated_sources": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Undated Sources",
+            "type": "array"
+          },
+          "note": {
+            "title": "Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "facts",
+          "undated_sources",
+          "note"
+        ],
+        "title": "Ledger",
+        "type": "object"
+      },
+      "Reasoning": {
+        "additionalProperties": false,
+        "properties": {
+          "focus": {
+            "items": {
+              "enum": [
+                "identity",
+                "chronology",
+                "amounts",
+                "alternatives",
+                "source_quality"
+              ],
+              "type": "string"
+            },
+            "maxItems": 5,
+            "title": "Focus",
+            "type": "array"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/$defs/Finding"
+            },
+            "maxItems": 24,
+            "title": "Findings",
+            "type": "array"
+          },
+          "questions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Questions",
+            "type": "array"
+          },
+          "gap_proposals": {
+            "items": {
+              "$ref": "#/$defs/GapProposal"
+            },
+            "maxItems": 12,
+            "title": "Gap Proposals",
+            "type": "array"
+          }
+        },
+        "title": "Reasoning",
+        "type": "object"
+      },
+      "ReasoningOutput": {
+        "additionalProperties": false,
+        "properties": {
+          "reasoning": {
+            "$ref": "#/$defs/Reasoning"
+          },
+          "provider_response_id": {
+            "maxLength": 256,
+            "title": "Provider Response Id",
+            "type": "string"
+          },
+          "model": {
+            "maxLength": 200,
+            "title": "Model",
+            "type": "string"
+          },
+          "input_tokens": {
+            "minimum": 0,
+            "title": "Input Tokens",
+            "type": "integer"
+          },
+          "output_tokens": {
+            "minimum": 0,
+            "title": "Output Tokens",
+            "type": "integer"
+          },
+          "cost": {
+            "minimum": 0,
+            "title": "Cost",
+            "type": "number"
+          }
+        },
+        "required": [
+          "reasoning",
+          "provider_response_id",
+          "model",
+          "input_tokens",
+          "output_tokens",
+          "cost"
+        ],
+        "title": "ReasoningOutput",
+        "type": "object"
+      },
+      "Source": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "speaker": {
+            "default": "未核实主体",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Speaker",
+            "type": "string"
+          },
+          "time": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Time"
+          },
+          "time_precision": {
+            "default": "unknown",
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ],
+            "title": "Time Precision",
+            "type": "string"
+          },
+          "kind": {
+            "default": "chat",
+            "enum": [
+              "chat",
+              "document",
+              "bank_record"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "locator": {
+            "default": "调用方文本",
+            "maxLength": 200,
+            "title": "Locator",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "text"
+        ],
+        "title": "Source",
+        "type": "object"
+      },
+      "StageMeta": {
+        "additionalProperties": false,
+        "properties": {
+          "stage": {
+            "enum": [
+              "planning",
+              "facts",
+              "assessment",
+              "gaps",
+              "synthesis"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "code",
+              "model"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "prompt_digest": {
+            "title": "Prompt Digest",
+            "type": "string"
+          },
+          "reasoning": {
+            "$ref": "#/$defs/Reasoning"
+          },
+          "model_receipt": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ReasoningOutput"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "stage",
+          "mode",
+          "prompt_digest",
+          "reasoning"
+        ],
+        "title": "StageMeta",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "case": {
+        "$ref": "#/$defs/CaseInput"
+      },
+      "plan": {
+        "$ref": "#/$defs/AnalysisPlan"
+      },
+      "ledger": {
+        "$ref": "#/$defs/Ledger"
+      },
+      "assessment": {
+        "$ref": "#/$defs/Assessment"
+      },
+      "gaps": {
+        "$ref": "#/$defs/Gaps"
+      },
+      "stages": {
+        "items": {
+          "$ref": "#/$defs/StageMeta"
+        },
+        "title": "Stages",
+        "type": "array"
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "type": "string"
+      },
+      "determination": {
+        "const": "insufficient",
+        "default": "insufficient",
+        "title": "Determination",
+        "type": "string"
+      }
+    },
+    "required": [
+      "case",
+      "plan",
+      "ledger",
+      "assessment",
+      "gaps",
+      "stages",
+      "conclusion"
+    ],
+    "title": "ReportData",
+    "type": "object"
+  },
+  "Reasoning": {
+    "$defs": {
+      "Citation": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "quote": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Quote",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "quote"
+        ],
+        "title": "Citation",
+        "type": "object"
+      },
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "observation",
+              "inference"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/Citation"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Citations",
+            "type": "array"
+          },
+          "uncertainty": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Uncertainty",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "kind",
+          "citations",
+          "uncertainty"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "GapProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "action": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Action",
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/$defs/Citation"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Citations",
+            "type": "array"
+          },
+          "method": {
+            "enum": [
+              "code",
+              "prompt",
+              "model",
+              "evidence",
+              "human"
+            ],
+            "title": "Method",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "action",
+          "citations",
+          "method"
+        ],
+        "title": "GapProposal",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "focus": {
+        "items": {
+          "enum": [
+            "identity",
+            "chronology",
+            "amounts",
+            "alternatives",
+            "source_quality"
+          ],
+          "type": "string"
+        },
+        "maxItems": 5,
+        "title": "Focus",
+        "type": "array"
+      },
+      "findings": {
+        "items": {
+          "$ref": "#/$defs/Finding"
+        },
+        "maxItems": 24,
+        "title": "Findings",
+        "type": "array"
+      },
+      "questions": {
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 12,
+        "title": "Questions",
+        "type": "array"
+      },
+      "gap_proposals": {
+        "items": {
+          "$ref": "#/$defs/GapProposal"
+        },
+        "maxItems": 12,
+        "title": "Gap Proposals",
+        "type": "array"
+      }
+    },
+    "title": "Reasoning",
+    "type": "object"
+  },
+  "AnalysisPlan": {
+    "additionalProperties": false,
+    "properties": {
+      "objective": {
+        "title": "Objective",
+        "type": "string"
+      },
+      "focus": {
+        "items": {
+          "enum": [
+            "identity",
+            "chronology",
+            "amounts",
+            "alternatives",
+            "source_quality"
+          ],
+          "type": "string"
+        },
+        "title": "Focus",
+        "type": "array"
+      },
+      "stages": {
+        "items": {
+          "enum": [
+            "planning",
+            "facts",
+            "assessment",
+            "gaps",
+            "synthesis"
+          ],
+          "type": "string"
+        },
+        "title": "Stages",
+        "type": "array"
+      },
+      "acceptance": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Acceptance",
+        "type": "array"
+      }
+    },
+    "required": [
+      "objective",
+      "focus",
+      "stages",
+      "acceptance"
+    ],
+    "title": "AnalysisPlan",
+    "type": "object"
+  },
+  "Ledger": {
+    "$defs": {
+      "Fact": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "quote": {
+            "title": "Quote",
+            "type": "string"
+          },
+          "speaker": {
+            "title": "Speaker",
+            "type": "string"
+          },
+          "time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time"
+          },
+          "time_precision": {
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ],
+            "title": "Time Precision",
+            "type": "string"
+          },
+          "source_kind": {
+            "enum": [
+              "chat",
+              "document",
+              "bank_record"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Labels",
+            "type": "array"
+          },
+          "amounts": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Amounts",
+            "type": "array"
+          },
+          "source_digest": {
+            "title": "Source Digest",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "quote",
+          "speaker",
+          "time",
+          "time_precision",
+          "source_kind",
+          "labels",
+          "amounts",
+          "source_digest"
+        ],
+        "title": "Fact",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "facts": {
+        "items": {
+          "$ref": "#/$defs/Fact"
+        },
+        "title": "Facts",
+        "type": "array"
+      },
+      "undated_sources": {
+        "items": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "type": "string"
+        },
+        "title": "Undated Sources",
+        "type": "array"
+      },
+      "note": {
+        "title": "Note",
+        "type": "string"
+      }
+    },
+    "required": [
+      "facts",
+      "undated_sources",
+      "note"
+    ],
+    "title": "Ledger",
+    "type": "object"
+  },
+  "Assessment": {
+    "$defs": {
+      "Check": {
+        "additionalProperties": false,
+        "properties": {
+          "check_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Check Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "observed",
+              "candidate",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "detail": {
+            "title": "Detail",
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Source Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "check_id",
+          "title",
+          "status",
+          "detail",
+          "source_ids"
+        ],
+        "title": "Check",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "checks": {
+        "items": {
+          "$ref": "#/$defs/Check"
+        },
+        "title": "Checks",
+        "type": "array"
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "type": "string"
+      },
+      "determination": {
+        "const": "insufficient",
+        "default": "insufficient",
+        "title": "Determination",
+        "type": "string"
+      }
+    },
+    "required": [
+      "checks",
+      "conclusion"
+    ],
+    "title": "Assessment",
+    "type": "object"
+  },
+  "Gaps": {
+    "$defs": {
+      "Gap": {
+        "additionalProperties": false,
+        "properties": {
+          "gap_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Gap Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "code",
+              "prompt",
+              "model",
+              "evidence",
+              "human"
+            ],
+            "title": "Method",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "completed",
+              "candidate",
+              "needs_evidence",
+              "needs_review"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Source Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "gap_id",
+          "title",
+          "method",
+          "status",
+          "rationale",
+          "action",
+          "source_ids"
+        ],
+        "title": "Gap",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/Gap"
+        },
+        "title": "Items",
+        "type": "array"
+      }
+    },
+    "required": [
+      "items"
+    ],
+    "title": "Gaps",
+    "type": "object"
+  }
+}

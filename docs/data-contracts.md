@@ -1,5 +1,7 @@
 # 数据与运行契约
 
+> 2026-10-22版本边界：本页保留旧legalhub/研究数据契约；独立产品见[product_v1 Schema](../product_v1/docs/SCHEMA.md)及[迁移](../product_v1/docs/MIGRATION.md)。V3扩展仍按[计划](../V3.0.0_PLAN.md)验收，[当前缺口](ai_docs_center/GAPS.md)未因类型定义存在而自动完成。
+
 本文件定义新代码之间的交接。历史文件继续放在 `projects/`，来源文件名、索引和 SHA256 必须保留。
 
 ## 评测任务

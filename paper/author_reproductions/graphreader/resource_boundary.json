@@ -1,0 +1,19 @@
+{
+  "paper_id": "A07",
+  "status": "deferred_resource_dependency",
+  "model_requests": 0,
+  "source_kind": "paper_evidence_only_not_implementation",
+  "author_repository_verified": false,
+  "local_model_inference": false,
+  "paper_url": "https://arxiv.org/html/2406.14550v1",
+  "normalization_reference": "https://openreview.net/pdf/13b6f81d90b7b92dd0e671d40c7c56694397d580.pdf",
+  "dependency": "GraphReader §3.2 invokes InsTag normalization; InsTag includes PHRASEBERT semantic embeddings, DBSCAN and association aggregation. Remote embeddings are an alternative in cited work, but no approved embedding configuration has been established here.",
+  "decision": "Skip local embedding/weight branch under current user instruction; do not relabel lexical-only or LLM-only normalization as full method.",
+  "files": {
+    "paper_v1.html": "43e52a54f8ede138e632cf392cd1509dde947ffe826cac03d0802b3a63945ae8",
+    "paper_v1_source.tar": "c9107dc714677645a2aca6be6c9eb67b1c6ba804467932ea4e2ce2a98c93fe71",
+    "3_Approach.tex": "6c40e4e0861f566065f0926902aa781175aef85c0c782d06415d35c45ea3a463",
+    "8_Appendix.tex": "c2c16a478eb29067aad77b18c3c0b02746509f1f3925b3b7b280982132786dad",
+    "4_Experiments.tex": "471600079bd0c12bfd2314b2e4c34af6a5a228b29df052bee6658dc264d9d5a6"
+  }
+}

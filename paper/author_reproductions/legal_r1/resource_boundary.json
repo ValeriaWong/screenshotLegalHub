@@ -1,0 +1,96 @@
+{
+  "paper_id": "L11",
+  "commit": "a2bf5054841a108b5f1a3be10fe1cd8a336ed806",
+  "repository": "https://github.com/killerqueen-wonder/Legal-R1",
+  "scheduling_scope": "original training/local vLLM actor rollout deferred; earlier generic project prototype is not author policy execution",
+  "findings": [
+    {
+      "file": "paper/upstream_sources/legal_r1/RL.sh",
+      "sha256": "c1ded6e1e39c57255dc94eeee6b606122d8bdcda7ae738f8825089bd3fa9ecfc",
+      "evidence": [
+        {
+          "line": 93,
+          "text": "\"conda activate vllm_server\" \\"
+        },
+        {
+          "line": 95,
+          "text": "\"python -m vllm.entrypoints.openai.api_server \\"
+        },
+        {
+          "line": 131,
+          "text": "kill_session \"vllm\""
+        },
+        {
+          "line": 132,
+          "text": "tmux new-session -d -s vllm -n vllm"
+        },
+        {
+          "line": 133,
+          "text": "tmux_send_commands \"vllm\" \\"
+        },
+        {
+          "line": 135,
+          "text": "\"conda activate vllm_server\" \\"
+        },
+        {
+          "line": 137,
+          "text": "\"python -m vllm.entrypoints.openai.api_server \\"
+        },
+        {
+          "line": 152,
+          "text": "wait_for_port $VLLM_PORT $PORT_TIMEOUT \"vllm\" || exit 1"
+        },
+        {
+          "line": 179,
+          "text": "actor_rollout_ref.model.path=$BASE_MODEL \\"
+        },
+        {
+          "line": 193,
+          "text": "actor_rollout_ref.rollout.name=vllm \\"
+        },
+        {
+          "line": 194,
+          "text": "actor_rollout_ref.rollout.gpu_memory_utilization=0.60 \\"
+        }
+      ]
+    },
+    {
+      "file": "paper/upstream_sources/legal_r1/RL_utils/search_r1/llm_agent/generation.py",
+      "sha256": "8f4711ec35e44545f1902fcf29ffda278e0480e2116caa14140fa5e1e96e9c6a",
+      "evidence": [
+        {
+          "line": 1,
+          "text": "import torch"
+        },
+        {
+          "line": 218,
+          "text": "if num_gpus <= 1, return self.actor_rollout_wg.generate_sequences(active_batch)"
+        },
+        {
+          "line": 224,
+          "text": "return self.actor_rollout_wg.generate_sequences(active_batch)"
+        },
+        {
+          "line": 232,
+          "text": "return self.actor_rollout_wg.generate_sequences(active_batch)"
+        },
+        {
+          "line": 248,
+          "text": "padded_output = self.actor_rollout_wg.generate_sequences(padded_active_batch)"
+        },
+        {
+          "line": 289,
+          "text": "# gen_output = self.actor_rollout_wg.generate_sequences(rollings)"
+        },
+        {
+          "line": 340,
+          "text": "# gen_output = self.actor_rollout_wg.generate_sequences(rollings)"
+        }
+      ]
+    }
+  ],
+  "source_inspection_only": true,
+  "author_original_full_method_executed": false,
+  "new_model_requests": 0,
+  "authority": "用户先略过本地权重推理、训练与重计算；不以通用DeepSeek角色prompt替代训练后的原模型"
+}

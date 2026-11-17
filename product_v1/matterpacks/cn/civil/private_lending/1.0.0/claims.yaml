@@ -1,0 +1,75 @@
+- id: principal
+  title: 返还借款本金
+  remedy: 请求返还经核实的未清偿本金
+  elements:
+  - id: el.agreement
+    title: 借贷合意
+    facts:
+    - id: fq.agreement
+      question: 双方是否形成借贷合意？
+      burden: 主张返还本金的出借人（争议抗辩需分别审查）
+      expected_evidence:
+      - 聊天原始记录
+      - 借条
+      signals:
+      - 借
+      - 归还
+      negative_signals:
+      - 投资
+      authority_ids:
+      - civil-code-679
+  - id: el.delivery
+    title: 款项交付
+    facts:
+    - id: fq.delivery
+      question: 款项是否实际到达借款人账户？
+      burden: 主张返还本金的出借人（争议抗辩需分别审查）
+      expected_evidence:
+      - 银行流水
+      - 收款记录
+      signals:
+      - 收到
+      - 转账
+      negative_signals: []
+      authority_ids:
+      - lending-9
+  - id: el.maturity
+    title: 还款期限
+    facts:
+    - id: fq.maturity
+      question: 约定还款期限是否届满？
+      burden: 主张返还本金的出借人（争议抗辩需分别审查）
+      expected_evidence:
+      - 完整约定
+      - 催告送达记录
+      signals:
+      - 月底
+      - 到期
+      negative_signals: []
+      authority_ids:
+      - civil-code-675
+  - id: el.outstanding
+    title: 未清偿本金
+    facts:
+    - id: fq.outstanding
+      question: 目前尚未清偿的本金是多少？
+      burden: 主张返还本金的出借人（争议抗辩需分别审查）
+      expected_evidence:
+      - 完整还款流水
+      - 对账记录
+      signals:
+      - 未还
+      - 欠款
+      negative_signals:
+      - 还清
+      authority_ids:
+      - civil-code-675
+  defenses:
+  - id: investment
+    title: 投资关系抗辩
+    signals:
+    - 投资
+  - id: repaid
+    title: 已清偿抗辩
+    signals:
+    - 还清

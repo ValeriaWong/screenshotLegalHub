@@ -1,0 +1,11 @@
+- id: transfer_plus_acknowledgment
+  kind: practice_pattern
+  signals:
+  - 转账
+  - 收到
+  usually_supports:
+  - agreement
+  - delivery
+  risks:
+  - investment_defense
+  legal_rule: false

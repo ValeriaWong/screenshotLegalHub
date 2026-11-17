@@ -1,0 +1,261 @@
+registry_version: '2026-10-26'
+source_document: ScreenshotLegal_学术方案比较与Agent评测候选_2026-10-26.md
+scope: representative literature corpus, not exhaustive world bibliography
+papers:
+- paper_id: L01
+  reference: 'He et al. (2024), *AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation*. EMNLP Findings.'
+  sources:
+  - https://arxiv.org/abs/2403.02959
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L02
+  reference: 'Sun et al. (2024), *LawLuo: A Multi-Agent Collaborative Framework for Multi-Round Chinese Legal Consultation*.'
+  sources:
+  - https://arxiv.org/abs/2407.16252
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L03
+  reference: 'Das et al. (2025), *LawFlow: Collecting and Simulating Lawyers’ Thought Processes*. Microsoft Research:'
+  sources:
+  - https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L04
+  reference: 'Shi et al. (2025), *LegalReasoner: Step-wised Verification-Correction for Legal Judgment Reasoning*.'
+  sources:
+  - https://arxiv.org/abs/2506.07443
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L05
+  reference: 'Sadowski & Chudziak (2025), *On Verifiable Legal Reasoning: A Multi-Agent Framework with Formalized Knowledge Representations*.'
+  sources:
+  - https://arxiv.org/abs/2509.00710
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L06
+  reference: Kondo et al. (2025), *Capturing Legal Reasoning Paths from Facts to Law in Court Judgments using Knowledge Graphs*.
+  sources:
+  - https://arxiv.org/abs/2508.17340
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L07
+  reference: 'Lu et al. (2026), *From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation* (JurisMA).'
+  sources:
+  - https://arxiv.org/abs/2604.10470
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L08
+  reference: 'Liao et al. (2026), *VERDICT: Verifiable Evolving Reasoning with Directive-Informed Collegial Teams for Legal Judgment Prediction*.'
+  sources:
+  - https://arxiv.org/abs/2603.19306
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L09
+  reference: 'Khatri et al. (2026), *SCALE: Structured Case-law-guided Anticipatory Legal Reasoning*. EMNLP 2026:'
+  sources:
+  - https://aclanthology.org/2026.emnlp-main.36/
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L10
+  reference: 'Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.'
+  sources:
+  - https://arxiv.org/abs/2607.09099
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L11
+  reference: 'Pang et al. (2026-10), *Legal-R1: Agentic Retrieval for Evidence-Based Legal Reasoning*.'
+  sources:
+  - https://arxiv.org/abs/2610.18611
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L12
+  reference: 'Cui et al. (2026), *Chatlaw: A Multi-Agent Legal Assistant based on a Role-Aligned Mixture-of-Experts Architecture*.  （注意与更早 ChatLaw 项目/同名版本核对）'
+  sources:
+  - https://doi.org/10.1016/j.fmre.2026.03.026
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L13
+  reference: Song et al. (2026), *Knowledge Graph-Assisted LLM Post-Training for Enhanced Legal Reasoning*.
+  sources:
+  - https://arxiv.org/abs/2601.13806
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: L14
+  reference: 'Li et al. (2026), *Legal-DC: Benchmarking Retrieval-Augmented Generation for Legal Documents* (LegRAG).'
+  sources:
+  - https://arxiv.org/abs/2603.11772
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A01
+  reference: 'Yao et al. (2022/23), *ReAct: Synergizing Reasoning and Acting in Language Models*.'
+  sources:
+  - https://arxiv.org/abs/2210.03629
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A02
+  reference: 'Madaan et al. (2023), *Self-Refine: Iterative Refinement with Self-Feedback*.'
+  sources:
+  - https://arxiv.org/abs/2303.17651
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A03
+  reference: 'Shinn et al. (2023), *Reflexion: Language Agents with Verbal Reinforcement Learning*.'
+  sources:
+  - https://arxiv.org/abs/2303.11366
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A04
+  reference: 'Hong et al. (2023), *MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework*.'
+  sources:
+  - https://arxiv.org/abs/2308.00352
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A05
+  reference: 'Zhao et al. (2024), *LongAgent: Scaling Language Models to 128k Context through Multi-Agent Collaboration*.'
+  sources:
+  - https://arxiv.org/abs/2402.11550
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A06
+  reference: 'Zhang et al. (2024), *Chain of Agents: Large Language Models Collaborating on Long-Context Tasks*.'
+  sources:
+  - https://arxiv.org/abs/2406.02818
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A07
+  reference: 'Li et al. (2024), *GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities*.'
+  sources:
+  - https://arxiv.org/abs/2406.14550
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A08
+  reference: Kim et al. (2025), *Towards a Science of Scaling Agent Systems*.
+  sources:
+  - https://arxiv.org/abs/2512.08296
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: A09
+  reference: '*On Scalable Oversight with Weak LLMs Judging Strong LLMs* (2024),'
+  sources:
+  - https://arxiv.org/abs/2407.04622
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: R01
+  reference: Asai et al. (2023/24), *Self-RAG*.
+  sources:
+  - https://arxiv.org/abs/2310.11511
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: R02
+  reference: Yan et al. (2024), *Corrective Retrieval Augmented Generation*.
+  sources:
+  - https://arxiv.org/abs/2401.15884
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: R03
+  reference: Sarthi et al. (2024), *RAPTOR*.
+  sources:
+  - https://arxiv.org/abs/2401.18059
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: R04
+  reference: 'Edge et al. (2024), *From Local to Global: A Graph RAG Approach to Query-Focused Summarization*.'
+  sources:
+  - https://arxiv.org/abs/2404.16130
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: R05
+  reference: Guo et al. (2024), *LightRAG*.
+  sources:
+  - https://arxiv.org/abs/2410.05779
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D01
+  reference: 'Wang et al. (2024), *MinerU: An Open-Source Solution for Precise Document Content Extraction*.  ；4.x 的具体 `doclib`/`MiddleJson`/`locator` 参考当前源码：'
+  sources:
+  - https://arxiv.org/abs/2409.18839
+  - https://github.com/opendatalab/MinerU
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D02
+  reference: 'Cui et al. (2025), *PaddleOCR-VL: Boosting Multilingual Document Parsing via a 0.9B Ultra-Compact Vision-Language Model*.'
+  sources:
+  - https://arxiv.org/abs/2510.14528
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D03
+  reference: Hu et al. (2024), *mPLUG-DocOwl2*.
+  sources:
+  - https://arxiv.org/abs/2409.03420
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D04
+  reference: Poznanski et al. (2025), *olmOCR*.
+  sources:
+  - https://arxiv.org/abs/2502.18443
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D05
+  reference: Li et al. (2025), *dots.ocr*.
+  sources:
+  - https://arxiv.org/abs/2512.02498
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D06
+  reference: Tito et al. (2022), *Hierarchical multimodal transformers for Multi-Page DocVQA*.
+  sources:
+  - https://arxiv.org/abs/2212.05935
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D07
+  reference: Kang et al. (2024), *Multi-Page Document Visual Question Answering using Self-Attention Scoring Mechanism*.
+  sources:
+  - https://arxiv.org/abs/2404.19024
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D08
+  reference: Li et al. (2026), *PureDocBench*.
+  sources:
+  - https://arxiv.org/abs/2605.07492
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: D09
+  reference: Ouyang et al. (2024), *OmniDocBench*.
+  sources:
+  - https://arxiv.org/abs/2412.07626
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B01
+  reference: 'Li et al. (2025), *LegalAgentBench: Evaluating LLM Agents in Legal Domain*. ACL 2025.'
+  sources:
+  - https://aclanthology.org/2025.acl-long.116/
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B02
+  reference: Fei et al. (2023/24), *LawBench*. EMNLP 2024.
+  sources:
+  - https://aclanthology.org/2024.emnlp-main.452/
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B03
+  reference: Li et al. (2024), *LexEval*. NeurIPS 2024.
+  sources:
+  - https://arxiv.org/abs/2409.20288
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B04
+  reference: Guha et al. (2023), *LegalBench*.
+  sources:
+  - https://arxiv.org/abs/2308.11462
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B05
+  reference: Pipitone & Alami (2024), *LegalBench-RAG*.
+  sources:
+  - https://arxiv.org/abs/2408.10343
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B06
+  reference: 'Butler & Butler (2026), *Legal RAG Bench: an end-to-end benchmark for legal RAG*.'
+  sources:
+  - https://arxiv.org/abs/2603.01710
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B07
+  reference: Zheng et al. (2025), *A Reasoning-Focused Legal Retrieval Benchmark*.
+  sources:
+  - https://arxiv.org/abs/2505.03970
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B09
+  reference: COLIEE 2025 官方任务/论文： ；综述：
+  sources:
+  - https://coliee.org/COLIEE2025/overview
+  - https://doi.org/10.1007/s12626-026-00199-9
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B10
+  reference: Ma et al. (2024), *MMLongBench-Doc*. NeurIPS 2024.
+  sources:
+  - https://arxiv.org/abs/2407.01523
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B11
+  reference: Zhang (2026), *MMLongBench-Doc-V2*.
+  sources:
+  - https://arxiv.org/abs/2608.03397
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B14
+  reference: Gao et al. (2023), *Enabling Large Language Models to Generate Text with Citations* (ALCE).
+  sources:
+  - https://aclanthology.org/2023.emnlp-main.398/
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B15
+  reference: Ru et al. (2024), *RAGChecker*.
+  sources:
+  - https://arxiv.org/abs/2408.08067
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B16
+  reference: Min et al. (2023), *FActScore*.
+  sources:
+  - https://arxiv.org/abs/2305.14251
+  verification: paper_listing_verified_not_code_reproduced
+- paper_id: B17
+  reference: Chlapanis et al. (2024), *LAR-ECHR*.
+  sources:
+  - https://aclanthology.org/2024.nllp-1.22/
+  verification: paper_listing_verified_not_code_reproduced

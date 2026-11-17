@@ -1,0 +1,152 @@
+{
+  "reproduction_name": "e18_jurisma",
+  "implementation_module": "screenshotlegal.method_reproductions.e18_jurisma",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e18_jurisma.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现法律要素结构、动态任务路由及修订；未执行 DPO 训练或作者原系统的完整测评。",
+  "paper_sources": [
+    {
+      "paper_id": "L07",
+      "reference": "Lu et al. (2026), *From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation* (JurisMA).",
+      "sources": [
+        "https://arxiv.org/abs/2604.10470"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现法律要素结构、动态任务路由及修订；未执行 DPO 训练或作者原系统的完整测评。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "JurisMA：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L07",
+      "method": "JurisMA",
+      "task": "中文法律咨询问答；查询转法律要素图，再动态协作与内容修订。",
+      "input": "用户法律咨询问题，可能长、非正式且存在多个争点；不要求先输入截图或 ProofGraph。",
+      "output": "面向用户的咨询答复和法律依据；要素图是中间结构。",
+      "benchmark": "修订版 LawBench；JurisCQAD 用于训练/DPO。另有 LegalBench-RuleQA 小样本迁移实验。",
+      "innovation": "实体/事件/意图/争点结构、动态任务路由、法条 grounding 与内容修订，并构建咨询偏好数据。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2604.10470v1",
+      "fit": "结构层条件可适配，但需保持陈述/推断/未知的区别。未核实作者代码/训练检查点入口，当前 E18 只有项目机制原型。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-deepseek-pilot",
+      "kind": "real_model",
+      "statuses": {
+        "failed": 2
+      },
+      "planned": 2,
+      "report": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-deepseek-pilot/without-thinking-simple",
+      "kind": "real_model",
+      "statuses": {
+        "failed": 1
+      },
+      "planned": 1,
+      "report": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e18_jurisma"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e18_jurisma"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+id: evidence.strength.generic.v1
+capability: evidence.strength
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions:
+  - '*'
+  matters:
+  - '*'
+  practice_areas:
+  - '*'
+input_schema:
+- evidence_links
+- facts
+output_schema:
+- strength
+grounding:
+  require_source_refs: false
+dependencies:
+- evidence.map
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: true
+  authority_search: false
+stage: 5

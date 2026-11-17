@@ -1,0 +1,15 @@
+{
+  "url": "http://47.114.81.51:48000/law_api/get_company_info",
+  "request": {
+    "identifier": "金宏气体股份有限公司",
+    "columns": [
+      "公司代码",
+      "法人代表",
+      "董秘"
+    ]
+  },
+  "authorization_sent": false,
+  "started": "2026-10-29T19:17:44.781Z",
+  "error": "TypeError: fetch failed",
+  "cause": "Error: connect ECONNREFUSED 47.114.81.51:48000"
+}

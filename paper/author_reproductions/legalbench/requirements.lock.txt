@@ -1,0 +1,16 @@
+click==8.5.0
+colorama==0.4.6
+joblib==1.6.0
+nltk==3.9.1
+numpy==2.2.6
+pandas==2.3.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+regex==2026.9.29
+scikit-learn==1.6.1
+scipy==1.15.3
+six==1.17.0
+threadpoolctl==3.6.0
+tqdm==4.70.1
+tzdata==2025.2
+cloudpickle==3.1.2

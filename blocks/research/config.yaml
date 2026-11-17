@@ -1,0 +1,22 @@
+block: research
+version: 1
+status: working_protocol_experiments_pending
+consumes:
+  frozen_dataset: blocks/evaluator/artifacts/dataset.json
+  images: reports/restart/images_manifest.json
+  legacy_research: reports/research/research_assets.json
+  historical_errors: reports/research/historical_error_rows.json
+  github_sources: reports/research/github_research_inventory.json
+publishes:
+  findings: reports/research/RESTART_FINDINGS.md
+  architecture: docs/architecture.md
+  review_matrix: reports/research/REVIEW_AND_REBUTTAL.md
+  latex: paper/main.tex
+  pdf: output/pdf/screenshotlegalbench_working_draft.pdf
+  verification: reports/research/paper_verification.json
+scripts:
+  extract: python -m tools.research_assets
+  fetch_public: python tools/fetch_public_research.py
+  build: powershell -NoProfile -File paper/build.ps1
+  check: python tools/verify_paper.py
+skill: skills/legal-paper/SKILL.md

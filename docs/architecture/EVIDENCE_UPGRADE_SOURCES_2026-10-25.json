@@ -1,0 +1,283 @@
+{
+  "as_of": "2026-10-25 Asia/Singapore",
+  "kind": "architecture_proposal_evidence_not_runtime_changes",
+  "input": {
+    "path": "new_plan.md",
+    "sha256": "1cc05c815eb0c25a270a32625e7ecdee0b405e346820f422f8b52db3ae232615"
+  },
+  "local_code": [
+    {
+      "path": "product_v1/backend/src/screenshotlegal/domain/evidence/models.py",
+      "sha256": "5996b32a67d8c86e3e5603ccd0901b5f8e11956f798f510470d53b2e84e56771",
+      "symbols": [
+        {
+          "symbol": "class SourceRef",
+          "line": 5
+        },
+        {
+          "symbol": "class Message",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/documents/service.py",
+      "sha256": "b9ac0288ed55caf87eb3e2eac5b592107f0550c670565163e74344e18a287158",
+      "symbols": [
+        {
+          "symbol": "def normalized",
+          "line": 31
+        },
+        {
+          "symbol": "def ingest",
+          "line": 64
+        },
+        {
+          "symbol": "def parse_next",
+          "line": 105
+        },
+        {
+          "symbol": "async def analyze",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/documents/store.py",
+      "sha256": "1328ce49aba4e0c5eb4c6910a1329209be9e5a09d30c9ab390991300f4f24334",
+      "symbols": [
+        {
+          "symbol": "class DocumentStore",
+          "line": 7
+        },
+        {
+          "symbol": "def blocks",
+          "line": 46
+        },
+        {
+          "symbol": "def analysis",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/application/services/workspace.py",
+      "sha256": "78aab34f3b29988a2d7c9b8dd23c73ca6573198e3d50a44c66d07f7cfe86ba6f",
+      "symbols": [
+        {
+          "symbol": "def start_run",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/application/services/proof.py",
+      "sha256": "4d8aaf9d32a5d2a5ac3500722e83802497793a22421afde95ddf75a633e6c8a6",
+      "symbols": [
+        {
+          "symbol": "def graph",
+          "line": 28
+        },
+        {
+          "symbol": "def decorate_reviews",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/infrastructure/retrieval/fts.py",
+      "sha256": "db1f815355418c357c21697677663c9a41792481219ab5dcf60f53161d71d695",
+      "symbols": [
+        {
+          "symbol": "class Retriever",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/plugins/perception/adapters.py",
+      "sha256": "4eeeb0edc429c9c3c22d1d4e7db5e591c0eb93d6989b5a9edeb7185e3b87105e",
+      "symbols": [
+        {
+          "symbol": "class OpenAICompatibleVisionAdapter",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/research/worker.py",
+      "sha256": "1672df8d7b831d65e04a7dadd8da20022bc75cf84b5b241884ae0058a480c90c",
+      "symbols": [
+        {
+          "symbol": "class Worker",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "product_v1/backend/src/screenshotlegal/runtime/context_projection.py",
+      "sha256": "454032b5d4a1df5483795214b03dcb2aff0ced60190e8e244ad79652a961fe2d",
+      "symbols": [
+        {
+          "symbol": "def project",
+          "line": 3
+        }
+      ]
+    }
+  ],
+  "upstream_sources": [
+    {
+      "project": "opendatalab/MinerU",
+      "commit": "b7f3dd0c5f6e6d66a298239ffd02b328b873918e",
+      "path": "mineru/doclib/types.py",
+      "symbol": "class DocContentResponse",
+      "line": 266,
+      "sha256": "3f004c84d73efa0112ef261e5d75274b2458c3a95bb81be909c52805831cde6c",
+      "url": "https://github.com/opendatalab/MinerU/blob/b7f3dd0c5f6e6d66a298239ffd02b328b873918e/mineru/doclib/types.py#L266"
+    },
+    {
+      "project": "opendatalab/MinerU",
+      "commit": "b7f3dd0c5f6e6d66a298239ffd02b328b873918e",
+      "path": "mineru/doclib/locators.py",
+      "symbol": "def block_char_ref",
+      "line": 44,
+      "sha256": "6b95683a4b397766bd2a16a7dfdf0e28c832dfec5f63c0c03ea098b415523c54",
+      "url": "https://github.com/opendatalab/MinerU/blob/b7f3dd0c5f6e6d66a298239ffd02b328b873918e/mineru/doclib/locators.py#L44"
+    },
+    {
+      "project": "opendatalab/MinerU",
+      "commit": "b7f3dd0c5f6e6d66a298239ffd02b328b873918e",
+      "path": "mineru/backend/analysis/pdf/window.py",
+      "symbol": "def _configured_window_size",
+      "line": 56,
+      "sha256": "655e823dd4002173e7740775d6f67296e24f6520d6b9e7b8c23e795baf4ac535",
+      "url": "https://github.com/opendatalab/MinerU/blob/b7f3dd0c5f6e6d66a298239ffd02b328b873918e/mineru/backend/analysis/pdf/window.py#L56"
+    },
+    {
+      "project": "opendatalab/MinerU",
+      "commit": "b7f3dd0c5f6e6d66a298239ffd02b328b873918e",
+      "path": "mineru/doclib/services/parse_svc.py",
+      "symbol": "async def _maybe_update_fts",
+      "line": 1367,
+      "sha256": "471ce6d529635fdee5fd2ce373cffa11b624767691e0ee8b5e13c6a9ad186b76",
+      "url": "https://github.com/opendatalab/MinerU/blob/b7f3dd0c5f6e6d66a298239ffd02b328b873918e/mineru/doclib/services/parse_svc.py#L1367"
+    },
+    {
+      "project": "docling-project/docling-core",
+      "commit": "b501ec8011181db4a08a45b27a47fe7f66814cbe",
+      "path": "docling_core/types/doc/common/reference.py",
+      "symbol": "class ProvenanceItem",
+      "line": 205,
+      "sha256": "2d1a9b723bbd858d2c384bbe3b68d1533bc236f6f00c3cf4d1ac7e1b944e96ce",
+      "url": "https://github.com/docling-project/docling-core/blob/b501ec8011181db4a08a45b27a47fe7f66814cbe/docling_core/types/doc/common/reference.py#L205"
+    },
+    {
+      "project": "docling-project/docling-core",
+      "commit": "b501ec8011181db4a08a45b27a47fe7f66814cbe",
+      "path": "docling_core/types/doc/base.py",
+      "symbol": "class BoundingBox",
+      "line": 61,
+      "sha256": "a9836ae38b966a78cd944d12afa1f25474dd536efa8eac6301f12c75aaf36fc2",
+      "url": "https://github.com/docling-project/docling-core/blob/b501ec8011181db4a08a45b27a47fe7f66814cbe/docling_core/types/doc/base.py#L61"
+    },
+    {
+      "project": "docling-project/docling-core",
+      "commit": "b501ec8011181db4a08a45b27a47fe7f66814cbe",
+      "path": "docling_core/transforms/chunker/hybrid_chunker.py",
+      "symbol": "class HybridChunker",
+      "line": 56,
+      "sha256": "fb875dc4547ad81623e8ae0fae280e6ba53caef920b9bc2b056005ae9fde689c",
+      "url": "https://github.com/docling-project/docling-core/blob/b501ec8011181db4a08a45b27a47fe7f66814cbe/docling_core/transforms/chunker/hybrid_chunker.py#L56"
+    },
+    {
+      "project": "docling-project/docling",
+      "commit": "90234a71b16785d08fd2f46ec62668dd2396db76",
+      "path": "docling/document_converter.py",
+      "symbol": "class DocumentConverter",
+      "line": 488,
+      "sha256": "ce8407bb8ddd8d8b8b518b413ced86cded5aa153606cd7ee2cf092232fa9ea65",
+      "url": "https://github.com/docling-project/docling/blob/90234a71b16785d08fd2f46ec62668dd2396db76/docling/document_converter.py#L488"
+    },
+    {
+      "project": "docling-project/docling-graph",
+      "commit": "bbcd0e4846fadfcadac2800784783e59cd2722a9",
+      "path": "docling_graph/core/provenance/models.py",
+      "symbol": "class ProvenanceLedger",
+      "line": 198,
+      "sha256": "2d56055f9a50d3a335174f36c49bbe16e962011dfc018f54c479138850026f91",
+      "url": "https://github.com/docling-project/docling-graph/blob/bbcd0e4846fadfcadac2800784783e59cd2722a9/docling_graph/core/provenance/models.py#L198"
+    },
+    {
+      "project": "docling-project/docling-graph",
+      "commit": "bbcd0e4846fadfcadac2800784783e59cd2722a9",
+      "path": "docling_graph/core/provenance/binder.py",
+      "symbol": "def bind_provenance",
+      "line": 172,
+      "sha256": "c5dace11f9a58c02c760ba7a4bb77fe8b6e02856972e71f0d04c87eba46ce3d1",
+      "url": "https://github.com/docling-project/docling-graph/blob/bbcd0e4846fadfcadac2800784783e59cd2722a9/docling_graph/core/provenance/binder.py#L172"
+    },
+    {
+      "project": "PaddlePaddle/PaddleOCR",
+      "commit": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "path": "paddleocr/_pipelines/pp_structurev3.py",
+      "symbol": "class PPStructureV3",
+      "line": 31,
+      "sha256": "c4f2bf78774489843da5a9632507c4453b9531275cb851da6e937cce55e6ccb9",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/paddleocr/_pipelines/pp_structurev3.py#L31"
+    },
+    {
+      "project": "datalab-to/marker",
+      "commit": "6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81",
+      "path": "marker/converters/pdf.py",
+      "symbol": "class PdfConverter",
+      "line": 59,
+      "sha256": "c7f826a5184dac86400cec23474b4c0ce594fd89440172548e79f0c892a59492",
+      "url": "https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/marker/converters/pdf.py#L59"
+    },
+    {
+      "project": "datalab-to/marker",
+      "commit": "6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81",
+      "path": "marker/builders/ocr.py",
+      "symbol": "class OcrBuilder",
+      "line": 28,
+      "sha256": "b9d36f93e2fdf2d43c1e78e537fef36ba9bf6296eb05f5163263b387628002d8",
+      "url": "https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/marker/builders/ocr.py#L28"
+    },
+    {
+      "project": "datalab-to/marker",
+      "commit": "6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81",
+      "path": "marker/renderers/json.py",
+      "symbol": "class JSONBlockOutput",
+      "line": 12,
+      "sha256": "26e3a7bc4c27ed348966a527c2ce8133c8b42b9f9abc42e1a796bfcb3db1b4c5",
+      "url": "https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/marker/renderers/json.py#L12"
+    },
+    {
+      "project": "infiniflow/ragflow",
+      "commit": "176e91d7c26c479ffcb2fb305743bb64bdf43250",
+      "path": "internal/ingestion/component/parser_dispatch.go",
+      "symbol": "func dispatchParse",
+      "line": 77,
+      "sha256": "b47b66eeaba09167c885c674038d4a07188d6e29b93e32a1c6d15ba61c7461a4",
+      "url": "https://github.com/infiniflow/ragflow/blob/176e91d7c26c479ffcb2fb305743bb64bdf43250/internal/ingestion/component/parser_dispatch.go#L77"
+    },
+    {
+      "project": "infiniflow/ragflow",
+      "commit": "176e91d7c26c479ffcb2fb305743bb64bdf43250",
+      "path": "internal/parser/parser/pdf_parser_docling.go",
+      "symbol": "func parsePDFWithDocling",
+      "line": 41,
+      "sha256": "8b1d7c5b6512e34501b581cf0a1dde5dac7c78b55ad72f71835a4a46b84a2da8",
+      "url": "https://github.com/infiniflow/ragflow/blob/176e91d7c26c479ffcb2fb305743bb64bdf43250/internal/parser/parser/pdf_parser_docling.go#L41"
+    },
+    {
+      "project": "infiniflow/ragflow",
+      "commit": "176e91d7c26c479ffcb2fb305743bb64bdf43250",
+      "path": "internal/parser/parser/pdf_parser_paddleocr.go",
+      "symbol": "func PaddleOCRPDFResult",
+      "line": 28,
+      "sha256": "150f0e87bcfcaafe18a9623c5a88f103a6302cacfaa93552e9b6348029b8a22f",
+      "url": "https://github.com/infiniflow/ragflow/blob/176e91d7c26c479ffcb2fb305743bb64bdf43250/internal/parser/parser/pdf_parser_paddleocr.go#L28"
+    }
+  ]
+}

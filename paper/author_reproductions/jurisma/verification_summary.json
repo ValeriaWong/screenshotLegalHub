@@ -1,0 +1,47 @@
+{
+  "scope": "JurisMA inference branch and user resource boundary",
+  "supplier_requests_for_tests": 0,
+  "final_backend": {
+    "command": [
+      "D:/workspace/screenshotLegalHub/product_v1/.conda/screenshotlegal-v1/python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "product_v1/backend/tests/test_jurisma_inference.py",
+      "product_v1/backend/tests/test_jurisma_product.py",
+      "product_v1/backend/tests/test_author_resource_boundary.py",
+      "product_v1/backend/tests/test_author_reproduction_disclosures.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "passed": 41,
+    "log": "reports/author_expansion_20261029/test-jurisma-final.log"
+  },
+  "earlier_shared_backend": {
+    "exit_code": 0,
+    "passed": 64,
+    "log": "reports/author_expansion_20261029/test-jurisma-shared-regressions.log",
+    "overlaps_final_checks": true
+  },
+  "frontend": {
+    "exit_code": 0,
+    "passed": 8,
+    "log": "reports/author_expansion_20261029/test-jurisma-frontend.log"
+  },
+  "typecheck": {
+    "command": [
+      "D:/workspace/screenshotLegalHub/product_v1/.conda/screenshotlegal-v1/node.exe",
+      "D:/workspace/screenshotLegalHub/product_v1/frontend/node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "cwd": "product_v1/frontend",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "http_acceptance": "isolated TestClient only",
+  "live_service_18430_restarted": false,
+  "browser_e2e_executed": false
+}

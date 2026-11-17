@@ -1,0 +1,42 @@
+import {test,expect,artifactPath} from './fixtures';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+function seed() {
+ const id='benchmark.browser-'+crypto.randomUUID();
+ const script=["import sys;sys.path.insert(0,'backend/tests')","from benchmark_fixtures import seed","from screenshotlegal.research.store import Store","from screenshotlegal.research.benchmark import Benchmark,DEFAULTS","s=Store(sys.argv[1]);seed(s,'e2eadmin',sys.argv[2]);b=Benchmark(s)","for f,m in DEFAULTS.items():"," b.save_prompt('e2eadmin',dict(name=sys.argv[2],family=f,parent_id=None,markdown=m,note='browser fixture',idempotency_key=sys.argv[2]+f))"].join('\n');
+ execFileSync(path.resolve('../.conda/screenshotlegal-v1',process.platform==='win32'?'python.exe':'bin/python'),['-X','utf8','-c',script,process.env.E2E_DATA_DIR!,id],{cwd:path.resolve('..'),windowsHide:true});return id;
+}
+test('benchmark review comments drafts coordinates publication demo and replay stay visible',async({page,request})=>{
+ const id=seed();await page.goto('/review.html?section=benchmark&benchmark='+id);
+ await page.getByRole('row').filter({has:page.getByRole('checkbox',{name:'选择任务 vqa',exact:true})}).getByRole('button',{name:'核对原图与答案',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'核对截图和目标答案',exact:true})).toBeVisible();
+ await expect(page.getByRole('region',{name:'原图与答案核对工作区'})).toBeFocused();
+ await page.getByRole('combobox',{name:'图片缩放',exact:true}).selectOption('150');
+ await page.getByRole('combobox',{name:'图片缩放',exact:true}).selectOption('100');
+ await expect(page.getByRole('checkbox',{name:/锁定坐标/})).toBeChecked();await page.getByRole('button',{name:'当前参考框，点击编辑目标文本',exact:true}).click();await expect(page.getByRole('dialog',{name:'编辑区域目标文本',exact:true})).toBeVisible();await page.getByRole('button',{name:'关闭，保留草稿',exact:true}).click();await expect(page.getByLabel('拖动参考框角点1',{exact:true})).toHaveCount(0);
+ await page.getByRole('button',{name:'查看判决书原文',exact:true}).click();await expect(page.getByRole('dialog',{name:'判决书原文'})).toContainText('尚未绑定判决书');await page.getByRole('button',{name:'关闭原文面板'}).click();
+ await page.getByText("LabelU 矩形标注交换",{exact:true}).click();
+ const downloadPromise=page.waitForEvent("download");
+ await page.getByRole("button",{name:"导出当前矩形与答案",exact:true}).click();
+ const exchangeDownload=await downloadPromise;const exchangePath=artifactPath("labelu-reference.json");await exchangeDownload.saveAs(exchangePath);
+ const exchange=JSON.parse((await import("node:fs")).readFileSync(exchangePath,"utf8"));
+ expect(exchange.annotations[0]).toMatchObject({x:10,y:10,width:100,height:80});
+ await page.getByLabel("导入 LabelU 矩形交换文件",{exact:true}).setInputFiles({name:"wrong.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify({...exchange,image:{...exchange.image,sha256:"wrong"}}))});
+ await expect(page.getByText(/标注与当前原图哈希或尺寸不匹配/)).toBeVisible();
+ await page.getByLabel("导入 LabelU 矩形交换文件",{exact:true}).setInputFiles({name:"verified.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify(exchange))});
+ await expect(page.getByText("标注已导入草稿，请核对后保存新版本",{exact:false})).toBeVisible();
+ const comment=page.getByRole('textbox',{name:'评论 / 给下一轮生成的修改建议',exact:true});await comment.fill('保留图中的转账金额，不能补造身份');await expect(page.getByText('本地与服务器草稿已保存',{exact:false})).toBeVisible();
+ page.once('dialog',d=>d.accept());await page.reload();await expect(comment).toHaveValue('保留图中的转账金额，不能补造身份');await page.getByRole('button',{name:'只保存评论',exact:true}).click();await expect(comment).toHaveValue('');
+ await page.getByRole('checkbox',{name:/锁定坐标/}).uncheck();const handle=page.getByLabel('拖动参考框角点3',{exact:true});await handle.scrollIntoViewIfNeeded();const point=await handle.boundingBox();expect(point).toBeTruthy();await page.mouse.move(point!.x+point!.width/2,point!.y+point!.height/2);await page.mouse.down();await page.mouse.move(point!.x+point!.width/2+20,point!.y+point!.height/2+15,{steps:4});await page.mouse.up();
+ await page.getByRole('checkbox',{name:/锁定坐标/}).check();
+ await page.getByRole('textbox',{name:'案件组编号',exact:true}).fill('browser-case-'+id);await page.getByRole('combobox',{name:'区域是什么',exact:true}).selectOption('other');await page.getByRole('combobox',{name:'数据用途',exact:true}).selectOption('development');await page.getByRole('checkbox',{name:'我已核对图片身份与本条标注对应',exact:true}).check();await page.getByRole('combobox',{name:'审核结论',exact:true}).selectOption('pass');await page.getByRole('textbox',{name:'修改原因 / 审核过程',exact:true}).fill('人工对照原图，核对证据形式与区域');await page.getByRole('button',{name:'保存审核新版本',exact:true}).click();await expect(page.getByText(/已保存新审核版本；原图和旧版本保留/)).toBeVisible();
+ const saved=await(await request.get('/v1/review/benchmarks/'+id+'/tasks/vqa')).json();expect(saved.annotation.version).toBe(1);expect(saved.annotation.bbox_xyxy[2]).toBeGreaterThan(110);expect(saved.task.asset.sha256).toBe(saved.annotation.asset_sha256);
+ await page.getByRole('checkbox',{name:'选择任务 vqa',exact:true}).check();await page.getByRole('textbox',{name:'发布名称',exact:true}).fill('浏览器人工任务版本');await page.getByRole('button',{name:'发布 1 项任务',exact:true}).click();await expect(page.getByText('所选任务已发布，可在评测台选择人工发布版本。',{exact:true})).toBeVisible();
+ await page.screenshot({path:artifactPath('benchmark-review.png'),fullPage:true});
+ await page.goto('/evaluation.html?benchmark='+id);await page.getByRole('button',{name:'单阶段调试',exact:true}).click();await page.getByRole('checkbox',{name:'选择任务 vqa',exact:true}).check();await page.getByRole('textbox',{name:'本次运行名称',exact:true}).fill('浏览器离线任务运行');await page.getByRole('combobox',{name:'模型看什么',exact:true}).selectOption('vqa_image_full');await page.getByRole('button',{name:'预览这道题实际输入',exact:true}).click();const preview=page.getByText('实际输入（不含目标答案和审核评论）',{exact:true}).locator('..');await expect(preview).toContainText('Visible question evidence');await expect(preview).not.toContainText('is_evidence');
+ await page.getByRole('button',{name:'开始所选任务',exact:true}).click();await expect(page.getByRole('heading',{name:'浏览器离线任务运行 · 开发参考评分（旧答案未复核）',exact:true})).toBeVisible();await expect(page.getByText('fixture.png · 执行已完成',{exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'离线重评旧回答',exact:true}).click();
+ await page.getByRole('button',{name:'离线回放全部旧 IoU（无模型费用）',exact:true}).click();await expect(page.getByRole('heading',{name:'旧IoU离线回放 · 旧结果离线回放',exact:true})).toBeVisible();await page.getByText('逐区域旧 IoU 明细（1）',{exact:true}).click();await expect(page.getByText('"no_message": true',{exact:false})).toBeVisible();
+ await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await page.screenshot({path:artifactPath('benchmark-evaluation-mobile.png'),fullPage:true});
+ expect((await(await request.get('/v1/evaluation/history?category=benchmark')).json()).items.some((r:{name:string})=>r.name==='浏览器离线任务运行')).toBeTruthy();
+});

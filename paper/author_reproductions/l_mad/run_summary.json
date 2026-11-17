@@ -1,0 +1,192 @@
+{
+  "paper": "L10",
+  "source_kind": "paper_specification_with_cited_upstream_components",
+  "author_LMAD_code_executed": false,
+  "original_complete_benchmark": false,
+  "expert_legal_accuracy": null,
+  "local_model_inference": false,
+  "requests_used_including_failures": 92,
+  "limit": 100,
+  "runs": [
+    {
+      "directory": "1814043722ca8211__vqa_predicted_text__hybrid",
+      "track": "vqa_predicted_text",
+      "protocol": "hybrid",
+      "status": "completed",
+      "requests": 17,
+      "total_tokens": 18683,
+      "estimated_cost_CNY": 0.042352,
+      "error": null,
+      "paper_used_after_run": 34,
+      "prediction": {
+        "answer": null,
+        "evidence": [
+          {
+            "candidate": "group_chat",
+            "entailed": "N",
+            "decision": true
+          },
+          {
+            "candidate": "private_chat",
+            "entailed": null,
+            "decision": false
+          }
+        ]
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": [
+            {
+              "candidate": "group_chat",
+              "entailed": "N",
+              "decision": true
+            },
+            {
+              "candidate": "private_chat",
+              "entailed": null,
+              "decision": false
+            }
+          ]
+        }
+      },
+      "correct": null,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/1814043722ca8211__vqa_predicted_text__hybrid/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "1a6a5128c2ffd31d__case_product__hybrid",
+      "track": "case_product",
+      "protocol": "hybrid",
+      "status": "failed",
+      "requests": 16,
+      "total_tokens": 17123,
+      "estimated_cost_CNY": 0.054682,
+      "error": "Case revision changed the verified fact set; result retained as failure",
+      "paper_used_after_run": 81,
+      "prediction": null,
+      "score": null,
+      "correct": null,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/1a6a5128c2ffd31d__case_product__hybrid/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "a2386156d6841124__native__hybrid",
+      "track": "native",
+      "protocol": "hybrid",
+      "status": "completed",
+      "requests": 5,
+      "total_tokens": 2648,
+      "estimated_cost_CNY": 0.008002,
+      "error": null,
+      "paper_used_after_run": 5,
+      "prediction": "N",
+      "score": null,
+      "correct": true,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/a2386156d6841124__native__hybrid/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "b075523bcd722ec1__case_product__hybrid",
+      "track": "case_product",
+      "protocol": "hybrid",
+      "status": "completed",
+      "requests": 11,
+      "total_tokens": 13254,
+      "estimated_cost_CNY": 0.038412,
+      "error": null,
+      "paper_used_after_run": 92,
+      "prediction": null,
+      "score": null,
+      "correct": null,
+      "final_fact_count": 0,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/b075523bcd722ec1__case_product__hybrid/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "b21b140da9086225__native__ranked",
+      "track": "native",
+      "protocol": "ranked",
+      "status": "completed",
+      "requests": 12,
+      "total_tokens": 8261,
+      "estimated_cost_CNY": 0.021652,
+      "error": null,
+      "paper_used_after_run": 17,
+      "prediction": "N",
+      "score": null,
+      "correct": true,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/b21b140da9086225__native__ranked/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "d60074513de5d1a1__vqa_predicted_text__ranked",
+      "track": "vqa_predicted_text",
+      "protocol": "ranked",
+      "status": "completed",
+      "requests": 30,
+      "total_tokens": 33051,
+      "estimated_cost_CNY": 0.072084,
+      "error": null,
+      "paper_used_after_run": 64,
+      "prediction": {
+        "answer": null,
+        "evidence": [
+          {
+            "candidate": "group_chat",
+            "entailed": null,
+            "decision": false
+          },
+          {
+            "candidate": "private_chat",
+            "entailed": "N",
+            "decision": true
+          }
+        ]
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": [
+            {
+              "candidate": "group_chat",
+              "entailed": null,
+              "decision": false
+            },
+            {
+              "candidate": "private_chat",
+              "entailed": "N",
+              "decision": true
+            }
+          ]
+        }
+      },
+      "correct": null,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/d60074513de5d1a1__vqa_predicted_text__ranked/e09_l_mad.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "df63d7f9b390e5d5__case_product__hybrid",
+      "track": "case_product",
+      "protocol": "hybrid",
+      "status": "failed",
+      "requests": 1,
+      "total_tokens": 4098,
+      "estimated_cost_CNY": 0.015006,
+      "error": "1 validation error for CaseAnalysisOutput\n  Value error, 要件引用未知实体 [type=value_error, input_value={'summary': '本案为民...事实人工审核。']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "paper_used_after_run": 65,
+      "prediction": null,
+      "score": null,
+      "correct": null,
+      "final_fact_count": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/e09_l_mad/runs/df63d7f9b390e5d5__case_product__hybrid/e09_l_mad.INPUT_OUTPUT.md"
+    }
+  ]
+}

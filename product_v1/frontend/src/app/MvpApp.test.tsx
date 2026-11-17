@@ -1,0 +1,21 @@
+import { render, screen, cleanup, fireEvent, within } from "@testing-library/react";
+import { afterEach, it, expect, vi } from "vitest";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { App } from "./App";
+import { I18nProvider } from "../i18n";
+const { fakeApi } = vi.hoisted(() => ({ fakeApi: vi.fn() }));
+vi.mock("../api/client", async importOriginal => ({ ...await importOriginal<object>(), api: fakeApi }));
+vi.mock("../features/workbench/Workbench", () => ({ Workbench: ({ caseId, page }: { caseId: string; page: string }) => <div data-testid="workbench-page">{caseId}:{page}</div> }));
+afterEach(() => { cleanup(); vi.clearAllMocks(); vi.unstubAllGlobals(); });
+it("keeps the customer workbench limited to the four MVP pages", async () => {
+  history.replaceState({}, "", "/?case=own"); localStorage.setItem("locale", "zh-CN");
+  vi.stubGlobal("matchMedia", () => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
+  fakeApi.mockResolvedValue([{ id: "own", title: "Own", access_role: "owner" }]);
+  render(<QueryClientProvider client={new QueryClient()}><I18nProvider><App /></I18nProvider></QueryClientProvider>);
+  expect(await screen.findByTestId("workbench-page")).toHaveTextContent("own:overview");
+  const navigation = screen.getByRole("navigation");
+  expect(within(navigation).getAllByRole("button").map(button => button.textContent)).toEqual(["01概览", "02编辑", "03证据时间线", "04生成 PPT", "创建"]);
+  fireEvent.click(within(navigation).getByRole("button", { name: /编辑/ }));
+  expect(screen.getByTestId("workbench-page")).toHaveTextContent("own:edit");
+  expect(within(navigation).queryByRole("button", { name: /模型设置|证明矩阵|人工审核/ })).not.toBeInTheDocument();
+});

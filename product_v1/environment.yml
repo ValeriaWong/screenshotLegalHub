@@ -1,0 +1,9 @@
+name: screenshotlegal-v1
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - pip>=24
+  - setuptools>=75
+  - nodejs=22

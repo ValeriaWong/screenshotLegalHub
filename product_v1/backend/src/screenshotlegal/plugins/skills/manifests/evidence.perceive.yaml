@@ -1,0 +1,32 @@
+id: evidence.perceive.generic.v1
+capability: evidence.perceive
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions:
+  - '*'
+  matters:
+  - '*'
+  practice_areas:
+  - '*'
+input_schema:
+- evidence
+- messages
+- source_refs
+output_schema:
+- perception
+grounding:
+  require_source_refs: false
+dependencies: []
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: true
+  authority_search: false
+stage: 1

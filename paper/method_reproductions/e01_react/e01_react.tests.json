@@ -1,0 +1,66 @@
+{
+  "reproduction_name": "e01_react",
+  "implementation_status": "implemented",
+  "unit_checks": [
+    {
+      "name": "test_react_runs_original_notebook_with_real_pixel_crop[kie]",
+      "status": "passed",
+      "time_s": "0.385"
+    },
+    {
+      "name": "test_react_runs_original_notebook_with_real_pixel_crop[vqa]",
+      "status": "passed",
+      "time_s": "0.368"
+    },
+    {
+      "name": "test_react_rejects_crop_outside_frozen_original",
+      "status": "passed",
+      "time_s": "0.324"
+    },
+    {
+      "name": "test_durable_cap_counts_failed_requests_before_network",
+      "status": "passed",
+      "time_s": "0.041"
+    },
+    {
+      "name": "test_saved_response_reuse_never_calls_provider",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[failed]",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[unknown]",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[calling_model]",
+      "status": "passed",
+      "time_s": "0.042"
+    },
+    {
+      "name": "test_original_task_and_adaptation_are_disclosed_without_claiming_paper_reproduction[e01_react]",
+      "status": "passed",
+      "time_s": "0.068"
+    },
+    {
+      "name": "test_named_method_file_discloses_original_sources_and_extent[e01_react]",
+      "status": "passed",
+      "time_s": "0.081"
+    },
+    {
+      "name": "test_dispatch_calls_the_named_module_or_rejects_planned[e01_react]",
+      "status": "passed",
+      "time_s": "0.006"
+    }
+  ],
+  "behavior_equivalence": [],
+  "junit_source": "../../../reports/author_product_adaptation_20261028/pytest-final-all.xml",
+  "junit_sha256": "f0ee21a8e3dad5953eb9880a6b454312a47b0aec85803d4587e3588819c3d636",
+  "method_source_sha256": "354974c45d89e4062f82ae70ff9e271a44014723d15b76330e6013e2a8abbde5",
+  "note": "Dispatch/header checks, offline equivalence and saved run states are distinct from legal-quality evaluation."
+}

@@ -1,0 +1,32 @@
+{
+  "paper_id": "L02",
+  "source_identity": {
+    "paper_id": "L02",
+    "commit": "d3fe4c75af15db4933a89962eaacff3b1b414c41",
+    "repository": "https://github.com/NEFUJing/LawLuo",
+    "original_path": "tree_of_legal_clarifications /tolc_demo.py",
+    "local_path": "paper/upstream_sources/lawluo/tolc_demo.py",
+    "original_git_blob": "61aaf6dd1b0cce8aac0d620ebcb35ef4835c519f",
+    "sha256": "51efc0ba51e5814c221c575c5c9282676a3449efe58bc4a7795c1d8b5dab7269",
+    "git_blob_verified": true,
+    "model_requests": 0,
+    "source_kind": "author_pseudocode_with_unimplemented_functions"
+  },
+  "model_requests": 0,
+  "source_unchanged": true,
+  "author_code_executed": false,
+  "parse_passed": false,
+  "syntax_error": {
+    "line": 21,
+    "offset": 39,
+    "message": "invalid character '）' (U+FF09)",
+    "text": "            i = (K**(h-1) - 1) / k - 1）+ k"
+  },
+  "unimplemented_returns": [
+    "return rt",
+    "return relevant_cases",
+    "return legal_elements",
+    "return chosen_nodes",
+    "return response"
+  ]
+}

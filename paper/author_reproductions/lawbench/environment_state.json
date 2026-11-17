@@ -1,0 +1,18 @@
+{
+  "method": "lawbench",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "lawbench",
+      "commit": "e30981bb3ff54c41571f222e0b23e92d27375388",
+      "files_checked": 79
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 17,
+    "mismatches": {}
+  },
+  "resources": []
+}

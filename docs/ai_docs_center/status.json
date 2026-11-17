@@ -1,0 +1,2859 @@
+{
+  "schema_version": 1,
+  "assessed_on": "2026-10-25",
+  "timezone": "Asia/Singapore",
+  "basis": "V3.0.0_PLAN.md",
+  "scope": "RP01–RP08交付后完成模型预算/单价配置、流程与结果同步和审计跳转/关键词日期聚合；I26–I28已按软件范围修复。上轮真实试跑历史同步，未新增收费调用、未代签人工认证或正式研究发布。 后续RP10面向不熟悉项目的协作人员完成默认信息、状态及下一步引导；真人理解测试待执行。 本轮13样本真实测试发现I29–I31（请求筛选、英文断词、质量资产范围），保持开放，未以软件回归通过代替修复。 RP11已修复I29/I30/I31的软件问题，I10等待策略已配置冻结；历史数据/真实模型语义/人工验收边界保留。 RP12修复评测历史遗漏试跑，正式运行0与未计分真实测试分开展示。 KIE/VQA指定源目录已完成只读完整性评估、清单/映射/评分协议准备，RP13软件迁移已交付；RP14 A/P0–P5软件实现通过本地验收，P6真实在线/G4人工参考及B扩展待完成。",
+  "release_ready": false,
+  "v3_stage_acceptance": {
+    "completed": 4,
+    "total": 8,
+    "percentage": 50,
+    "method": "按当前四场景校准范围验收S0–S3作者/机械交接；S4独立认证仍0题，S5–S7未通过。50%仅为8个阶段中的4个，不是全项目、20场景或法律质量完成率。"
+  },
+  "readiness_checklist": {
+    "reusable_assets_checked": 5,
+    "execution_checked": 14,
+    "execution_total": 33,
+    "all_checked": 19,
+    "all_total": 38,
+    "changed_item": "S0/S1六项、S2/S3七项及S4盲审包一项已交接；真实独立意见及正式评测/软件全交付未勾选。"
+  },
+  "summary": {
+    "features": {
+      "completed": 26,
+      "partial": 4,
+      "planned": 4
+    },
+    "issues": {
+      "resolved": 27,
+      "open": 5
+    },
+    "gaps": {
+      "completed": 12,
+      "open": 12,
+      "deferred": 1
+    }
+  },
+  "stages": [
+    {
+      "id": "S0",
+      "title": "资产与基线冻结",
+      "status": "accepted",
+      "readiness": "已完成当前准备轮交接",
+      "assessment": "G01/G02完成；774文件来源契约、实际字体/浏览器、重复渲染及冻结产品烟测齐备。",
+      "gaps": [
+        "G01",
+        "G02"
+      ],
+      "required_outputs": [
+        "source_manifest.jsonl",
+        "baseline_snapshot.json",
+        "readiness.json",
+        "inherited_gaps.md"
+      ],
+      "exit_conditions": [
+        "所有纳入资产有哈希、来源和状态",
+        "未完成事项绑定责任阶段",
+        "旧材料未覆盖"
+      ],
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md",
+        "product_v1/docs/CONDA_LINUX_SETUP.md",
+        "datasets/v3.0.0/baseline_20261022_001/source_manifest.jsonl",
+        "datasets/v3.0.0/baseline_20261022_001/baseline_snapshot.json",
+        "reports/v3.0.0/s0_baseline_20261022_001/README.md",
+        "datasets/v3.0.0/baseline_20261023_001/baseline_snapshot.json",
+        "datasets/v3.0.0/source_audit_20261023_002/audit_summary.json",
+        "reports/v3.0.0/source_closure_20261023_001/README.md",
+        "reports/v3.0.0/runtime_reproduction_20261023_002/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ],
+      "accepted_on": "2026-10-23",
+      "acceptance_scope": "current_four_scenario_calibration_author_and_mechanical_handoff"
+    },
+    {
+      "id": "S1",
+      "title": "事实账本、范围与量表",
+      "status": "accepted",
+      "readiness": "已完成当前四场景口径",
+      "assessment": "G03/G04完成；范围、账本、量表、历史字段映射与抽样五类输出齐备，未知与合成来源明确。",
+      "gaps": [
+        "G03",
+        "G04"
+      ],
+      "required_outputs": [
+        "case_scope.json",
+        "fact_ledger.jsonl",
+        "rubric.json",
+        "legacy_rubric_mapping.json",
+        "sampling_plan.json"
+      ],
+      "exit_conditions": [
+        "原文来源可定位",
+        "时间和身份未知项不被补造",
+        "事实、意思表示和法律评价口径分开",
+        "旧量表新维度差异明确"
+      ],
+      "evidence": [
+        "V3.0.0_PLAN.md",
+        "datasets/v2.0.0/round_002/REPORT.md",
+        "reports/restart/human_score_coverage.json",
+        "datasets/v3.0.0/source_audit_20261023_002/calibration_source_pool.json",
+        "datasets/v3.0.0/source_audit_20261023_002/legacy_score_checks.jsonl",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ],
+      "accepted_on": "2026-10-23",
+      "acceptance_scope": "current_four_scenario_calibration_author_and_mechanical_handoff"
+    },
+    {
+      "id": "S2",
+      "title": "自然对话及依赖题设计",
+      "status": "accepted",
+      "readiness": "已完成当前四场景作者设计",
+      "assessment": "G05完成校准作者阶段；四种任务结构、图节点来源、候选支持集及作者自然度自审齐备；不等于独立认证。",
+      "gaps": [
+        "G05"
+      ],
+      "required_outputs": [
+        "messages.jsonl",
+        "questions.jsonl",
+        "dependency_graphs.jsonl",
+        "author_answers.reviewer_only.jsonl",
+        "alternative_interpretations.jsonl"
+      ],
+      "exit_conditions": [
+        "题干无必要身份/答案泄漏",
+        "必要/可选节点与替代支持明确",
+        "题意、时序和自然度自审完成",
+        "未将作者答案标成专业金标"
+      ],
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ],
+      "accepted_on": "2026-10-23",
+      "acceptance_scope": "current_four_scenario_calibration_author_and_mechanical_handoff"
+    },
+    {
+      "id": "S3",
+      "title": "渲染及去图、反事实、包装控制",
+      "status": "accepted",
+      "readiness": "已完成当前四场景机械交接",
+      "assessment": "G06完成；80图/352子集、控制条件、全映射及哈希检查通过；独立审核仍未开始。",
+      "gaps": [
+        "G06"
+      ],
+      "required_outputs": [
+        "screenshots/",
+        "html/",
+        "render_manifest.json",
+        "source_refs.jsonl",
+        "subset_manifest.jsonl",
+        "interventions.jsonl",
+        "mechanical_checks.json"
+      ],
+      "exit_conditions": [
+        "图片和消息映射完整",
+        "区域未越界且关键内容未裁切",
+        "一个语义干预的所有关联内容同步",
+        "无图/单图/去图/顺序/分页/干扰条件可复现"
+      ],
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ],
+      "accepted_on": "2026-10-23",
+      "acceptance_scope": "current_four_scenario_calibration_author_and_mechanical_handoff"
+    },
+    {
+      "id": "S4",
+      "title": "独立复核与证据认证",
+      "status": "not_accepted",
+      "readiness": "待独立复核",
+      "assessment": "两份冻结盲审ZIP已备好，每份352子集+20页级认证组；真实独立复核者和裁决尚未就绪，认证题0。",
+      "gaps": [
+        "G07",
+        "G08"
+      ],
+      "required_outputs": [
+        "reviewer_a.jsonl",
+        "reviewer_b.jsonl",
+        "adjudication.jsonl",
+        "certifications.jsonl",
+        "accepted_questions.jsonl",
+        "revision_queue.jsonl"
+      ],
+      "exit_conditions": [
+        "原始独立意见与分歧可追溯",
+        "关键反证与缺证原因已核查",
+        "最小性粒度和穷尽范围明确",
+        "歧义未解决题不进入金标",
+        "分层认证状态完整"
+      ],
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md",
+        "V3.0.0_PLAN.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+        "datasets/v3.0.0/calibration_20261023_003/blind_review/reviewer_a.zip",
+        "datasets/v3.0.0/calibration_20261023_003/blind_review/reviewer_b.zip"
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "冻结评测及难度分析",
+      "status": "not_accepted",
+      "readiness": "前置条件未满足",
+      "assessment": "仅development评测草案，352条件×2配置×3重复=2112为计划量；认证题/留出/模型版本/实际预算与服务探测未就绪，API调用0。",
+      "gaps": [
+        "G09",
+        "G10",
+        "G11",
+        "G16"
+      ],
+      "required_outputs": [
+        "run_spec.json",
+        "requests.jsonl",
+        "responses.jsonl",
+        "node_reviews.jsonl",
+        "metrics.json",
+        "EVALUATION.md",
+        "difficulty_profiles.jsonl"
+      ],
+      "exit_conditions": [
+        "计划分母和服务失败完整",
+        "中间判断、结论和引用分开评价",
+        "简单基线与重复结果齐备",
+        "按案件/模板族统计",
+        "未把聚合标签命中率称为法律准确率"
+      ],
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "configs/models.example.yaml",
+        "V3.0.0_PLAN.md",
+        "reports/v1.0.0_iteration_analysis.md",
+        "reports/research/RESTART_FINDINGS.md",
+        "datasets/v3.0.0/calibration_20261023_003/evaluation_plan.json"
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "软件来源链与结论一致性回归",
+      "status": "not_accepted",
+      "readiness": "有软件基础；未达V3验收",
+      "assessment": "product_v1选作后续集成基线；I11修复及2案真实旧语料隔离迁移通过，G18部分推进；经认证充分路径、完整双模式和专用导出未验收。 2026-10-24已交付三研究产品MVP与图片审核，但确认I17–I25；输入保护、资产/金标/发布绑定及统一操作审计/可视化待开发，不能据此标记S6验收。 随后RP01–RP08已交付并验收，I17–I25关闭；S6仍有认证图、双模式、专用导出等原研究缺口，阶段不改为accepted。",
+      "gaps": [
+        "G12",
+        "G13",
+        "G14",
+        "G18",
+        "G20",
+        "G21",
+        "G22",
+        "G23",
+        "G24",
+        "G25"
+      ],
+      "required_outputs": [
+        "evidence_graph_adapter",
+        "conclusion_consistency_checks",
+        "mode_regression_report.json",
+        "export_compatibility_report.md",
+        "SOFTWARE_ACCEPTANCE.md"
+      ],
+      "exit_conditions": [
+        "有效充分路径才能支持对应肯定结论",
+        "足以否定时不强求无关字段",
+        "缺证与最终输出冲突可见",
+        "双模式和导出来源可追溯",
+        "既有 Excel/PPT 缺口按实际交付验收"
+      ],
+      "evidence": [
+        "docs/architecture.md",
+        "product_v1/docs/SCHEMA.md",
+        "product_v1/backend/src/screenshotlegal/plugins/skills/deterministic.py",
+        "V3.0.0_PLAN.md",
+        "docs/v3.0.0/work_packages.json",
+        "product_v1/docs/REQUIREMENTS.md",
+        "product_v1/docs/MIGRATION.md",
+        "reports/v3.0.0/import_atomicity_20261023_001/README.md",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+        "product_v1/reports/review-canvas-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md"
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "版本发布与 LaTeX 实验材料",
+      "status": "not_accepted",
+      "readiness": "未发布",
+      "assessment": "未见V3发布包、独立LaTeX版本及全部门槛完成记录",
+      "gaps": [
+        "G15"
+      ],
+      "required_outputs": [
+        "release_manifest.json",
+        "DATASET_CARD.md",
+        "MODEL_EVALUATION.md",
+        "SOFTWARE_RELEASE.md",
+        "paper/versions/v3.0.0/",
+        "CHANGELOG.md",
+        "reproduction_bundle/"
+      ],
+      "exit_conditions": [
+        "所有声明与完成记录一致",
+        "论文表图绑定原始运行",
+        "未完成事项显式保留",
+        "旧版本入口和回退资料齐备"
+      ],
+      "evidence": [
+        "paper/README.md",
+        "reports/research/REVIEW_AND_REBUTTAL.md"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "F01",
+      "title": "历史资产索引与来源哈希",
+      "status": "completed",
+      "stage": "S0",
+      "scope": "旧资产索引已建立；不等于 V3 输入完整冻结",
+      "evidence": [
+        "tools/restart_inventory.py",
+        "reports/restart/ASSET_RESTART.md",
+        "reports/restart/images_manifest.json"
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "冻结评测任务与兼容模型适配",
+      "status": "completed",
+      "stage": "S5",
+      "scope": "已有 v1 数据摘要、dry-run 与真实请求日志",
+      "evidence": [
+        "legalhub/benchmark.py",
+        "legalhub/inference.py",
+        "tests/test_benchmark.py"
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "v1 三配置 P3 复测",
+      "status": "completed",
+      "stage": "S5",
+      "scope": "每配置230项；含复用结果，未完成八轨全量专业评测",
+      "evidence": [
+        "reports/v1.0.0_iteration_analysis.md",
+        "tools/iterate_v1_p3.py"
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "代码检索与原图引用",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "FTS5/BM25、案内来源和像素框；不认证引用语义；2026-10-24补齐product_v1区域浏览与程序恢复：6389个区域引用，2549/2579图有框，非完整转录或语义认证。",
+      "evidence": [
+        "legalhub/retrieval.py",
+        "tests/test_retrieval.py",
+        "reports/v1.1.0_http_acceptance.json",
+        "product_v1/tools/sync_evidence_regions.py",
+        "product_v1/frontend/src/features/source-navigation/SourceViewer.tsx",
+        "reports/coordinate_audit_20261024/README.md"
+      ]
+    },
+    {
+      "id": "F05",
+      "title": "截图转录与重试保留",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "已有真实上传闭环；模型质量及当前服务可用性另验",
+      "evidence": [
+        "legalhub/evidence.py",
+        "legalhub/case_registry.py",
+        "reports/v1.1.0_upload_acceptance.json"
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "旧工作台多案浏览与问答",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "316组材料为历史运行库计数；3案12题为开发评估",
+      "evidence": [
+        "legalhub/app.py",
+        "legalhub/case_chat.py",
+        "reports/v1.1.0_multi_case_workspace.md",
+        "reports/v1.1.0_case_qa_evaluation.md"
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "法律批注与追加历史",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "待办、修订、冲突、来源变化失效、双语界面",
+      "evidence": [
+        "legalhub/legal_review.py",
+        "legalhub/review_content.py",
+        "tests/test_legal_review.py",
+        "reports/v1.2.0_legal_review_workspace.md"
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "CSV/JSON 来源导出",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "旧版结构导出可用；不包含专用 Excel/PPT",
+      "evidence": [
+        "legalhub/retrieval.py",
+        "reports/v1.0.0_software_iteration.md"
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "V2 判决约束候选生成与归档",
+      "status": "completed",
+      "stage": "S2",
+      "scope": "六轮开发候选与逐句来源/修订归档；第六轮200条全文复核后138通信候选+2辅助，62缺口；无专业人工金标",
+      "evidence": [
+        "datasets/v2.0.0/round_001/REPORT.md",
+        "datasets/v2.0.0/round_002/REPORT.md",
+        "datasets/v2.0.0/round_003/REPORT.md",
+        "datasets/v2.0.0/round_004/REPORT.md",
+        "datasets/v2.0.0/round_005/REPORT.md",
+        "datasets/v2.0.0/round_006/REPORT.md"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "依赖题、有限子集及反事实预研",
+      "status": "partial",
+      "stage": "S3",
+      "scope": "12变体、192子集和旧模型实验已存在；分页/干扰及语义认证缺失",
+      "evidence": [
+        "datasets/v2.0.0/dependency_pilot_001_r1/README.md",
+        "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md"
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "盲审包与意见汇总工具",
+      "status": "completed",
+      "stage": "S4",
+      "scope": "两个空白独立入口可用；不代表复核已完成",
+      "evidence": [
+        "tools/prepare_dependency_certification_v1.py",
+        "tools/merge_dependency_reviews_v1.py",
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md"
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "独立 product_v1 分层架构与启动环境",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "独立 FastAPI/React、锁文件、Conda、无 Key Demo",
+      "evidence": [
+        "product_v1/README.md",
+        "product_v1/docs/ARCHITECTURE.md",
+        "product_v1/scripts/conda_workspace.py"
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Matter Pack 与 Skill/DAG 编排",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "民间借贷草案、13个内置确定性 Skill；不等同专家规则",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/application/services/compiler.py",
+        "product_v1/backend/src/screenshotlegal/runtime/executor.py",
+        "product_v1/backend/src/screenshotlegal/plugins/skills/deterministic.py",
+        "product_v1/backend/tests/test_contract.py"
+      ]
+    },
+    {
+      "id": "F14",
+      "title": "ProofGraph/证明矩阵与补证线索",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "关键词支持/反驳关系与结构可追溯；实质证明能力未认证",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/application/services/proof.py",
+        "product_v1/docs/SCHEMA.md",
+        "product_v1/backend/tests/test_contract.py"
+      ]
+    },
+    {
+      "id": "F15",
+      "title": "运行快照、审核关卡和 SSE 恢复",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "节点隔离、有限重试、幂等及审核历史",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/runtime/stage_executor.py",
+        "product_v1/backend/src/screenshotlegal/runtime/review_gate.py",
+        "product_v1/backend/tests/test_contract.py"
+      ]
+    },
+    {
+      "id": "F16",
+      "title": "账户、会话与案件协作权限",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "本地管理员/普通用户、共享查看/编辑；无生产部署认证",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/application/services/auth.py",
+        "product_v1/backend/tests/test_accounts_ingestion.py",
+        "product_v1/docs/INGESTION_ACCOUNTS_MODELS.md"
+      ]
+    },
+    {
+      "id": "F17",
+      "title": "批量图片导入与逐项重试",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "50文件/20MiB单文件/100MiB批次默认限制与哈希去重",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/plugins/ingestion/registry.py",
+        "product_v1/frontend/src/features/evidence/Evidence.test.tsx",
+        "product_v1/backend/tests/test_accounts_ingestion.py"
+      ]
+    },
+    {
+      "id": "F18",
+      "title": "用户隔离模型设置与加密凭据",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "保存/编辑/连通性测试；线上服务只经历史 mock 验收",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/infrastructure/model/secrets.py",
+        "product_v1/frontend/src/features/settings/ModelSettings.test.tsx",
+        "product_v1/reports/multi-upload-auth-2026-10-13/REPORT.md"
+      ]
+    },
+    {
+      "id": "F19",
+      "title": "证据感知版本选择与审核失效",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "active_perceptions、旧运行保留、来源变化失效",
+      "evidence": [
+        "product_v1/backend/alembic/versions/0004_active_perceptions.py",
+        "product_v1/backend/tests/test_accounts_ingestion.py"
+      ]
+    },
+    {
+      "id": "F20",
+      "title": "V3 资产、范围与量表冻结",
+      "status": "completed",
+      "stage": "S0-S1",
+      "scope": "本准备轮774文件基线、Windows运行环境/渲染复现，以及4场景scope、144行账本、11维量表、旧行映射与抽样方案已冻结；是S0/S1作者阶段交接，不含独立专业认证。",
+      "evidence": [
+        "V3.0.0_PLAN.md",
+        "docs/v3.0.0/work_packages.json",
+        "tools/prepare_v3_baseline.py",
+        "configs/v3/baseline_inputs.json",
+        "datasets/v3.0.0/baseline_20261022_001/baseline_snapshot.json",
+        "reports/v3.0.0/s0_baseline_20261022_001/README.md",
+        "datasets/v3.0.0/baseline_20261023_001/baseline_snapshot.json",
+        "reports/v3.0.0/source_closure_20261023_001/README.md",
+        "reports/v3.0.0/runtime_reproduction_20261023_002/README.md",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ]
+    },
+    {
+      "id": "F21",
+      "title": "V3 独立语义与专业认证",
+      "status": "planned",
+      "stage": "S4",
+      "scope": "两份独立意见、裁决和认证记录未见交付",
+      "evidence": [
+        "docs/v3.0.0/READINESS.md",
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md"
+      ]
+    },
+    {
+      "id": "F22",
+      "title": "V3 冻结分层评测与难度分析",
+      "status": "planned",
+      "stage": "S5",
+      "scope": "金标、独立留出、预算、重复与聚类统计未完成",
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "F23",
+      "title": "完整法官/律师双模式",
+      "status": "partial",
+      "stage": "S6",
+      "scope": "已有 LawyerAssessment、对抗线索与复核；完整双方对齐/委托方相对有利性流程未验收",
+      "evidence": [
+        "product_v1/docs/SCHEMA.md",
+        "product_v1/backend/src/screenshotlegal/domain/evidence/assessments.py",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "id": "F24",
+      "title": "必要条件与最终结论一致性",
+      "status": "partial",
+      "stage": "S6",
+      "scope": "已有结构引用/缺证提示；未接入经认证的充分路径与节点一致性适配器",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/plugins/skills/deterministic.py",
+        "legalhub/case_chat.py",
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "F25",
+      "title": "专用事件 Excel 与时间轴 PPT",
+      "status": "planned",
+      "stage": "S6",
+      "scope": "CSV/JSON 及页面时间轴不能代替独立 xlsx/pptx 交付",
+      "evidence": [
+        "product_v1/docs/REQUIREMENTS.md",
+        "docs/v3.0.0/work_packages.json"
+      ]
+    },
+    {
+      "id": "F26",
+      "title": "V3 发布及 LaTeX 实验包",
+      "status": "planned",
+      "stage": "S7",
+      "scope": "现有 paper 是协议工作稿；未见 v3 独立版本与发布包",
+      "evidence": [
+        "paper/README.md",
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "F27",
+      "title": "PDF/文本原件与格式扩展",
+      "status": "partial",
+      "stage": "extension",
+      "scope": "原件保存已有；PDF解析/OCR、ZIP展开未启用",
+      "evidence": [
+        "product_v1/docs/INGESTION_ACCOUNTS_MODELS.md",
+        "product_v1/backend/src/screenshotlegal/plugins/ingestion/registry.py"
+      ]
+    },
+    {
+      "id": "F28",
+      "title": "全仓库案件、原文与历史版本同步",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "本机运行库新增2682条，admin可见2687条；旧库/V2/V3/round/作者修订/缺口/历史渲染全量覆盖、备份及幂等；普通用户不自动授权，研究标注不转为专业金标",
+      "evidence": [
+        "product_v1/tools/import_repository_cases.py",
+        "product_v1/tools/export_legacy_repository_cases.py",
+        "product_v1/backend/tests/test_repository_import.py",
+        "product_v1/frontend/src/app/App.tsx",
+        "reports/admin_case_inventory_20261024/import-result.json",
+        "reports/admin_case_inventory_20261024/live-audit.json"
+      ]
+    },
+    {
+      "id": "F29",
+      "title": "四产品独立入口与用户工作台MVP",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "默认用户工作台及评测/生成/审核独立入口已交付；工作台PPT为mock，不代表真实pptx导出或研究专业认证",
+      "evidence": [
+        "docs/products/PRODUCT_BOUNDARIES.md",
+        "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+        "product_v1/reports/review-canvas-2026-10-24/REPORT.md"
+      ]
+    },
+    {
+      "id": "F30",
+      "title": "合成生成台及生成Prompt迭代",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "批次/Markdown Prompt/快照/打包已交付；本轮修复Prompt编辑目标，反馈可逐条冻结，比较按评分协议和初稿/修订阶段拆分；为观察性比较，不宣称因果改进",
+      "evidence": [
+        "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+        "product_v1/backend/src/screenshotlegal/research/products.py",
+        "product_v1/frontend/src/features/research/DataStudio.tsx",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "F31",
+      "title": "图片审核、独立评论及统一质量记录",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "图片/锁定坐标编辑、原文侧栏/独立评论、输入保护、原图升级、审核与图片绑定、金标失效及发布、视觉有效性与反馈处理闭环已验收；不是独立专业认证",
+      "evidence": [
+        "product_v1/reports/review-canvas-2026-10-24/REPORT.md",
+        "docs/products/REVIEW_CANVAS.md",
+        "product_v1/backend/src/screenshotlegal/research/review.py",
+        "product_v1/frontend/src/features/research/ReviewCanvas.tsx",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "F32",
+      "title": "评测台固定版本多模型任务及结果",
+      "status": "completed",
+      "stage": "S5/S6",
+      "scope": "固定research.v2发布/实际图像/模型/输入快照，多模型任务及恢复；质量覆盖范围显式，指标及未评分明确；评分仍限精确匹配，不是正式法律质量评测",
+      "evidence": [
+        "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+        "product_v1/backend/src/screenshotlegal/research/products.py",
+        "product_v1/backend/src/screenshotlegal/research/gateway.py",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "F33",
+      "title": "研究侧SQLite版本历史与持久化任务",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "records/jobs/idempotency、WAL/FULL、revision+render outbox事务、检查点/幂等已实现；仅为持久化基础，不等于统一审计或所有编辑竞态已修复",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/research/store.py",
+        "product_v1/backend/src/screenshotlegal/research/review.py",
+        "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+        "product_v1/reports/review-canvas-2026-10-24/REPORT.md"
+      ]
+    },
+    {
+      "id": "F34",
+      "title": "统一操作审计表与前端可视化",
+      "status": "completed",
+      "stage": "S6",
+      "scope": "SQLite audit_events/schema_migrations及事务审计，owner隔离/脱敏/稳定分页/JSON导出；三台和工作台入口、筛选/概览/差异抽屉/父事件/时间线；工作台和配置用主库事务事件经公开接口幂等投影",
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/backend/src/screenshotlegal/research/store.py",
+        "product_v1/frontend/src/features/research/ResearchApp.tsx",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      ],
+      "completed_on": "2026-10-24"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I01",
+      "title": "上传重试覆盖已有成功转录",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "旧管线可能用不完整新结果覆盖成功转录",
+      "resolution": "按原图哈希保留成功版本与每次尝试；已有测试/验收",
+      "evidence": [
+        "reports/v1.1.0_multi_case_workspace.md",
+        "tests/test_multi_case.py"
+      ]
+    },
+    {
+      "id": "I02",
+      "title": "成功响应覆盖内部 request_id",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "旧 r2 运行的服务商 request_id 覆盖任务 ID",
+      "resolution": "执行工具已分离 ID；旧日志不动，派生日志对账",
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_r2/RESULTS.md",
+        "tools/run_evidence_dependency_pilot.py"
+      ]
+    },
+    {
+      "id": "I03",
+      "title": "批注并发及来源变更后的有效性",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "旧决定可能与新内容失配，需要保留草稿和历史",
+      "resolution": "409冲突、追加历史、来源摘要失效及导出状态检查已实现",
+      "evidence": [
+        "reports/v1.2.0_legal_review_workspace.md",
+        "tests/test_legal_review.py"
+      ]
+    },
+    {
+      "id": "I04",
+      "title": "渲染缓存与输入指纹不一致",
+      "status": "resolved",
+      "severity": "medium",
+      "finding": "第四轮前向验证发现缓存图片与消息/渲染器指纹不一致",
+      "resolution": "修复缓存指纹检查，原失败与布局检查保留",
+      "evidence": [
+        "datasets/v2.0.0/round_004/REPORT.md",
+        "datasets/v2.0.0/round_004/skill.forwardtest.json"
+      ]
+    },
+    {
+      "id": "I05",
+      "title": "未知发言者被指定与不忠实候选",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "第三轮 zh_0226 原文未明确逐条发言者",
+      "resolution": "撤回该候选，旧稿/图保留；未据此补齐来源缺口",
+      "evidence": [
+        "datasets/v2.0.0/round_003/REPORT.md",
+        "tools/withdraw_v2_unattributed_case.py"
+      ]
+    },
+    {
+      "id": "I06",
+      "title": "跨案或无来源引用进入展示",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "引用ID存在不代表属于当前案件或有来源",
+      "resolution": "案内绑定、来源摘要与错误引用拦截已实现；语义支持仍待认证",
+      "evidence": [
+        "tests/test_multi_case.py",
+        "product_v1/backend/tests/test_contract.py",
+        "reports/v1.1.0_multi_case_workspace.md"
+      ]
+    },
+    {
+      "id": "I07",
+      "title": "证据形式判断低于多数类基线",
+      "status": "open",
+      "severity": "high",
+      "finding": "历史P3三配置为50.5%/46.0%/43.0%，基线61.5%",
+      "resolution": "继续禁止将该指标作为自动证据排除依据；独立审核标准及负例",
+      "evidence": [
+        "reports/v1.0.0_iteration_analysis.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_before_automatic_exclusion",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": false
+      }
+    },
+    {
+      "id": "I08",
+      "title": "旧金标跨字段协议冲突",
+      "status": "open",
+      "severity": "high",
+      "finding": "21张非聊天样本仍带private_chat；608条不一致队列未等于608个确认错误",
+      "resolution": "按原图独立审核、保留旧版本，形成新契约和冻结基线",
+      "evidence": [
+        "reports/v1.0.0_iteration_analysis.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_before_scored_benchmark",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": false
+      }
+    },
+    {
+      "id": "I09",
+      "title": "缺证、时间与肯定结论不一致",
+      "status": "open",
+      "severity": "high",
+      "finding": "预研存在删关联页仍合并事项、缺事件日期仍肯定，以及无图P0引用",
+      "resolution": "先消除题干范围歧义，再建立节点/结论/引用回归；尚未验证系统性修复",
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md",
+        "reports/research/legal_answer_review/20261004_dependency_scope_probe_v2/RESULTS.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_before_evidence_support_conclusions",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": false
+      }
+    },
+    {
+      "id": "I10",
+      "title": "历史模型鉴权、额度与超时失败",
+      "status": "open",
+      "severity": "medium",
+      "finding": "历史401/402/429及超时影响覆盖，不能当法律能力错误。2026-10-24当前DeepSeek实际131调用130返回、1次质量超时unknown；未证明其他历史服务或凭据已恢复。",
+      "resolution": "正式运行前探测并明确预算、限流与显式重试；模型等待策略需配置并冻结，unknown结果与费用不得补零。旧“本次没有探测线上服务”限历史时点，本轮已实际调用；仍未关闭跨服务历史问题及当前超时恢复边界。 本轮已将阶段等待和可选调用总时长移到模型配置并冻结到新任务；超时保留阶段/耗时/未知费用，无自动重发。此软件子项完成，外部恢复与旧账单仍待确认。",
+      "evidence": [
+        "reports/v1.0.0_iteration_analysis.md",
+        "reports/research/legal_answer_review/20261004_dependency_r2/RESULTS.md",
+        "product_v1/reports/full-actual-test-2026-10-24/summary.json",
+        "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_before_formal_bulk_run",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": false,
+        "software_wait_policy_fixed": true
+      }
+    },
+    {
+      "id": "I11",
+      "title": "旧数据CLI迁移部分失败会留下未完成案件",
+      "status": "resolved",
+      "severity": "medium",
+      "finding": "旧实现边校验边建案/上传，失败留下半案且按文本反查消息可能误连重复文本。",
+      "resolution": "预校验全部来源；记录与FTS统一事务，失败清理新UUID文件；按原ID/位置关联；未知页码保留null，兼容真实编码、拒绝混案。60项唯一后端用例有覆盖，2案真实既存语料隔离验证通过。成功导入去重和强杀后的孤立文件不在本修复范围。",
+      "evidence": [
+        "product_v1/docs/MIGRATION.md",
+        "product_v1/tools/import_legacy_case.py",
+        "reports/v3.0.0/import_atomicity_20261023_001/README.md"
+      ],
+      "resolved_on": "2026-10-23"
+    },
+    {
+      "id": "I12",
+      "title": "根README遗漏新产品线且状态混杂",
+      "status": "resolved",
+      "severity": "medium",
+      "finding": "根README以旧18420工作台为当前入口，未纳入独立18431产品线",
+      "resolution": "本次重写双入口、完成度与历史导航；整理前全文已存档",
+      "evidence": [
+        "README.md",
+        "docs/ai_docs_center/DOCUMENTATION_MAP.md"
+      ]
+    },
+    {
+      "id": "I13",
+      "title": "需求及验收文档仍将多用户作为未完成项",
+      "status": "resolved",
+      "severity": "medium",
+      "finding": "旧REQUIREMENTS/ACCEPTANCE的初版范围与10月13日账户验收冲突",
+      "resolution": "补充版本边界、更新已交付扩展，初版AC57项仍按历史范围保留",
+      "evidence": [
+        "product_v1/docs/REQUIREMENTS.md",
+        "product_v1/docs/ACCEPTANCE.md",
+        "product_v1/reports/multi-upload-auth-2026-10-13/REPORT.md"
+      ]
+    },
+    {
+      "id": "I14",
+      "title": "V2历史重建稿混入非通信内容与合成时间",
+      "status": "open",
+      "severity": "high",
+      "finding": "本轮200项复核发现庭审/证明目的/银行流水改写成聊天、无发送锚点附件及合成分钟；第五轮机械通过不能证明语义忠实。",
+      "resolution": "第六轮已全文代理复核，恢复11、修订85、撤回11；11案63条合成分钟已删除并保留旧版本。其他未选历史材料、在线旧样本的版本映射及真实人类/法律审核仍待；本轮6来源仍为round_001，归档修订不等于在线已升级，旧图不得直接充当金标。",
+      "evidence": [
+        "datasets/v2.0.0/round_006/REPORT.md",
+        "datasets/v2.0.0/round_006/CHANGELOG.md",
+        "datasets/v2.0.0/round_006/tool-peer-review.json"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_before_dataset_release",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": false
+      }
+    },
+    {
+      "id": "I15",
+      "title": "仓库案件未进入admin运行库",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "此前仅完成数据集和临时库迁移，实际运行库仅5案；目录扫描缺final/curated、嵌套JSON/JSONL、纯原文和无作者历史render。",
+      "resolution": "全量递归盘点及适配后实际导入2682条；admin2687可见。保留所有来源别名/旧版本/缺口，修复recover与auxiliary状态，历史render不借当前转录；原有案件和人工工作哈希未变。",
+      "evidence": [
+        "reports/admin_case_inventory_20261024/README.md",
+        "reports/admin_case_inventory_20261024/coverage-review.json",
+        "reports/admin_case_inventory_20261024/import-result.json",
+        "product_v1/docs/MIGRATION.md"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I16",
+      "title": "图片区域未接入及直接打开误显无坐标",
+      "status": "resolved",
+      "severity": "high",
+      "finding": "直接打开图片仅传整图，无已有区域列表；历史render仅归档图片，旧LabelU矩形未导入。修复前893/2579图无引用框。",
+      "resolution": "接入源引用列表和全部/单区域浏览，按原图SHA恢复6389个纯几何区域引用；2549/2579图有框，重跑0新增。剩30图及标注/评测完整性转G19；不把区域等同于消息或专业金标。",
+      "resolved_on": "2026-10-24",
+      "evidence": [
+        "reports/coordinate_audit_20261024/README.md",
+        "reports/coordinate_audit_20261024/live-verification.json",
+        "product_v1/backend/tests/test_evidence_regions.py",
+        "product_v1/frontend/src/features/source-navigation/SourceViewer.test.tsx"
+      ]
+    },
+    {
+      "id": "I17",
+      "title": "保存响应覆盖保存期间新输入",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "提交A期间输入B，响应后回退A并清草稿，浏览器已复现",
+      "resolution": "RP01：保存仅确认提交快照，后续编辑和评论草稿保留；刷新/延迟/乱序/清理竞态回归；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/ui-save-race.json",
+        "product_v1/frontend/src/features/research/ReviewDesk.tsx",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I18",
+      "title": "原件审核与评测资产不一致及历史框未接入",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "未转录原图审核显示上传资产，评测却读标题/来源生成的派生图；历史导入未接入原图bbox",
+      "resolution": "RP03：资产角色/哈希绑定；原件评测与审核一致；历史坐标基于原图，原始字节保留；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/gateway.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I19",
+      "title": "图片生成前的通过记录可直接用于后续发布",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "人工pass只绑定revision，不要求已渲染manifest；生成后无需确认即可release",
+      "resolution": "RP03：审核范围绑定revision/content_hash及实际资产/manifest，后端拒绝过期或未就绪图片通过/发布；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/review.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I20",
+      "title": "消息框遮挡与可读性不影响渲染成功",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "完全相同bbox覆盖正文仍completed；隐式字号可缩至8px，缺少视觉有效性门槛",
+      "resolution": "RP04：文件完成和视觉有效分开；遮挡/缺失/不可读阻断有效发布，错误可恢复；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/renderer.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I21",
+      "title": "题目或引用变化后旧金标未失效",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "修改问题但保留旧答案和gold=true；后端主要在messages变化时清金标",
+      "resolution": "RP03：题目/答案/任务/证据摘要绑定认证，依赖变化自动失效，发布后端验证；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/review.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I22",
+      "title": "模型质量评估文本覆盖范围未明确",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "finding": "评估只发送revision.content文本JSON，无实际图片，不能判断截图布局/遮挡/可读性",
+      "resolution": "RP06：显式text/visual/multimodal覆盖，视觉输入绑定实际图片；文本pass不冒充图片质量通过；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/worker.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I23",
+      "title": "评分协议与人工修订混入生成Prompt比较",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "finding": "不同裁判/质量Prompt分数汇成均值，修订后的高分仍归原生成Prompt，不能解释改进来源",
+      "resolution": "RP06：固定评分协议与样本集合，初稿/修订稿分别统计，覆盖率/失败率及修订成本可见；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/review.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I24",
+      "title": "评论缺少处理状态与适用范围",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "finding": "旧revision意见默认继续用于后续生成；UI缺少逐条选择/撤回/采纳和解决结果",
+      "resolution": "RP07：原评论追加处理事件，明确长期/一次性范围；冻结所选意见并关联新候选验证；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/backend-reproduction.json",
+        "product_v1/backend/src/screenshotlegal/research/products.py",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I25",
+      "title": "切换Prompt名称时编辑正文和基线串用",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "finding": "选择B后仍保留A正文/反馈，保存基线却取B的latest；浏览器已复现",
+      "resolution": "RP01：同步正文/反馈/实际加载基线；明确另存/分支；未保存内容及并发冲突可恢复；本轮已实现并通过对应回归，详见交付报告；原复现记录保持发现时状态。",
+      "evidence": [
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/critical-review-2026-10-24/ui-prompt-switch.json",
+        "product_v1/frontend/src/features/research/shared.tsx",
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "product_v1/backend/tests/test_research_reliability.py",
+        "product_v1/frontend/e2e/research-reliability.spec.ts"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I26",
+      "title": "真实推理模型的输出预算、未评维度及空正文用量留存未适配",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "真实DeepSeek试跑默认max_tokens=2048：11次质量空正文、1次生成JSON截断；8192单次验证与本轮恢复成功。另1条未评视觉维度null触发契约失败；空正文失败未保留usage，费用不能完整追溯。",
+      "resolution": "去除研究/连通性隐含token上限；模型界面配置可选上限及每模型输入/输出单价币种，按快照估费。空正文usage/finish_reason落表、未评null维度兼容；历史11次缺失不补造。",
+      "evidence": [
+        "product_v1/reports/deepseek-full-flow-2026-10-24/REPORT.md",
+        "product_v1/reports/deepseek-full-flow-2026-10-24/summary.json",
+        "product_v1/reports/deepseek-full-flow-2026-10-24/quality-pilot-result.json",
+        "product_v1/reports/deepseek-full-flow-2026-10-24/response-normalization.json",
+        "product_v1/backend/src/screenshotlegal/research/gateway.py",
+        "product_v1/backend/src/screenshotlegal/research/contracts.py",
+        "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+        "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/backend/tests/test_operations_observability.py"
+      ],
+      "resolved_on": "2026-10-24"
+    },
+    {
+      "id": "I27",
+      "title": "真实试跑步骤和探测结果未进入操作台",
+      "finding": "上轮报告保留结果但UI只展示正式评测，evaluation.probe和逐轮阶段不可见，造成跑完但用户无法追踪。",
+      "resolution": "新增流程与结果页，历史流程显式同步；169关联记录、28探测、21产物可查。新网关逐请求开始/结果/失败/中断落表。",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "resolved_on": "2026-10-24",
+      "evidence": [
+        "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+        "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/frontend/e2e/operations-observability.spec.ts"
+      ]
+    },
+    {
+      "id": "I28",
+      "title": "审计缺少业务对象导航与可用日志检索",
+      "finding": "关联按钮主要筛选时间线，部分对象没有业务入口；缺少关键词检索、格式化日志和组合聚合。",
+      "resolution": "owner/案件权限校验的对象解析，支持样本/批次/运行/任务/Prompt/探测/模型/工作台链接；关键词、SGT日期/请求/流程等组合检索和全过滤范围聚合、JSON/log导出。 后续真实模型调用编号的专用筛选遗漏另由I29跟踪，不将原HTTP操作请求覆盖解释为所有模型调用均可精确筛选。",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "resolved_on": "2026-10-24",
+      "evidence": [
+        "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+        "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/frontend/e2e/operations-observability.spec.ts"
+      ]
+    },
+    {
+      "id": "I29",
+      "title": "真实模型调用编号与审计请求ID精确筛选不对应",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "实际运行库中evaluation.request可按关键词查到，同一模型请求编号用于request_id精确筛选返回0。Worker/控制器请求上下文与模型请求编号语义混用；事件仍在，单次调用追查易误判缺失。",
+      "resolution": "按软件范围修复：操作请求、模型调用、服务商编号分开保留；精确筛选兼容旧evaluation.request对象ID，列表/聚合/导出共用条件，未改写历史事件。历史131调用均命中；模拟Gateway+Worker覆盖成功/429/超时unknown、原操作关联与owner隔离。",
+      "evidence": [
+        "product_v1/reports/full-actual-test-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/reports/full-actual-test-2026-10-24/audit-request-filter-check.json",
+        "product_v1/backend/src/screenshotlegal/research/gateway.py",
+        "product_v1/backend/src/screenshotlegal/research/worker.py",
+        "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+        "docs/products/OPEN_ISSUES_FIXES.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_software",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": true,
+        "scope": "software",
+        "followup": "Historical/human/real-model validation remains separately pending"
+      },
+      "resolved_on": "2026-10-24",
+      "resolution_scope": "forward_software_fix_with_legacy_preservation"
+    },
+    {
+      "id": "I30",
+      "title": "英文合成截图按字符断词影响阅读",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "finding": "真实英文渲染截图将leaves、before等单词拆到两行；几何校验通过但自然阅读质量仍不足。两张中英文图开发者抽查不等于全量人工验收。",
+      "resolution": "按软件范围修复：pillow-chat.v4/visual.v2按英文词与标点换行，完整排标题/说话人/时间；固定坐标放不下明确失败且保留文字。旧任务保留v3；审核台可显式生成文字不变的新版本，草稿时禁用，旧图/审核/金标/发布保留，新版重新审核。未替换在线旧图，也未完成全量人工视觉验收。",
+      "evidence": [
+        "product_v1/reports/full-actual-test-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/reports/full-actual-test-2026-10-24/generated-en.png",
+        "product_v1/backend/src/screenshotlegal/research/renderer.py",
+        "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+        "docs/products/OPEN_ISSUES_FIXES.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P2_body_P1_if_identity_or_time_clipped",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": true,
+        "scope": "software",
+        "followup": "Historical/human/real-model validation remains separately pending"
+      },
+      "resolved_on": "2026-10-24",
+      "resolution_scope": "forward_software_fix_with_legacy_preservation"
+    },
+    {
+      "id": "I31",
+      "title": "质量模型混淆来源原图与当前待审合成图范围",
+      "status": "resolved",
+      "severity": "high",
+      "found_on": "2026-10-24",
+      "finding": "当前binding明确为1张synthetic_render，模型却要求补齐original_assets的page_002–008。Worker发送正确manifest图片，但正文携带来源资产元数据，未单独明确所审角色与页数，造成范围混用。",
+      "resolution": "按软件范围修复：quality-input.v2白名单输入明确reviewed_object、visual_role、expected_pages和实际页清单，来源元数据分开；任务、协议、质量结果冻结输入版本，旧任务沿用旧序列化。旧意见保留并提示复核，新旧协议分组。模拟范围用例通过；历史意见待人工逐项复核，新协议真实模型语义复测未执行。",
+      "evidence": [
+        "product_v1/reports/full-actual-test-2026-10-24/CRITICAL_REVIEW.md",
+        "product_v1/reports/full-actual-test-2026-10-24/quality-scope-observation.json",
+        "product_v1/backend/src/screenshotlegal/research/worker.py",
+        "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+        "docs/products/OPEN_ISSUES_FIXES.md"
+      ],
+      "assessment": {
+        "assessed_on": "2026-10-24",
+        "priority": "P1_first_software",
+        "evidence": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+        "fixed": true,
+        "scope": "software",
+        "followup": "Historical/human/real-model validation remains separately pending"
+      },
+      "previous_severity": "medium",
+      "severity_reason": "评估对象范围错误可通过评论/规则反馈传播到后续生成；已有人工发布门槛仍保留，不表示已发生正式发布错误。",
+      "resolved_on": "2026-10-24",
+      "resolution_scope": "forward_software_fix_with_legacy_preservation"
+    },
+    {
+      "id": "I32",
+      "title": "评测运行历史遗漏真实未计分试跑",
+      "status": "resolved",
+      "severity": "medium",
+      "found_on": "2026-10-24",
+      "resolved_on": "2026-10-24",
+      "finding": "运行历史仅列evaluation.run；实际正式运行0、118条probe与两轮真实问答已保存，只在流程与结果可见，界面误导为从未测试。",
+      "resolution": "新增当前账号只读历史投影及类型筛选分页，整轮问答合并、连通性独立、孤立探测仍可见，软件回归流程排除；正式结果与试跑清楚区分。38相关后端/29前端/8相关浏览器通过；无旧行迁移、付费调用或人工代签。",
+      "evidence": [
+        "product_v1/reports/evaluation-history-2026-10-24/REPORT.md",
+        "docs/products/EVALUATION_HISTORY.md",
+        "product_v1/backend/src/screenshotlegal/research/history.py",
+        "product_v1/frontend/src/features/research/EvaluationHistory.tsx"
+      ],
+      "resolution_scope": "history_visibility_software_fix"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "title": "V3完整输入清单及允许用途",
+      "stage": "S0",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "当前S0准备轮纳入的774文件已具备路径、SHA256、来源、版本、作者/审核状态及内部允许用途；缺口责任及未纳入范围明确。后续扩大输入须新建批次重核，不表示v1全量或V3专业认证完成。",
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "datasets/v3.0.0/baseline_20261022_001/baseline_snapshot.json",
+        "docs/v3.0.0/S0_BASELINE.md",
+        "datasets/v3.0.0/baseline_20261023_001/source_manifest.jsonl",
+        "datasets/v3.0.0/baseline_20261023_001/baseline_snapshot.json",
+        "datasets/v3.0.0/source_audit_20261023_002/audit_summary.json",
+        "docs/v3.0.0/SOURCE_CLOSURE.md"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G02",
+      "title": "可复现软件、执行器与渲染器快照",
+      "stage": "S0",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "当前准备轮冻结源码在Windows已装环境复现：两案9页各两遍一致，浏览器/实际字体/依赖版本与哈希保存，冻结产品来源/检索/导入3项烟测通过。非全新机器安装；历史9页中1页标题像素差异单列。",
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md",
+        "product_v1/docs/CONDA_LINUX_SETUP.md",
+        "datasets/v3.0.0/baseline_20261022_001/baseline_snapshot.json",
+        "docs/v3.0.0/S0_BASELINE.md",
+        "reports/v3.0.0/runtime_reproduction_20261023_002/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G03",
+      "title": "案件范围与事实账本",
+      "stage": "S1",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "四案scope及144条账本已冻结，62处原文精确定位；112旧候选陈述与32新合成消息分开，身份/历史时间未知项保留，原案主题不认证新对话。",
+      "evidence": [
+        "V3.0.0_PLAN.md",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+        "datasets/v3.0.0/calibration_20261023_003/mechanical_checks.json"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G04",
+      "title": "分层量表、历史评分映射与抽样",
+      "stage": "S1",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "11维量表、512条旧行引用映射与来源/模板抽样固定；1空行排除，2重复引用单列；旧分数不转换为充分性/最小性认证。",
+      "evidence": [
+        "datasets/v2.0.0/round_002/REPORT.md",
+        "reports/restart/human_score_coverage.json",
+        "datasets/v3.0.0/source_audit_20261023_002/legacy_score_checks.jsonl",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+        "datasets/v3.0.0/calibration_20261023_003/mechanical_checks.json"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G05",
+      "title": "V3校准批与自然度/依赖题设计",
+      "stage": "S2",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "当前4基础场景校准的作者阶段完成（2中2英、4种结构），必要/可选节点、作者候选充分集、替代解释与自然度自审齐备；独立认证及20场景扩展仍待后续。",
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "datasets/v3.0.0/source_audit_20261023_002/calibration_source_pool.json",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+        "datasets/v3.0.0/calibration_20261023_003/mechanical_checks.json"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G06",
+      "title": "完整干预及子集审核材料",
+      "stage": "S3",
+      "priority": "P0",
+      "status": "completed",
+      "acceptance": "当前校准批20条件、80图、352全子集及作者逐子集范围已冻结，节点/消息/像素坐标可查，反事实、顺序、分页、干扰检查通过；独立语义认证由G07/G08负责。",
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md",
+        "reports/v3.0.0/calibration_20261023_001/README.md",
+        "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+        "datasets/v3.0.0/calibration_20261023_003/mechanical_checks.json"
+      ],
+      "completed_on": "2026-10-23"
+    },
+    {
+      "id": "G07",
+      "title": "两位独立复核及适用法域专业角色",
+      "stage": "S4",
+      "priority": "P0",
+      "status": "open",
+      "acceptance": "记录独立意见、必要第三人裁决、规则来源与能力；空白盲审包不能充当意见",
+      "evidence": [
+        "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md"
+      ]
+    },
+    {
+      "id": "G08",
+      "title": "充分性、最小性与依赖认证记录",
+      "stage": "S4",
+      "priority": "P0",
+      "status": "open",
+      "acceptance": "逐题记录支持/反证/缺证、穷尽范围、候选/全局最小差别及页/消息粒度状态",
+      "evidence": [
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "G09",
+      "title": "认证题、独立留出与评测协议冻结",
+      "stage": "S5",
+      "priority": "P0",
+      "status": "open",
+      "acceptance": "同源/模板/反事实同划分，白名单输入不泄漏答案，冻结模型/评分器/提示版本",
+      "evidence": [
+        "docs/v3.0.0/work_packages.json"
+      ]
+    },
+    {
+      "id": "G10",
+      "title": "模型、预算与失败策略就绪",
+      "stage": "S5",
+      "priority": "P0",
+      "status": "open",
+      "acceptance": "实际所选服务探测、总调用/费用上限、重复/重试和停止条件明确；本地可选",
+      "evidence": [
+        "configs/models.example.yaml",
+        "docs/v3.0.0/work_packages.json"
+      ]
+    },
+    {
+      "id": "G11",
+      "title": "正式分层评测及难度分析",
+      "stage": "S5",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "认证题上报告中间节点/结论/引用/缺证、简单基线、对照、重复及案件/模板聚类统计",
+      "evidence": [
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "G12",
+      "title": "完整法官/律师工作流",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "双方材料对齐与冲突、委托方有利性、完整来源和工作视图分别验收",
+      "evidence": [
+        "docs/architecture.md",
+        "product_v1/docs/SCHEMA.md"
+      ]
+    },
+    {
+      "id": "G13",
+      "title": "认证依赖图接入及结论一致性回归",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "合法替代充分路径、未知必要前提、足以否定路径和冲突提示均有端到端回归",
+      "evidence": [
+        "product_v1/backend/src/screenshotlegal/plugins/skills/deterministic.py",
+        "V3.0.0_PLAN.md"
+      ]
+    },
+    {
+      "id": "G14",
+      "title": "专用Excel与时间轴PPT",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "同一批已复核事件导出xlsx/pptx，保留时间精度、全部来源、模式及审核状态；PPT视觉另验",
+      "evidence": [
+        "docs/v3.0.0/work_packages.json",
+        "product_v1/docs/REQUIREMENTS.md"
+      ]
+    },
+    {
+      "id": "G15",
+      "title": "V3发布、许可与论文实验包",
+      "stage": "S7",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "数据卡、认证包、评测MD/JSON、软件验收、回退与独立v3 LaTeX表图均可追溯",
+      "evidence": [
+        "paper/README.md",
+        "reports/research/REVIEW_AND_REBUTTAL.md"
+      ]
+    },
+    {
+      "id": "G16",
+      "title": "继承的v1全量专业评测",
+      "stage": "inherited/S5",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "原八轨17,672任务覆盖、开放题专业审核和原稿/评审缺口按实际验收，不以pilot替代",
+      "evidence": [
+        "reports/v1.0.0_iteration_analysis.md",
+        "reports/research/RESTART_FINDINGS.md"
+      ]
+    },
+    {
+      "id": "G17",
+      "title": "产品扩展：PDF解析/ZIP、更多Matter与原生Linux",
+      "stage": "extension",
+      "priority": "P2",
+      "status": "deferred",
+      "acceptance": "按独立需求验收；当前PDF/文本保存、单Matter及Windows实测不扩张为完整能力",
+      "evidence": [
+        "product_v1/README.md",
+        "product_v1/docs/REQUIREMENTS.md"
+      ]
+    },
+    {
+      "id": "G18",
+      "title": "新旧软件与V3契约的真实迁移回归",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "旧两案9图81消息16事件隔离迁移、来源/检索及审计CSV/JSON已通过；选定product_v1为后续基线。经S4认证后的V3契约适配与完整软件交付仍待完成。",
+      "evidence": [
+        "product_v1/docs/MIGRATION.md",
+        "V3.0.0_PLAN.md",
+        "reports/v3.0.0/import_atomicity_20261023_001/README.md"
+      ]
+    },
+    {
+      "id": "G19",
+      "title": "坐标补标及定位/检索/回溯评测协议交付",
+      "stage": "S5/S6",
+      "priority": "P1",
+      "status": "open",
+      "acceptance": "核对30张无框图和异常源标注；固定message_row/bubble等粒度、原始像素/图像哈希协议；交付代码IoU匹配/IR/来源结构评分器及错误用例，独立认证主张支持与替代充分集后才报正式语义/端到端成绩；参考区域不泄漏模型。",
+      "evidence": [
+        "docs/coordinate-retrieval-evaluation.md",
+        "reports/coordinate_audit_20261024/applied/report.json",
+        "reports/coordinate_audit_20261024/README.md"
+      ]
+    },
+    {
+      "id": "G20",
+      "title": "编辑保存安全与Prompt目标一致性",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "completed",
+      "acceptance": "RP01：保存中继续输入不丢、草稿正确重定基线，评论同类竞态可恢复；切换Prompt名称/分支/并发不串写。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [
+        "I17",
+        "I25"
+      ],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "G21",
+      "title": "审核对象—图片版本—金标—发布契约",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "completed",
+      "acceptance": "RP03：明确资产角色、原图及历史坐标，审核范围/manifest/内容和金标摘要绑定，后端校验发布；旧release保留且旧审核不伪补有效绑定。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [
+        "I18",
+        "I19",
+        "I21"
+      ],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "G22",
+      "title": "渲染可见性与可读性验收",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "completed",
+      "acceptance": "RP04：合成消息无遮挡/无缺失、坐标覆盖有效、字号阈值明确；文件成功不等于视觉通过，失败文本/旧图/恢复路径保留。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [
+        "I20"
+      ],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "G23",
+      "title": "质量评估范围与公平比较",
+      "stage": "S6",
+      "priority": "P2",
+      "status": "completed",
+      "acceptance": "RP06：文本/视觉覆盖明确；固定评分模型/Prompt/rubric与样本集合；初稿和人工修订分开，未评/失败不混作零分或忽略。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [
+        "I22",
+        "I23"
+      ],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "G24",
+      "title": "评论处理、采纳及生成验证闭环",
+      "stage": "S6",
+      "priority": "P2",
+      "status": "completed",
+      "acceptance": "RP07：反馈逐条选择、修订/撤回、适用范围、采纳/解决及原因，候选绑定反馈与验证结果；旧意见不无条件永久喂入。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [
+        "I24"
+      ],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    },
+    {
+      "id": "G25",
+      "title": "SQLite统一操作审计及前端可视化",
+      "stage": "S6",
+      "priority": "P1",
+      "status": "completed",
+      "acceptance": "RP02/RP05/RP08：audit_events及迁移、成功同事务/拒绝失败unknown留痕、幂等/权限/脱敏；只读分页API及三台列表/筛选/差异/时间线与回归。 已按本轮MVP范围实现并验收；不授予V3专业认证。",
+      "issues": [],
+      "evidence": [
+        "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+        "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+        "product_v1/backend/src/screenshotlegal/research/store.py",
+        "product_v1/frontend/src/features/research/ResearchApp.tsx",
+        "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "docs/products/RELIABILITY_AUDIT.md"
+      ],
+      "completed_on": "2026-10-24"
+    }
+  ],
+  "asset_observations": [
+    {
+      "version": "v2 round_001",
+      "cases": 6,
+      "images": 49,
+      "messages": 190,
+      "questions": 24,
+      "evidence": "datasets/v2.0.0/round_001/REPORT.md",
+      "scope": "540x960开发预览"
+    },
+    {
+      "version": "v2 round_002",
+      "cases": 2,
+      "images": 9,
+      "messages": 49,
+      "questions": 6,
+      "evidence": "datasets/v2.0.0/round_002/REPORT.md",
+      "scope": "860x1864开发候选"
+    },
+    {
+      "version": "v2 round_003",
+      "cases": 177,
+      "images": 382,
+      "messages": 1417,
+      "source_labels": 207,
+      "covered_labels": 177,
+      "uncovered_labels": 30,
+      "evidence": "datasets/v2.0.0/round_003/summary.json",
+      "scope": "候补与代表分开；无专业金标"
+    },
+    {
+      "version": "v2 round_004",
+      "cases": 28,
+      "images": 56,
+      "messages": 176,
+      "questions": 118,
+      "labels": {
+        "supported": 38,
+        "contradicted": 21,
+        "insufficient": 59
+      },
+      "new_internet_judgments": 2,
+      "evidence": "datasets/v2.0.0/round_004/summary.json",
+      "scope": "development；200为来源扩充目标"
+    },
+    {
+      "version": "dependency pre-research",
+      "scenarios": 12,
+      "abstract_templates": 1,
+      "image_positions": 48,
+      "unique_image_pixels": 18,
+      "enumerated_subsets": 192,
+      "evidence": "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md",
+      "scope": "受控虚构、development；非12独立案件/非V3认证数据"
+    },
+    {
+      "version": "v2 round_005",
+      "queued_sources": 200,
+      "cases": 138,
+      "newly_authored_cases": 38,
+      "replayed_cases": 100,
+      "source_gaps": 62,
+      "images": 242,
+      "messages": 815,
+      "questions": 439,
+      "new_internet_judgments": 0,
+      "source_labels": 182,
+      "covered_labels": 127,
+      "all_records_accounted_for": true,
+      "all_samples_generated": false,
+      "evidence": "datasets/v2.0.0/round_005/summary.json",
+      "scope": "development；439为候选问答，非已认证三分类主张；各轮不可相加为独立案件数"
+    },
+    {
+      "version": "v2 round_006",
+      "queued_sources": 200,
+      "full_source_agent_reviews": 200,
+      "source_chars": 1616769,
+      "cases": 138,
+      "images": 200,
+      "messages": 528,
+      "questions": 408,
+      "recovered_cases": 11,
+      "revised_cases": 85,
+      "withdrawn_cases": 11,
+      "auxiliary_cases": 2,
+      "source_gaps": 62,
+      "covered_labels": 129,
+      "new_internet_judgments": 0,
+      "evidence": "datasets/v2.0.0/round_006/summary.json",
+      "scope": "independent agent full-source review; not human/professional gold; auxiliary excerpts do not fill private-chat gaps"
+    }
+  ],
+  "asset_count_policy": "各轮有同源复用，不相加为独立案件/唯一图片总数。历史316组运行库及48待办为10月4日验收快照，未重新查询生产库。",
+  "missing_v3_roots": [
+    "paper/versions/v3.0.0"
+  ],
+  "archive_path": "docs/ai_docs_center/archive/2026-10-22",
+  "verification": {
+    "current": [
+      {
+        "name": "旧legalhub单元测试",
+        "result": "79/79通过",
+        "log": "docs/ai_docs_center/archive/2026-10-22/legacy-unit.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "product_v1后端回归",
+        "result": "43/43通过；1条依赖弃用提示",
+        "log": "docs/ai_docs_center/archive/2026-10-22/product-backend-unit-rerun.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "product_v1前端单元测试",
+        "result": "9/9通过",
+        "log": "docs/ai_docs_center/archive/2026-10-22/product-frontend-unit.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "TypeScript",
+        "result": "通过",
+        "log": "docs/ai_docs_center/archive/2026-10-22/product-frontend-typecheck.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "ESLint",
+        "result": "通过",
+        "log": "docs/ai_docs_center/archive/2026-10-22/product-frontend-lint.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "UI架构边界",
+        "result": "通过",
+        "log": "docs/ai_docs_center/archive/2026-10-22/product-frontend-architecture.log",
+        "executed_on": "2026-10-22"
+      },
+      {
+        "name": "V3冻结工具边界/完整性测试",
+        "result": "14/14通过；含Windows符号链接用例",
+        "executed_on": "2026-10-22",
+        "log": "reports/v3.0.0/s0_baseline_20261022_001/unit-tests.log"
+      },
+      {
+        "name": "S0首批冻结副本校验",
+        "result": "401/401文件通过",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/s0_baseline_20261022_001/snapshot-check.json"
+      },
+      {
+        "name": "S0首批当前工作区校验",
+        "result": "源文件内容和文件集合与冻结范围一致",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/s0_baseline_20261022_001/source-check.json"
+      },
+      {
+        "name": "V3来源审计与冻结工具回归",
+        "result": "28/28通过（新审计14+冻结14）",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/source_closure_20261023_001/unit-tests-final.log"
+      },
+      {
+        "name": "原始评分/P3图片/四案来源核对",
+        "result": "512记录中511非空+1空行；306图片引用及4案来源定位通过",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/source_closure_20261023_001/source-audit.json"
+      },
+      {
+        "name": "第二批冻结及工作区校验",
+        "result": "774文件通过；第一批401文件副本仍通过",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/source_closure_20261023_001/source-check.json"
+      },
+      {
+        "name": "冻结源码环境/渲染复现",
+        "result": "18图重复一致；历史9页中8页像素一致、1页标题差异；实际字体记录；软件3项烟测通过",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/runtime_reproduction_20261023_002/README.md"
+      },
+      {
+        "name": "导入及当前后端回归",
+        "result": "全套58项通过；随后16项专项含新增MIME用例通过（60项唯一后端用例覆盖，集合有重叠）",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/import_atomicity_20261023_001/README.md"
+      },
+      {
+        "name": "当前前端回归与类型",
+        "result": "9项前端及TypeScript通过；SourceRef未知页码类型同步",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/import_atomicity_20261023_001/frontend-tests.log"
+      },
+      {
+        "name": "V3校准完整性与边界测试",
+        "result": "13项通过；391产物、80图、352子集及62处原文定位通过",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/calibration_20261023_001/README.md"
+      },
+      {
+        "name": "导入事件文本预校验",
+        "result": "1项通过；无效事件文本在任何写入前拒绝",
+        "executed_on": "2026-10-23",
+        "log": "reports/v3.0.0/import_atomicity_20261023_001/event-type-test.log"
+      },
+      {
+        "name": "V2第五轮200项来源闭环与样本校验",
+        "result": "200项处置；138候选242图815消息439问答通过，62来源缺口；173会话21卡片无内部溢出；新工具8项测试通过；旧冻结1545文件不变",
+        "executed_on": "2026-10-23",
+        "log": "datasets/v2.0.0/round_005/REPORT.md"
+      },
+      {
+        "name": "V2第六轮全量代理语义复查与机械回归",
+        "result": "200全文复核；138通信+2辅助、85修订、11恢复、11撤回；26边界用例、165会话78卡片通过；第五轮2632冻结文件不变",
+        "executed_on": "2026-10-23",
+        "log": "datasets/v2.0.0/round_006/REPORT.md"
+      },
+      {
+        "name": "admin全仓库案件同步与覆盖",
+        "result": "新增2682条、admin2687可见；7883文件/7417引用通过；原有5案及人工工作保持",
+        "executed_on": "2026-10-24",
+        "log": "reports/admin_case_inventory_20261024/live-audit.json"
+      },
+      {
+        "name": "批量仓库导入回归与前端搜索",
+        "result": "后端25项仓库导入+17项旧导入器，42不同用例通过；前端16项及类型/lint/架构/构建通过",
+        "executed_on": "2026-10-24",
+        "log": "reports/admin_case_inventory_20261024/README.md"
+      },
+      {
+        "name": "代码坐标恢复与FTS保留/区域浏览",
+        "result": "5后端+20前端及类型/lint/架构/构建通过；新增6389区域，重跑0新增，原记录/FTS保持；剩30图待补标",
+        "executed_on": "2026-10-24",
+        "log": "reports/coordinate_audit_20261024/README.md"
+      },
+      {
+        "name": "研究产品MVP及图片审核交付轮",
+        "result": "后端137、前端单元26、浏览器6项及类型/lint/架构/构建通过；为历史覆盖场景，不代表9项新缺陷已修复",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/review-canvas-2026-10-24/summary.json"
+      },
+      {
+        "name": "研究产品批判性评审与缺陷复现",
+        "result": "9项发现；7个后端隔离场景、2个浏览器复现，bugs_fixed=false；无真实收费模型调用",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/critical-review-2026-10-24/summary.json"
+      },
+      {
+        "name": "研究产品可靠性与统一操作审计交付",
+        "result": "后端全套152通过；最后受影响研究侧49再次通过（子集）；前端26、浏览器11及类型/lint/架构/构建通过；2687案及73条研究记录字节摘要保持，旧快照6条；真实收费模型调用0",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/reliability-audit-2026-10-24/summary.json"
+      },
+      {
+        "name": "DeepSeek六初始样本真实模型试跑与数据保留",
+        "result": "6原图绑定、7生成候选、6来源+7候选质量覆盖；26/26未计分双模态问答；原2687案/67不可变记录/49原图保持；61外部请求，11条usage缺失；人工审核/正式发布0，I26开放",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/deepseek-full-flow-2026-10-24/summary.json"
+      },
+      {
+        "name": "模型配置/流程结果/审计检索",
+        "result": "全套159后端通过，后续36项含新增第160个唯一用例及21审计项复验；26前端、19浏览器全套及最后3项含移动端、类型/lint/架构/构建通过。实际只新增历史流程及同步审计，旧记录和模型配置保持；无新付费调用。",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/operations-observability-2026-10-24/REPORT.md"
+      },
+      {
+        "name": "新协作人员控制台信息与渐进展开",
+        "result": "29前端单元、21浏览器全套、类型/lint/架构/生产构建通过；默认结论与下一步、费用未知、折叠参数保留、图片审核门槛与完整流程回归。仅前端；无收费调用或生产数据迁移；真人理解测试待执行。",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/console-clarity-2026-10-24/REPORT.md"
+      },
+      {
+        "name": "当前13样本全量实际测试",
+        "result": "软件160后端/29前端/21浏览器及类型/lint/架构/构建通过；真实131调用130返回1超时未知；14新候选、90/90未计分问答。原2687案/263研究记录/53任务/357审计保持；隔离27发布门槛全部阻断；I29–I31开放。",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/full-actual-test-2026-10-24/REPORT.md"
+      },
+      {
+        "name": "开放问题软件修复与历史兼容",
+        "result": "171后端、29前端单元、24浏览器及类型/lint/架构/构建通过；旧131调用精确查询、73份已绑定产物哈希保持。I29/I30/I31软件关闭、I10等待配置交付仍开放；未新发真实模型请求，旧图/意见/业务行保持。",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md"
+      },
+      {
+        "name": "评测运行历史可见性与正式评测兼容",
+        "result": "38项相关后端、29前端单元、8个相关浏览器及类型/lint/架构/构建通过；两轮真实试跑和2连通性入口覆盖118探测，正式运行0如实保留；不是全套产品重跑。旧业务行及95绑定产物保持，无新付费调用。",
+        "executed_on": "2026-10-24",
+        "log": "product_v1/reports/evaluation-history-2026-10-24/REPORT.md"
+      },
+      {
+        "name": "指定KIE/VQA/IoU源目录完整性与迁移规格",
+        "result": "1,132源文件哈希不变；19标签/30组映射、12,201准备行检查通过；6,333 IoU明细精确回放，11,031标注仅坐标舍入差异；11边界探针和9源码语法检查完成并记录缺陷。不是产品回归或新模型评测；0生产迁移/新API调用，正式计分仍未就绪。",
+        "executed_on": "2026-10-24",
+        "log": "reports/kie_vqa_migration_20261024/validation.json"
+      }
+    ],
+    "historical_browser": {
+      "legacy": "reports/v1.2.0_review_browser.json",
+      "product": "product_v1/reports/multi-upload-auth-2026-10-13/VERIFICATION.json"
+    },
+    "limits": "历史131项初次审计与28项来源工具回归按原日期保留。本次实际执行冻结源码渲染/烟测、后端全套及专项、前端/TypeScript、真实旧语料隔离迁移与校准检查；无生产服务/UI E2E复测、线上模型调用或独立语义/法律认证。 2026-10-24已备份并写入本机实际产品运行库，核验admin可见、文件与引用；当前无可用浏览器控制面，未做本轮视觉E2E，实际服务健康/资源HTTP检查通过。 后续2026-10-24研究产品交付另执行137/26/6测试及浏览器检查；此前无浏览器控制面的限制只指当时旧范围。批判性复现确认9项待修复，不与正常回归计数相加，本次文档同步未重跑产品全套。 本轮后续已修复I17–I25并交付统一操作审计和可视化：152全套/49受影响子集/26前端/11浏览器通过，原业务记录摘要保持；仍无专业独立认证或正式研究发布。 后续DeepSeek六样本试跑已获外发明确授权并发生61次实际API调用；此前API调用0仅指各历史交付轮。当前运行是development未计分探测，不等于V3 S5正式评测或S4独立认证；I26未修复。 其后RP09已修复I26–I28的前向软件问题并同步历史流程；先前I26未修复仅指首次试跑时点。历史缺失usage和真实人工认证边界保持。 RP10仅前端与文档改动，本轮29单元/21浏览器等通过；未重跑后端，不代表真人理解、接受或专业质量认证。 本轮13样本获授权执行131次真实调用，130返回、1未知，软件全套通过仍暴露I29–I31并保持开放。27发布检查仅在隔离库执行，未代签人工通过、金标认证或正式发布。 RP11后续已完成三项前向软件修复，I10等待策略子项完成但总体开放；历史报告中的I29–I31开放只指当时。新协议真实模型语义测试、历史质量复核和独立认证仍待执行。"
+  },
+  "maintenance": "修改台账前人工核对证据；sync_ai_docs_center.py只同步表格和检查链接，不自动认证研究或法律质量。",
+  "active_plan": "docs/ai_docs_center/NEXT_STEPS.md",
+  "preparation_batches": [
+    {
+      "id": "baseline_20261022_001",
+      "frozen_at": "2026-10-22T15:57:56.637722+00:00",
+      "verified_on": "2026-10-23",
+      "status": "partial_s0_batch_frozen",
+      "path": "datasets/v3.0.0/baseline_20261022_001",
+      "manifest": "datasets/v3.0.0/baseline_20261022_001/source_manifest.jsonl",
+      "report": "reports/v3.0.0/s0_baseline_20261022_001/README.md",
+      "assets": 401,
+      "bytes": 26266866,
+      "groups": 10,
+      "stage_accepted": false
+    },
+    {
+      "id": "baseline_20261023_001",
+      "frozen_at": "2026-10-22T16:25:26.727732+00:00",
+      "verified_on": "2026-10-23",
+      "status": "selected_input_closure_verified_environment_pending",
+      "path": "datasets/v3.0.0/baseline_20261023_001",
+      "manifest": "datasets/v3.0.0/baseline_20261023_001/source_manifest.jsonl",
+      "report": "reports/v3.0.0/source_closure_20261023_001/README.md",
+      "assets": 774,
+      "bytes": 247208463,
+      "groups": 15,
+      "stage_accepted": false
+    }
+  ],
+  "latest_preparation_batch": "datasets/v3.0.0/baseline_20261023_001",
+  "source_audits": [
+    {
+      "path": "datasets/v3.0.0/source_audit_20261023_002",
+      "report": "reports/v3.0.0/source_closure_20261023_001/README.md",
+      "status": "passed",
+      "checked_at": "2026-10-22T16:22:47.641989+00:00",
+      "workbooks": 3,
+      "score_records": 512,
+      "unique_score_rows": 510,
+      "nonempty_score_records": 511,
+      "empty_score_records": 1,
+      "duplicate_score_records": 2,
+      "cells_checked": 5599,
+      "tasks": 244,
+      "image_references": 306,
+      "unique_images": 286,
+      "calibration_sources": 4,
+      "languages": {
+        "zh": 2,
+        "en": 2
+      },
+      "errors": [],
+      "new_api_calls": 0,
+      "values_mode": "cached_excel_values_data_only; no_formula_recalculation",
+      "limits": [
+        "Mechanical provenance checks only; not legal review or new calibration scenarios.",
+        "Image closure is for the selected P3 task file, not the entire v1 benchmark.",
+        "Rubric-to-V3 semantic mapping remains S1 work; development sources must not become held-out test cases.",
+        "Empty worksheet rows are preserved but excluded from mapping evidence; repeated row IDs are not independent scores."
+      ]
+    }
+  ],
+  "completed_updates": [
+    "docs/ai_docs_center/archive/2026-10-23/COMPLETED.md",
+    "docs/ai_docs_center/archive/2026-10-23/CONTINUATION.md",
+    "docs/ai_docs_center/archive/2026-10-23/v2_round005/README.md",
+    "docs/ai_docs_center/archive/2026-10-23/v2_round006/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/admin_cases/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/research_products_plan/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/research_products_implementation/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/console_clarity/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/full_actual_test/README.md",
+    "docs/ai_docs_center/archive/2026-10-24/open_issues_assessment/README.md",
+    "docs/products/OPEN_ISSUES_FIXES.md",
+    "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+    "docs/products/EVALUATION_HISTORY.md",
+    "product_v1/reports/evaluation-history-2026-10-24/REPORT.md",
+    "reports/kie_vqa_migration_20261024/REPORT.md",
+    "docs/ai_docs_center/KIE_VQA_MIGRATION_PLAN.md",
+    "docs/products/KIE_VQA_FIELD_MAPPING.md",
+    "docs/products/KIE_VQA_SCORING_PROTOCOL.md"
+  ],
+  "latest_calibration_batch": "datasets/v3.0.0/calibration_20261023_003",
+  "calibration_batches": [
+    {
+      "path": "datasets/v3.0.0/calibration_20261023_001",
+      "status": "superseded_author_iteration_viewer_identity_not_displayed"
+    },
+    {
+      "path": "datasets/v3.0.0/calibration_20261023_002",
+      "status": "superseded_contract_enrichment"
+    },
+    {
+      "path": "datasets/v3.0.0/calibration_20261023_003",
+      "status": "author_mechanical_handoff_complete_independent_review_pending",
+      "report": "reports/v3.0.0/calibration_20261023_001/README.md"
+    }
+  ],
+  "human_handoff": "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+  "execution_docs": [
+    "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+    "reports/v3.0.0/runtime_reproduction_20261023_002/README.md",
+    "reports/v3.0.0/import_atomicity_20261023_001/README.md",
+    "reports/v3.0.0/calibration_20261023_001/README.md",
+    "product_v1/docs/MIGRATION.md",
+    "datasets/v2.0.0/round_005/REPORT.md",
+    "datasets/v2.0.0/round_005/SOURCE_GAPS.md",
+    "datasets/v2.0.0/round_006/REPORT.md",
+    "datasets/v2.0.0/round_006/SOURCE_GAPS.md",
+    "datasets/v2.0.0/round_006/CHANGELOG.md",
+    "docs/ai_docs_center/ADMIN_CASES.md",
+    "product_v1/docs/MIGRATION.md",
+    "reports/admin_case_inventory_20261024/README.md",
+    "docs/coordinate-retrieval-evaluation.md",
+    "reports/coordinate_audit_20261024/README.md",
+    "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+    "docs/products/PRODUCT_BOUNDARIES.md",
+    "docs/products/RESEARCH_MVP.md",
+    "docs/products/REVIEW_CANVAS.md",
+    "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+    "product_v1/reports/review-canvas-2026-10-24/REPORT.md",
+    "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+    "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+    "docs/products/RELIABILITY_AUDIT.md",
+    "docs/ai_docs_center/DEEPSEEK_FLOW_RUN.md",
+    "product_v1/reports/deepseek-full-flow-2026-10-24/REPORT.md",
+    "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+    "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+    "docs/products/OPERATIONS_OBSERVABILITY.md",
+    "docs/products/CONSOLE_CLARITY.md",
+    "product_v1/reports/console-clarity-2026-10-24/REPORT.md",
+    "product_v1/reports/full-actual-test-2026-10-24/REPORT.md",
+    "product_v1/reports/full-actual-test-2026-10-24/RUNBOOK.md",
+    "product_v1/reports/full-actual-test-2026-10-24/CRITICAL_REVIEW.md",
+    "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md"
+  ],
+  "latest_v2_batch": "datasets/v2.0.0/round_006",
+  "admin_case_sync": {
+    "executed_on": "2026-10-24",
+    "report": "reports/admin_case_inventory_20261024/README.md",
+    "data_directory": "product_v1/data",
+    "owner": "admin",
+    "cases_before": 5,
+    "new_case_versions": 2682,
+    "admin_visible_cases": 2687,
+    "inventory_counts": {
+      "legacy": 316,
+      "render": 60,
+      "sample": 1417,
+      "source": 829,
+      "v3": 60
+    },
+    "source_locators": 4071,
+    "coverage_missing": 0,
+    "evidence_files_verified": 7883,
+    "original_data_preserved": true,
+    "professional_certification_added": 0,
+    "idempotency": {
+      "existing": 2682,
+      "created": 0,
+      "updated_provenance": 0,
+      "report": "reports/admin_case_inventory_20261024/idempotency-result.json"
+    }
+  },
+  "coordinate_status": {
+    "executed_on": "2026-10-24",
+    "images": 2579,
+    "with_any_bbox_before": 1686,
+    "with_any_bbox_after": 2549,
+    "unlocated_images": 30,
+    "new_region_refs": 6389,
+    "total_source_refs": 13825,
+    "model_calls": 0,
+    "repeat_new_refs": 0,
+    "message_detection_or_semantic_certification": false,
+    "report": "reports/coordinate_audit_20261024/README.md",
+    "protocol": "docs/coordinate-retrieval-evaluation.md"
+  },
+  "research_products": {
+    "updated_on": "2026-10-25",
+    "plan": "docs/ai_docs_center/RESEARCH_PRODUCTS_PLAN.md",
+    "scope": "four_product_mvp_research_reliability_and_audit",
+    "baseline_status": "mvp_reliability_iteration_delivered",
+    "implementation_status": "completed_with_documented_limits",
+    "formal_release_ready": false,
+    "features": [
+      "F29",
+      "F30",
+      "F31",
+      "F32",
+      "F33",
+      "F34"
+    ],
+    "issues": [
+      "I17",
+      "I18",
+      "I19",
+      "I20",
+      "I21",
+      "I22",
+      "I23",
+      "I24",
+      "I25",
+      "I26",
+      "I27",
+      "I28",
+      "I29",
+      "I30",
+      "I31"
+    ],
+    "gaps": [
+      "G20",
+      "G21",
+      "G22",
+      "G23",
+      "G24",
+      "G25"
+    ],
+    "baseline_reports": [
+      "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+      "product_v1/reports/review-canvas-2026-10-24/REPORT.md"
+    ],
+    "critical_review": "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+    "sqlite": {
+      "implemented": true,
+      "path": "product_v1/data/research/research.sqlite3",
+      "tables": [
+        "records",
+        "jobs",
+        "idempotency",
+        "audit_events",
+        "schema_migrations"
+      ],
+      "record_format": "owner-scoped JSON by kind",
+      "journal_mode": "WAL",
+      "synchronous": "FULL",
+      "unified_audit_table_implemented": true,
+      "audit_frontend_implemented": true,
+      "binary_assets": "files_with_database_hash_and_path_references",
+      "external_projection": "Workbench/settings store durable events in owning SQLite transaction; public idempotent projection into audit_events"
+    },
+    "tasks": [
+      {
+        "id": "RP00",
+        "title": "文档计划/进度同步",
+        "status": "completed",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+        "completed_on": "2026-10-24"
+      },
+      {
+        "id": "RP01",
+        "title": "输入与Prompt编辑安全",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP02",
+        "title": "SQLite操作审计基础与只读API",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP03",
+        "title": "审核对象/图片/金标/发布绑定及历史映射",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP04",
+        "title": "渲染有效性与可读性",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP05",
+        "title": "操作审计前端可视化",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP06",
+        "title": "质量评估范围与可比性",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP07",
+        "title": "评论处理与生成验证闭环",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP08",
+        "title": "兼容迁移/回归与文档交付",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP09",
+        "title": "模型预算/定价配置、流程结果和可检索审计",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/operations-observability-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP10",
+        "title": "新协作人员的控制台可理解性与渐进展开",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/console-clarity-2026-10-24/REPORT.md",
+        "limits": "软件范围交付；真人理解测试待执行"
+      },
+      {
+        "id": "RP11",
+        "title": "开放问题软件修复、兼容保留及操作台验证记录",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+        "limits": "仅I29/I30/I31软件范围关闭；I10部分交付仍开放，无真实模型复测或人工代签"
+      },
+      {
+        "id": "RP12",
+        "title": "评测台统一展示真实试跑与正式运行历史",
+        "status": "completed",
+        "completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/evaluation-history-2026-10-24/REPORT.md"
+      },
+      {
+        "id": "RP13",
+        "title": "KIE/VQA与IoU迁移适配、评分与审核展示",
+        "status": "completed",
+        "preparation_status": "completed",
+        "preparation_completed_on": "2026-10-24",
+        "evidence": "product_v1/reports/kie-vqa-migration-2026-10-24/REPORT.md",
+        "limits": "仅数据迁入、分步执行与本地/模拟验证交付；不含按图KIE→新IoU→匹配消息VQA自动串联，见RP14。82候选、人工目标/字典/量表与真实试跑仍待完成，不增加V3独立认证",
+        "completed_on": "2026-10-24"
+      },
+      {
+        "id": "RP14",
+        "title": "按图KIE→新IoU→VQA在线编排与分层验收",
+        "status": "partial",
+        "planning_status": "completed",
+        "planned_on": "2026-10-24",
+        "plan": "docs/ai_docs_center/KIE_VQA_PIPELINE_PLAN.md",
+        "acceptance": "docs/products/KIE_VQA_PIPELINE_ACCEPTANCE.md",
+        "evidence": "product_v1/reports/kie-vqa-sample-workflow-2026-10-25/REPORT.md",
+        "limits": "A/P0–P5及按样本入口软件完成；P6首次真实1图/5调用已执行，低IoU阻塞区域VQA，G3正向路径仍未通过；G4与B0人工准备/B1/B2待完成，整体partial。",
+        "implementation_started": true,
+        "software_completed_on": "2026-10-25"
+      }
+    ],
+    "research_certification": "unchanged; S0-S3 4/8; independent certification 0; not released",
+    "latest_report": "product_v1/reports/kie-vqa-budget-ux-2026-10-25/REPORT.md",
+    "delivery_verification": "product_v1/reports/kie-vqa-budget-ux-2026-10-25/summary.json",
+    "this_iteration": {
+      "scope": "pipeline_call_limit_clarity_and_explicit_adjustment",
+      "business_code_changed": true,
+      "documentation_changed": true,
+      "production_data_changed": "append software verification flow and audit only; existing real run preserved",
+      "real_paid_model_calls": 0,
+      "report": "reports/kie_vqa_budget_ux_20261025/REPORT.md"
+    },
+    "limits": [
+      "分组观察比较，不自动做因果推断",
+      "原有QA正式运行保留精确匹配；新增KIE/VQA提供版本化检测/字段/人工量表，专业认证仍由S4等任务承担",
+      "旧图和旧通过需显式升级/修复及重新确认；历史操作者不伪造",
+      "跨产品通过主库事务事件幂等投影，不是两库同一事务"
+    ],
+    "planning_sync": {
+      "documentation_changed": true,
+      "business_code_changed": false,
+      "production_data_changed": false,
+      "real_paid_model_calls": false,
+      "plan": "docs/ai_docs_center/KIE_VQA_PIPELINE_PLAN.md"
+    },
+    "real_model_trial": {
+      "date": "2026-10-24",
+      "flow_id": "deepseek-initial-20261024",
+      "report": "product_v1/reports/deepseek-full-flow-2026-10-24/REPORT.md",
+      "summary": "product_v1/reports/deepseek-full-flow-2026-10-24/summary.json",
+      "external_authorization": "product_v1/reports/deepseek-full-flow-2026-10-24/authorization.json",
+      "source_samples": 6,
+      "candidates": 7,
+      "qa_requests": 26,
+      "qa_success": 26,
+      "external_requests": 61,
+      "recorded_usage_requests": 50,
+      "missing_usage_requests": 11,
+      "cost": null,
+      "status": "awaiting_human_review",
+      "formal_releases": 0,
+      "formal_evaluation_runs": 0,
+      "gold_certifications": 0,
+      "production_gateway_changed": false,
+      "followup_issue": "I26",
+      "ui_synced": true,
+      "ui_url": "http://127.0.0.1:18431/evaluation.html?operations=1&kind=research.flow&record=deepseek-initial-20261024"
+    },
+    "operations_iteration": {
+      "status": "completed_with_research_limits",
+      "report": "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+      "critical_review": "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+      "issues": [
+        "I26",
+        "I27",
+        "I28"
+      ],
+      "real_model_calls": 0,
+      "synced_flow": "deepseek-initial-20261024",
+      "linked_records": 169,
+      "artifacts": 21,
+      "record_kind": "research.flow",
+      "request_record_kind": "evaluation.request",
+      "legacy_missing_usage": 11,
+      "formal_releases": 0
+    },
+    "clarity_iteration": {
+      "status": "software_delivered_human_comprehension_test_pending",
+      "audience": "对项目不熟悉的协作人员",
+      "report": "product_v1/reports/console-clarity-2026-10-24/REPORT.md",
+      "guide": "docs/products/CONSOLE_CLARITY.md",
+      "verification": {
+        "frontend_unit": 29,
+        "browser": 21,
+        "typecheck": true,
+        "eslint": true,
+        "architecture": true,
+        "production_build": true,
+        "backend_rerun": false
+      },
+      "backend_changed": false,
+      "production_data_migration": false,
+      "real_paid_model_calls": 0,
+      "human_comprehension_study_executed": false
+    },
+    "full_actual_test": {
+      "status": "completed_with_unknown_call_and_open_issues",
+      "date": "2026-10-24",
+      "flow_id": "full-actual-13-20261024",
+      "authorized_existing_samples": 13,
+      "questions": 31,
+      "images": 56,
+      "maximum_planned_calls": 131,
+      "report": "product_v1/reports/full-actual-test-2026-10-24/REPORT.md",
+      "plan": "product_v1/reports/full-actual-test-2026-10-24/RUNBOOK.md",
+      "software_verification": {
+        "backend": 160,
+        "frontend_unit": 29,
+        "browser": 21
+      },
+      "formal_releases_added": 0,
+      "professional_certifications_added": 0,
+      "open_issues": [
+        "I29",
+        "I30",
+        "I31"
+      ],
+      "finished_at": "2026-10-24T08:28:06.503109+00:00",
+      "real_external_requests": 131,
+      "returned_requests": 130,
+      "unknown_requests": 1,
+      "generated_candidates": 14,
+      "qa_requests": 90,
+      "qa_returned": 90,
+      "model_quality_records": 26,
+      "source_quality_coverage": "12/13",
+      "candidate_quality_coverage": "14/14",
+      "known_cost_estimate": 3.692356,
+      "currency": "CNY",
+      "cost_is_partial": true,
+      "input_records_preserved": 263,
+      "cases_preserved": 2687,
+      "release_gates_checked_in_isolation": 27,
+      "ui_url": "http://127.0.0.1:18431/evaluation.html?operations=1&kind=research.flow&record=full-actual-13-20261024",
+      "human_comprehension_study_executed": false
+    },
+    "reliability_iteration": {
+      "business_code_changed": true,
+      "production_data_migration": "audit schema and six legacy migration snapshots only; research record bytes unchanged",
+      "research_records_preserved": true,
+      "original_cases_preserved": 2687,
+      "real_paid_model_calls": false,
+      "verification": {
+        "backend_full": 152,
+        "latest_affected_subset": 49,
+        "frontend_unit": 26,
+        "browser": 11
+      }
+    },
+    "open_issue_assessment": {
+      "date": "2026-10-24",
+      "document": "docs/ai_docs_center/OPEN_ISSUES_ASSESSMENT.md",
+      "open_issues": 8,
+      "software_order": [
+        "I31",
+        "I29",
+        "I10",
+        "I30"
+      ],
+      "data_before_release": [
+        "I08",
+        "I14"
+      ],
+      "research_gates": [
+        "I09",
+        "I07"
+      ],
+      "severity_change": {
+        "I31": {
+          "from": "medium",
+          "to": "high"
+        }
+      },
+      "business_code_changed": false,
+      "real_model_calls": 0,
+      "production_data_changed": false,
+      "followup": "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+      "current_open_issues": 5
+    },
+    "fix_iteration": {
+      "scope": "open_issue_software_fixes_and_local_verification",
+      "business_code_changed": true,
+      "production_data_migration": "two audit expression indexes; append one software verification flow and audit only; preserve all existing rows",
+      "research_records_preserved": true,
+      "original_cases_preserved": 2687,
+      "real_paid_model_calls": false,
+      "external_requests": 0,
+      "verification": {
+        "backend_full": 171,
+        "frontend_unit": 29,
+        "browser": 24
+      },
+      "software_resolved": [
+        "I29",
+        "I30",
+        "I31"
+      ],
+      "open_issues": [
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I14"
+      ],
+      "report": "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+      "flow_id": "open-issues-fixes-20261024",
+      "guide": "docs/products/OPEN_ISSUES_FIXES.md",
+      "historical_calls_queryable": 131,
+      "sealed_artifacts_preserved": 73,
+      "quality_input_version": "quality-input.v2",
+      "renderer_version": "pillow-chat.v4",
+      "legacy_quality_unchanged": true,
+      "real_model_semantic_retest": false,
+      "online_images_upgraded": 0,
+      "ui_url": "http://127.0.0.1:18431/evaluation.html?operations=1&kind=research.flow&record=open-issues-fixes-20261024"
+    },
+    "history_iteration": {
+      "scope": "evaluation_history_read_only_projection",
+      "report": "product_v1/reports/evaluation-history-2026-10-24/REPORT.md",
+      "business_code_changed": true,
+      "real_paid_model_calls": false,
+      "external_requests": 0,
+      "verification": {
+        "backend_affected": 38,
+        "frontend_unit": 29,
+        "browser_affected": 8
+      },
+      "existing_records_preserved": true,
+      "production_data_migration": "append software verification flow and audit only",
+      "formal_runs_created": 0,
+      "trial_flows_visible": 2,
+      "recorded_probes": 118,
+      "history_entries": 4,
+      "issue": "I32"
+    },
+    "kie_vqa_migration": {
+      "status": "software_migrated_human_reference_and_real_trial_pending",
+      "source_directory": "D:/workspace/ScreenshotLegalBench_v2/process_local_evaluator",
+      "report": "reports/kie_vqa_migration_20261024/REPORT.md",
+      "plan": "docs/ai_docs_center/KIE_VQA_MIGRATION_PLAN.md",
+      "field_mapping": "docs/products/KIE_VQA_FIELD_MAPPING.md",
+      "scoring_protocol": "docs/products/KIE_VQA_SCORING_PROTOCOL.md",
+      "source_files": 1132,
+      "primary_images": 1088,
+      "unique_image_hashes": 1086,
+      "annotation_records": 1176,
+      "annotation_unique_images": 1170,
+      "attribute_rows": 11031,
+      "rect_attribute_rows": 6333,
+      "physical_region_candidates": 4209,
+      "source_labels": 19,
+      "field_mapping_groups": 30,
+      "task_manifest_rows": 12201,
+      "vqa_candidates": 11002,
+      "kie_candidates": 1170,
+      "review_notes": 29,
+      "iou_rows_replayed_exactly": 6333,
+      "missing_primary_images": 82,
+      "missing_image_candidates_hash_verified": 82,
+      "saved_qa_prompt_generator_snapshot_missing": true,
+      "original_vqa_scoring_not_recovered": true,
+      "preparation_validation": "reports/kie_vqa_migration_20261024/validation.json",
+      "production_migration_executed": true,
+      "platform_code_changed": true,
+      "source_modified": false,
+      "new_real_model_calls": 0,
+      "official_scoring_ready": false,
+      "implementation_report": "product_v1/reports/kie-vqa-migration-2026-10-24/REPORT.md",
+      "guide": "docs/products/KIE_VQA_MIGRATION.md",
+      "dataset_id": "benchmark.e21d7f46a78b83843ce61350",
+      "managed_logical_images": 1170,
+      "managed_unique_image_hashes": 1168,
+      "provisional_candidates": 82,
+      "tasks_imported": 12172,
+      "review_notes_imported": 29,
+      "historical_archives": 10,
+      "raw_kie_attempts": 1124,
+      "old_evidence_answers": 450,
+      "original_research_rows_preserved": 590,
+      "original_cases_preserved": 2687,
+      "previous_bound_artifacts_preserved": 111,
+      "verification": {
+        "backend_full": 193,
+        "frontend_unit": 29,
+        "browser_full": 26,
+        "browser_final_affected": 4,
+        "typecheck": true,
+        "eslint": true,
+        "architecture_guard": true,
+        "production_build": true,
+        "isolated_full_import": true,
+        "production_integrity": true,
+        "backend_final_affected": 32,
+        "backend_current_collected": 195,
+        "browser_last_affected": 2
+      },
+      "flow_id": "kie-vqa-migration-20261024"
+    },
+    "latest_preparation_report": "reports/kie_vqa_migration_20261024/REPORT.md",
+    "active_plan": "docs/ai_docs_center/KIE_VQA_PIPELINE_PLAN.md",
+    "latest_planning_report": "reports/kie_vqa_pipeline_plan_revision_20261024/REPORT.md",
+    "kie_vqa_pipeline_plan": {
+      "status": "A_software_delivered_online_reference_and_B_pending",
+      "planning_completed_on": "2026-10-24",
+      "plan": "docs/ai_docs_center/KIE_VQA_PIPELINE_PLAN.md",
+      "acceptance": "docs/products/KIE_VQA_PIPELINE_ACCEPTANCE.md",
+      "report": "reports/kie_vqa_pipeline_plan_revision_20261024/REPORT.md",
+      "contract": "reports/kie_vqa_pipeline_plan_revision_20261024/proposed-contract.json",
+      "acceptance_matrix": "reports/kie_vqa_pipeline_plan_revision_20261024/acceptance-matrix.json",
+      "critical_risks": 22,
+      "acceptance_cases": 43,
+      "phases": [
+        {
+          "id": "P0",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P1",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P2",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P3",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P4",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P5",
+          "status": "completed",
+          "scope": "software",
+          "completed_on": "2026-10-25"
+        },
+        {
+          "id": "P6",
+          "status": "partial",
+          "limits": "单样本6计划/5实际在线请求完成；区域低IoU未调用，G3正向链路仍未通过"
+        }
+      ],
+      "gates": {
+        "G1": "passed_software_scope",
+        "G2": "passed_software_scope",
+        "G3": "partial_online_execution_verified_no_positive_guided_path",
+        "G4": "not_ready"
+      },
+      "regional_vqa": 6304,
+      "global_vqa": 4698,
+      "unique_vqa_regions": 4180,
+      "proposed_pilot": {
+        "images": 3,
+        "regional_vqa": 3,
+        "global_visual_vqa": 3,
+        "max_new_calls": 9,
+        "optional_regional_visual_control_calls": 3,
+        "max_with_controls": 12,
+        "authorized": false,
+        "executed": false
+      },
+      "new_model_calls": 5,
+      "business_code_changed": true,
+      "production_data_changed": "append software verification only; old business rows unchanged",
+      "scope_note": "A reference-guided baseline implemented. B0 manual qualification/data split and B1 prediction-only evidence/B2 experiments remain pending.",
+      "version": "v3-A-software",
+      "revised_on": "2026-10-25",
+      "critical_review": "reports/kie_vqa_pipeline_plan_revision_20261024/CRITICAL_REVIEW.md",
+      "previous_planning_report": "reports/kie_vqa_pipeline_plan_20261024/REPORT.md",
+      "acceptance_cases_by_delivery": {
+        "A": 34,
+        "B": 9
+      },
+      "acceptance_cases_executed": 34,
+      "extension_phases": [
+        {
+          "id": "B0",
+          "status": "partial",
+          "limits": "question version/eligibility foundation only; manual reference, independent questions and split pending"
+        },
+        {
+          "id": "B1",
+          "status": "planned"
+        },
+        {
+          "id": "B2",
+          "status": "planned"
+        }
+      ],
+      "extension_gates": {
+        "local": "not_executed",
+        "online": "not_executed",
+        "quality": "not_ready"
+      },
+      "extension_pilot": {
+        "actual_manifest_defined": false,
+        "authorized": false,
+        "executed": false,
+        "uses_A_pilot_authorization": false
+      },
+      "development_reference_proposal": {
+        "images": 20,
+        "status": "proposed_not_selected",
+        "purpose": "development calibration only; no population accuracy claim",
+        "real_calls_authorized": false
+      },
+      "implementation_started": true,
+      "implementation_report": "product_v1/reports/kie-vqa-sample-workflow-2026-10-25/REPORT.md",
+      "implementation_evidence": "reports/kie_vqa_pipeline_implementation_20261024/acceptance-evidence.json",
+      "acceptance_scope": "software coverage; AT31 human corpus eligibility and AT27 actual comprehension pending; B9 planned",
+      "previous_implementation_report": "product_v1/reports/kie-vqa-pipeline-2026-10-25/REPORT.md",
+      "online_runs": 1,
+      "latest_online_report": "reports/kie_vqa_online_smoke_20261025_173000/REPORT.md"
+    },
+    "kie_vqa_pipeline": {
+      "date": "2026-10-25",
+      "status": "A_software_delivered_G3_G4_B_pending",
+      "backend": 228,
+      "frontend_unit": 29,
+      "browser": 30,
+      "typecheck": true,
+      "eslint": true,
+      "architecture": true,
+      "production_build": true,
+      "local_http_requests": 12172,
+      "external_requests": 0,
+      "real_model_calls": 0,
+      "formal_releases_added": 0,
+      "independent_certifications_added": 0,
+      "legacy_iou_equal_rows": 6333,
+      "A_software_cases_mapped": 34,
+      "A_manual_review_pending": [
+        "AT31",
+        "AT27 human comprehension"
+      ],
+      "B_cases_planned": 9,
+      "full_manifest_latest_patch_rerun": false,
+      "flow_id": "kie-vqa-pipeline-20261025",
+      "guide": "docs/products/KIE_VQA_PIPELINE.md",
+      "report": "product_v1/reports/kie-vqa-pipeline-2026-10-25/REPORT.md",
+      "ui_url": "http://127.0.0.1:18431/evaluation.html?operations=1&kind=research.flow&record=kie-vqa-pipeline-20261025",
+      "sample_workflow": {
+        "status": "software_delivered",
+        "scope": "default_sample_selection_and_complete_KIE_IoU_VQA_pipeline",
+        "date": "2026-10-25",
+        "report": "product_v1/reports/kie-vqa-sample-workflow-2026-10-25/REPORT.md",
+        "guide": "docs/products/KIE_VQA_PIPELINE.md",
+        "flow_id": "kie-vqa-sample-workflow-20261025",
+        "default_selection_unit": "logical_image_sample",
+        "execution_unit": "one_parent_pipeline_with_independent_stage_jobs",
+        "verification": {
+          "backend_full": 236,
+          "frontend_unit": 29,
+          "browser_full": 32,
+          "typecheck": true,
+          "eslint": true,
+          "architecture": true,
+          "production_build": true
+        },
+        "real_model_calls": 0,
+        "official_scoring_ready": false,
+        "ui_url": "http://127.0.0.1:18431/evaluation.html?operations=1&kind=research.flow&record=kie-vqa-sample-workflow-20261025",
+        "limits": "G3 online/G4 human reference and B0 preparation/B1/B2 remain pending; not pure end-to-end"
+      },
+      "online_smoke": {
+        "date": "2026-10-25",
+        "pipeline_id": "pipeline.350e7b46e8f8458cae8969c2fa0222a4",
+        "status": "completed_with_issues",
+        "images": 1,
+        "planned_units": 6,
+        "actual_requests": 5,
+        "kie_returned": 1,
+        "global_vqa_returned": 4,
+        "regional_vqa_blocked": 1,
+        "best_iou": 0.09693278456479457,
+        "threshold": 0.6,
+        "cost_estimate": 0.07285,
+        "currency": "CNY",
+        "cost_complete": true,
+        "scope": "one newly authorized complete sample; does not authorize further samples or retry",
+        "positive_guided_path_verified": false,
+        "report": "reports/kie_vqa_online_smoke_20261025_173000/REPORT.md",
+        "ui_url": "http://127.0.0.1:18431/evaluation.html?benchmark=1&pipeline=pipeline.350e7b46e8f8458cae8969c2fa0222a4"
+      },
+      "interaction_redesign": {
+        "status": "software_delivered",
+        "date": "2026-10-25",
+        "report": "product_v1/reports/kie-vqa-interaction-2026-10-25/REPORT.md",
+        "flow_id": "kie-vqa-interaction-20261025",
+        "verification": {
+          "backend": 236,
+          "frontend_unit": 29,
+          "browser": 33,
+          "typecheck": true,
+          "eslint": true,
+          "architecture": true,
+          "production_build": true
+        },
+        "real_model_calls": 0,
+        "source_feedback": "startup and result interactions both need improvement",
+        "actual_human_comprehension_study": false
+      },
+      "budget_ux": {
+        "status": "software_delivered",
+        "date": "2026-10-25",
+        "report": "product_v1/reports/kie-vqa-budget-ux-2026-10-25/REPORT.md",
+        "flow_id": "kie-vqa-budget-ux-20261025",
+        "verification": {
+          "backend": 0,
+          "backend_rerun": false,
+          "frontend_unit": 29,
+          "browser": 8,
+          "browser_scope": "benchmark-pipeline.spec.ts affected suite; not full browser suite",
+          "typecheck": true,
+          "eslint": true,
+          "architecture": true,
+          "production_build": true
+        },
+        "real_model_calls": 0
+      }
+    }
+  }
+}

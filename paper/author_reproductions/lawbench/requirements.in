@@ -1,0 +1,6 @@
+pandas==2.2.3
+numpy==2.2.6
+nltk==3.9.1
+jieba==0.42.1
+rouge-chinese==1.0.3
+cn2an==0.5.23

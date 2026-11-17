@@ -1,0 +1,18 @@
+{
+  "method": "chain_of_agents",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "longbench",
+      "commit": "2e00731f8d0bff23dc4325161044d0ed8af94c1e",
+      "files_checked": 6
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 7,
+    "mismatches": {}
+  },
+  "resources": []
+}

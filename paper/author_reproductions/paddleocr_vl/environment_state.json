@@ -1,0 +1,18 @@
+{
+  "method": "paddleocr_vl",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 31,
+    "mismatches": {}
+  },
+  "resources": [
+    {
+      "name": "PaddlePaddle/PaddleOCR-VL",
+      "revision": "7fa00a8c55b735ba51ba49a9058f3f9c57a99a11",
+      "files_checked": 17
+    }
+  ]
+}

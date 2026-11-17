@@ -1,0 +1,9 @@
+{
+  "generator": "kimi3_low",
+  "reviewer": "kimi26_nonthinking",
+  "model_config": "configs/models.local.yaml",
+  "generation_max_tokens": 11000,
+  "critic_max_tokens": 11000,
+  "timeout": 240,
+  "inference_mode": "cloud"
+}

@@ -1,0 +1,96 @@
+{
+  "reproduction_name": "e05_self_refine",
+  "implementation_status": "implemented",
+  "unit_checks": [
+    {
+      "name": "test_product_executes_author_controller_with_frozen_images[kie]",
+      "status": "passed",
+      "time_s": "4.632"
+    },
+    {
+      "name": "test_product_executes_author_controller_with_frozen_images[vqa]",
+      "status": "passed",
+      "time_s": "4.580"
+    },
+    {
+      "name": "test_rejects_insufficient_actual_step_budget_before_model",
+      "status": "passed",
+      "time_s": "0.065"
+    },
+    {
+      "name": "test_invalid_author_output_keeps_response_and_stops_without_retry",
+      "status": "passed",
+      "time_s": "4.410"
+    },
+    {
+      "name": "test_missing_usage_stops_after_saved_response",
+      "status": "passed",
+      "time_s": "4.267"
+    },
+    {
+      "name": "test_author_recovery_replays_known_responses_without_duplicate_requests[1]",
+      "status": "passed",
+      "time_s": "8.918"
+    },
+    {
+      "name": "test_author_recovery_replays_known_responses_without_duplicate_requests[4]",
+      "status": "passed",
+      "time_s": "8.691"
+    },
+    {
+      "name": "test_author_recovery_replays_known_responses_without_duplicate_requests[parent]",
+      "status": "passed",
+      "time_s": "4.467"
+    },
+    {
+      "name": "test_author_unknown_inflight_never_resends_and_counts_durable_request",
+      "status": "passed",
+      "time_s": "4.177"
+    },
+    {
+      "name": "test_durable_cap_counts_failed_requests_before_network",
+      "status": "passed",
+      "time_s": "0.041"
+    },
+    {
+      "name": "test_saved_response_reuse_never_calls_provider",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[failed]",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[unknown]",
+      "status": "passed",
+      "time_s": "0.039"
+    },
+    {
+      "name": "test_unresolved_native_requests_are_not_automatically_reissued[calling_model]",
+      "status": "passed",
+      "time_s": "0.042"
+    },
+    {
+      "name": "test_original_task_and_adaptation_are_disclosed_without_claiming_paper_reproduction[e05_self_refine]",
+      "status": "passed",
+      "time_s": "0.059"
+    },
+    {
+      "name": "test_named_method_file_discloses_original_sources_and_extent[e05_self_refine]",
+      "status": "passed",
+      "time_s": "0.070"
+    },
+    {
+      "name": "test_dispatch_calls_the_named_module_or_rejects_planned[e05_self_refine]",
+      "status": "passed",
+      "time_s": "0.011"
+    }
+  ],
+  "behavior_equivalence": [],
+  "junit_source": "../../../reports/author_product_adaptation_20261028/pytest-final-all.xml",
+  "junit_sha256": "f0ee21a8e3dad5953eb9880a6b454312a47b0aec85803d4587e3588819c3d636",
+  "method_source_sha256": "955f3068e34cb2a460e5ebdb8e4e2e3f37880515ca8c7e620fa7071dcf888cb5",
+  "note": "Dispatch/header checks, offline equivalence and saved run states are distinct from legal-quality evaluation."
+}

@@ -1,0 +1,75 @@
+{
+  "model": "PaddlePaddle/PaddleOCR-VL",
+  "revision": "7fa00a8c55b735ba51ba49a9058f3f9c57a99a11",
+  "files": {
+    "PP-DocLayoutV2/config.json": {
+      "sha256": "e1a25a0cbdc59c3668bc96467ecca6b9747eca29ff26d90282f452adc89df21f",
+      "bytes": 4535
+    },
+    "README.md": {
+      "sha256": "9b8ffe23416747af051eb8ea3003d6a2b3e4855d405359fe35eb8aae2de4bd08",
+      "bytes": 26406
+    },
+    "added_tokens.json": {
+      "sha256": "f59f889088e0fe21c523e7cf121bb6dca3b0bb148cb7159fbb4572c74dfc5644",
+      "bytes": 25381
+    },
+    "chat_template.jinja": {
+      "sha256": "ab4f984a185809daf6d36ebb6efa7a27c5fe7772ed7b0f0cabd3a1b30a2069cd",
+      "bytes": 1472
+    },
+    "config.json": {
+      "sha256": "ce7f4565f8b1db78532ad5d1b9ebe55c2139d49bd4cb04778b580a08a598f171",
+      "bytes": 2059
+    },
+    "configuration_paddleocr_vl.py": {
+      "sha256": "753dd93654c3a9c8c85a3eaee1e3092dd12591b0f2dce0305e1abfb7a41ff160",
+      "bytes": 8104
+    },
+    "generation_config.json": {
+      "sha256": "a6701d78ab3b4d972307cdec3b69d4c13f46e0d5140514f50ab7d84259324b94",
+      "bytes": 133
+    },
+    "image_processing_paddleocr_vl.py": {
+      "sha256": "a4fa521b9cb16e207f94b7f2d16427771776dfc634420d319fc4916ee58049ec",
+      "bytes": 25032
+    },
+    "modeling_paddleocr_vl.py": {
+      "sha256": "556398ac4b9e1879066f4589dd45c3142037eea616e47d82011402206fbda28f",
+      "bytes": 103889
+    },
+    "preprocessor_config.json": {
+      "sha256": "0c349d1210abce664bdba8986dc0637e94679b1fe90f13fcb18616a6466c4618",
+      "bytes": 641
+    },
+    "processing_paddleocr_vl.py": {
+      "sha256": "e29cb1e5f275f2bd3ce051bd5c9983a33894e693b2823a0e13d4c07c8c4f9e13",
+      "bytes": 12253
+    },
+    "processor_config.json": {
+      "sha256": "1568858960a9760c54431dae693a6152e601ff55cdf6d2eab97a4a99958faea0",
+      "bytes": 137
+    },
+    "special_tokens_map.json": {
+      "sha256": "215bf3a1b155fafe3497f8790bedf280af92d29c2f0286c2f87a5c78baff8f7c",
+      "bytes": 1152
+    },
+    "tokenizer.json": {
+      "sha256": "f90f04fd8e5eb6dfa380f37d10c87392de8438dccb6768a2486b5a96ee76dba6",
+      "bytes": 11187679
+    },
+    "tokenizer.model": {
+      "sha256": "34ef7db83df785924fb83d7b887b6e822a031c56e15cff40aaf9b982988180df",
+      "bytes": 1614363
+    },
+    "tokenizer_config.json": {
+      "sha256": "2eb86166750a1ce6aaeb60d12ef7d88a68e5545ee986a2d266bf143ff8d26f3c",
+      "bytes": 185587
+    },
+    "model.safetensors": {
+      "sha256": "3085f1042e184f68f8a412aa0f64f2c4b8562989598bbfba326aaa11fc685de8",
+      "bytes": 1917255968,
+      "expected_lfs_sha256": "3085f1042e184f68f8a412aa0f64f2c4b8562989598bbfba326aaa11fc685de8"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+entrypoint: python tools/extract_evidence.py
+model_config: configs/models.local.yaml
+development_model: kimi3_low
+selection_status: engineering_default_kimi3_grounding_review_required
+evaluation_report: reports/v1.0.0_iteration_analysis.md
+bbox_coordinate_space: pixels
+optional_coordinate_space: normalized_1000
+schema: original_pixel_message_event_citations
+review_required: true
+retrieval_model_requests: 0

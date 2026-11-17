@@ -1,0 +1,34 @@
+id: fact.instantiate.generic.v1
+capability: fact.instantiate
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions:
+  - '*'
+  matters:
+  - '*'
+  practice_areas:
+  - '*'
+input_schema:
+- matter
+- claims
+- elements
+- case
+output_schema:
+- fact
+grounding:
+  require_source_refs: false
+dependencies:
+- claim.identify
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: true
+  authority_search: false
+stage: 4

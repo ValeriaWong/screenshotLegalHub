@@ -1,0 +1,12 @@
+entrypoint: python -m legalhub.app serve
+host: 127.0.0.1
+port: 18420
+index: blocks/retriever/artifacts/index.sqlite3
+algorithm: sqlite_fts5_bm25_literal_synonyms
+model_requests_per_query: 0
+case_scope_required: true
+sources:
+  original_images: reports/restart/images_manifest.json
+  historical_predictions: projects/ScreenshotLegalBench_v2/process_local_evaluator/image_structured_info.json
+  case_law: projects/ScreenshotLegalBench_v2/generate_chat/output_full/wkinfo_parsed.jsonl
+  statutes: blocks/retriever/artifacts/statutes/civil-code-2020.json

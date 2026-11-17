@@ -1,0 +1,9 @@
+{
+  "mode": "native_query",
+  "question": "What is the major conflict in this story and who are the protagonist and antagonist?",
+  "source": "examples_notebooks/global_search.ipynb",
+  "community_level": 2,
+  "index_source": "all three original Operation Dulce parquet tables; author precomputed index",
+  "native_index_regenerated": false,
+  "original_paper_benchmark": false
+}

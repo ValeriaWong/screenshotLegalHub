@@ -1,0 +1,12 @@
+{
+  "method": "jurisma",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 0,
+    "mismatches": {}
+  },
+  "resources": []
+}

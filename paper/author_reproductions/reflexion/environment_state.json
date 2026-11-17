@@ -1,0 +1,18 @@
+{
+  "method": "reflexion",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "reflexion",
+      "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+      "files_checked": 16
+    }
+  ],
+  "environment": {
+    "python": "3.11.0",
+    "packages_checked": 44,
+    "mismatches": {}
+  },
+  "resources": []
+}

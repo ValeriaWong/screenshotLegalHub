@@ -1,0 +1,61 @@
+{
+  "synthetic": true,
+  "messages": [
+    {
+      "index": 0,
+      "page": 1,
+      "text": "向你借50000元，月底归还。",
+      "speaker": "李四",
+      "timestamp": "2024-01-05",
+      "event_type": "agreement",
+      "bbox": [
+        30,
+        130,
+        690,
+        220
+      ]
+    },
+    {
+      "index": 1,
+      "page": 1,
+      "text": "已转账50000元，请查收。",
+      "speaker": "张三",
+      "timestamp": "2024-01-05",
+      "event_type": "payment",
+      "bbox": [
+        30,
+        340,
+        690,
+        430
+      ]
+    },
+    {
+      "index": 2,
+      "page": 2,
+      "text": "收到50000元，月底归还。",
+      "speaker": "李四",
+      "timestamp": "2024-01-05",
+      "event_type": "acknowledgment",
+      "bbox": [
+        30,
+        130,
+        690,
+        220
+      ]
+    },
+    {
+      "index": 3,
+      "page": 2,
+      "text": "这笔是投资款，不是借款。",
+      "speaker": "李四",
+      "timestamp": "2024-02-01",
+      "event_type": "dispute",
+      "bbox": [
+        30,
+        340,
+        690,
+        430
+      ]
+    }
+  ]
+}

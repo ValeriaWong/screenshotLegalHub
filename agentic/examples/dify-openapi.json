@@ -1,0 +1,476 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Agentic Harness",
+    "version": "0.2.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18440"
+    }
+  ],
+  "paths": {
+    "/adapters/dify/harness_get_run": {
+      "post": {
+        "operationId": "harness_get_run",
+        "summary": "Read an owned run",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "run_id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "title": "Run Id",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "run_id"
+                ],
+                "title": "RunID",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/adapters/dify/harness_cancel_run": {
+      "post": {
+        "operationId": "harness_cancel_run",
+        "summary": "Cancel an owned run",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "run_id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "title": "Run Id",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "run_id"
+                ],
+                "title": "RunID",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/adapters/dify/harness_events": {
+      "post": {
+        "operationId": "harness_events",
+        "summary": "Read available ordered events after a cursor",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "run_id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "title": "Run Id",
+                    "type": "string"
+                  },
+                  "after": {
+                    "default": 0,
+                    "minimum": 0,
+                    "title": "After",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "run_id"
+                ],
+                "title": "EventsInput",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/adapters/dify/harness_list_skills": {
+      "post": {
+        "operationId": "harness_list_skills",
+        "summary": "Discover task abilities",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {},
+                "title": "Empty",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/adapters/dify/harness_list_tools": {
+      "post": {
+        "operationId": "harness_list_tools",
+        "summary": "Discover permitted atomic operations",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {},
+                "title": "Empty",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/adapters/dify/harness_run_evidence_analysis": {
+      "post": {
+        "operationId": "harness_run_evidence_analysis",
+        "summary": "独立五阶段证据分析：规划、事实、争点、缺口与报告数据；保留推断和待补证项",
+        "security": [
+          {
+            "HarnessBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "case_id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_.:-]+$",
+                    "title": "Case Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "question": {
+                    "maxLength": 2000,
+                    "minLength": 1,
+                    "title": "Question",
+                    "type": "string"
+                  },
+                  "sources": {
+                    "items": {
+                      "$ref": "#/components/schemas/harness_run_evidence_analysis_Source"
+                    },
+                    "maxItems": 64,
+                    "minItems": 1,
+                    "title": "Sources",
+                    "type": "array"
+                  },
+                  "synthetic": {
+                    "default": false,
+                    "title": "Synthetic",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "case_id",
+                  "title",
+                  "question",
+                  "sources"
+                ],
+                "title": "CaseInput",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Run result or operation data"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "409": {
+            "description": "Idempotency or state conflict"
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "harness_run_evidence_analysis_Source": {
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.:-]+$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "speaker": {
+            "default": "未核实主体",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Speaker",
+            "type": "string"
+          },
+          "time": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Time"
+          },
+          "time_precision": {
+            "default": "unknown",
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ],
+            "title": "Time Precision",
+            "type": "string"
+          },
+          "kind": {
+            "default": "chat",
+            "enum": [
+              "chat",
+              "document",
+              "bank_record"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "locator": {
+            "default": "调用方文本",
+            "maxLength": 200,
+            "title": "Locator",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "text"
+        ],
+        "title": "Source",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "HarnessBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

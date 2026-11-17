@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "supplier_requests": 0,
+  "stages": [
+    "query.map.0000",
+    "query.reduce.0001"
+  ],
+  "rank_descending_verified": true,
+  "zero_score_filtered": true,
+  "source_index_unchanged": true,
+  "neural_modules_loaded": []
+}

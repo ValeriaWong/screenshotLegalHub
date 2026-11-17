@@ -1,0 +1,11 @@
+{
+  "paper_id": "L05",
+  "scope": "SARA development reproduction rule pack only; not legal accuracy or Chinese-rule-domain approval",
+  "user_reply": "接受该开发规则包，继续 SOLAR 后续原流程",
+  "accepted_at": "2026-10-29T23:01:19.861Z",
+  "source_plan_id": "c0d9a6be0adebf24",
+  "tbox_path": "paper/author_reproductions/results/2026-10-29-per-paper/methods/solar/runs/c0d9a6be0adebf24__native_acquisition/solar.tbox.json",
+  "tbox_file_sha256": "b54ee6d92908fc73aff703afa94af8c7b94b77fa6186be08870c74cf2dbd7956",
+  "approval_input": "approve",
+  "rule_pack_changes_require_new_review": true
+}

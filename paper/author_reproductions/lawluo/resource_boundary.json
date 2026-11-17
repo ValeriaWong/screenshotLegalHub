@@ -1,0 +1,19 @@
+{
+  "paper_id": "L02",
+  "state": "temporarily_deferred_local_resources_and_incomplete_upstream_example",
+  "model_requests": 0,
+  "author_code_executed": false,
+  "original_paper_reproduced": false,
+  "local_branches": [
+    "SFT reception/lawyer/secretary models",
+    "reward model and PPO",
+    "embedding/case retrieval components"
+  ],
+  "api_example": {
+    "file": "paper/upstream_sources/lawluo/tolc_demo.py",
+    "runnable": false,
+    "evidence": "paper/author_reproductions/lawluo/source_probe.json"
+  },
+  "reason": "用户暂缓本地权重与训练；当前ToLC API示例为含语法错误及未实现函数的伪代码，不能补占位后称作者复现",
+  "version_boundary": "v3 paper uses case-graph RAG; repository ToLC sketch is not verified as its full implementation"
+}

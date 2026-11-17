@@ -1,0 +1,122 @@
+{
+  "method": "r04_graphrag",
+  "source_version": "0.1.1",
+  "source_commit": "a81efe58c7c21ff8b17aa9bf1cb78a0750f3065b",
+  "model_requests_for_tests": 0,
+  "backend_relevant": {
+    "passed": 54,
+    "exit_code": 0,
+    "log": "reports/author_expansion_20261029/test-graphrag-final-products.log"
+  },
+  "shared_regressions": {
+    "passed": 78,
+    "exit_code": 0,
+    "log": "reports/author_expansion_20261029/test-graphrag-shared-regressions-v2.log"
+  },
+  "frontend": {
+    "passed": 9,
+    "exit_code": 0,
+    "log": "reports/author_expansion_20261029/test-graphrag-frontend.log"
+  },
+  "typecheck": {
+    "command": [
+      "D:/workspace/screenshotLegalHub/product_v1/.conda/screenshotlegal-v1/node.exe",
+      "D:/workspace/screenshotLegalHub/product_v1/frontend/node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "cwd": "product_v1/frontend",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "source_files_verified": 399,
+  "dependency_pins_verified": 101,
+  "run_snapshot_files_verified": 1243,
+  "paid_requests": 15,
+  "per_paper_cap": 100,
+  "model_identities": [
+    "DeepSeek-V4.1-Flash-1017"
+  ],
+  "all_paid_replies_complete": true,
+  "full_backend_suite_executed": false,
+  "http_scope": "isolated TestClient",
+  "browser_e2e_executed": false,
+  "service_18430_restarted": false,
+  "original_complete_benchmark": false,
+  "known_quality_issues": [
+    "text VQA abstains / development score 0",
+    "case summary says three parties for two speakers / three statements"
+  ],
+  "prior_failed_checks_preserved": [
+    "test-graphrag-author-product.log: HTTP fixture asked 40 calls but case API cap is 30; corrected fixture",
+    "test-graphrag-shared-regressions.log: three older methods lacked explicit Chinese source/degree labels; generator fixed",
+    "index_transport_test_first_failure.json: bad deterministic community response; no supplier call"
+  ],
+  "reproduction_commands": {
+    "notice": "Commands reconstructed for repeatability at report finalization; historical job JSON stores status/exit code, not original argv.",
+    "backend_relevant": {
+      "cwd": "product_v1/backend",
+      "argv": [
+        "../../product_v1/.conda/screenshotlegal-v1/python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_graphrag_author.py",
+        "tests/test_jurisma_inference.py",
+        "tests/test_jurisma_product.py",
+        "tests/test_author_resource_boundary.py",
+        "tests/test_author_reproduction_disclosures.py"
+      ]
+    },
+    "shared_regressions": {
+      "cwd": "product_v1/backend",
+      "argv": [
+        "../../product_v1/.conda/screenshotlegal-v1/python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_method_reproductions.py",
+        "tests/test_author_source_fingerprint_cache.py",
+        "tests/test_author_inference_parameters.py",
+        "tests/test_author_benchmark_adapter.py",
+        "tests/test_author_protocol_regressions.py",
+        "tests/test_author_pilot_budget.py"
+      ]
+    },
+    "frontend": {
+      "cwd": "product_v1/frontend",
+      "argv": [
+        "../.conda/screenshotlegal-v1/node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "src/features/research/BenchmarkExecution.test.tsx"
+      ]
+    },
+    "typecheck": {
+      "cwd": "product_v1/frontend",
+      "argv": [
+        "../.conda/screenshotlegal-v1/node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ]
+    }
+  },
+  "final_annotation_regressions": {
+    "passed": 80,
+    "exit_code": 0,
+    "model_requests": 0,
+    "log": "reports/author_expansion_20261029/test-graphrag-final-annotation.log",
+    "cwd": "product_v1/backend",
+    "argv": [
+      "D:/workspace/screenshotLegalHub/product_v1/.conda/screenshotlegal-v1/python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_author_reproduction_disclosures.py",
+      "tests/test_method_reproductions.py"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+.venv/
+.venv-clean/
+node_modules/
+dist/
+data/
+.env
+!.env.example
+__pycache__/
+.pytest_cache/
+*.egg-info/
+test-results/
+playwright-report/
+artifacts/
+.tools/
+.conda/
+reports/latest/

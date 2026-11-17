@@ -1,0 +1,38 @@
+{
+  "paper_id": "L10",
+  "name": "L-MAD",
+  "source_kind": "paper_specification_with_cited_upstream_components",
+  "paper_url": "https://arxiv.org/html/2607.09099v1",
+  "author_repository_verified": false,
+  "files": {
+    "paper_v1.html": "08038b4435942985c76facfb491c88643a91ef8b98a8b9ba686ef610123cd0a4",
+    "paper_v1.pdf": "30861e56c412294170a276da95953a0f06411c49056fd5e4ab14c78a579eeb04",
+    "paper_v1_source.tar": "70facea857f41992fb05142d5fe28628ad8a13c680a5c1a53af936fb01a1b87e",
+    "example_paper.tex": "ffeb743f1b2af304dbda9a30a0cc5d157c829311b4c65a433009487daf2ac437",
+    "paper_prompts.json": "c4c4d825faad741463fb49f8fb21cceb6e3bfe5b133db55ea39f6eac85a295e1"
+  },
+  "upstream_component": "mallm @ eeec9f5c28961a7349cbb4306a5aa860bdaef6dd (not LMAD author code)",
+  "protocol": {
+    "agents": 3,
+    "personas": "fixed Appendix A.1 personas, not regenerated",
+    "context": "two prior completed rounds; frozen round-start histories",
+    "consensus": "original ThresholdConsensus configured per LMAD, not original HybridMajority defaults",
+    "voting": "original MALLM RankedVoting process_votes/process_results; strict full permutation required by paper",
+    "tie": "one additional full discussion round then a second terminal ranking; unresolved tie remains unknown",
+    "label": "strict Answer:Y/N for main path; appendix 判断:Y/N parsed separately, never silently normalized"
+  },
+  "ambiguities": [
+    "Exact LMAD discussion prompt and source code are not supplied; cited SimpleResponseGenerator template reused",
+    "Paper does not name round cap for consensus or tie exhaustion; bounded developer values and unknown exhaustion are explicit",
+    "MALLM HybridMajorityConsensus default differs from the paper",
+    "正文Answer标签与附录判断标签不一致"
+  ],
+  "parameters": {
+    "model": "configured AIPING DeepSeek substitution",
+    "temperature": 0.1,
+    "max_output_tokens": 1024,
+    "round_cap": 3
+  },
+  "full_original_benchmark": false,
+  "local_model_inference": false
+}

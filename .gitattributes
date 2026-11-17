@@ -1,0 +1,8 @@
+# Normalize text in Git; preserve binary fixtures byte for byte.
+* text=auto
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+# Markdown uses trailing spaces for deliberate hard line breaks.
+*.md whitespace=-blank-at-eol

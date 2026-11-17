@@ -1,0 +1,49 @@
+{
+  "paper_id": "A06",
+  "shared_cap": 100,
+  "used": 9,
+  "source_kind": "paper_algorithm_reimplementation",
+  "original_complete_benchmark": false,
+  "records": [
+    {
+      "folder": "5c8847569acd6456__vqa_predicted_text",
+      "track": "vqa_predicted_text",
+      "requests": 2,
+      "input_tokens": 1168,
+      "output_tokens": 115,
+      "cost_CNY": 0.003256,
+      "status": "completed",
+      "score": 1
+    },
+    {
+      "folder": "93cf97434ec04e87__case_product",
+      "track": "case_product",
+      "requests": 2,
+      "input_tokens": 2366,
+      "output_tokens": 1521,
+      "cost_CNY": 0.016900000000000002,
+      "status": "completed",
+      "score": null
+    },
+    {
+      "folder": "b7e15d91616acd45__native",
+      "track": "native",
+      "requests": 3,
+      "input_tokens": 12523,
+      "output_tokens": 997,
+      "cost_CNY": 0.033022,
+      "status": "completed",
+      "score": 0.3333333333333333
+    },
+    {
+      "folder": "c62faca80f2c97ad__vqa_predicted_text",
+      "track": "vqa_predicted_text",
+      "requests": 2,
+      "input_tokens": 1061,
+      "output_tokens": 124,
+      "cost_CNY": 0.003114,
+      "status": "completed",
+      "score": 0
+    }
+  ]
+}

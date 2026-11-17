@@ -1,0 +1,6 @@
+.author_reproduction_env/
+.author_envs/
+.models/
+.python/
+.cache/
+.data/

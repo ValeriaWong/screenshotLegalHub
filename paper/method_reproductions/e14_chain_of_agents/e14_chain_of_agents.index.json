@@ -1,0 +1,131 @@
+{
+  "reproduction_name": "e14_chain_of_agents",
+  "implementation_module": "screenshotlegal.method_reproductions.e14_chain_of_agents",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e14_chain_of_agents.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现顺序 worker 传递引用记忆到 manager；字符分块替代论文 token 窗口，未复现原基准。",
+  "paper_sources": [
+    {
+      "paper_id": "A06",
+      "reference": "Zhang et al. (2024), *Chain of Agents: Large Language Models Collaborating on Long-Context Tasks*.",
+      "sources": [
+        "https://arxiv.org/abs/2406.02818"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现顺序 worker 传递引用记忆到 manager；字符分块替代论文 token 窗口，未复现原基准。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "Chain of Agents (Zhang et al., 2024)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "A06",
+      "method": "Chain of Agents (Zhang et al., 2024)",
+      "task": "长上下文问答、摘要与代码补全，worker 顺序通信后由 manager 整合。",
+      "input": "长文本＋问题；摘要可仅给文档；代码任务给代码上下文。",
+      "output": "答案、摘要或代码补全，以及 worker 传递的 communication units。",
+      "benchmark": "HotpotQA、MuSiQue、NarrativeQA、Qasper、QuALITY、QMSum、GovReport、RepoBench-P。",
+      "innovation": "交错阅读与通信，顺序 worker 聚合全局信息，以短窗口处理长输入。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2406.02818",
+      "fit": "可条件迁移长资料处理，但 communication units 必须附原文锚点。当前字符分块与新增引用契约均是适配改动；不能使用 OPPO 同名论文代码冒充该作者实现。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e14_chain_of_agents"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e14_chain_of_agents"
+    }
+  ]
+}

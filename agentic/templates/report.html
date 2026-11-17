@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-@@SCRIPT_HASH@@'; style-src 'sha256-@@STYLE_HASH@@'; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>@@TITLE@@ · Agentic Report</title><style>@@STYLE@@</style></head><body>
+<header><div class="masthead"><div class="mark">AGENTIC <span class="muted">/ EVIDENCE WORKSPACE</span></div><div class="actions"><button id="download-data" type="button">下载数据</button><button id="print-report" type="button">打印报告</button></div></div>
+<div class="hero"><div class="eyebrow">MATERIALS → REASONING → REVIEW</div><h1>@@TITLE@@</h1><p class="muted">@@QUESTION@@</p>@@BADGES@@</div></header>
+<main><nav class="tabs" aria-label="报告视图" role="tablist"><button type="button" role="tab" data-tab="overview" aria-selected="true" aria-controls="overview">分析概览</button><button type="button" role="tab" data-tab="ledger" aria-selected="false" aria-controls="ledger">事实与来源</button><button type="button" role="tab" data-tab="gaps" aria-selected="false" aria-controls="gaps">缺口与补全</button><button type="button" role="tab" data-tab="execution" aria-selected="false" aria-controls="execution">阶段与执行</button></nav>
+<section id="overview" data-panel="overview" role="tabpanel">@@OVERVIEW@@</section>
+<section id="ledger" data-panel="ledger" role="tabpanel" hidden>@@LEDGER@@</section>
+<section id="gaps" data-panel="gaps" role="tabpanel" hidden>@@GAPS@@</section>
+<section id="execution" data-panel="execution" role="tabpanel" hidden>@@EXECUTION@@</section>
+</main><footer>@@FOOTER@@</footer>
+<dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-head"><h2 id="source-title"></h2><button type="button" id="source-close" aria-label="关闭来源">关闭</button></div><p id="source-meta" class="muted"></p><blockquote id="source-quote"></blockquote><p class="result-note">此处展示调用方提供的文本。当前输入未附原始截图或文件；内容摘要用于追溯，不证明真实性。</p><small>输入来源 SHA-256</small><p><code id="source-hash"></code></p></dialog>
+<script type="application/json" id="report-data">@@DATA@@</script><script>@@SCRIPT@@</script></body></html>

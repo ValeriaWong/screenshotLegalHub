@@ -1,0 +1,11 @@
+block: curator
+version: 1
+entrypoint: .venv/Scripts/python.exe tools/restart_inventory.py
+consumes:
+  primary_images: projects/ScreenshotLegalBench_v2/process_local_evaluator/images
+  supplementary_images: projects/quiz-collector/images
+  feishu_exports: 归档.zip
+publishes:
+  images: reports/restart/images_manifest.json
+  archive: reports/restart/archive_inventory.json
+  summary: reports/restart/inventory_summary.json

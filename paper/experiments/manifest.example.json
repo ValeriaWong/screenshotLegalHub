@@ -1,0 +1,48 @@
+{
+  "schema_version": "paper-experiments.v1",
+  "name": "P0 controlled comparison",
+  "model_id": "demo",
+  "model_revision": "demo.v1",
+  "law_effective_date": "2026-10-28",
+  "allow_draft_matter": true,
+  "repeats": 1,
+  "methods": [
+    "E00",
+    "E01",
+    "E02",
+    "E03",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11"
+  ],
+  "budget": {
+    "max_model_calls": 12,
+    "max_tool_calls": 16,
+    "max_input_tokens": 200000,
+    "max_output_tokens": 20000,
+    "max_wall_time_s": 300,
+    "max_output_per_call": 2000
+  },
+  "options": {
+    "debate_rounds": 1,
+    "retrieval_top_k": 5,
+    "method_options": {
+      "refinement_rounds": 2,
+      "retrieval_rounds": 3,
+      "chunk_chars": 4000
+    }
+  },
+  "cases": [
+    {
+      "case_id": "REPLACE_WITH_AUTHORIZED_CASE_ID",
+      "document_ids": [],
+      "case_group_id": "REPLACE_WITH_CASE_GROUP_ID",
+      "split": "development",
+      "goal": "整理待证事实、反证和不确定项，逐项引用冻结原文。"
+    }
+  ]
+}

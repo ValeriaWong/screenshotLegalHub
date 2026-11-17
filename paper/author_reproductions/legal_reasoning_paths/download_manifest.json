@@ -1,0 +1,74 @@
+{
+  "paper_id": "L06",
+  "name": "legal_reasoning_paths",
+  "repository": "https://github.com/rkondo3/CapturingLegalReasoningPaths",
+  "commit": "918996f82037b7a9d6541ccbdc9553f0308a164d",
+  "version": "public-resources-2026-09-10",
+  "files": [
+    {
+      "path": "intances/step3-法律-法規範-法適用-事実_all_2025-07-12_df_gyosei_tisai_2008_2022.xlsx",
+      "git_blob": "3e5eb09461c2cbaba893e6dbc17d02dd0d360b5b",
+      "size": 65356109
+    },
+    {
+      "path": "lightweight_LKG_ontology.jsonld",
+      "git_blob": "449b491a1b2f6b5751a06ff3b813c866b2c74878",
+      "size": 5396
+    },
+    {
+      "path": "prompts/prompt_step1_en.txt",
+      "git_blob": "16db7919ad65cd1eea7f163958fe138378e37fdb",
+      "size": 2479
+    },
+    {
+      "path": "prompts/prompt_step1_ja.txt",
+      "git_blob": "d073636d8c87e402dd29db6b241200031c906d31",
+      "size": 2881
+    },
+    {
+      "path": "prompts/prompt_step2_en.txt",
+      "git_blob": "2ec1156368d5c6738a26f31650cc7e4ac0c3e27f",
+      "size": 574
+    },
+    {
+      "path": "prompts/prompt_step2_ja.txt",
+      "git_blob": "5e91b71acd8996cec4d2f070442c1fc7ae417791",
+      "size": 537
+    },
+    {
+      "path": "prompts/prompt_step3_fact_application_en.txt",
+      "git_blob": "eb7d50a3b04c7bb325973723da588863e6b58e89",
+      "size": 1313
+    },
+    {
+      "path": "prompts/prompt_step3_fact_application_ja.txt",
+      "git_blob": "c7011d72e65915479b09068e8e658911ca608063",
+      "size": 1087
+    },
+    {
+      "path": "prompts/prompt_step3_law_norm_en.txt",
+      "git_blob": "dea1df155492071475935fabb8c52bb85d7eb7e5",
+      "size": 1140
+    },
+    {
+      "path": "prompts/prompt_step3_law_norm_ja.txt",
+      "git_blob": "c97f60a4beb27f0e8564384fdfce4ea186e0db3e",
+      "size": 1133
+    },
+    {
+      "path": "prompts/prompt_step3_norm_application_en.txt",
+      "git_blob": "6fe652d1930c57c54032f840d35818fad28d9877",
+      "size": 303
+    },
+    {
+      "path": "prompts/prompt_step3_norm_application_ja.txt",
+      "git_blob": "26bdbbe151c8492aa93ffd9c2d10b04eaf8041c0",
+      "size": 274
+    },
+    {
+      "path": "prompts/review_prompt_SCOPE_V6.txt",
+      "git_blob": "dddb5ab490753134418f87506334c5351e2ad9b0",
+      "size": 3035
+    }
+  ]
+}

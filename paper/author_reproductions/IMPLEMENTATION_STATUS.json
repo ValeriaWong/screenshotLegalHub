@@ -1,0 +1,479 @@
+[
+  {
+    "method_id": "E00",
+    "name": "e00_single_shot",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E01",
+    "name": "e01_react",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "native_real_verification": {
+      "checks": {
+        "author_controller_completed": true,
+        "answer_exact_match": true
+      },
+      "status": "completed",
+      "original_complete_benchmark": false,
+      "scope": "Native task/adapter execution; expert legal metrics deferred"
+    },
+    "real_product_tracks_completed": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "blockers": [
+      "案件run(context)仍为项目原型；KIE/全图VQA为作者控制器"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E02",
+    "name": "e02_staged_without_matterpack",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E03",
+    "name": "e03_staged_with_matterpack",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "JurisMA：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E04",
+    "name": "e04_symbolic_verifier",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "SARA Stage II真实执行完成；精确数值未命中，论文10%容差命中；Stage I原抽取/整合/校验已运行至实际人工输入边界",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "Stage I已生成24类/71属性/21规则并通过原结构校验，等待原作者human_review输入；新解释器/训练反馈未执行",
+      "固定SARA税法规则不能直接用于中国截图任务，须建立相应规则域"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E05",
+    "name": "e05_self_refine",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "native_real_verification": {
+      "checks": {
+        "author_controller_completed": true
+      },
+      "status": "completed",
+      "original_complete_benchmark": false,
+      "scope": "Native task/adapter execution; expert legal metrics deferred"
+    },
+    "real_product_tracks_completed": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E06",
+    "name": "e06_legalreasoner_verifier",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "LegalReasoner：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E07",
+    "name": "e07_agentscourt_adversarial",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "L-MAD (Nguyen et al., 2026)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E08",
+    "name": "e08_agentscourt_judge",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "L-MAD (Nguyen et al., 2026)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E09",
+    "name": "e09_l_mad",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [
+      "case_product",
+      "vqa_predicted_text"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E10",
+    "name": "e10_factor_guided_retrieval",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E11",
+    "name": "e11_legal_r1",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E12",
+    "name": "e12_crag",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "未运行原 T5 evaluator 与细粒度知识精炼；闭域变体不能等同允许 Web 搜索的原 CRAG"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E13",
+    "name": "e13_graphreader",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "GraphReader：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E14",
+    "name": "e14_chain_of_agents",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": {
+      "status": "completed",
+      "checks": {
+        "whole_source_covered": true,
+        "worker_count": 2,
+        "separate_manager": true,
+        "manager_last_CU_only": true,
+        "source_context_truncated": false,
+        "official_longbench_qa_f1": 0.3333333333333333,
+        "reference_sent_to_model": false,
+        "local_model_inference": false,
+        "source_kind": "paper_algorithm_reimplementation",
+        "author_code_executed": false,
+        "expert_legal_accuracy": null
+      },
+      "original_complete_benchmark": false
+    },
+    "real_product_tracks_completed": [
+      "case_product",
+      "vqa_predicted_text"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E15",
+    "name": "e15_raptor",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "vqa_predicted_text"
+    ],
+    "native_real_verification": {
+      "author_controller_completed": true,
+      "summary_layers": 3,
+      "answer_quality": "manual_review_required"
+    },
+    "real_product_tracks_completed": [
+      "vqa_predicted_text"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E16",
+    "name": "e16_lightrag",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "vqa_predicted_text"
+    ],
+    "native_real_verification": {
+      "author_controller_completed": true,
+      "graph_nodes": 335,
+      "graph_edges": 657,
+      "reference": [
+        "The procedure for indemnification involves the Indemnified Party promptly notifying the Indemnifying Party of the claim, the Indemnifying Party having the right to assume the defense, and the Indemnified Party having the right to participate in the defense with its own counsel at its own expense."
+      ],
+      "answer_quality": "manual_review_required"
+    },
+    "real_product_tracks_completed": [
+      "vqa_predicted_text"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E17",
+    "name": "e17_lawflow_review",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E18",
+    "name": "e18_jurisma",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": {
+      "status": "completed",
+      "checks": {
+        "published_consultation_query_executed": true,
+        "manager_rounds": 5,
+        "stop_reason": "iteration_limit",
+        "maximum_rounds": 5,
+        "content_check_executed": true,
+        "retrieved_statutes": 3,
+        "full_article_literal_checks": true,
+        "training_reproduced": false,
+        "native_full_method_completed": false,
+        "expert_legal_accuracy": null,
+        "complete_inference_algorithm_execution": true,
+        "local_model_inference": false,
+        "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+        "author_code_executed": false
+      },
+      "original_complete_benchmark": false
+    },
+    "real_product_tracks_completed": [
+      "case_product",
+      "vqa_predicted_text"
+    ],
+    "blockers": [
+      "作者源码未核实；DPO与本地训练检查点按用户指令暂缓；推理API分支不能替代整篇训练系统与原benchmark"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E19",
+    "name": "e19_scale",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": {
+      "status": "completed",
+      "checks": {
+        "author_controller_completed": true,
+        "articles_processed": [
+          "1_PROTOCOL_1",
+          "6_CIVIL"
+        ],
+        "issue_factor_guide_paths_preserved": true,
+        "product_adaptation_completed": false,
+        "answer_quality": "expert_review_deferred"
+      },
+      "original_complete_benchmark": false,
+      "new_supplier_requests_on_resume": 33,
+      "replayed_responses": 14
+    },
+    "real_product_tracks_completed": [
+      "case_product"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E20",
+    "name": "e20_verdict",
+    "case_author_controller_connected": false,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [],
+    "blockers": [
+      "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E21",
+    "name": "e21_reflexion",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "kie_image",
+      "vqa_image_full",
+      "vqa_predicted_text"
+    ],
+    "native_real_verification": {
+      "author_controller_completed": true,
+      "answer_exact_match": true
+    },
+    "real_product_tracks_completed": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E22",
+    "name": "e22_metagpt",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [],
+    "native_real_verification": {
+      "status": "completed",
+      "checks": {
+        "author_controller_completed": true,
+        "all_software_stages_run": true,
+        "written_python_files": 7,
+        "syntax": {
+          "snake_game/snake_game/config.py": true,
+          "snake_game/snake_game/food.py": true,
+          "snake_game/snake_game/game.py": true,
+          "snake_game/snake_game/input_handler.py": true,
+          "snake_game/snake_game/main.py": true,
+          "snake_game/snake_game/renderer.py": true,
+          "snake_game/snake_game/snake.py": true
+        },
+        "all_requests_completed": true,
+        "local_model_inference": false,
+        "artifact_recovery_without_inference": true,
+        "functional_task_validation": "pending generated-code review",
+        "original_benchmark_score": null
+      },
+      "original_complete_benchmark": false
+    },
+    "real_product_tracks_completed": [
+      "case_product"
+    ],
+    "blockers": [
+      "v0.3.0原QA续跑19次；2/7测试文件最后执行失败，main最终截断修订未重跑；原Engineer不支持自主开发代码修复；交互终端未验收"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E23",
+    "name": "b01_legalagentbench",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "vqa_predicted_text"
+    ],
+    "native_real_verification": "not_completed",
+    "real_product_tracks_completed": [
+      "case_product",
+      "vqa_predicted_text"
+    ],
+    "blockers": [
+      "作者在线法律工具服务拒绝连接；原首任务只回放原日志精确工具观察，不等于17库/37工具端到端复现"
+    ],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  },
+  {
+    "method_id": "E24",
+    "name": "r04_graphrag",
+    "case_author_controller_connected": true,
+    "kie_global_vqa_author_tracks": [
+      "vqa_predicted_text"
+    ],
+    "native_real_verification": {
+      "status": "completed",
+      "checks": {
+        "native_original_global_query_executed": true,
+        "author_index_precomputed": true,
+        "native_index_regenerated": false,
+        "selected_reports": 5,
+        "selected_entities": 217,
+        "positive_map_points": 3,
+        "original_map_reduce_executed": true,
+        "author_code_executed": true,
+        "local_model_inference": false,
+        "neural_modules_loaded": [],
+        "expert_legal_accuracy": null,
+        "source_kind": "author_global_api_index_and_query"
+      },
+      "original_complete_benchmark": false
+    },
+    "real_product_tracks_completed": [
+      "case_product",
+      "vqa_predicted_text"
+    ],
+    "blockers": [],
+    "original_complete_benchmark": false,
+    "expert_legal_evaluation": "deferred_by_user; not_an_environment_or_adapter_gate"
+  }
+]

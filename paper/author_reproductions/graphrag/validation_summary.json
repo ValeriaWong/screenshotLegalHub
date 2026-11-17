@@ -1,0 +1,198 @@
+{
+  "paper_id": "R04",
+  "method": "r04_graphrag",
+  "source_kind": "author_global_api_index_and_query",
+  "original_complete_benchmark": false,
+  "local_neural_inference": false,
+  "runs": [
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/r04_graphrag/runs/301dfd4b24097759__vqa_predicted_text",
+      "track": "vqa_predicted_text",
+      "status": "completed",
+      "plan_id": "301dfd4b24097759",
+      "new_supplier_requests": 6,
+      "source_snapshots_verified": 415,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "product_text_VQA_controller_completed": true,
+          "reference_status": "legacy_unverified",
+          "score": {
+            "raw_exact": false,
+            "normalized_exact": false,
+            "score": 0,
+            "status": "abstained",
+            "prediction": {
+              "answer": null,
+              "evidence": "输入仅包含发送方关于在淘宝中无法发送微信消息的对话文本，未提供 classify 字段的明确标注结果；无法据此确定四类标签中的正式取值。"
+            }
+          },
+          "indexing_workflows": [
+            "create_base_text_units",
+            "create_base_extracted_entities",
+            "create_summarized_entities",
+            "create_base_entity_graph",
+            "create_final_entities",
+            "create_final_nodes",
+            "create_final_communities",
+            "join_text_units_to_entity_ids",
+            "create_final_relationships",
+            "join_text_units_to_relationship_ids",
+            "create_final_community_reports",
+            "create_final_text_units",
+            "create_base_documents",
+            "create_final_documents"
+          ],
+          "source_context": "frozen_predicted_KIE_only",
+          "author_code_executed": true,
+          "local_model_inference": false,
+          "neural_modules_loaded": [],
+          "expert_legal_accuracy": null,
+          "source_kind": "author_global_api_index_and_query"
+        },
+        "original_complete_benchmark": false
+      },
+      "prompt_tokens": 9470,
+      "completion_tokens": 1402,
+      "cost_estimate_CNY": 0.030156,
+      "all_replies_complete": true,
+      "response_models": [
+        "DeepSeek-V4.1-Flash-1017"
+      ],
+      "prediction": {
+        "answer": null,
+        "evidence": "输入仅包含发送方关于在淘宝中无法发送微信消息的对话文本，未提供 classify 字段的明确标注结果；无法据此确定四类标签中的正式取值。"
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": "输入仅包含发送方关于在淘宝中无法发送微信消息的对话文本，未提供 classify 字段的明确标注结果；无法据此确定四类标签中的正式取值。"
+        }
+      },
+      "selected_entities": 3,
+      "selected_reports": 1,
+      "indexing_workflows": [
+        "create_base_text_units",
+        "create_base_extracted_entities",
+        "create_summarized_entities",
+        "create_base_entity_graph",
+        "create_final_entities",
+        "create_final_nodes",
+        "create_final_communities",
+        "join_text_units_to_entity_ids",
+        "create_final_relationships",
+        "join_text_units_to_relationship_ids",
+        "create_final_community_reports",
+        "create_final_text_units",
+        "create_base_documents",
+        "create_final_documents"
+      ]
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/r04_graphrag/runs/54b98ea6c350b827__case_product",
+      "track": "case_product",
+      "status": "completed",
+      "plan_id": "54b98ea6c350b827",
+      "new_supplier_requests": 7,
+      "source_snapshots_verified": 415,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "case_product_schema_valid": true,
+          "literal_citations_valid": true,
+          "final_fact_count": 3,
+          "indexing_workflows": [
+            "create_base_text_units",
+            "create_base_extracted_entities",
+            "create_summarized_entities",
+            "create_base_entity_graph",
+            "create_final_entities",
+            "create_final_nodes",
+            "create_final_communities",
+            "join_text_units_to_entity_ids",
+            "create_final_relationships",
+            "join_text_units_to_relationship_ids",
+            "create_final_community_reports",
+            "create_final_text_units",
+            "create_base_documents",
+            "create_final_documents"
+          ],
+          "author_code_executed": true,
+          "local_model_inference": false,
+          "neural_modules_loaded": [],
+          "expert_legal_accuracy": null,
+          "source_kind": "author_global_api_index_and_query"
+        },
+        "original_complete_benchmark": false
+      },
+      "prompt_tokens": 12257,
+      "completion_tokens": 3807,
+      "cost_estimate_CNY": 0.05497,
+      "all_replies_complete": true,
+      "response_models": [
+        "DeepSeek-V4.1-Flash-1017"
+      ],
+      "structured_entries": 3,
+      "literal_citations": 3,
+      "selected_entities": 7,
+      "selected_reports": 2,
+      "indexing_workflows": [
+        "create_base_text_units",
+        "create_base_extracted_entities",
+        "create_summarized_entities",
+        "create_base_entity_graph",
+        "create_final_entities",
+        "create_final_nodes",
+        "create_final_communities",
+        "join_text_units_to_entity_ids",
+        "create_final_relationships",
+        "join_text_units_to_relationship_ids",
+        "create_final_community_reports",
+        "create_final_text_units",
+        "create_base_documents",
+        "create_final_documents"
+      ]
+    },
+    {
+      "directory": "paper/author_reproductions/results/2026-10-29-per-paper/methods/r04_graphrag/runs/61234347b55fca45__native",
+      "track": "native",
+      "status": "completed",
+      "plan_id": "61234347b55fca45",
+      "new_supplier_requests": 2,
+      "source_snapshots_verified": 413,
+      "tests": {
+        "status": "completed",
+        "checks": {
+          "native_original_global_query_executed": true,
+          "author_index_precomputed": true,
+          "native_index_regenerated": false,
+          "selected_reports": 5,
+          "selected_entities": 217,
+          "positive_map_points": 3,
+          "original_map_reduce_executed": true,
+          "author_code_executed": true,
+          "local_model_inference": false,
+          "neural_modules_loaded": [],
+          "expert_legal_accuracy": null,
+          "source_kind": "author_global_api_index_and_query"
+        },
+        "original_complete_benchmark": false
+      },
+      "prompt_tokens": 5271,
+      "completion_tokens": 509,
+      "cost_estimate_CNY": 0.014613999999999999,
+      "all_replies_complete": true,
+      "response_models": [
+        "DeepSeek-V4.1-Flash-1017"
+      ]
+    }
+  ],
+  "new_supplier_requests": 15,
+  "prompt_tokens": 26998,
+  "completion_tokens": 5718,
+  "cost_estimate_CNY": 0.09974
+}

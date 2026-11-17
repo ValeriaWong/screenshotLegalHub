@@ -1,0 +1,18 @@
+{
+  "paper_id": "L07",
+  "active_branch": "paper_algorithm_inference_reimplementation_training_deferred",
+  "author_code_executed": false,
+  "training_reproduced": false,
+  "original_paper_reproduced": false,
+  "whole_paper_completed": false,
+  "deferred_branches": [
+    "JurisCQAD DPO training",
+    "local fine-tuned checkpoints"
+  ],
+  "allowed_resources": [
+    "remote AIPING DeepSeek API",
+    "standard library Python",
+    "small frozen statutory text catalog"
+  ],
+  "budget": "L07 shared <=100 supplier reservations including history, failures and unresolved requests"
+}

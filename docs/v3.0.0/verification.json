@@ -1,0 +1,18 @@
+{
+  "target_release": "v3.0.0",
+  "plan_version": "1.0",
+  "planning_only": true,
+  "local_links_checked": 14,
+  "all_local_links_resolve": true,
+  "work_packages": 8,
+  "dependencies_acyclic_and_ordered": true,
+  "all_stages_have_inputs_outputs_start_and_exit_conditions": true,
+  "calibration_budget_example_requests": 432,
+  "development_budget_example_requests": 2160,
+  "new_api_calls": 0,
+  "plan_file_hashes": {
+    "V3.0.0_PLAN.md": "5739f5bca859f48e3c018b4d3e60a088136d74a0159d70cea891808cdff7d733",
+    "docs/v3.0.0/READINESS.md": "58f55db468259dfaf93f6f7ae8b3e91475ab81472807866f5cb5bf8491c5f6bd",
+    "docs/v3.0.0/work_packages.json": "eb3bbf68c1cd4552155415fa16b6a8de28eaf51a95ef6b9c40a79904e29742fb"
+  }
+}

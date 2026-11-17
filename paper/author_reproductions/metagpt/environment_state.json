@@ -1,0 +1,18 @@
+{
+  "method": "metagpt",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "metagpt",
+      "commit": "820fee5df6697b4e85e90c787940de111c3ed05b",
+      "files_checked": 166
+    }
+  ],
+  "environment": {
+    "python": "3.11.0",
+    "packages_checked": 25,
+    "mismatches": {}
+  },
+  "resources": []
+}

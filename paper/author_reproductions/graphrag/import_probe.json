@@ -1,0 +1,43 @@
+{
+  "python": "3.11.0",
+  "modules": [
+    {
+      "module": "graphrag.query.structured_search.global_search.search",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.query.structured_search.global_search.community_context",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.query.indexer_adapters",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.graph.graph_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.summarize.description_summary_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.verbs.graph.clustering.strategies.leiden",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.community_reports.community_reports_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.run",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.create_pipeline_config",
+      "status": "imported"
+    }
+  ],
+  "neural_modules_loaded": [],
+  "model_requests": 0
+}

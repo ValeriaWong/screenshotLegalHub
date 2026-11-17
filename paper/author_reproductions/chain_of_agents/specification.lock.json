@@ -1,0 +1,39 @@
+{
+  "paper_id": "A06",
+  "name": "Chain of Agents",
+  "source_kind": "paper_algorithm_reimplementation",
+  "author_repository_verified": false,
+  "paper_url": "https://arxiv.org/html/2406.02818v1",
+  "paper_version": "v1",
+  "evidence_locators": [
+    "Algorithm 1",
+    "Section 3.1",
+    "Section 3.2",
+    "Appendix B Tables 9 and 10",
+    "Appendix D"
+  ],
+  "files": {
+    "paper_v1.html": "1d09d68b6c202dac979813c1eaf75b4babaea608376a7c28d443ac2f506d46d8"
+  },
+  "implementation_contract": {
+    "initial_communication_unit": "empty_string",
+    "worker_input": "current_chunk + immediately_previous_CU + query",
+    "worker_output": "updated_cumulative_communication_unit",
+    "manager_input": "last_CU_only + query + task_requirement",
+    "chunk_order": "all_source_text_in_order_exactly_once",
+    "retrieval_or_training": false
+  },
+  "parameters": {
+    "paper_default_window": "8k",
+    "our_window_tokens": 8192,
+    "tokenizer_proxy": "cl100k_base (replaces Vertex tokenizer; not a DeepSeek tokenizer claim)",
+    "temperature": 0,
+    "native_max_generation_tokens": 1024,
+    "product_max_generation_tokens": 2048
+  },
+  "resource_policy": {
+    "model_weights": false,
+    "local_embedding": false,
+    "ordinary_tokenization": true
+  }
+}

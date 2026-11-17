@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "reference_files": [
+    "datasets/v2.0.0/round_002/references/same_case_feedback.json",
+    "datasets/v2.0.0/round_002/references/human_corrected_examples.json",
+    "datasets/v2.0.0/round_002/references/rubric_experiments.json"
+  ],
+  "task_file": "blocks/evaluator/artifacts/iterations/20261004-p3-form/tasks.jsonl",
+  "language_targets": {
+    "zh": 2,
+    "en": 2
+  },
+  "candidates": [
+    {
+      "directory": "datasets/v2.0.0/round_002/zh/zh_sales_146",
+      "candidate_file": "case.json",
+      "scope_proposal": "围绕款项往来、对账和意思表示的截图可见内容设计中间判断；来源事实与合成补充须在S1逐条分开。"
+    },
+    {
+      "directory": "datasets/v2.0.0/round_001/zh/zh_employment_130",
+      "candidate_file": "curated.json",
+      "scope_proposal": "围绕通知、回复与事件先后设计中间判断；不从单方陈述直接断言实际劳动关系或解除后果。"
+    },
+    {
+      "directory": "datasets/v2.0.0/round_002/en/en_probate_283",
+      "candidate_file": "case.json",
+      "scope_proposal": "围绕不同账号对遗嘱及家庭沟通的陈述设计证据范围题；不从聊天直接认证能力、真实意思或遗嘱效力。"
+    },
+    {
+      "directory": "datasets/v2.0.0/round_001/en/en_charter_177",
+      "candidate_file": "curated.json",
+      "scope_proposal": "围绕条件、接受和后续沟通设计证据依赖题；对合同成立等法律后果另要求法域规则和独立复核。"
+    }
+  ]
+}

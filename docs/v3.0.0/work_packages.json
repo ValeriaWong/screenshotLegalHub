@@ -1,0 +1,506 @@
+{
+  "plan_version": "1.0",
+  "target_release": "v3.0.0",
+  "date": "2026-10-04",
+  "status": "s0_s3_calibration_handoff_complete_waiting_independent_review",
+  "schema_kind": "planning_manifest_not_runtime_validator",
+  "main_document": "V3.0.0_PLAN.md",
+  "checklist": "docs/v3.0.0/READINESS.md",
+  "execution_started_by_this_plan": true,
+  "new_api_calls": 0,
+  "preserve_existing_artifacts": true,
+  "legacy_dependency_pilot_disposition": "development_reference_keep_original_v2_path",
+  "roles": {
+    "data_engineering": "资产、来源、渲染、版本及程序检查",
+    "research_lead": "任务范围、对照设计、评分协议及论文声明",
+    "domain_reviewers": "两名独立复核者；法律后果题需对应法域能力",
+    "adjudicator": "处理必要分歧，保留原意见",
+    "software_engineering": "来源链、代码检索、模式、导出和回归"
+  },
+  "candidate_scale": {
+    "calibration_base_scenarios": 4,
+    "calibration_language_targets": {
+      "zh": 2,
+      "en": 2
+    },
+    "development_base_scenarios_target": 20,
+    "development_language_targets": {
+      "zh": 10,
+      "en": 10
+    },
+    "minimum_development_logic_templates_target": 4,
+    "typical_evidence_units_per_question": [
+      4,
+      6
+    ],
+    "exhaustive_subset_limit_units": 6,
+    "heldout_size": null,
+    "heldout_size_status": "set_after_review_capacity_and_statistical_design",
+    "counts_are_targets_not_completed_work": true
+  },
+  "evaluation_preconditions": {
+    "inference_modes": [
+      "cloud",
+      "local"
+    ],
+    "both_modes_required": false,
+    "proposed_model_configurations": 2,
+    "proposed_repeats_per_condition": 3,
+    "model_versions": [],
+    "max_requests": null,
+    "max_cost": null,
+    "retry_policy": null,
+    "credential_readiness": "must_probe_at_execution",
+    "local_service_readiness": "required_only_if_selected",
+    "can_start_paid_evaluation_with_unset_budget": false,
+    "failed_requests_are_legal_errors": false,
+    "separate_protocols_and_reasoning_budgets": true,
+    "provider_payload_allowlist": [
+      "question",
+      "authorized_background_if_protocol_allows",
+      "image_bytes",
+      "specified_rules_if_protocol_allows"
+    ],
+    "provider_payload_excludes": [
+      "reference_answer",
+      "review_notes",
+      "hidden_generation_facts",
+      "minimal_sets",
+      "counterfactual_expected_label",
+      "private_project_links"
+    ]
+  },
+  "work_packages": [
+    {
+      "id": "S0",
+      "name": "资产与基线冻结",
+      "depends_on": [],
+      "owners": [
+        "data_engineering",
+        "research_lead"
+      ],
+      "current_readiness": "已完成当前准备轮交接",
+      "inputs": [
+        "v1 数据/响应/软件快照",
+        "v2 候选与来源",
+        "历史人工评分",
+        "依赖预研记录"
+      ],
+      "start_conditions": [
+        "资产可读",
+        "来源与版本可区分",
+        "新输出目录可分配"
+      ],
+      "outputs": [
+        "source_manifest.jsonl",
+        "baseline_snapshot.json",
+        "readiness.json",
+        "inherited_gaps.md"
+      ],
+      "exit_conditions": [
+        "所有纳入资产有哈希、来源和状态",
+        "未完成事项绑定责任阶段",
+        "旧材料未覆盖"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": true,
+        "readiness": "已完成当前准备轮交接",
+        "gap_ids": [
+          "G01",
+          "G02"
+        ],
+        "completed_gap_ids": [
+          "G01",
+          "G02"
+        ],
+        "evidence": "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      }
+    },
+    {
+      "id": "S1",
+      "name": "事实账本、范围与量表",
+      "depends_on": [
+        "S0"
+      ],
+      "owners": [
+        "research_lead",
+        "data_engineering",
+        "domain_reviewers"
+      ],
+      "current_readiness": "已完成当前四场景口径",
+      "inputs": [
+        "S0 资产清单",
+        "判决/聊天原文",
+        "历史量表"
+      ],
+      "start_conditions": [
+        "候选来源可核对",
+        "法域、证据范围和任务类型明确",
+        "审核角色安排可记录"
+      ],
+      "outputs": [
+        "case_scope.json",
+        "fact_ledger.jsonl",
+        "rubric.json",
+        "legacy_rubric_mapping.json",
+        "sampling_plan.json"
+      ],
+      "exit_conditions": [
+        "原文来源可定位",
+        "时间和身份未知项不被补造",
+        "事实、意思表示和法律评价口径分开",
+        "旧量表新维度差异明确"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": true,
+        "readiness": "已完成当前四场景口径",
+        "gap_ids": [
+          "G03",
+          "G04"
+        ],
+        "completed_gap_ids": [
+          "G03",
+          "G04"
+        ],
+        "evidence": "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      }
+    },
+    {
+      "id": "S2",
+      "name": "自然对话及依赖题设计",
+      "depends_on": [
+        "S1"
+      ],
+      "owners": [
+        "research_lead",
+        "data_engineering"
+      ],
+      "current_readiness": "已完成当前四场景作者设计",
+      "inputs": [
+        "事实账本",
+        "case scope",
+        "自然度审核后的 v2 候选",
+        "开发失败类型"
+      ],
+      "start_conditions": [
+        "题目目标及前提可明确",
+        "合成补充与来源事实可区分"
+      ],
+      "outputs": [
+        "messages.jsonl",
+        "questions.jsonl",
+        "dependency_graphs.jsonl",
+        "author_answers.reviewer_only.jsonl",
+        "alternative_interpretations.jsonl"
+      ],
+      "exit_conditions": [
+        "题干无必要身份/答案泄漏",
+        "必要/可选节点与替代支持明确",
+        "题意、时序和自然度自审完成",
+        "未将作者答案标成专业金标"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": true,
+        "readiness": "已完成当前四场景作者设计",
+        "gap_ids": [
+          "G05"
+        ],
+        "completed_gap_ids": [
+          "G05"
+        ],
+        "evidence": "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      }
+    },
+    {
+      "id": "S3",
+      "name": "渲染及去图、反事实、包装控制",
+      "depends_on": [
+        "S2"
+      ],
+      "owners": [
+        "data_engineering",
+        "research_lead"
+      ],
+      "current_readiness": "已完成当前四场景机械交接",
+      "inputs": [
+        "候选消息/题/图",
+        "固定渲染源码及环境",
+        "干预目标和预期变化"
+      ],
+      "start_conditions": [
+        "渲染视口、字体和浏览器固定",
+        "每个语义干预范围可定位"
+      ],
+      "outputs": [
+        "screenshots/",
+        "html/",
+        "render_manifest.json",
+        "source_refs.jsonl",
+        "subset_manifest.jsonl",
+        "interventions.jsonl",
+        "mechanical_checks.json"
+      ],
+      "exit_conditions": [
+        "图片和消息映射完整",
+        "区域未越界且关键内容未裁切",
+        "一个语义干预的所有关联内容同步",
+        "无图/单图/去图/顺序/分页/干扰条件可复现"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": true,
+        "readiness": "已完成当前四场景机械交接",
+        "gap_ids": [
+          "G06"
+        ],
+        "completed_gap_ids": [
+          "G06"
+        ],
+        "evidence": "docs/v3.0.0/CALIBRATION_HANDOFF.md"
+      }
+    },
+    {
+      "id": "S4",
+      "name": "独立复核与证据认证",
+      "depends_on": [
+        "S3"
+      ],
+      "owners": [
+        "domain_reviewers",
+        "adjudicator",
+        "research_lead"
+      ],
+      "current_readiness": "待独立复核",
+      "inputs": [
+        "冻结题与截图",
+        "证据范围",
+        "rubric",
+        "盲审材料"
+      ],
+      "start_conditions": [
+        "两名独立复核者就绪",
+        "必要时有第三人裁决",
+        "法律后果题有适合法域的专业复核与规则来源"
+      ],
+      "outputs": [
+        "reviewer_a.jsonl",
+        "reviewer_b.jsonl",
+        "adjudication.jsonl",
+        "certifications.jsonl",
+        "accepted_questions.jsonl",
+        "revision_queue.jsonl"
+      ],
+      "exit_conditions": [
+        "原始独立意见与分歧可追溯",
+        "关键反证与缺证原因已核查",
+        "最小性粒度和穷尽范围明确",
+        "歧义未解决题不进入金标",
+        "分层认证状态完整"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": false,
+        "readiness": "待独立复核",
+        "gap_ids": [
+          "G07",
+          "G08"
+        ],
+        "completed_gap_ids": [],
+        "evidence": "datasets/v3.0.0/calibration_20261023_003/blind_review/reviewer_b.zip"
+      }
+    },
+    {
+      "id": "S5",
+      "name": "冻结评测及难度分析",
+      "depends_on": [
+        "S4"
+      ],
+      "owners": [
+        "research_lead",
+        "data_engineering",
+        "domain_reviewers"
+      ],
+      "current_readiness": "前置条件未满足",
+      "inputs": [
+        "认证合格题",
+        "冻结来源/模板划分",
+        "模型与预算配置",
+        "固定评分协议"
+      ],
+      "start_conditions": [
+        "通过 dry-run",
+        "所选服务可用",
+        "调用/费用预算及重试规则已填写",
+        "版本与被测输入白名单冻结"
+      ],
+      "outputs": [
+        "run_spec.json",
+        "requests.jsonl",
+        "responses.jsonl",
+        "node_reviews.jsonl",
+        "metrics.json",
+        "EVALUATION.md",
+        "difficulty_profiles.jsonl"
+      ],
+      "exit_conditions": [
+        "计划分母和服务失败完整",
+        "中间判断、结论和引用分开评价",
+        "简单基线与重复结果齐备",
+        "按案件/模板族统计",
+        "未把聚合标签命中率称为法律准确率"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": false,
+        "readiness": "前置条件未满足",
+        "gap_ids": [
+          "G09",
+          "G10",
+          "G11",
+          "G16"
+        ],
+        "completed_gap_ids": [],
+        "evidence": "datasets/v3.0.0/calibration_20261023_003/evaluation_plan.json"
+      }
+    },
+    {
+      "id": "S6",
+      "name": "软件来源链与结论一致性回归",
+      "depends_on": [
+        "S4",
+        "S5"
+      ],
+      "owners": [
+        "software_engineering",
+        "domain_reviewers"
+      ],
+      "current_readiness": "有软件基础；未达V3验收",
+      "inputs": [
+        "认证记录",
+        "开发失败及保留判断案例",
+        "软件基线",
+        "既有 Case/Message/SourceRef/Event/ExportRow 契约"
+      ],
+      "start_conditions": [
+        "来源定位和代码检索可复现",
+        "模式、委托方和证据页码语义明确"
+      ],
+      "outputs": [
+        "evidence_graph_adapter",
+        "conclusion_consistency_checks",
+        "mode_regression_report.json",
+        "export_compatibility_report.md",
+        "SOFTWARE_ACCEPTANCE.md"
+      ],
+      "exit_conditions": [
+        "有效充分路径才能支持对应肯定结论",
+        "足以否定时不强求无关字段",
+        "缺证与最终输出冲突可见",
+        "双模式和导出来源可追溯",
+        "既有 Excel/PPT 缺口按实际交付验收"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": false,
+        "readiness": "有软件基础；未达V3验收",
+        "gap_ids": [
+          "G12",
+          "G13",
+          "G14",
+          "G18"
+        ],
+        "completed_gap_ids": [],
+        "evidence": "reports/v3.0.0/import_atomicity_20261023_001/README.md"
+      }
+    },
+    {
+      "id": "S7",
+      "name": "版本发布与 LaTeX 实验材料",
+      "depends_on": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "owners": [
+        "research_lead",
+        "data_engineering",
+        "software_engineering"
+      ],
+      "current_readiness": "未发布",
+      "inputs": [
+        "认证数据",
+        "冻结评测结果",
+        "软件验收",
+        "来源与许可记录",
+        "论文及评审资产"
+      ],
+      "start_conditions": [
+        "发布声明有对应证据",
+        "数据和软件里程碑均完成必需检查",
+        "论文引用结果可复现"
+      ],
+      "outputs": [
+        "release_manifest.json",
+        "DATASET_CARD.md",
+        "MODEL_EVALUATION.md",
+        "SOFTWARE_RELEASE.md",
+        "paper/versions/v3.0.0/",
+        "CHANGELOG.md",
+        "reproduction_bundle/"
+      ],
+      "exit_conditions": [
+        "所有声明与完成记录一致",
+        "论文表图绑定原始运行",
+        "未完成事项显式保留",
+        "旧版本入口和回退资料齐备"
+      ],
+      "latest_assessment": {
+        "assessed_on": "2026-10-23",
+        "accepted": false,
+        "readiness": "未发布",
+        "gap_ids": [
+          "G15"
+        ],
+        "completed_gap_ids": [],
+        "evidence": "reports/research/REVIEW_AND_REBUTTAL.md"
+      }
+    }
+  ],
+  "certification_axes": [
+    "mechanical_check",
+    "semantic_review",
+    "sufficiency_review",
+    "minimality_review",
+    "dependency_review",
+    "legal_review",
+    "empirical_difficulty"
+  ],
+  "planned_output_roots": [
+    "datasets/v3.0.0/<round_id>/",
+    "reports/v3.0.0/<run_id>/",
+    "paper/versions/v3.0.0/"
+  ],
+  "inheritance_gaps_not_marked_complete": [
+    "full professional legal evaluation",
+    "complete judge/lawyer workflows",
+    "dedicated Excel",
+    "timeline PPT and its visual skill"
+  ],
+  "release_ready": false,
+  "progress_snapshot": {
+    "assessed_on": "2026-10-23",
+    "report": "docs/ai_docs_center/PROGRESS.md",
+    "ledger": "docs/ai_docs_center/status.json",
+    "accepted_stages": 4,
+    "total_stages": 8,
+    "release_ready": false,
+    "scope": "按当前四场景校准范围验收S0–S3作者/机械交接；S4独立认证仍0题，S5–S7未通过。50%仅为8个阶段中的4个，不是全项目、20场景或法律质量完成率。",
+    "latest_preparation_batch": "datasets/v3.0.0/baseline_20261023_001",
+    "latest_calibration_batch": "datasets/v3.0.0/calibration_20261023_003"
+  },
+  "execution_started_on": "2026-10-22",
+  "updated_on": "2026-10-23"
+}

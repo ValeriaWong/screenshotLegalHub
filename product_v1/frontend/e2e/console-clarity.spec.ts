@@ -1,0 +1,31 @@
+import { test, expect, artifactPath } from "./fixtures";
+import path from "node:path";
+import { execFileSync } from "node:child_process";
+const id=()=>crypto.randomUUID();
+test('a newcomer sees the decision and next action without reading technical records',async({page,request})=>{
+ const created=await(await request.post('/v1/review/samples',{data:{dataset:'clarity',content:{title:'待审示例（测试数据）',messages:[{id:'m1',text:'金额尚需核实'}]},note:'界面测试',idempotency_key:id()}})).json();
+ const data=process.env.E2E_DATA_DIR!;expect(path.resolve(data)).toContain(path.resolve('../.tools/e2e-data'));
+ const fid='clarity-'+id();const python=path.resolve('../.conda/screenshotlegal-v1',process.platform==='win32'?'python.exe':'bin/python');
+ const script="from screenshotlegal.research.store import Store; from screenshotlegal.research.contracts import now; import sys; s=Store(sys.argv[1]); row=dict(id=sys.argv[2],flow_id=sys.argv[2],name='新协作者示例（测试数据）',created_at=now(),synced_at=now(),historical_sync=True,status='awaiting_human_review',source_sample_ids=[],sample_ids=[sys.argv[3]],summary={'generated_candidates':1,'qa_success':1,'qa_requests':1,'formal_releases':0,'usage_missing_requests':1},steps=[{'stage':'问答试跑','result':'收到回答，尚未审核'}],artifacts=[]); db=s.tx(); c=db.__enter__(); s.put('research.flow',row,'e2eadmin',c); db.__exit__(None,None,None)";
+ execFileSync(python,['-c',script,data,fid,created.sample.id],{cwd:path.resolve('..'),windowsHide:true});
+ await page.goto('/evaluation.html?operations=1&kind=research.flow&record='+fid);
+ const decision=page.getByRole('region',{name:'本轮结论与下一步'});
+ await expect(decision).toContainText('这轮还需要人工审核');await expect(decision).toContainText('问答返回成功不代表答案正确');await expect(decision.getByRole('link',{name:'打开待审样本',exact:true})).toHaveAttribute('href','/review.html?sample='+created.sample.id);
+ await expect(page.locator('.research-json:visible')).toHaveCount(0);await expect(page.getByText('费用记录不完整：1 次调用缺少用量，暂时无法核对完整费用。')).toBeVisible();
+ await page.screenshot({path:artifactPath("flow-desktop.png"),fullPage:true});
+ await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await page.screenshot({path:artifactPath("flow-mobile.png"),fullPage:true});
+ await decision.getByRole('link',{name:'打开待审样本',exact:true}).click();await expect(page.getByRole('region',{name:'审核步骤'})).toContainText('只想提意见时，可以只保存评论');
+ const form=page.locator('section.card').filter({has:page.getByRole('heading',{name:/审核结论与修改意见/})});
+ await expect(form.getByLabel('分项分数 JSON',{exact:true})).not.toBeVisible();await form.getByRole('combobox',{name:'结论',exact:true}).selectOption('pass');await expect(form.getByRole('button',{name:'保存质量记录',exact:true})).toBeDisabled();
+ await expect(form.getByRole('checkbox',{name:'我已核对上方当前图片',exact:true})).toBeEnabled();await form.getByRole('checkbox',{name:'我已核对上方当前图片',exact:true}).check();await expect(form.getByRole('button',{name:'保存质量记录',exact:true})).toBeEnabled();
+});
+test('advanced generation fields stay intact and an invalid hidden field reveals itself',async({page,request})=>{
+ const source=await(await request.post('/v1/review/samples',{data:{dataset:'clarity',content:{title:'English source',language:'en',platform:'WhatsApp',messages:[{id:'m1',text:'The amount is not confirmed.'}]},note:'fixture',idempotency_key:id()}})).json();
+ const prompt=await(await request.post('/v1/studio/prompts',{data:{name:'clarity-rule-'+id(),markdown:'# Keep unknown facts unknown',note:'fixture',expected_version:0,idempotency_key:id()}})).json();
+ await page.goto('/studio.html');await page.getByLabel('批次名称',{exact:true}).fill('新协作者生成测试');await page.getByRole('combobox',{name:'来源样本',exact:true}).selectOption(source.sample.id);await page.getByRole('combobox',{name:'生成规则',exact:true}).selectOption(prompt.id);
+ await expect(page.getByLabel('Seed',{exact:true})).not.toBeVisible();const advanced=page.locator('details').filter({has:page.locator('summary').filter({hasText:'高级设置：归档、语言与生成方式'})}).first();await advanced.locator('summary').first().click();
+ const group=page.getByLabel('目标数据集',{exact:true});await group.fill('');await advanced.locator('summary').first().click();await page.getByRole('button',{name:'开始生成待审样本',exact:true}).click();await expect(group).toBeVisible();
+ await group.fill('clarity-custom');await page.getByLabel('Seed',{exact:true}).fill('7');await advanced.locator('summary').first().click();await page.getByLabel('本次希望生成什么',{exact:true}).fill('保留未知事实');
+ const sent=page.waitForRequest(r=>r.url().endsWith('/v1/studio/batches')&&r.method()==='POST');await page.getByRole('button',{name:'开始生成待审样本',exact:true}).click();const body=(await sent).postDataJSON();expect(body.dataset).toBe('clarity-custom');expect(body.seed).toBe(7);expect(body.language).toBe('en');expect(body.platform).toBe('WhatsApp');expect(body.model_id).toBe('demo');
+ await page.screenshot({path:artifactPath("studio-desktop.png"),fullPage:true});
+});

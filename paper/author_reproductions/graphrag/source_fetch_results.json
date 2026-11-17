@@ -1,0 +1,2798 @@
+{
+  "commit": "a81efe58c7c21ff8b17aa9bf1cb78a0750f3065b",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+      "bytes": 1141,
+      "status": "verified"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4618194f3cfd17d756a9a3e1f4508c572cb1c6e5b22a40eb5253d051d2b509ab",
+      "git_blob": "f14e33a80d2d120caa6cdc5866e8f1bfe2da0079",
+      "bytes": 3319,
+      "status": "verified"
+    },
+    {
+      "path": "docsite/posts/query/0-global_search.md",
+      "sha256": "defda367c901a37d62f437d00bdb7f0754446fdc0f6ffb5a64d11970d3732a67",
+      "git_blob": "1a0eda22fe4bc86ff6be9dd9fb3800d4a59ca0f3",
+      "bytes": 5993,
+      "status": "verified"
+    },
+    {
+      "path": "examples_notebooks/global_search.ipynb",
+      "sha256": "bd8d56b8b19e6e02b2ed99c610a9a0be68173a8c8faed71952ef0dd60c8300e7",
+      "git_blob": "fdde2c706cf787c16a49b43a424c5ad32dd01c2b",
+      "bytes": 8596,
+      "status": "verified"
+    },
+    {
+      "path": "examples_notebooks/inputs/operation dulce/create_final_community_reports.parquet",
+      "sha256": "adccc2fbfc14cecdbfb878b8189c20dd9ece1d20e056ad81620d99ce2cf0430d",
+      "git_blob": "d28111c35d5d74bb716ccbd4acf8fc471c1d35e7",
+      "bytes": 71337,
+      "status": "verified"
+    },
+    {
+      "path": "examples_notebooks/inputs/operation dulce/create_final_entities.parquet",
+      "sha256": "a5fe0501b8bcd4b8bea1ca93f2679086fd8a2a538d33965d39444280d541cca4",
+      "git_blob": "30f0ac6baedf1f8be7193f051deb7d76e74495fa",
+      "bytes": 2271498,
+      "status": "verified"
+    },
+    {
+      "path": "examples_notebooks/inputs/operation dulce/create_final_nodes.parquet",
+      "sha256": "61474e9dc3e5e2c024a895dc4f87bba652b1fecc443eb3b9729d9589b9c6bb4f",
+      "git_blob": "97772bcefc621f633ae58aa48810a95f4d1934ba",
+      "bytes": 54835,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/__init__.py",
+      "sha256": "1971e2f23c84b1bf807a986a0498d8568e54bb4396bc06e1efcbf944facfdc64",
+      "git_blob": "a1e9b589bf66538dc47af7ecf2ac4a9f8831b6f1",
+      "bytes": 106,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/__init__.py",
+      "sha256": "391da38f43a4640e2083b34ac7d784fbedac1b98d66cb1a0027d8289fcff949f",
+      "git_blob": "118018a98fd920f232468ba0be374cebb947b820",
+      "bytes": 2951,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/create_graphrag_config.py",
+      "sha256": "93b37753bbac65cd9f572a04fabfd6dd033f74b879a30084dc6d5edac8929946",
+      "git_blob": "6c7f3f4bffbcf0f4dae8b7fa0d59b3b9954594d7",
+      "bytes": 27222,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/defaults.py",
+      "sha256": "4dd2f0297b9efda56a6e4f552704db7ef4f21577255ccf4258681807a05af82f",
+      "git_blob": "1c2dffe4405567603b2ba63c3dc00abf91642a67",
+      "bytes": 2617,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/enums.py",
+      "sha256": "22ccae5fb050b453df8a509f0aa73f7a4f5cb433211f175f3af18d2240d01eec",
+      "git_blob": "8741cf74ae079b1cd88d706f914573beab4bcc36",
+      "bytes": 2739,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/environment_reader.py",
+      "sha256": "069c37c398216f47f9569ca8a8a1152d01e4465ce422aa7b1582a36fc5f1b86c",
+      "git_blob": "dc61301f8b14edd73eb5aec62f3efa0fdefb4391",
+      "bytes": 4297,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/errors.py",
+      "sha256": "f932c8471009fef1bf5cdcb6b9d41ee659c2383a896cdd302172902cd12cb205",
+      "git_blob": "9a2161b8afbcc78557b599930cf168b33168a882",
+      "bytes": 1746,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/__init__.py",
+      "sha256": "67f7f32dfa68954fd322dc183fb7e5f283ae3e45ba65a028a52110759d777479",
+      "git_blob": "f905ae38b2de5019dd2017ad93d9839d5e25fa6c",
+      "bytes": 1956,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/cache_config_input.py",
+      "sha256": "4c34310423a72f0de46916d448c1fd3afcb373542fac75ac724e1e8ffc8b049b",
+      "git_blob": "fe88d35b44d4f3bc2667f9208c2b761987a55e86",
+      "bytes": 562,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/chunking_config_input.py",
+      "sha256": "58183a2260b51a178f1d30ce4a1c7c9056083686e4985cfe009e88908286a0a8",
+      "git_blob": "bbf4fc735f57f01250919967c59765e0f3e5ad1d",
+      "bytes": 462,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/claim_extraction_config_input.py",
+      "sha256": "bcc55909026dbb7534b7798fd3895f38a91e24041e641804aedbbd8fec28c3b4",
+      "git_blob": "4827435cab3f194f82385b2df27cdd67d581e46e",
+      "bytes": 540,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/cluster_graph_config_input.py",
+      "sha256": "a0e7626115050eeb8d6fdcf6e459e8d9e53b9304084f0603184386de6042898b",
+      "git_blob": "eb6f9cd1c66c27197cd6b34b75b768690a38f9b8",
+      "bytes": 380,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/community_reports_config_input.py",
+      "sha256": "40570cb11690190362792b214dd6b4436243d2cb1882bde41ccc126d92111482",
+      "git_blob": "79ae3152e7a55e073468ec6393cda5a32973f3c8",
+      "bytes": 512,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/embed_graph_config_input.py",
+      "sha256": "ad229e41f82694ceca4fc36379d9fda356f996d3fae9e58ce3bb5c1e35800479",
+      "git_blob": "f8b6ee6faf045a3124dd23dea5cda0733c4b2a84",
+      "bytes": 611,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/entity_extraction_config_input.py",
+      "sha256": "6354578e42afba9bf876d5ca185ea5674d72ef75efabb5c9e39ce1d9ba9b2aa6",
+      "git_blob": "a03cbfee1bcb8317f664db851bf82d4f4b2cb8c1",
+      "bytes": 517,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/global_search_config_input.py",
+      "sha256": "674d2bc4163137a078d5a0fef7ea1b6e2fa419298e60ca6a65bddde8aa5a261b",
+      "git_blob": "e13fbbfa9e734494527d468e8f098e7b9f0ba86d",
+      "bytes": 542,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/graphrag_config_input.py",
+      "sha256": "d5379c13a29b218d530a4bc27fef5facc431171bd67868980f6f3b9d830c5a2b",
+      "git_blob": "7c04dea2e3949d225db9f76f3c144735b4bd98a5",
+      "bytes": 2399,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/input_config_input.py",
+      "sha256": "79d8be98d5e27d15ac7108185ac9a71bc66dad6f70a412015003e148d9bf10af",
+      "git_blob": "4ff89d2c9ae122739521e72ec19b413cef2688e0",
+      "bytes": 1003,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/llm_config_input.py",
+      "sha256": "75eb2d0ec17246da80c9b3678aea4f7189536a03af8eb8ad3f87f01b19d99587",
+      "git_blob": "67231371b8a369a39ef1a418fafc5f267b15f3bd",
+      "bytes": 614,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/llm_parameters_input.py",
+      "sha256": "3298b30ee46e4318c3f8fdcb0b1b452734fa4017ab95826c7416444e5bc0def9",
+      "git_blob": "c89c6c0922e802453c76857efbe708ac8abcfff8",
+      "bytes": 1137,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/local_search_config_input.py",
+      "sha256": "db022cc6f458a6ff6b3f666c6aadf377ff5d90a22ad23ea7340bfa06a6c6102c",
+      "git_blob": "23df40102a895399cc6b9facf276b597bd8bcde7",
+      "bytes": 665,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/parallelization_parameters_input.py",
+      "sha256": "ba81c1db748011dfa3ecbd4b0e72217efa56f84fb738a66db648ce0388a5ce1d",
+      "git_blob": "e9204437b2ee837a73c7618ea3978de145b0b633",
+      "bytes": 336,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/reporting_config_input.py",
+      "sha256": "86e72aeac9a510ad3aa402c0c5418583c3d397c81ba8dcfa4c6a0c9a6f5e8761",
+      "git_blob": "a224f0b4404c4375b6335c4d4cfb717f6e37f2ec",
+      "bytes": 578,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/snapshots_config_input.py",
+      "sha256": "f106932b7dbb31484ce72e901453c582e46bc3a434825c059576ca5a706f3f30",
+      "git_blob": "c20becb0716345ecdf334001c064320b2286bcd4",
+      "bytes": 429,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/storage_config_input.py",
+      "sha256": "fdb65135cdb701a0a4169bc4792af6e42f4b5af79e17dead3e01871915f30115",
+      "git_blob": "cc5caf79521e896a282b8ed0a47d06e45a1c4b7e",
+      "bytes": 570,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/summarize_descriptions_config_input.py",
+      "sha256": "7542acd2550a95569803efc3333d5ae392a4fb1723c2b9e97d6438f6f5ebb42a",
+      "git_blob": "6ce756e5581d95ef05c62c8c698cdbd3a390d14c",
+      "bytes": 473,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/text_embedding_config_input.py",
+      "sha256": "c166f40743d0eb3f9cf5bb28a51e432e4f70eb7e2ebd9b66853b6b010bdf5132",
+      "git_blob": "a7e176c65813be1eb703bb829015146a5e36af64",
+      "bytes": 682,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/input_models/umap_config_input.py",
+      "sha256": "8ef9305c774c78756211a9afe6fcee2621194dfcba796ac0d0bb4e4ade9ad1df",
+      "git_blob": "543ca385e0470d104038fbca91ebeba4f36e6753",
+      "bytes": 318,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/__init__.py",
+      "sha256": "1411900afa2988b8c1bce0f1190af9e172235aed4ef9add29f62cf4cc87e7080",
+      "git_blob": "43c4cde506305dae7068bb0267dd69436e3b571e",
+      "bytes": 1628,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/cache_config.py",
+      "sha256": "9fa0b45323a90ef213fc53bb097f827ff56d02eaa5c35954067f70d8203746b5",
+      "git_blob": "4589edce0b31f34c5dd8312b0fd713f8a236222a",
+      "bytes": 941,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/chunking_config.py",
+      "sha256": "4bd035fb30fa58aad5d28ef0effa9f91405cae901dc2cc4c2173b90193894e80",
+      "git_blob": "ad7e3d0a9d29be588339b71f227551d9a8872327",
+      "bytes": 1186,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/claim_extraction_config.py",
+      "sha256": "608d0d8f2d8b4967c4863a8bc6123bced43ad33700aa5c1a1cab5c6b47e9bc2e",
+      "git_blob": "7ec465d9aea06588cc29e6cee363e40ff1eb8672",
+      "bytes": 1622,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/cluster_graph_config.py",
+      "sha256": "7016133cae035589a3de62b7c006ba3767427cf2a46762e688e634de572a1451",
+      "git_blob": "3029baebcb8ad988b6eadcbc3098f34c52b87f46",
+      "bytes": 880,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/community_reports_config.py",
+      "sha256": "02319e6b0a731142e57ce6b16aaa490e5b6a2444cb49cfd54dbfbc7d76b3777d",
+      "git_blob": "cc2c9e8f13fd8577c54b9ae34e0828bf7f976639",
+      "bytes": 1592,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/embed_graph_config.py",
+      "sha256": "74b1b4bdd29a228089f78255d13a2c4bce145becfec2a9188065d8623a03358f",
+      "git_blob": "8b7677ab10120e314176789a39d94338457164d4",
+      "bytes": 1650,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/entity_extraction_config.py",
+      "sha256": "fb35d5e4bdbfa0a2b93642c4fb0bc59cd3fc240c568f7552e81bc09cc191d57c",
+      "git_blob": "ae4d4c56110848c12007e6f77d613ba186e38233",
+      "bytes": 1664,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/global_search_config.py",
+      "sha256": "d9b0a02e662772a27b88116161b4448c69c7f7883829d07fd0e040ebcc99e812",
+      "git_blob": "4249c29e0592b09d6f5f0077dcf736725a8e58f7",
+      "bytes": 1034,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/graph_rag_config.py",
+      "sha256": "bb4452ea1c4ba95228154a1c42ef0e68469fa10d7facca3f633b9de3d9e1a4fe",
+      "git_blob": "197d85e3e986e9e52186201b4ec366af3cbb4c10",
+      "bytes": 4957,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/input_config.py",
+      "sha256": "7a227eadc9467952c8e4e1c97ab8115870e1e7657beaaeff14be67257ae61d1b",
+      "git_blob": "f9e5847af61000c3bf140e488c131825e5ddc3c0",
+      "bytes": 2213,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/llm_config.py",
+      "sha256": "24dff893682fb1b2dd3b03e80804cb8b2f9d3556546ef2beb3e0b6d1d3b371f4",
+      "git_blob": "62c193b0c5402315979ba1d7869bfed5a0e14164",
+      "bytes": 839,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/llm_parameters.py",
+      "sha256": "3be5d7f0ca650f69bba7aab51e76c592996cf1834b58b4dbfaa733df6b9782ea",
+      "git_blob": "4743e0105b3daaaaa9d3eca78fc790dd4a21536b",
+      "bytes": 2837,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/local_search_config.py",
+      "sha256": "fa61f1e0dbb92efb8df07731187e054c025ab88606f921d8ee8bf91dc25c21fe",
+      "git_blob": "5fa5dd1e379ca57c9944979dc36ed150399befd1",
+      "bytes": 1317,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/parallelization_parameters.py",
+      "sha256": "c3ee0c8016f9a927d960a59694a103c8fd3e95d236226e3918bbfa2e8370f77e",
+      "git_blob": "80a85b863965f15e398735775c1b483b32ba113f",
+      "bytes": 567,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/reporting_config.py",
+      "sha256": "6f65b809f15cd8ef73c381bfe6ef0a751911be516eaa7fe5253e0f68482a249b",
+      "git_blob": "35e86cf5dae182c2231b43d889794c3fdc7d65f8",
+      "bytes": 986,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/snapshots_config.py",
+      "sha256": "21f9c531f94caaaad35ad3698a3a16cef5b381557bd086599993b703fb2af9e7",
+      "git_blob": "08293fb7a762d8d0a31b66b7d9129a79557fc26f",
+      "bytes": 800,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/storage_config.py",
+      "sha256": "a80341748245227eb351c7ec610a7222126a225685d03422e5414ef6ee5c5316",
+      "git_blob": "dcf41b92223a23959def5e7d925bd88e30cc314e",
+      "bytes": 970,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/summarize_descriptions_config.py",
+      "sha256": "f5c19e74bf4fc81ddc0a4d7dd7ca41d2eaef7178ab23f536af8ab27027643723",
+      "git_blob": "39aa93e218cb2aa5ade28f612e80c2df12668b9d",
+      "bytes": 1349,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/text_embedding_config.py",
+      "sha256": "2ba428e2cf13f66d0a1d45c75263aeca5d1fddbbb9654c0a2812518c92f0014e",
+      "git_blob": "5c2fcdb86e6c7dcc250b49da0a077a976b1dae0e",
+      "bytes": 1564,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/models/umap_config.py",
+      "sha256": "16f276f1fd98d719dee594a2b13881216bf8249258e437f02bf63ed14192211b",
+      "git_blob": "1d9bd93ead7ad5ac9baea6ab4a33d28934124700",
+      "bytes": 428,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/config/read_dotenv.py",
+      "sha256": "65579cf74838d13b542a42a43efd46a412a23ca65c96966f057cb97f159b5799",
+      "git_blob": "7e041757b37388af2a8b81474eab47371dd8173c",
+      "bytes": 687,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/__init__.py",
+      "sha256": "a434eb7a12167022f330a3b3b0017d3938c2f53693150ffe6f7c071fecf5f7d5",
+      "git_blob": "c97c290a94f29267e8249252a2b197d45eb1e8ac",
+      "bytes": 2245,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/__main__.py",
+      "sha256": "baab47e7f1398c273aa4d99836963e3f883931eff70f9e22935a30c2f5e7020a",
+      "git_blob": "0c1c53f97302c84d8cf52f53011d2531ae4418cb",
+      "bytes": 2331,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/bootstrap.py",
+      "sha256": "dfef99281567db07567dfc7071132b44956eb4032607d0bb2b85a57b5d6c9893",
+      "git_blob": "398ec88b208ce61c3282fee1ceb8dda15b1b9637",
+      "bytes": 752,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/__init__.py",
+      "sha256": "68a87de2da4373ca1c2e42786494233f19cfbe618dc2cea8939fba794ee14bed",
+      "git_blob": "42ebb2299465f5d5fffc348b2653bb3db0a7ef65",
+      "bytes": 478,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/json_pipeline_cache.py",
+      "sha256": "be8e5f694b23542320fc8a847bb35d7f4495c5c63f8c729b1f5cfacb1addfe22",
+      "git_blob": "b88a38990cfa1de1abbc7dcf4385e6ed1193ab98",
+      "bytes": 2033,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/load_cache.py",
+      "sha256": "8af70e4614b3137a160be8b501a9330878876b3f79788d9dcf6ef5eb08e74f8a",
+      "git_blob": "4e0e6324fb29d4427ba546176a6cc1b6c4857918",
+      "bytes": 1714,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/memory_pipeline_cache.py",
+      "sha256": "02657ceb3c537c36cbca1d0a7d1a18df7204fdc22b8c60a58583cc95d349828f",
+      "git_blob": "fa42f3f921dccf10a518db9516e53bac7bd620ec",
+      "bytes": 2264,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/noop_pipeline_cache.py",
+      "sha256": "90188dfb9688ee37307d323a651bf5d3f375e5ed21c913927029029d6a558301",
+      "git_blob": "b7c3e60fdd51aad52d02621aa9e7b5c83a159841",
+      "bytes": 1693,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cache/pipeline_cache.py",
+      "sha256": "95f4bf180f46485bd6da2b4398db663a78d33fba903bc40c3df4d5a538f91671",
+      "git_blob": "c68c5cfb4b91ea517bba3ea90a1d82eb227bcad8",
+      "bytes": 1713,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/cli.py",
+      "sha256": "9446f5ca3c8ae024a4395cb9893916da3434997448eb7e8803ec39d64d91814d",
+      "git_blob": "f32e34dc096282eed760144d60b9d2e58e8351ab",
+      "bytes": 9783,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/__init__.py",
+      "sha256": "5e5db2d7585e8ac577f01cc97bb79058222a06d520cceb5a0d53a63dc0600688",
+      "git_blob": "3c40762a84ba0b8314cab9a39bdb10dd90982a45",
+      "bytes": 1852,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/cache.py",
+      "sha256": "28a96c02867a43dc284abb470b26c3aa17b6a3a810240e649d2c8de8dc853bbc",
+      "git_blob": "be1053de2eb7990f2a36a5d042ccb8b17d60f871",
+      "bytes": 2486,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/input.py",
+      "sha256": "9ab479605d88ec4dbe53ab2ec1a92ac4505609dcb38e3806469cbad99ccbf3c1",
+      "git_blob": "35db357599ad117c4cb8c4c5a4d72688cc167642",
+      "bytes": 4144,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/pipeline.py",
+      "sha256": "e2d60238b42cff636944459e401ff5d37d644dadabc3080697855ae98c2add44",
+      "git_blob": "30d866e3490284aa913b530ae4d3277830bc8996",
+      "bytes": 2112,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/reporting.py",
+      "sha256": "b9637fd03845691d99f5a15f36510f50cccd44f3dfd2f26cb66a33e57787b02b",
+      "git_blob": "921e24ae4e6cbe9da944a0c19f3df38ab207f9f5",
+      "bytes": 2423,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/storage.py",
+      "sha256": "efbb71cfeaa4ce94cc6b015c98f58cdb84b9f2afa794049cd5a8b8515a7fc3ef",
+      "git_blob": "023d50e24925f93f14f3ca9d11cc49d3d34e5c40",
+      "bytes": 2286,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/config/workflow.py",
+      "sha256": "9fe9c5ea7a3c202267a6617fe847ff673ee8e462f10aaa39884b73f1d6ebd8f5",
+      "git_blob": "c26fef6ca0d50d1ef993c837063d372f68f1f44c",
+      "bytes": 1093,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/context.py",
+      "sha256": "16e5650a0b69e4830b52d4f9c38c21b36ab71308ca897564d2577632b48b2153",
+      "git_blob": "e74799bd358a0729c327397d50f1ac4a6b02d6f3",
+      "bytes": 1121,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/create_pipeline_config.py",
+      "sha256": "d6558c605374e8dca0e6222f089efd8e24d41591a669eff10fb999356d03175d",
+      "git_blob": "40f36247bafc6aaff1698aaf1f4eaeef15a2defd",
+      "bytes": 20588,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/__init__.py",
+      "sha256": "bcfbd6d450a33cd766d47c64c84b029cdcf5a2e77a1cad1780c74370cb6e1f54",
+      "git_blob": "354989e3382d424ea3443422d804ceb21b20cc82",
+      "bytes": 625,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/csv_table_emitter.py",
+      "sha256": "2d792621330ed661ae076beafe3e0370bd888bcc82ddbd4d6e4ca9896680e96e",
+      "git_blob": "c0305c254bcb18ffdba4ebad713b164f8ab91d7e",
+      "bytes": 791,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/factories.py",
+      "sha256": "d9bc0a3cb4fa62c93071660c3f0d1596244012df14fc4b06ab7a932a1158545f",
+      "git_blob": "84afa684431ef3440d361e08b2e78acca3a76d47",
+      "bytes": 1385,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/json_table_emitter.py",
+      "sha256": "219ceb556756c29389fa3ea8fd11be1ba53ed0099d6698d6e8922866efeb62b8",
+      "git_blob": "0b18c717a6d61994a614e715697221d61d9cc75b",
+      "bytes": 846,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/parquet_table_emitter.py",
+      "sha256": "11194c80174f9e13f594fac0e21169b0d54e60b4d960cdb5f3d4dad27e544a82",
+      "git_blob": "753915a79a06159dee0cad0d2434767502c2cfe2",
+      "bytes": 1485,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/table_emitter.py",
+      "sha256": "a5f9ae612348c0aa5ae42b190f84b6c63bbd8d5a7a9e72503d7544794d9e7424",
+      "git_blob": "2161eeb52391c6a58942b366b257f59840bb6b08",
+      "bytes": 405,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/emit/types.py",
+      "sha256": "18d0d0be13762eb1e86173c6d03bbaf30a610f367227767ff8e69a019db2ad28",
+      "git_blob": "ab3452856f4a4d7d564e829e7c37f7c35f4b4d40",
+      "bytes": 255,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/errors.py",
+      "sha256": "4dcc20ee3fe566c17330283138bc2c3901df2363a66c6553417112a3a93b619e",
+      "git_blob": "430cf27d0f095af84d37510f7adaac62cfc21988",
+      "bytes": 626,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/__init__.py",
+      "sha256": "64a078e0b92ad9745896422655ddf378a95bfc27b6d8667aab0e53ccb2c7c6fa",
+      "git_blob": "cb26e595953daf91b391094695b66bf99b82837d",
+      "bytes": 124,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/embedding/__init__.py",
+      "sha256": "e4e822cadf6221966f26640462ac984acc8881e872bff33257d561392a0423d9",
+      "git_blob": "0ea2d085f197042cb569d3a5121eb2ad2aaca3ef",
+      "bytes": 235,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/embedding/embedding.py",
+      "sha256": "52d6fb804183160cf1eda2f549368cdcb8c0c3bb940534310a3a090efc671ae2",
+      "git_blob": "267a190f914e09df8002807dd3a5797c54a5a868",
+      "bytes": 1015,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/__init__.py",
+      "sha256": "81dcd2bf4a80e316863aac30a9fb52ef8b043684f102b4b7aff063b47086659f",
+      "git_blob": "9168d5e2070a4a5391b1ac4847de22564895dfe9",
+      "bytes": 531,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/claims/__init__.py",
+      "sha256": "fe6838480ccaa9cd97adfccfd132208ff3911ca27e60e96de1b89358b6c98bfa",
+      "git_blob": "3977c8ff83bff76a0aeedeed1c2aac33baf16e98",
+      "bytes": 289,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/claims/claim_extractor.py",
+      "sha256": "6d7ef11ae4feba4b1ad0aa562e808c1ab57ded94c61570b61cf881c2f3a57b2b",
+      "git_blob": "26bb6e3f707230a20bc3fcf715969ccaabd540a5",
+      "bytes": 8995,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/claims/prompts.py",
+      "sha256": "214fa1836827dd66cbb321cbbb314c94bf60b5a750d1567d37239580823c24ad",
+      "git_blob": "05b3153c2004e4d541c1a466db88cafcaf7c1345",
+      "bytes": 5490,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/__init__.py",
+      "sha256": "145676a822686f1bff750afc1a0aebe8dfe1a78136711669bfb4acea6854013c",
+      "git_blob": "599f56d60f22b3635081c66c6eba08da7cad3ae1",
+      "bytes": 1004,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/build_mixed_context.py",
+      "sha256": "426401ecceea4094591f0017b42dd728b71573f8c21246b72781416d6c573c6a",
+      "git_blob": "ad9e2a8447b772419311acd5ed0974bab3c850b2",
+      "bytes": 2826,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/community_reports_extractor.py",
+      "sha256": "e291bf29f1712d8b945eb35cf3695879852228cc47b2fe3096a4c8794e24e082",
+      "git_blob": "309336fee77507e761b021db71221e8e697cb71f",
+      "bytes": 3558,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/prep_community_report_context.py",
+      "sha256": "61fbcd54d0fe948db8d316e8ad5f636696ca437f1d62f4ea9b33fc4324db7b33",
+      "git_blob": "2ec42220246559fd827bdf1df58a32632ecac8cf",
+      "bytes": 6554,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/prompts.py",
+      "sha256": "4a80f405ee9299115097addefebef465e97b6abee2783a42f31db1564c0eecd4",
+      "git_blob": "35ca38bc8b6c97d37e73f86d934c74a7386245f6",
+      "bytes": 8861,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/schemas.py",
+      "sha256": "78282d1b58a931b6b3a499ec75c4118eb6449646a6f6ca7469d29de05d545b41",
+      "git_blob": "8e89e0273c9f5d51fc927891acb086db3fbf5bff",
+      "bytes": 1352,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/sort_context.py",
+      "sha256": "0704f85d40a5ba2b9a53121b070749d1dec660d3c061a59024f772645f15c92c",
+      "git_blob": "811cb7e95c75476a18a4e217dfa1779a5cbc41d7",
+      "bytes": 6093,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/community_reports/utils.py",
+      "sha256": "a9e178de555e63ecd161362126f35fe26e5aabc7e4071f7de9c5dfe79de7dc70",
+      "git_blob": "b5fc9af9b8c3c1f44a31a81e450c71576c4aaf6c",
+      "bytes": 1743,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/graph/__init__.py",
+      "sha256": "28af9e0361c000310e15a0b3c5eb741db17bfa362d629f43e08afb673bd3a3f0",
+      "git_blob": "94e03ab9f7b9a1b7e30a5559beb145d4ace57b4c",
+      "bytes": 412,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/graph/graph_extractor.py",
+      "sha256": "38a6fcf86ba071e0609d8fb9e6fae0aee5f955b8a3f1f57dd5bfa16e9cc82244",
+      "git_blob": "ccd2b729fc6771056e63fa6ec96760e8765c2547",
+      "bytes": 11508,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/graph/prompts.py",
+      "sha256": "53a2d2f4b02e733967eccc497a1375fe8856cd963e64fe0f10ec8094adabccae",
+      "git_blob": "0cc53bec4d2f249c8901f3c2ab190016f5db47d0",
+      "bytes": 11254,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/summarize/__init__.py",
+      "sha256": "9f439826396b292c77018152aee227f596b045e542648cda70e9e77aca86031f",
+      "git_blob": "b4bfe5be87f884805729992856d3121c2a74a6d1",
+      "bytes": 347,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/summarize/description_summary_extractor.py",
+      "sha256": "2fda903ec59d66bacf7066d774f0f40e1fa822a28ede290aca140f8639d09dde",
+      "git_blob": "76d77202d3589c42e806e9edc506e93009f212f9",
+      "bytes": 4730,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/extractors/summarize/prompts.py",
+      "sha256": "0c989712cde9670fbdbdab0e349c385e371ae523036f19dd95d64c1621e16fcc",
+      "git_blob": "90e4434ee813fb6a6b8adb2bf9050d90a09a7a0b",
+      "bytes": 823,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/utils/__init__.py",
+      "sha256": "38ae3d90e5b7a4cccdf37ea73b767839d1de7175f1bb471510d7a734d37954be",
+      "git_blob": "6d4479283a290c8165b4f4d6427d7fc5b97b0544",
+      "bytes": 319,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/utils/normalize_node_names.py",
+      "sha256": "39d9b2ce9b54540de6e9d2aa4da2415b100eb23339f421afc4e3c9512f281057",
+      "git_blob": "bcc874a9274792606e136bbfb2f69aee2aef27f8",
+      "bytes": 449,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/utils/stable_lcc.py",
+      "sha256": "648d1ad9d0c2a65155fc1511956104cf73580947a6b0c93c819d8fbabb8d4eb8",
+      "git_blob": "7d602a6ba71cc0af6168c69dda9b871ab2a6427b",
+      "bytes": 2246,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/visualization/__init__.py",
+      "sha256": "db1157809019208095011e2a17d10a5c60320254d9d8f60de1a80b0970f5b648",
+      "git_blob": "f7780e4e9cf4a616260c25e4d60799db4b936262",
+      "bytes": 374,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/visualization/compute_umap_positions.py",
+      "sha256": "0dc6edf23d2072ce90cf9e02a7a219f967a3823d28410ca296f11ae596ae7cce",
+      "git_blob": "569b7b309d9db7f296b6453a68d35d0eee471026",
+      "bytes": 4471,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/graph/visualization/typing.py",
+      "sha256": "afd134889a1bcf2716b884a6e69d32659b8d9891cae189d112f44c045563b556",
+      "git_blob": "ae46afa928a0e5586704c9cddfad36f042bfa910",
+      "bytes": 590,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/init_content.py",
+      "sha256": "e2b7f4a683be878c86f739af5fb41905248fd34fb25ff93df5ed1629a62e573c",
+      "git_blob": "c1342119f3c9c738c0f97f7a82ce49986dd1b0a4",
+      "bytes": 6230,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/input/__init__.py",
+      "sha256": "207d2d8e0df5a87771978b7a3ffae0db2c966ddfdef916b3d7d45d2079631d63",
+      "git_blob": "91421867de9491e48664df49f311f3f84351337f",
+      "bytes": 186,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/input/csv.py",
+      "sha256": "513492aaab5c55f23f8d09e97239b4089c15f6cb3b628501f8fc470f6423058c",
+      "git_blob": "65966f18753eb5b62f4324b579f00f2023e02e2a",
+      "bytes": 4993,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/input/load_input.py",
+      "sha256": "d4cb6b6f76442a0c24f256ae82bbbe92b321a9f95c88688032579895bc62c3d2",
+      "git_blob": "6d623342105bde67bd54ffc460edba4b41e0ebea",
+      "bytes": 2900,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/input/text.py",
+      "sha256": "32515a5a0fb21fe8ee83e5fc4907baa2bffc32aa25db3f94e986dfe70b6da5ee",
+      "git_blob": "def13d78888c6111946e5b5b89054c296827cada",
+      "bytes": 1698,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/llm/__init__.py",
+      "sha256": "9927f87470ca4f8f9c4d14ac7ec204ad93f0cfd7c92c94d094aaaac3bfd70979",
+      "git_blob": "008ef07ccdf6e611c9ad9565c17474724dff9146",
+      "bytes": 327,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/llm/load_llm.py",
+      "sha256": "1020706361036a1a7d9927678a64ac1255c43fd4b6ce5b9d738feea80b696f08",
+      "git_blob": "f24a28158b5b9340d103c2a7dc6887f89533e89f",
+      "bytes": 9475,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/llm/types.py",
+      "sha256": "4bfdca12e97b3e1da67fea4eb6e3b67537eef4fe2e59f3b46d6319655ffaf860",
+      "git_blob": "73c47737cbc60fbd3f1e1978dbf50b244516e9f2",
+      "bytes": 309,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/load_pipeline_config.py",
+      "sha256": "19e586f1e4bead4b3f25b255f3104427227d9c058bce01632ab9f07512d0fcf9",
+      "git_blob": "50a532c5030d904dc562d5a8aeb1d093d349a662",
+      "bytes": 2923,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/progress/__init__.py",
+      "sha256": "03edf18e4bb1bd9a90331e69c9d5565f21e810240e6749f3d669e80ee1f29b11",
+      "git_blob": "df6a21523df576df0926ee2feed3c075c32c1b81",
+      "bytes": 278,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/progress/rich.py",
+      "sha256": "0a5e828602bdad8ab0e21e89d77608164f84c395d137d09294761e893b6bcf56",
+      "git_blob": "362b64f0c8e6ee5813cd6b277fc793641df5d46a",
+      "bytes": 4847,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/progress/types.py",
+      "sha256": "a3847f9ad8c0d0f3611eda248320ec988ab3e4bb92390bb0e97a139d31f34cbf",
+      "git_blob": "2912155ed1f86985fab1b6e2b90af4e69e0b23b2",
+      "bytes": 3459,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/__init__.py",
+      "sha256": "2d68a82e060f3e79482b0a5de8ad5e298c954cb23b1669bcc6159c7f47a51601",
+      "git_blob": "697d4fc51f9e2141b2d6ba09957834c19462e446",
+      "bytes": 627,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/blob_workflow_callbacks.py",
+      "sha256": "6a53f70a0278f750694340624479e9e40c041ffe2c4b4327af6d36064c035e79",
+      "git_blob": "28f0b6d991f80c832550c9e129d380413e264c84",
+      "bytes": 3857,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/console_workflow_callbacks.py",
+      "sha256": "20c948ee7ecfa2b938131aac4e25606d9b47d3d2afd4a7cbbc34dc359118d6bf",
+      "git_blob": "b1ab1278f74fb252948213b26079d363ef06f4ca",
+      "bytes": 961,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/file_workflow_callbacks.py",
+      "sha256": "ff36904a865331aa5c2f65933c332e2d41ac68a7019c0a25af9ee3d499ab92d2",
+      "git_blob": "e071498629eaa5050f26fa31186006565f2369f0",
+      "bytes": 1904,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/load_pipeline_reporter.py",
+      "sha256": "9dced4209e6207c670e15174304c7066b38f124350f13a1c26962b8ae4ff44ce",
+      "git_blob": "0386ea03d1eb623630ae0e53fc2b856b7a685f1c",
+      "bytes": 1600,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/reporting/progress_workflow_callbacks.py",
+      "sha256": "17222465264774c5e00d41b3e74111df1fb6fce9b143bd5fa9e2a0e6b009612f",
+      "git_blob": "68f10d75302027a903cd288df8739f4ece33030a",
+      "bytes": 1928,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/run.py",
+      "sha256": "f1b7ee4b0d7a5031240f09f25502351c9e5b4a787ff4fcda9df7e212cf9b7c5a",
+      "git_blob": "94a519de8705c50198f23767baf49d77df4ab476",
+      "bytes": 16088,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/__init__.py",
+      "sha256": "ae06c506b5527df0c630090545203ba8543203f989699fa6bd764e81af9944b9",
+      "git_blob": "7ca943db52844e1b24775bc40560438188c92e13",
+      "bytes": 560,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/blob_pipeline_storage.py",
+      "sha256": "ffdae493188c8a9bab1c8b1a44e4d495464c3f53135c21275178d9e13c632a0c",
+      "git_blob": "7e60df9697f73a4be4bd96c8f8e79f1dc3548f1f",
+      "bytes": 13188,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/file_pipeline_storage.py",
+      "sha256": "3dd5fd4a3acb56ae6b6dc3d93fa597cdc8c81b7c4d88265d2a93c22ea2916202",
+      "git_blob": "3580e1e1a653efe03098ae122b59b9b5573516ad",
+      "bytes": 5514,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/load_storage.py",
+      "sha256": "3c0fd22c82f22b29d0f3fe10d56aaa295438af6bb1cbd269445ba6bf6609965a",
+      "git_blob": "33d61ee97fe1a2b50ff4cbad2ac0b43831ae93d5",
+      "bytes": 1300,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/memory_pipeline_storage.py",
+      "sha256": "1a2c7a6fcc4a09e16b30c0c91a5e59f118c76bc4e042b971640e02c1525f1ed2",
+      "git_blob": "2d1382e0af786652c931311a43b26587f3f29058",
+      "bytes": 2183,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/storage/typing.py",
+      "sha256": "8b73e35dc0be7b230fd2d33ad9662d25b5b4964df5a575c7818b4e69cc434d42",
+      "git_blob": "595baf4efdef91923ec760ae8edeaa632cb8dc3b",
+      "bytes": 2258,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/text_splitting/__init__.py",
+      "sha256": "9fb5069bf8affbe910c7dce536f6ea405d86edac3f663922cef1a4408bf7c368",
+      "git_blob": "4653adb22b433f90b25077b31c2cd1f30ba69165",
+      "bytes": 699,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/text_splitting/check_token_limit.py",
+      "sha256": "0547657a0dd50cfcb50224c418401204dda124018a497b203c738fa0321af75f",
+      "git_blob": "1a5f862254ac55a9364b39ef54562598f9771f6c",
+      "bytes": 404,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/text_splitting/text_splitting.py",
+      "sha256": "8c1178324640373942d95c0d491702c6251e8345bc7ffe48926b55b19772e365",
+      "git_blob": "0badc8977c20f6ea7b6cbfdf9a7f716ae121f6c5",
+      "bytes": 8387,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/typing.py",
+      "sha256": "aa50c38452af6687f0dba5a10d2d7abdb87cb9d7bc882f1bea9361fb652ae94d",
+      "git_blob": "ed1d7e93e71a762dfd3717b9fa90e0299c9a4a5a",
+      "bytes": 486,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/__init__.py",
+      "sha256": "7a43050525044c889dbd0b0e24f4211c1b91059e64ba269f1513770dcfd11f71",
+      "git_blob": "3a8b1c00278fdc6b56080f2813ab10b228f0f955",
+      "bytes": 686,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/dataframes.py",
+      "sha256": "59565360590db695f9244fcccd6b6d07b2d202399ae9dcd1ee12294a5ed183a4",
+      "git_blob": "ea65d71d7ac4d0b25e384220a63aaa702b782a19",
+      "bytes": 1861,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/dicts.py",
+      "sha256": "479a31c6a75f2448493cef4cfb4fe3dbb13b5c7f84800eca354783058fbc5b73",
+      "git_blob": "4d3662e0b86d6f9049ebda58270e48219e6253a2",
+      "bytes": 570,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/ds_util.py",
+      "sha256": "cea4480546d7a0decbbc9e00eca494ee318bf81916213c07f51385f1bcda259b",
+      "git_blob": "d65c69e4a8c573ddec3b93da668413bae7395998",
+      "bytes": 978,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/hashing.py",
+      "sha256": "9d176390a9dc7cfad54606e7c840e9ed2905f79bec1cc4a89fd7203016a4dea7",
+      "git_blob": "342ae99d4419b8947d383d561bb434d39af5ce0e",
+      "bytes": 431,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/is_null.py",
+      "sha256": "49a15944faa5f38903e68576373b6cbb2aa9f26f94244bb9bbc8b33c257b552d",
+      "git_blob": "f5df1955ae95c2f1b17b29a7692d2a2ebdd525f5",
+      "bytes": 408,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/json.py",
+      "sha256": "384f7e9299b8902d0b1dc006865e58cc6c5efcf1df0ec2c5aae20646e04b5e20",
+      "git_blob": "11d5b020156d6f1101a1f5c3701541e0394dbe86",
+      "bytes": 640,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/load_graph.py",
+      "sha256": "7f0804c767cebb15f19c11604c952a0632b793a8f43e0734e9c368230c6bc8fb",
+      "git_blob": "57992a04c83997a4950d3f743a35600521a11423",
+      "bytes": 344,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/string.py",
+      "sha256": "aadd91d186fc3c72181d9ea8e152d37dc17865c5dbc3ac5635f175868ebeeeb1",
+      "git_blob": "7e1654bb4e48bcc2354c21c62a5ce2f12cf42925",
+      "bytes": 601,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/tokens.py",
+      "sha256": "a84bb08005d8cb4467b2524e602d30db1d2d8285df53db7c44a667fc9a6d126a",
+      "git_blob": "e308c81f01293581aad3fa54ab3a90abde87ec08",
+      "bytes": 1042,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/topological_sort.py",
+      "sha256": "1523f4b23b42cb37ac6017056a0d3917cc8650225096643ec28bf551ef1e6f04",
+      "git_blob": "a19b464559466b9824eacf1d36534f2eea157875",
+      "bytes": 320,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/utils/uuid.py",
+      "sha256": "c34aeaae80194b80359c248fb6aa9c305cc26c4719e9c876e553f68a94e77756",
+      "git_blob": "0671fb09dac38560a522d79c684f104174b1febb",
+      "bytes": 346,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/__init__.py",
+      "sha256": "5a8b176c117ca9b7e737d9abb1c55ec94217674fed78a86b6832356322e8bbec",
+      "git_blob": "379c2a3749b4ce51b3077b10844bb2620fcb6a60",
+      "bytes": 1162,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/__init__.py",
+      "sha256": "b20869d3e28e1fe4c41fa4adcaf905a5b19893b0891201c0dd53fb156eb4666c",
+      "git_blob": "cdebee228be80b4bf40f3e463f58d3d936c2684e",
+      "bytes": 215,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/__init__.py",
+      "sha256": "d7b56e43f5f86a6f602ac8d79c3edb30feb15c354bc84c2dba9279d54aae6450",
+      "git_blob": "53d357bb462f326ea54ee62d88d529ef6ff1461c",
+      "bytes": 280,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/extract_covariates.py",
+      "sha256": "a3e776c57a5497ca5f265b7fced08734a7a1656d437ab205abcc9657419fd19f",
+      "git_blob": "a67cb0fa0e93638f1577405fab166de55e00b466",
+      "bytes": 3118,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/strategies/__init__.py",
+      "sha256": "8fe1c7bd843460e0eb73b25dcf6459fa2c227d53c556e4e72589efa64146973b",
+      "git_blob": "605c66f8d1297453cac922dafa1b430d0f075b04",
+      "bytes": 149,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/strategies/graph_intelligence/__init__.py",
+      "sha256": "f4ffd40fd44caef45ffc071d27243b951482feda009cb41a4101f48f4713983e",
+      "git_blob": "ab01f06fc44fecdf8253978a00baada788bc638b",
+      "bytes": 227,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/strategies/graph_intelligence/defaults.py",
+      "sha256": "5efc9b069b616def6551cc593ad170b803261cfb41b0ec56d046eacd5b19cf1d",
+      "git_blob": "846bfa81e0d32ed934eb0318b0e052826b94a4e4",
+      "bytes": 856,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/extract_covariates/strategies/graph_intelligence/run_gi_extract_claims.py",
+      "sha256": "b97627732ccd424f2e12dbf4ef0e6c71852f9251898df0434a8f08022d3799dc",
+      "git_blob": "f047c44a72031e2d8d6579e18a2e50bce87038ad",
+      "bytes": 3607,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/covariates/typing.py",
+      "sha256": "be5d773989abfc44ed69488524bec8422f3f179a6275718571607d844abb01f0",
+      "git_blob": "e31cfa49896bdcc8d555144318f5629949120416",
+      "bytes": 1263,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/__init__.py",
+      "sha256": "1b84d046d6cfc7668a80442d08295789090e26c36ce4eb47335e31ab2e0aa316",
+      "git_blob": "2f55d710e910075098d3f93daad097cfe2690b9c",
+      "bytes": 269,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/__init__.py",
+      "sha256": "a2b47f5b1a5f19616ff7440a1775a2c2c3cb3be6297e7689ab884a48c8dd5000",
+      "git_blob": "46e6d54581e9894fa0a1f4ecefe8d81412a020ee",
+      "bytes": 268,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/entity_extract.py",
+      "sha256": "2fc769797899c5df231b0478fdcc9045ce708e0e5cd1845da0c4de516c8e8ced",
+      "git_blob": "9be302ae35f9177bc540bb733e2198fe6e12808d",
+      "bytes": 7730,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/__init__.py",
+      "sha256": "08dcfa373dead5137eff37920fd6937fd465f0c9bec5c38db92e22baeb9d96d2",
+      "git_blob": "f5cc17d750afe850d774c8a7e333343d49dbb733",
+      "bytes": 149,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/__init__.py",
+      "sha256": "021d68751676975ae9f283b4fd9db045ba5efaaab5742dbf6af5be850924d912",
+      "git_blob": "083c0e4112e7ed6552c05bc9eda272649af3b77d",
+      "bytes": 203,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/defaults.py",
+      "sha256": "dbe5214f5d8aa51f3b43b612165dad596e6071acdbb40d93df407e8996c1eb1a",
+      "git_blob": "237e6657c8842be15196a94c3ef6f225cb8902cc",
+      "bytes": 901,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/graph_intelligence/run_graph_intelligence.py",
+      "sha256": "788b63b1d3e0f85de87ca689fc5ca0eb3b2f8d13d1f90d96ef09b23b472d0856",
+      "git_blob": "997808f46aae4983779d27194eb152fe4be43ac1",
+      "bytes": 4629,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/nltk.py",
+      "sha256": "9c75d32a02789986bbebfa73c518309a6113ba0b2d74966a2bc9d79f915d57b0",
+      "git_blob": "48d4dae4ca28bcae70420aa66689b1a306cf37ba",
+      "bytes": 2267,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/extraction/strategies/typing.py",
+      "sha256": "89cf8e1a9c676b7079238d2be3ac39e958567e1903e19c8788b25dfbdac87d47",
+      "git_blob": "45d3f1b80e47fc10a71573a5cc57bd35441f3137",
+      "bytes": 895,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/__init__.py",
+      "sha256": "a15bbce051dbb88afee8eb9a5ec5cd7368e95ee331a3912e739459ee28c4bc13",
+      "git_blob": "9ba401295ea155fd568e30f1bd7c11944966774a",
+      "bytes": 267,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/description_summarize.py",
+      "sha256": "04723f44388f3b89b3459fb412fa9318045069bbc6e4463b72774f99331f6cc2",
+      "git_blob": "5b7feb4184bbfcd87f863d5248d5a5dce05b1347",
+      "bytes": 6872,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/strategies/__init__.py",
+      "sha256": "f3b0cc2c4eaaea3e22809245fdc385725d85890135283e4e0bb9dd4375f0e4da",
+      "git_blob": "28c398e6ac9aed603de1f8f455d987d82d8fe4a0",
+      "bytes": 216,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/strategies/graph_intelligence/__init__.py",
+      "sha256": "f4c3c51a8d8acad910e12000ea93e5e022174a42f52f3597cb37c4191603b3e7",
+      "git_blob": "665600d0fb4ccefc77a50c9194f2b865fd424ae3",
+      "bytes": 199,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/strategies/graph_intelligence/defaults.py",
+      "sha256": "b131bda71d7a642a7203a55402f09bc6d45ea7b545a1ac3e15c91a501c8ef2f2",
+      "git_blob": "8ac42aa13d39875c14ed6b56c11890cd6f3e8f21",
+      "bytes": 377,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/strategies/graph_intelligence/run_graph_intelligence.py",
+      "sha256": "02625442d8e498b2e524a90fe33357b662fe94278f7812e2791af4efd116fce8",
+      "git_blob": "57a1ecd218c546594fc8eab8132411487610834a",
+      "bytes": 2462,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/entities/summarize/strategies/typing.py",
+      "sha256": "4eadb013fd279d244794cadffb862aaf0bc7329f6ab45a1fd6a007ed588836c4",
+      "git_blob": "e950cedc109891aba9acd5800780afea00177f77",
+      "bytes": 757,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/genid.py",
+      "sha256": "e10aec6abeaa8e15e4d86a1074eebeddde6b7ace1099259a45f32c9ccd2e353c",
+      "git_blob": "019ffc2da04da9e4b36e64f13bba52f6cbd64552",
+      "bytes": 1670,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/__init__.py",
+      "sha256": "75df8dc3c9d7fe8ec6e9bfcea32dcf399c89dbba45da1441a8ac6b205177a8d9",
+      "git_blob": "5edbdbe5306a33c3b04b63528ee1adca04d51937",
+      "bytes": 1051,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/clustering/__init__.py",
+      "sha256": "416beb349e30846744bb195f4e05ae9b5ba18cbac0b08299f3ecfc00df9dc7be",
+      "git_blob": "a5db89bb7f039d27e015fbf46e692662b7d48b6e",
+      "bytes": 264,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/clustering/cluster_graph.py",
+      "sha256": "53417903c9d6b0ebcac563fcfeb8c098a3da2607da706df54be12a852c9bc398",
+      "git_blob": "e8be50e8ffa897dd029fef9236424943fe9996bc",
+      "bytes": 6219,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/clustering/strategies/__init__.py",
+      "sha256": "f2cdecec0e08815e6692f8158dd73e4b860e0f3d76db1f61bca5fff8190163f4",
+      "git_blob": "16a03f12d676fbbda16a26645a0bcf26050b1c5b",
+      "bytes": 113,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/clustering/strategies/leiden.py",
+      "sha256": "a9c9eb9ed2e2e1c95cd1288cf042d04d05e08ee49ee51eb48c5cc975f0bf954a",
+      "git_blob": "ffc36880411a686a8bd973728f27efa4bb2bf09f",
+      "bytes": 2239,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/clustering/typing.py",
+      "sha256": "e789631099dd458ab74068b9c14b1d07e7423684dadb023ed35edc62c5b20e1f",
+      "git_blob": "4d6fc7e60115a840114c91f72be439c18f0c24de",
+      "bytes": 181,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/compute_edge_combined_degree.py",
+      "sha256": "bc636aad1869fd11f8da8ab3dbbb047e649b5ef7fb6312fb9241aa8b29717033",
+      "git_blob": "1f2dd71972f74cba0a9d254f42e23c4c6aa1b085",
+      "bytes": 2278,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/create.py",
+      "sha256": "dbd283c54712f02f4777c3ecdcce45049bdab3707bb5a3cb42ccee851541cefe",
+      "git_blob": "eaf06284ef53187a8ba0ad4f4ab273c0686eae95",
+      "bytes": 4463,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/embed/__init__.py",
+      "sha256": "289080dfca6e9d48bcf9982e5a60a0e196efe7ed74585a13a8f874a367cb15a4",
+      "git_blob": "4ca8168c3c706cef211600723b01f680915ea359",
+      "bytes": 245,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/embed/embed_graph.py",
+      "sha256": "8a8bc7491e13005f268f404cfba0523463664ffd2a0bff76f6041f53ee0a55c5",
+      "git_blob": "8691d343f07f0dec749f21770b3c0e4c9e131dae",
+      "bytes": 3332,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/embed/strategies/__init__.py",
+      "sha256": "e6df7f47607b1b9b38d74961d70f7824d96afca5b11470fbd9aaa4646b7f9c04",
+      "git_blob": "ef85198eb703a17c281912ff4a069510d8a9f2df",
+      "bytes": 111,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/embed/strategies/node_2_vec.py",
+      "sha256": "2f9f5159ceae10b0ea5092076de3cbeb2f64c43fafe74c3178550a02de72afaf",
+      "git_blob": "eb329519ed9f15759d1bcecc10a051a7353a2f05",
+      "bytes": 1120,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/embed/typing.py",
+      "sha256": "530e93de119e3d24e36e7a7a79f09f4d67d5a6ec6b96343322602147c795fdf4",
+      "git_blob": "fea792c9b1dd294bc886abe2f60efcaa4d3dbdbb",
+      "bytes": 315,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/layout/__init__.py",
+      "sha256": "6c44133960939b83d0bf1fb3fc69067166473fdfec4c1009d77a2876fcc2ed97",
+      "git_blob": "74584f83eda106396817c75e5516aa155ce4e1d7",
+      "bytes": 199,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/layout/layout_graph.py",
+      "sha256": "e13a35cbd3bb50ddfa147e5fdeb57d96b68152e6d5a75a0460ba76907744117b",
+      "git_blob": "e1b55b1183f5718a0d63ef52a07b86771976c34d",
+      "bytes": 4672,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/layout/methods/__init__.py",
+      "sha256": "6ff4cdc1497f0897fad1a70cd1f5334be6cab22a19be9b84a4796d3c0554c8c1",
+      "git_blob": "5d5054122b71941f650a935b9e4f34a94056228d",
+      "bytes": 106,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/layout/methods/umap.py",
+      "sha256": "febc093812fb231d88dedb78af07f32135af0369276421f7d2dbf81b9cbee1ab",
+      "git_blob": "a4bc7c2818561c16d0b92c6356b6fae79b16d0a7",
+      "bytes": 2549,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/layout/methods/zero.py",
+      "sha256": "7bb12bf8490732dba9d73629ddb975a00d468a16accb3b6659a0603e8cbcec2c",
+      "git_blob": "f41d2d4ca4bb7df98291c568b7c3bd009ec51a86",
+      "bytes": 1905,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/merge/__init__.py",
+      "sha256": "27a0eca78fb3aa9c5b6e3c57c0fd271b03dd475402054cf7c348848648218a0f",
+      "git_blob": "f718827942b36bb63b01d497076bc2fb589c1b37",
+      "bytes": 198,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/merge/defaults.py",
+      "sha256": "e245427a437038ec64c6bf669dc2b91c2a8984ac2e2a65581b0473396cd6c954",
+      "git_blob": "80c60331c6681f747a927b96ffba8457879c216a",
+      "bytes": 490,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/merge/merge_graphs.py",
+      "sha256": "71743f93f0ce91a1702f6765b2557099e34a20c2fa2da9f75215150a3b7f6f8b",
+      "git_blob": "8ab3fa47f70af74493ff49e100b8fc150adddcef",
+      "bytes": 8000,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/merge/typing.py",
+      "sha256": "82805773d8cb03452c5d5fcf826ce898c55398033e63898ee9de0c79e5eab5e8",
+      "git_blob": "0e534f516c580f17e6eede592f4d38173de3b960",
+      "bytes": 1117,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/__init__.py",
+      "sha256": "317772c333c84375ed9700d877a47d16b76956b1c7c3bf391e545b1b47a872b5",
+      "git_blob": "e47d9ccef5fa3f34b00efa477dcbcfbd51b3911a",
+      "bytes": 918,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/create_community_reports.py",
+      "sha256": "c5d647533779f3f7f298a64514577c502d3fa50ec275f1589a650e0ceeb7b3ef",
+      "git_blob": "c67d5107e8fe3f8d1d5575152b306d933d0c9922",
+      "bytes": 4143,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/prepare_community_reports.py",
+      "sha256": "7f0d44a08e12abc0871ff5d8b2993d577687e82e96f744f43be81f58e2982a5b",
+      "git_blob": "3c9ebd451adbd816848e4ee8d730e5469b6ed476",
+      "bytes": 6488,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/prepare_community_reports_claims.py",
+      "sha256": "7394031326921e61e1162bedcdf5941b14cdf1607c21df94c08040a2ba74a793",
+      "git_blob": "aa9a790772d5517611a8f7541894c9cd5bc8408b",
+      "bytes": 1514,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/prepare_community_reports_edges.py",
+      "sha256": "563b626de61cea0a22ed6bd869b79fe76d03d8c5900a34ef60795a07df12ff3a",
+      "git_blob": "b568aba00666ce7d43f93dc93fd1a23a5daf76ea",
+      "bytes": 1435,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/prepare_community_reports_nodes.py",
+      "sha256": "5a96990800a3ebde8d2d8b7985210e891c5d5dd7e94e3c74237376be964b06bb",
+      "git_blob": "f159c125eee75f06dff0dc0e7e957b06f14143e1",
+      "bytes": 1373,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/restore_community_hierarchy.py",
+      "sha256": "61203783db3f36de62fd34dc5867f9b793b1b142904747611839b95c648b163b",
+      "git_blob": "437369f0e527dfea834263e43be3dd98e9647fc5",
+      "bytes": 2854,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/strategies/__init__.py",
+      "sha256": "32d82dc0a10a71e6dd0946cecfdafbbf22c84c588a103ea6396149a974546575",
+      "git_blob": "87d1f9e252a3061151890f52f35c30120aaa2784",
+      "bytes": 142,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/strategies/graph_intelligence/__init__.py",
+      "sha256": "3fe03909b406a72b8a06ce4f521038a2865376fc436b6f28cee696ddd0fc9247",
+      "git_blob": "7f51d7909ba383c11bdeed5c65e1b13af942cbf2",
+      "bytes": 221,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/strategies/graph_intelligence/defaults.py",
+      "sha256": "9c9faee459d73fd1fa47eef252035a26f51c646361b5debc8ba3d6f616693cbc",
+      "git_blob": "708d48d2b62a7af5168931c1dfcb8aac58f92721",
+      "bytes": 701,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/strategies/graph_intelligence/run_graph_intelligence.py",
+      "sha256": "4d58b559e85661bb0769d2ded798cfe332233eba721aba53ad5f6497ae0cb394",
+      "git_blob": "4c189c63607b5d562083f088931618bc70efa812",
+      "bytes": 2997,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/report/strategies/typing.py",
+      "sha256": "451539b45de68aaf8c6b69766ac9c7e50d87ced27ee2ca86b14ede8d90bc8020",
+      "git_blob": "087c72470275cf40e99743a391cbae4ad709c03c",
+      "bytes": 1067,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/graph/unpack.py",
+      "sha256": "b81e62a6be27f447a3f971c9d129d17d7c446e25a9a807ed2d15df4a96984d70",
+      "git_blob": "ffb7f4b0a2fa8336fee8bbd4dfa85e588fb31981",
+      "bytes": 3176,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/overrides/__init__.py",
+      "sha256": "23c17700f23e075eb3f83b1c4b29abe2b71c4bb3193e5443af77c54891165dc8",
+      "git_blob": "24b82c1f3ed813103817baf0fba556f185f0f8ca",
+      "bytes": 258,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/overrides/aggregate.py",
+      "sha256": "dbfe89fd5f33636a94d3aebb9d6407224741f16c751e62f55ac451d26254ce45",
+      "git_blob": "df2137046bbdbdf9b49df506d1ce273cd5edb231",
+      "bytes": 2510,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/overrides/concat.py",
+      "sha256": "b8e92dc7cd2f3b030b9f8210754bd20d3b900f4f9894ebd7f993f7cbaf5d7a17",
+      "git_blob": "7a0f0e2c327a907460e4bff0f9d22e20a64a2a11",
+      "bytes": 794,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/overrides/merge.py",
+      "sha256": "caa0f4c18b829e1bfce46fce53bd8bf678e44af3e6562d8f44b2daea4c783f03",
+      "git_blob": "64684c98281f2bb5150b2fcbe4e65431f428597f",
+      "bytes": 2234,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/snapshot.py",
+      "sha256": "839e0a4fd1bb9bd18a06edac60bc9e1396ca5e284255a061c91f86ade7541d91",
+      "git_blob": "a90fc2837b093c8340111eeaba9b57c96cbe6971",
+      "bytes": 810,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/snapshot_rows.py",
+      "sha256": "7744199674867db0b172fdf45148c7cde8916bacab6080c0b19cc06bd4c89f8f",
+      "git_blob": "99aae70a04ab92da7829347cda7d6af19efc822c",
+      "bytes": 2510,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/spread_json.py",
+      "sha256": "7957ff94539239bb7a4d892f362ef19690094f2387644932b169529e0e1ba4e9",
+      "git_blob": "38656e12a4dcd8082980c1e82e67db664730a67f",
+      "bytes": 1278,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/__init__.py",
+      "sha256": "a010636c908f1d9b09fb1a0987ef2ce418ee14e514f1536c4a5378201f38ca5e",
+      "git_blob": "032f45e1b10b1a12831f5101c456d0806a99f9b0",
+      "bytes": 388,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/__init__.py",
+      "sha256": "c755fbcb55ac2c23ad0bd8fd22ad5c769ab8466a2cd026a9baae0600798b72c2",
+      "git_blob": "4e2a7729c5f09a2d409d8f4e0af48f8fcf14dd14",
+      "bytes": 253,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/strategies/__init__.py",
+      "sha256": "f670eb7f346d614bb42536ea7103cdae1dad3c9524ba67213838873624bc2213",
+      "git_blob": "0f15fcb2d5b35e5478454c99108fce8d55cf6f9a",
+      "bytes": 140,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/strategies/sentence.py",
+      "sha256": "b5e42c2d2e648a401b37c19425307c9f049239482409ca96df375e2ace6fdb04",
+      "git_blob": "687def1d90be1ffb8fe1a64e13429707e040e143",
+      "bytes": 698,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/strategies/tokens.py",
+      "sha256": "8fdf51b4b7b1e7c9ac88c9c650dfca94ab1948704cf5fd3f6c6071206e4db053",
+      "git_blob": "6dab135ed187124c0bc5af861211867f253c12b3",
+      "bytes": 2708,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/strategies/typing.py",
+      "sha256": "5bcdf4d5964b1a03203ed69dabe6214abe721231f61480205112f5f5475b6d15",
+      "git_blob": "b4e833c8e3c40e6eee9a43508483d27d990f9598",
+      "bytes": 495,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/text_chunk.py",
+      "sha256": "38f0e508ea3c3c43dea63bddadec40dd7c1bc5d575268b9fa89b7c3fc898231d",
+      "git_blob": "d8fab44f6498a0e53ca437090d005bfc909f3f39",
+      "bytes": 4789,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/chunk/typing.py",
+      "sha256": "cffe1f3bdb97ef3b0068433fd1d5643d5c93304389b448390b3bc25841d3442e",
+      "git_blob": "3a42cf68a7a528b09bf6eed83f9543e023172dbc",
+      "bytes": 476,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/__init__.py",
+      "sha256": "97fdde5f95e8f1765f1f935d6d57ea16f59fdceb2a301e825a60a2671c278108",
+      "git_blob": "969bd2aab925ac9c3a33fecc67a1770dea632858",
+      "bytes": 239,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/strategies/__init__.py",
+      "sha256": "659fdb8cd256829a172ce15e3fda470d3da77514a0b0f21bb47cc8765da3beeb",
+      "git_blob": "8cbe7a580ef3769cc5ef800bef97124c9af8c85d",
+      "bytes": 135,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/strategies/mock.py",
+      "sha256": "2cd902ea17eb9a36838b5c0266d9a603f2b67fa42e80d3735028b576224239db",
+      "git_blob": "1be4ab0f9ff594d33d83dc72b9a8b6510503ed17",
+      "bytes": 1069,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/strategies/openai.py",
+      "sha256": "4db3058382bc3f36388786805b8bbb9b577375924a797c4f8e43479d0c7408bd",
+      "git_blob": "0658d604ccb8d4550810835a949d337d01777c82",
+      "bytes": 5447,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/strategies/typing.py",
+      "sha256": "bc7c53d8a4071c39c2bee0bbe98208868205c7bd7eecfca497ea6d3915e485a8",
+      "git_blob": "1b2525649776dc7db0ed1fc9d4f464b25f1e993b",
+      "bytes": 607,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/embed/text_embed.py",
+      "sha256": "b2707893d0e8a10a4d8b6ede34baca96624a6ed338627ba9f64580c100ce9e7f",
+      "git_blob": "2d6def220cb7db279c38a4053ad436b1af2b250f",
+      "bytes": 8864,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/replace/__init__.py",
+      "sha256": "1b7a6d7104264a0ec111630cc5f99af258ffd841fb9533bbe2ca87987b4e812b",
+      "git_blob": "f863415f4049cede1a458e7207cac5e432d9fda9",
+      "bytes": 194,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/replace/replace.py",
+      "sha256": "03000f38980b296f2c86d7ac88c8fd284c72f622044e54ca07051b849e55e507",
+      "git_blob": "386fac34594fccf5d7dbe4124e3db62f2a47c9b9",
+      "bytes": 1387,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/replace/typing.py",
+      "sha256": "7dd3a122b1f4c3dc9ea47e44eabd705d8ff990ea5edc7fd635ec1f51bb5e1767",
+      "git_blob": "45beef9f2832130fe8c42a09c83816663af6d2ca",
+      "bytes": 271,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/split.py",
+      "sha256": "9ccbac11c9afbdc978405d4665323a5db856ae5202a28ca0032872ed128aa70c",
+      "git_blob": "b1339ff4551814425a691d66379990cefe475d4e",
+      "bytes": 1608,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/__init__.py",
+      "sha256": "c4937e40350644f2d230cee9c8cb86449e179e993b08cbc1407cfe7dea300754",
+      "git_blob": "ad830dfa87d20451352c09acd1f0075252f6e624",
+      "bytes": 207,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/strategies/__init__.py",
+      "sha256": "c6f52d48a640ae427895a2fed5ed412a59946a98cb742356fd773b5d7f3a1d09",
+      "git_blob": "d418bbae283c48ff5f82afcfc202d2a059572e71",
+      "bytes": 250,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/strategies/defaults.py",
+      "sha256": "873aae2613412d041f82d664f3167ec1b8de21dcfb1fad114813055cac8de8f2",
+      "git_blob": "003e00eb1ff7229404694c7cf72b2f154e392646",
+      "bytes": 308,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/strategies/mock.py",
+      "sha256": "9b75758a5a981814d3d221941e4211e6d74aac4886b36fb3f1d77eac0253f192",
+      "git_blob": "58a5a9995e900c3dd044db1998046c04c45253ff",
+      "bytes": 811,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/strategies/openai.py",
+      "sha256": "530818ce342ca5384d808adc67b2025030a185471864ae85b833b0c3220ecb7b",
+      "git_blob": "cf0628ff644a77c17223b58e1e0b43db58a92fdb",
+      "bytes": 2613,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/strategies/typing.py",
+      "sha256": "a5bea5711d788ead429c7b2911df4cff45779fb4657086a1b45102ab9be6ecd2",
+      "git_blob": "d91ed735f59a14aba15a8e287b5df401f56a692a",
+      "bytes": 591,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/text/translate/text_translate.py",
+      "sha256": "9ddebe815239e3b7f0a30103ddf092e593139362bedf66dd1f10789e87f5109c",
+      "git_blob": "8d0faffefa64da6c42de8eecef0e9e9c694dd647",
+      "bytes": 3999,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/unzip.py",
+      "sha256": "76748c25a0aa964cd738030eb812be539ead6312b317b8f409f7d1781e19c811",
+      "git_blob": "4d8c8da08e6278ff669aa909c5017f573f0f26d9",
+      "bytes": 669,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/verbs/zip.py",
+      "sha256": "fa5a53f4eab4313121a3f65d7e55f36474738bee9ddeee46308de9d02d00a4b1",
+      "git_blob": "462395d3da17b98f9f503a4732427b3351c6c47a",
+      "bytes": 1416,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/__init__.py",
+      "sha256": "cee7844bc519f76df268702b5aaecdc979e39715ceb87fe5773c4772f954e8a4",
+      "git_blob": "ed580309a8dc14b313131ba6cc3b29cbf2ec99a4",
+      "bytes": 517,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/default_workflows.py",
+      "sha256": "e2e7daa534dd0aad224c21bf1d2be88111be3891930a0a48e419860ebf7654aa",
+      "git_blob": "81112bee32f5b8a206b10ac83c19e8f76e96d1c4",
+      "bytes": 4499,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/load.py",
+      "sha256": "350ff5e6e2d9d297558dcc3a69110783cd2913e9ab9450df040a9c33e9117569",
+      "git_blob": "4dd6f9bfd099388f963fbece22027239a5d24174",
+      "bytes": 5627,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/typing.py",
+      "sha256": "0ff280b557ad894b924548516f640f027a562500ff3e192694a4ac9f61b38cb4",
+      "git_blob": "3b44545bd4fc4c77eb211188f4fee9a742f96319",
+      "bytes": 866,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/__init__.py",
+      "sha256": "763f8a5e4d06dbbfb5351b82a0f3f79c848063f93b3ab7997639451e9e4498c7",
+      "git_blob": "69518f5ee2ce0440d8d57272b510af22dc5b7417",
+      "bytes": 128,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_base_documents.py",
+      "sha256": "904b020f1a08a20d062fd7988d64e79e81bbd472ca2da6282432c8bf67936b5d",
+      "git_blob": "bd7094c64adc195bbe104c1deb206e79fb569ca6",
+      "bytes": 3060,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_base_entity_graph.py",
+      "sha256": "52bc4c04fd761152312a0f159a35fbcf3ba306a0f5e2157b3fc546590ff94766",
+      "git_blob": "b001aad21896bb519d71015cba21d1d2e435066d",
+      "bytes": 2874,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_base_extracted_entities.py",
+      "sha256": "6b7a0b84519d9271f0a6f8fd1620e4a246dbecf9fc126dfcfe43972c3b18254c",
+      "git_blob": "30d608e9fd4ab7815a43d1c4592cf002bd308072",
+      "bytes": 3287,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_base_text_units.py",
+      "sha256": "62e3e685ac22f9697ba0292d5aca06ff73bd5359c5ec4ca897ecc63063ba2474",
+      "git_blob": "63876e5e499785bc30da016273f2cb7659de01d2",
+      "bytes": 3187,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_communities.py",
+      "sha256": "9264d6153d3f7e727d21b182567d1699b5b3c80cedfb890422b79c1df40b79b9",
+      "git_blob": "f8949dfcec055f142ca82b590511cb31ed0213fe",
+      "bytes": 5002,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_community_reports.py",
+      "sha256": "1e419dd83439dc6b41bfc7fe811bd7f72099941169f852c76e52ceeab0a9d4a3",
+      "git_blob": "164c70e0dd56519297c63f18bab3f59663350d4c",
+      "bytes": 4316,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_covariates.py",
+      "sha256": "7a70a537384b1ec0ce8aaef27e3445a2a0630ce53282350cd65b23bfaa2e2e1c",
+      "git_blob": "d1090e5054e363e60ea671ccdeec94810d397549",
+      "bytes": 2543,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_documents.py",
+      "sha256": "e1a5fa25b636130b55843e578711d93bd17e71727d718e1f398165d3bcd65620",
+      "git_blob": "d09ce001b0205ef652f86201e57903d4b0546084",
+      "bytes": 1238,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_entities.py",
+      "sha256": "e0ac81bac3767d348a4cc2bb999fc26038cc1505e3009fbce3a51cd0fbae3a33",
+      "git_blob": "9d8b962b77ff813e5dbd73c256199560a54e2b12",
+      "bytes": 4278,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_nodes.py",
+      "sha256": "a719157c213cb8a7f3c14d02a746dec126e87c74ad187e1437734167bf517bc2",
+      "git_blob": "31277e7bf07368f45f8a19a895137cbdb005ebe3",
+      "bytes": 3380,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_relationships.py",
+      "sha256": "5d06f81a1cdd3a452efbfc8663cc5554ee74512f2b89dc33029ca5c35b93cade",
+      "git_blob": "a58c2a45b46c0ac16f0e9077749e3308a686f3c5",
+      "bytes": 2730,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_final_text_units.py",
+      "sha256": "86cad1ddeaf6e3bc109fe4c176ddefa3b8d37cef9ee9eb513fede85dba5d24bf",
+      "git_blob": "56dd0a73d60f2ef60ca0221fcdee2fb21674db2d",
+      "bytes": 5276,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/create_summarized_entities.py",
+      "sha256": "cbc395343b0b5acfcf2092941fec81e43fbfb4fe2cfe63652ac1e8af28d43106",
+      "git_blob": "8f8d7f0042fec331a471a497312e19ce2f7c0d2a",
+      "bytes": 1438,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/join_text_units_to_covariate_ids.py",
+      "sha256": "91e681be93abb3a0efc1797765d5c63e4c69e3ee0e6a43920264516c127081f0",
+      "git_blob": "be6bddf1e45a7c27ac9c587e4bc7cad01d323a62",
+      "bytes": 1233,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/join_text_units_to_entity_ids.py",
+      "sha256": "7e614e9638daa2505fd3b4176345abca20bdaacbe2c834dd505f73e109f63fb8",
+      "git_blob": "6337502d1abd84d1f9ad9d8223afdb5412ab846d",
+      "bytes": 1376,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/index/workflows/v1/join_text_units_to_relationship_ids.py",
+      "sha256": "5aa532a739acb50eb0e54f224835222dd9601bb477d87007baf096d1ecd482b5",
+      "git_blob": "fe6d6463beed246f12ad945cdf0e4272ed03ac61",
+      "bytes": 1569,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/__init__.py",
+      "sha256": "09dc1a5700aeb5e33acdfac7115abb9c2d260537c0826bc15118efdb6a6814a1",
+      "git_blob": "609be951b23e7ef0f936ab2a373bbc3e4cc8ff18",
+      "bytes": 1961,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/base/__init__.py",
+      "sha256": "65ed9676082804774a6f9baabf1ccf9592a081335193f18d0ecd314d1e0b206f",
+      "git_blob": "dd5ebf9050376d88c4bd4bc883bdbd56d579fd9c",
+      "bytes": 280,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/base/_create_cache_key.py",
+      "sha256": "3d727fdd5d11afa15a6e277263ca48155fad4e4d103d4a21a5144a561f2e16ae",
+      "git_blob": "e435ba460d38abcb6145a1c46b2ba402b7669492",
+      "bytes": 1039,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/base/base_llm.py",
+      "sha256": "96661f4c0255a76360fb579a60155ebb68e82d47820b620bfba243ccf3cf9ea0",
+      "git_blob": "66f1919cd43bc4ecb5c2f132e6aa4565e73562fa",
+      "bytes": 1752,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/base/caching_llm.py",
+      "sha256": "67c8211dba911698a2e5067172d3b921e1a142a5861f82d7e9f3a8d664e38f09",
+      "git_blob": "51c99638f1ce0d078c6200f1b60f53eb47b0d5b8",
+      "bytes": 3313,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/base/rate_limiting_llm.py",
+      "sha256": "f8ebac9a87840e554b13171be96ee156778e2a5b40f7b4f67704efef1e8a50b0",
+      "git_blob": "5e2082475f60f6cb2a96663bafc8095d50924b60",
+      "bytes": 7504,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/errors.py",
+      "sha256": "0acacbe99de5b481551cc201729a806d0c83f49e006459a0e005f0d021aea910",
+      "git_blob": "01136359de622d347a4c1e61ca5c51219f314086",
+      "bytes": 406,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/__init__.py",
+      "sha256": "eef6540a077f594ae3c4a1feee25f8dec9dc595b6d4a2ad54993a81cf7e4ca53",
+      "git_blob": "4f7933d1a802557737196f228f2688e090fbc6b7",
+      "bytes": 474,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/composite_limiter.py",
+      "sha256": "e4165fdacf9ab7726f8f26f8a3006ceee6e407f7afa3e1866b0637bf29e072dc",
+      "git_blob": "7bcf9195b2515eb4d255ac2bfadf00318dbf0e32",
+      "bytes": 810,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/create_limiters.py",
+      "sha256": "2294dd056a24369056b56da66bf44f68d25489aab854c2a10c89d45f94fe8138",
+      "git_blob": "92df11c1a6780732cc2de88763c062d26469fdc8",
+      "bytes": 738,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/llm_limiter.py",
+      "sha256": "51dd33d46b56b70ff8f63700acbafc5d7529054870d4a3b1903356cdd3f0decf",
+      "git_blob": "1264a84be58e5e23a3495f91ddf09e05fb66fdd9",
+      "bytes": 474,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/noop_llm_limiter.py",
+      "sha256": "f587b810ec3352437a4ab1e9ee554832b216f9411ad394c082c1e0d4c811d1a7",
+      "git_blob": "5147055255b5f854588856c023f34aae554b60c4",
+      "bytes": 494,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/limiting/tpm_rpm_limiter.py",
+      "sha256": "f6593f1de8f129011e3eeb17c61a1be15122561314bdd1886231e75a773b0aad",
+      "git_blob": "cb6d84e377e25767011976ca753b6c97ecbc8941",
+      "bytes": 1024,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/mock/__init__.py",
+      "sha256": "a580891b853bdf001199570f25219ca9f3bcfd72cd372e08dd20d1975f828547",
+      "git_blob": "cd1f000dd16cd3c734b94d986f7fdc08abdd03fc",
+      "bytes": 260,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/mock/mock_chat_llm.py",
+      "sha256": "d9fcdc64b8961f43a95c473e9c4457e409e685098346b864e554501dde04abe3",
+      "git_blob": "b8a6650b3142815e4a1d5a684c688711c543cd08",
+      "bytes": 1324,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/mock/mock_completion_llm.py",
+      "sha256": "fa2e7aa8a3b867cd28e4fbdaf5be217776401a8b22e4ca0948ebba21e12687d1",
+      "git_blob": "8cb8e95083a1d5cad1201184f9706f79307aec09",
+      "bytes": 778,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/__init__.py",
+      "sha256": "09a3253480d0c78d2c871f9ba436fa8afa0fa3ee972e6e508071e8cbff33dcb1",
+      "git_blob": "9478e146d2dc82bc3c05d96b02e6be9eb539e351",
+      "bytes": 805,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/_json.py",
+      "sha256": "84d27b6da721e9ca608bbef4a7c5b24be163f774b2f30c3044c691566f7814cb",
+      "git_blob": "22184cc221bf10ab8ac3d352e47e1645a55eb17a",
+      "bytes": 647,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/_prompts.py",
+      "sha256": "5667d2f9dbfa0f5ed92a040706bb571f13337953b93d05e3296c2c03ce0e3ce4",
+      "git_blob": "37d9f0fc70b6e7f3068be32ff5bd19dea90398c0",
+      "bytes": 1537,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/create_openai_client.py",
+      "sha256": "9b550346af9fbc20c27605eb15757ce849a1558431eeb681502d4b136e2b4932",
+      "git_blob": "40d7d649d73e069d4e9810036154cbff44640761",
+      "bytes": 2354,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/factories.py",
+      "sha256": "ab9797e578629ec2cf51780b9acccee40b42472c450c261c39be21ec7e31061a",
+      "git_blob": "e595e2e55b69f82e12e8250a264621652180b2fc",
+      "bytes": 4564,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/json_parsing_llm.py",
+      "sha256": "63c14f16d6e6484afa8f054ab2b68e3a34dc509d38d82b635e660e2888150a00",
+      "git_blob": "843ca0ecb738f6c886c40dcd0cdb4fb40ee968a8",
+      "bytes": 987,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_chat_llm.py",
+      "sha256": "0007ac2074797272416cc928e3c52d1b0b90086b85a61b6db0ee980c8ecb93f7",
+      "git_blob": "e4add8a25e7cef7e4ea5ffc30cfccf3f2ce8d438",
+      "bytes": 5022,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_completion_llm.py",
+      "sha256": "115fe7d46a2c976abe6fff0415faa27df9c15c1bd88279195e85a957036e0c74",
+      "git_blob": "bdbac6c131d4b43f65f6be416dd5934e18acc18a",
+      "bytes": 1186,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_configuration.py",
+      "sha256": "9cfa37dcaf464762e4e1e7881abec266d3600d7ff2981ca1cc89a61a2c2a8182",
+      "git_blob": "1bcd5694d6fe59d38e1a6d6de7b039dff4cee091",
+      "bytes": 9124,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_embeddings_llm.py",
+      "sha256": "9dae57b454e18f7e5f8a94ba8fc1ebf584adf5d2a0e40f6b85a625c9f1bdf727",
+      "git_blob": "558afe8437358e02fb80150da03b14fb67e0a7fc",
+      "bytes": 1132,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_history_tracking_llm.py",
+      "sha256": "7f2bb0f6ad9b2cea0d3cb3eef23a7b23bc3fc702d793d887a561f4fe4dd425d3",
+      "git_blob": "26ac8e227d2ed32a018f3930a66cb19f4ebd1a68",
+      "bytes": 971,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/openai_token_replacing_llm.py",
+      "sha256": "4d16b562b25245cc5b30e86aae74bbf165c7f20bacdca38efa62ffce645af427",
+      "git_blob": "7385b840597b8ace2b3e5509f254bd01d04f9158",
+      "bytes": 983,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/types.py",
+      "sha256": "eba43dbf0f60a4348a93152fd56a430c9db7879d8b3ccfe64eb1bcf0d32ba92f",
+      "git_blob": "4aacf18c1c7437ac9f4ce8ec6019ca9421db45ba",
+      "bytes": 235,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/openai/utils.py",
+      "sha256": "cb25a97ccc306ae23581460dc4b6e229ebabf003d77875a4b9225518d722414b",
+      "git_blob": "d529a8c0691a76264ce4ea40d5237897ec048dc0",
+      "bytes": 3246,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/__init__.py",
+      "sha256": "f87a80d14c560e170bd99ef4d50f7ae86c8f22c377059a651cb0b407d9cd4997",
+      "git_blob": "c8277661d514344c0d548f007b13c95378e9c480",
+      "bytes": 902,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm.py",
+      "sha256": "61b4325205b08123038dd489c26a0d9be0c13d0ec79a59055edb82af25dfceb7",
+      "git_blob": "fd8407e50e0bdc07bf456574eb186cdf05bda95c",
+      "bytes": 572,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_cache.py",
+      "sha256": "d36e80a9eb3e3be34260429076fb4546c5c6725b2a0dd70a09cab3d2742b822c",
+      "git_blob": "952b8d346d6c7d9a7812b31a3398e07a5af8784d",
+      "bytes": 586,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_callbacks.py",
+      "sha256": "46451e38c80efa4ed714d47939aa6b4abcf73c66482b119c4e0144273c13b544",
+      "git_blob": "dc06dbff068a6651f95709152e063361ded708a9",
+      "bytes": 642,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_config.py",
+      "sha256": "b0b7e934271e2f38d51d1e16dbd5e301af21e507db8cc97f81d68da2b1b941e5",
+      "git_blob": "cd7ec255b263cc308077a98109cdc15acbc8f0fb",
+      "bytes": 878,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_invocation_result.py",
+      "sha256": "4138fcc6c13505e9faa254e686f7fecf8445a82a980606234f035361fc91f523",
+      "git_blob": "1769aeb96de042a80aac17c01f466a1096a1020f",
+      "bytes": 800,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_io.py",
+      "sha256": "f1b467f11ecca7bf3c30e6ecb828e8babae9d746c62be8d40e2a67c9ba1ab8dd",
+      "git_blob": "051b5b8288a2e7c8afd2e5c33a308b9eaf7f7115",
+      "bytes": 1431,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/llm/types/llm_types.py",
+      "sha256": "c4e2570008ee3efe494696f14305332b2cead1c2a7f3562c57cee62cb0563957",
+      "git_blob": "7ae76ef9bed56bbf9b49afe4858fae6575dca281",
+      "bytes": 430,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/__init__.py",
+      "sha256": "b89bac2a4c3210a23db3f6ff177d801c8708e05203bf996ee48e2cd12d815254",
+      "git_blob": "9dbec3d1dd24ba6301262898692ebed06b83feb9",
+      "bytes": 827,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/community.py",
+      "sha256": "9b0f12ab956f4e16487fc2267860091ae13099bf973c487ef3a5ba7bc606d532",
+      "git_blob": "800a9a292a1bf0afdfb8a858d5050ed754398c12",
+      "bytes": 1746,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/community_report.py",
+      "sha256": "9dea51c12f9debdb95e1d371239c15a5a625b1f06fb5ba01c9bd160698184ac3",
+      "git_blob": "2666c0b5a81d5a57cebb06ed91bf184c36d2fa41",
+      "bytes": 2139,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/covariate.py",
+      "sha256": "6fb8081907ae60c48f77b89cacb08b626de89105ee2f98801371642a2dbe6cb0",
+      "git_blob": "b974b6b3273e5daafa0e15a2f9e32eb3a894bc23",
+      "bytes": 1879,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/document.py",
+      "sha256": "c425ecaed55801f41529167bddb857fae38af78d8a0fcef8487b3f64fdbb248c",
+      "git_blob": "b54a39ac910379a334a3f6235fbab5fb2451827b",
+      "bytes": 2066,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/entity.py",
+      "sha256": "0f7af24e118c0cf3d3ac5c40cb8b73ade992007cedab682699bc819f04f7b037",
+      "git_blob": "37c26342aa3169d54a21fe2455b8756823ba0d49",
+      "bytes": 2875,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/identified.py",
+      "sha256": "5cb68c34f84718a540b3c0d869e683abcc34972f1aa8a8c57d99d9403babf545",
+      "git_blob": "ca2c939526490588f1fa58f18c164e12d2a70617",
+      "bytes": 449,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/named.py",
+      "sha256": "0e9bc4e528fb8254829e8fa396529e9af5a6107e73a527fff1fea21079c5bf50",
+      "git_blob": "5352c77c96f8a6a6f375bef5bb03bd92ba86f964",
+      "bytes": 342,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/relationship.py",
+      "sha256": "be3edc09e4b557d16a9c806c0966bee2be3e523667084352fb8940292cf0f7f5",
+      "git_blob": "fadd0aaa6f1352592caf48911881c1c01d55e7eb",
+      "bytes": 2155,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/text_unit.py",
+      "sha256": "97d0ee27ec678305e8896fffdd1de04fa880691b2daba7b997d1598181389223",
+      "git_blob": "cff4ac01c1a9da26e0ca1e506d752042e5140393",
+      "bytes": 2243,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/model/types.py",
+      "sha256": "9f7900a32c282941cbeb6fc50d294c122a0eb70c71ed6a3d379dfeec5baf7f14",
+      "git_blob": "6156e39969d978edc6e9175ee69b6f423111e9da",
+      "bytes": 214,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/__init__.py",
+      "sha256": "7cf9fdc2e024cb153553aab71b1a6d85e21eb3bea29c0fc6785ad2bb8ba0f83b",
+      "git_blob": "2384b5793c01eba522d8e5288963cb06c38f2e96",
+      "bytes": 133,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/__main__.py",
+      "sha256": "7b2d4fd21632675ca0a3b3a98013d17b9bfbd4112aad9e757b241131517874c4",
+      "git_blob": "341a0fa4fd118e533dfd66a34291389286f52623",
+      "bytes": 2683,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/cli.py",
+      "sha256": "1d75d53d9a9aedaf3796b80f3f31c1dfe63dd0b4bef96515f784b466344b5da2",
+      "git_blob": "94983cf72a4fed14839a14f649cd115485f985ab",
+      "bytes": 6908,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/__init__.py",
+      "sha256": "7b4d3911fad59b1b6f5043de542c0ccb642029fb7fb9738c0b181ace62ca37f2",
+      "git_blob": "e93277b47c2a998e6ae12d95684544639ab6fdfd",
+      "bytes": 965,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/community_report_summarization.py",
+      "sha256": "b6fa88399cc19d5e80c6bdffb188cbefee5b614d56105f473ca8ae30edc11c75",
+      "git_blob": "4a0a7ea6a8f70e577987d3d798893b9829a2947c",
+      "bytes": 1319,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/community_reporter_role.py",
+      "sha256": "b196bd9ced38e4faa135f7a2d9bd8ab80a01c3267fbc07f5d82003687c669dc4",
+      "git_blob": "9abd5ed83f8b27808927d23a2f9e4da2df962087",
+      "bytes": 1106,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/defaults.py",
+      "sha256": "0ab31d67f70d51eb7db0db1697b887ff6155741f0dfed7563e2afafcfa779765",
+      "git_blob": "5b42f81332faebe32e6e2ea51a004c1b96fda362",
+      "bytes": 283,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/domain.py",
+      "sha256": "49edbfc495512da5fe0aa0a331ce05edc55afc76ec3805ae9cdf4df8f1a235d4",
+      "git_blob": "49c698d1b431abedfc5ed7bc618bd560be5fe781",
+      "bytes": 837,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/entity_extraction_prompt.py",
+      "sha256": "45aaec7eebf06f7494f8347b507dbc00599b6d6c9c13b50162791b017379ac66",
+      "git_blob": "3866abf95e3eca9cba34edc844fe019e7c3656d2",
+      "bytes": 3199,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/entity_relationship.py",
+      "sha256": "00f642925dd903dcaef341fd2caf6e51c14bf68a5558a152cabc160cec60ca3a",
+      "git_blob": "71c646c1d0fe32d142ce471025a0604fbeaeb96e",
+      "bytes": 1890,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/entity_summarization_prompt.py",
+      "sha256": "18dfc4e54d604d12eacc727ea7df1fb028b5fff58ac6644f97be80597c9ca688",
+      "git_blob": "779ce8d773837e598fcdd5a92a7a48dccf2c0887",
+      "bytes": 1101,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/entity_types.py",
+      "sha256": "4ab70bcf399472f32ad0341239f8ad179442276dee396ed308a85f95d3773167",
+      "git_blob": "42518acd8cfa1283fcdc6e86d92847e8b5e60909",
+      "bytes": 1360,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/generator/persona.py",
+      "sha256": "bedf28eed65a82154508111c9dae75c4675b33132a62f1e594dbf35782e590ca",
+      "git_blob": "cdd57a655d9af2c69f86887293d119403c9b154e",
+      "bytes": 925,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/loader/__init__.py",
+      "sha256": "afe1f005c9544210e7432cf16724c11c75422f6173c2946c4dcbf2346ff65771",
+      "git_blob": "94e64cbe87677542673d9d61f1f49db7c61f64be",
+      "bytes": 364,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/loader/config.py",
+      "sha256": "04b3dddff0b45329771a82068bc0109e1026da23273d64215cfca1b89aa61a5c",
+      "git_blob": "db451156cab7867a0d5ca9fb40ba37620ef0ced1",
+      "bytes": 1393,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/loader/input.py",
+      "sha256": "95da07a3e01cc83dd394ebb4ee40c9a3403307d57d2cbefe9a87167ec6514980",
+      "git_blob": "42f58c8092c7b52cab4daa8b41edb4e45ad6bede",
+      "bytes": 1798,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/__init__.py",
+      "sha256": "a5dedc1b0d76a95258949c992ddcafbcbf40a624084933b8ba3c835f373b00a7",
+      "git_blob": "b1f5de150757eeb916813f8a98ba74d0bce64f3b",
+      "bytes": 964,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/community_reporter_role.py",
+      "sha256": "0a6c9ab2bd52a8887c25717f61de8bbb989f4248e16ac1cf636ebc3377203935",
+      "git_blob": "b667bc294044b4c920f91ad17170d1154ea666b7",
+      "bytes": 1001,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/domain.py",
+      "sha256": "0b43d92d1544633ae77ea00204452a7d58574bf52bfe5c96e4425266815f6d86",
+      "git_blob": "4b4587f8d8d41ab260eda08e53444f4c20c2c0c0",
+      "bytes": 492,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/entity_relationship.py",
+      "sha256": "dd699aac6f91513b4baf4f078e1240dbfb2b1ab30e02c9b455ab8432d635ee42",
+      "git_blob": "29ed2eb26ac8b6996cba2462d3ca0957c838b84e",
+      "bytes": 8341,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/entity_types.py",
+      "sha256": "516b4716b599cba0e957eb20fc14abd84c18cf22a7ef047a69d79a8f02dcec47",
+      "git_blob": "99b21db6450771fe2bf0bd3acb0aa92e389eaeea",
+      "bytes": 5371,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/prompt/persona.py",
+      "sha256": "de0947497bd9c3ba986c8a013372516164da732d067e17109f986643feaec228",
+      "git_blob": "58515fd2043838d21c7692513b9ba7597584caac",
+      "bytes": 618,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/template/__init__.py",
+      "sha256": "8e37bbc21744a9e316037eb6969aef7f44987d4028540ea234796310d1dd53bb",
+      "git_blob": "e056762ff723ee05a01606a342c0e0b3c12bf8a4",
+      "bytes": 818,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/template/community_report_summarization.py",
+      "sha256": "e86ba2633b5b42745442b04fdfcb61a61f7f7538109913922bac79dc4c7104b8",
+      "git_blob": "5d909fef9fc6deb1d0604865b140ec4c258020d3",
+      "bytes": 5657,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/template/entity_extraction.py",
+      "sha256": "54bb0ae289f6f4937b6ef085808e3e5df4bf32c699f036e1eff293b73b4fa4fa",
+      "git_blob": "8916d622d1a58e9a556dfc5e7fac6699b8be8ef4",
+      "bytes": 6076,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/prompt_tune/template/entity_summarization.py",
+      "sha256": "07400eb6a67e3e392a3fcf8f4a824a85086c8ade71d9d1d70b75b001dd479c9b",
+      "git_blob": "be926e1914f5cde440c0e9fe25df78553350977f",
+      "bytes": 1056,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/__init__.py",
+      "sha256": "dedc331739c5236d3c45dd979ec7d6edc01be1271ae1310aa61baa4500a4fab8",
+      "git_blob": "58a557f8a2fcff92f4968a48b53bdd55d5cb956a",
+      "bytes": 115,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/__main__.py",
+      "sha256": "8868d0d639ff4ef2432e54b843b8f9348871e9fba0ca8da59ba325cf0019b5d9",
+      "git_blob": "03eb1b62591bd6484725f8a957ee7acb5d038725",
+      "bytes": 2313,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/cli.py",
+      "sha256": "eb580bcd33140c65b17e210c60ad7149be9a91c64968d48425febfd0c783a64e",
+      "git_blob": "aef7c2965bd4d1c4f5b3e4f58ab482b05ef6ad03",
+      "bytes": 6906,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/__init__.py",
+      "sha256": "b0ada08d9ba5ada70ea98182e51666874fc686c240a4aa099d2a513730f2994c",
+      "git_blob": "7e27364e1ec98983be1768ed56681030d54b00b9",
+      "bytes": 169,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/builders.py",
+      "sha256": "51de0901d1df369583bcd788d966f4e4f06e83a6d0ea0f93e8088bf8abb9baff",
+      "git_blob": "7a4ba277ae809e09ce15c475754ffda6cd388edd",
+      "bytes": 990,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/community_context.py",
+      "sha256": "7e451dd273ad3e27a1312618248a78a2668596cf85a681c1b51934eff7b74b5c",
+      "git_blob": "dba7f729d27d8070b32daab6a9b6ce22cd88573c",
+      "bytes": 8794,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/conversation_history.py",
+      "sha256": "67b77ecc7df62042b33e27b0e0355e7f034d5e735b790baedfd9286587fea643",
+      "git_blob": "33f516dbd4f9680cc6c199538773435afbd53287",
+      "bytes": 6968,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/entity_extraction.py",
+      "sha256": "e3f66621f4104e699926f5c00e635c8d3250de12ce7f51a9641d4bbe19257ef6",
+      "git_blob": "82a0699cd84f4d44c0b04f9a988647a755f7e465",
+      "bytes": 5577,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/local_context.py",
+      "sha256": "0af0809a90464a58f317312c12a73450a6dd2ca4f4255f364d46b8cc4c05dc0e",
+      "git_blob": "c2f7527e33559b3a2c74c5b38051ee00ca3bd297",
+      "bytes": 12816,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/context_builder/source_context.py",
+      "sha256": "ca7aed9fb4bdf0380a277ae5d7e18775f49bf281080a954a692c67eab1826069",
+      "git_blob": "99b7791ca65bb696c5486fba2f9882d3e9a60379",
+      "bytes": 3546,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/factories.py",
+      "sha256": "da6b3fb2095850dbcc102cdf2fb54450fcdf4530cfd99aeb82fb743aed7fad9f",
+      "git_blob": "d7b7677d51e381acd5a307935c2862de068e8500",
+      "bytes": 7641,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/indexer_adapters.py",
+      "sha256": "67485d934f7e742534140a39f02e6e8d8c351fd4b843a4fd769dafadf8be3847",
+      "git_blob": "4ce90d9215a285be9a1439e77c3990f2fd1727d0",
+      "bytes": 4650,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/__init__.py",
+      "sha256": "3964080ed23949343bc69cf53211a3456d4133a392259e07bbd656a30ea596ab",
+      "git_blob": "94ae973477305adbc608c820f3a8b41249ab1838",
+      "bytes": 115,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/loaders/__init__.py",
+      "sha256": "40300d8f651339eb2db87edccb505f4d577a9e1d7ec99df3a94a449fa9e6f1a6",
+      "git_blob": "8f19dac0ddec38f964892b884512300b9848d844",
+      "bytes": 122,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/loaders/dfs.py",
+      "sha256": "5b9f96e83bd78be80521b390691b0b47dddebd826abba5f2f617c882d1cc1899",
+      "git_blob": "7312963bb88c0a04af6a22cdf129733151322c8f",
+      "bytes": 12298,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/loaders/utils.py",
+      "sha256": "6b5e02b90532f0c3a4535c156c29aa63fc0e3ed5ebde0b35f6e0e210c369663b",
+      "git_blob": "e0fffd2467bb86bc4957a87420c950c4407c2d13",
+      "bytes": 7309,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/__init__.py",
+      "sha256": "8bf652aea763a4f2f063a3b0c9ad732c7f8500486e6412a6fb2b72e5518b4ff7",
+      "git_blob": "75c2f9f095749633795705c50898bbed099e891d",
+      "bytes": 124,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/community_reports.py",
+      "sha256": "8135da02bd31b5b1239a2421153f8a852da8039743eb7bbe084de3a33913e7e6",
+      "git_blob": "bd4933f1f9465d8d81ddb92f601f84989ecfa306",
+      "bytes": 2442,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/covariates.py",
+      "sha256": "12482328d926835ea06d7600b8ab906c088d2d3c6c4bbf6f3782d45d730371ef",
+      "git_blob": "1c45203d01428fb1475abb94375ac54abbde2eff",
+      "bytes": 1692,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/entities.py",
+      "sha256": "82e3177e384488b68b4078d705c8ea290723011fec077925feacff33dafed72e",
+      "git_blob": "5465f9f59ebd02a614de434ed7d50a93c972cfd2",
+      "bytes": 2750,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/relationships.py",
+      "sha256": "745910032a1980b430a6690aac27b7cb9c5b96e212afe517954fd9b7d010cb13",
+      "git_blob": "2ef5ba38cb069a02084ec366879e865afb597c96",
+      "bytes": 6409,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/input/retrieval/text_units.py",
+      "sha256": "e648806bdb0a04b6137ec5cd2783d6d2cda575701d269875192bd4c115b7b7d4",
+      "git_blob": "a00dc20a0a2f25cf97071801ca15f5606c5ee038",
+      "bytes": 1672,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/__init__.py",
+      "sha256": "f63bec817c042e6c0db5cdffed3e28f8677bd6ca6635675db9b462ff94f2640d",
+      "git_blob": "b8f507b138ffb98eca02e3bd82be34b9848bc522",
+      "bytes": 113,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/base.py",
+      "sha256": "5c3b30eed0ab024e00c590c2e69a72da21c1f66a593d10643445260a1324646b",
+      "git_blob": "228150af50707713f44767dcca679f387bfccb02",
+      "bytes": 1346,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/__init__.py",
+      "sha256": "d4b5a542eb649700abbabb6bfca89c50cc6b8bca7743683c5818744c8fcd97fd",
+      "git_blob": "cbb257905e9ade08e3f41d734afe8b5215a67fe1",
+      "bytes": 555,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/base.py",
+      "sha256": "0ffc82ed1c920a7a97e7e40e748391637b35ff10803efe52b2ee17ce33d53685",
+      "git_blob": "6181c0b2a5f40b297142ebc0351fe8d1e19466b4",
+      "bytes": 6312,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/chat_openai.py",
+      "sha256": "257910c46018d4032b8f76127d5a5ccdc571dcd8d53006099fb31ad02c15717f",
+      "git_blob": "8314f3a2c2ccfbb544ee5665a724ca802287066b",
+      "bytes": 6666,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/embedding.py",
+      "sha256": "612a65c01c09fc5c8a5ba9500a01a7d2496d77b115c66a795134e050c7a1518a",
+      "git_blob": "f40372dbcea655fb94702156e719ca7ed04cf2e4",
+      "bytes": 6905,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/openai.py",
+      "sha256": "b800ce026fb5b3f1c79ede6c808c064f81d3a9e0e18418f03aaef980da34f9e3",
+      "git_blob": "e714709c0bca38533a610ce86d6bd49deaec8a57",
+      "bytes": 5694,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/oai/typing.py",
+      "sha256": "169f8f556bff59dedaec7f55642b3d591582d3c30f1380d591ba856ab2dc3d15",
+      "git_blob": "399a82f6999ebf6f24a6eebbb62f7c9629dde949",
+      "bytes": 512,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/llm/text_utils.py",
+      "sha256": "0dc72ceed34371a765b0f64fa38b24ce5bfcbaf1a8e4724726845c3fe8c3878f",
+      "git_blob": "d60e630488c2eb83affbb580fa1be19262393f31",
+      "bytes": 1311,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/progress.py",
+      "sha256": "3fe7a26c860a90cc74cd860af12ada1f740a0bf4e9663dbff4838b61a0eaac20",
+      "git_blob": "ad5bcee7343658242ad9a415c75dcf67c36cd3a2",
+      "bytes": 1280,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/question_gen/__init__.py",
+      "sha256": "109f79bae12fd909403c453551b5c7ceec2b12d8330a4babadc40b0f3fb51931",
+      "git_blob": "d7329277c25e2ef20838d981a3f29f8a24316f91",
+      "bytes": 112,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/question_gen/base.py",
+      "sha256": "f004cb570af446f03b9f4257eb1af07a6760ebb8754bdec04f871f7a297a862d",
+      "git_blob": "959b63d79134275ac07ac70733bc8ec63521098c",
+      "bytes": 1741,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/question_gen/local_gen.py",
+      "sha256": "a5ecf410ca56bb81fee92d382c855fe495b86d9449c4d3d0669def045b1dbb9b",
+      "git_blob": "ca703a66e34833074f027968af2b9584f215ae07",
+      "bytes": 6929,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/question_gen/system_prompt.py",
+      "sha256": "7d5d91c5fcecff32318b6ed0e40a4a66ad3592018ac9407e83366882f0f40702",
+      "git_blob": "904ede2435307ad4fde3e16798cacd50906a107b",
+      "bytes": 939,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/__init__.py",
+      "sha256": "7b3f859f7314e6621a4b47114d3e027e723005e953441dc334d31115409097d9",
+      "git_blob": "b41baaf340404151dd0228298bd5a43adcd77ccb",
+      "bytes": 111,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/base.py",
+      "sha256": "dd1ad0e89c7f6fdbb6b467beab4546c2968212e9296169ee621c7a6eb76b61cb",
+      "git_blob": "6dd02485f8b09ca718cc19f13856557731618399",
+      "bytes": 1941,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/__init__.py",
+      "sha256": "a848560a5ac40709e515cc5ba046718042abaa09430c15804a4fc5545de31879",
+      "git_blob": "ba73b6090039ecf8f852449eb219b753dd7ab559",
+      "bytes": 105,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/callbacks.py",
+      "sha256": "a5f39552653e1e5fa1825298a0790551d30c45fdce81bd07982df0c2a718e535",
+      "git_blob": "f48bb79b828f6b9bd3adaa6fa7fafab1227a8c1e",
+      "bytes": 807,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/community_context.py",
+      "sha256": "fec4033d866e5c7341e549d5ffcc31a0b25e48267c3902c51af3448b2093db93",
+      "git_blob": "d63320c85ba9355f6d875c6344bc4a7ace329434",
+      "bytes": 3874,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/map_system_prompt.py",
+      "sha256": "f2c2e122e049c81fd126f28c55f50203ae7141b56c0d78a1de0b73cf1b31dbd8",
+      "git_blob": "db1a649df336f5a83971017d5eb45e02345d8372",
+      "bytes": 4015,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/reduce_system_prompt.py",
+      "sha256": "5f016007cd53e62a9d1946e4272dfd30c6e5a231952149d962ac51ad498c6131",
+      "git_blob": "701717817c99975c935697a68e3f6024ad06e91a",
+      "bytes": 4145,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/global_search/search.py",
+      "sha256": "88e695dbadd6d8e7ae4fcebfe570be52671b6be0b12acb7a5dcf78c8defa176e",
+      "git_blob": "3b52ecbd8ca8f0ea08316b2cdfa334950fe201d1",
+      "bytes": 13135,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/local_search/__init__.py",
+      "sha256": "0c7580665fab38b1205daaba407167f51b1e6176146aa707d58c389a3c3f62ea",
+      "git_blob": "8b8b1e790e0006d71bbbadeba7b751fa263bd894",
+      "bytes": 109,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/local_search/mixed_context.py",
+      "sha256": "8822d0b600ab96f2f20a7c5a910537ff7db01277f8858ce8bdcd881b86814e36",
+      "git_blob": "117101e913597bcf4772d3a453939fa531d61cf9",
+      "bytes": 21665,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/local_search/search.py",
+      "sha256": "340986bc6b4d117d5b444268c3d7324ce2e120fd97a1f581ece0eb4c34807ba5",
+      "git_blob": "80dd6670041ba15fe760b482b689335b3d6a7dbf",
+      "bytes": 5481,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/query/structured_search/local_search/system_prompt.py",
+      "sha256": "68eadf9641416d9ad2b358a62447d4a02fcca83702f4fad967f44a6b7819947c",
+      "git_blob": "70b1d12fc3883811d033a681bba04154eacc249f",
+      "bytes": 2701,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/vector_stores/__init__.py",
+      "sha256": "8a0e1241eb4582820c8a1aef53230bb4aaedbce880e5885348faf2fa3489eec7",
+      "git_blob": "d4c11760aab9c29d020f7bb3053453971bdd9935",
+      "bytes": 549,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/vector_stores/azure_ai_search.py",
+      "sha256": "933458dc965e7e15c025a6dc827bcbc5cc532a20d6934c56ed8dda42e4e683fe",
+      "git_blob": "c503fca1c1b0160feef31dad4820c69e79a2e401",
+      "bytes": 7019,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/vector_stores/base.py",
+      "sha256": "10a4838905b0163fb92ce9e0f99699bfa293e9143dca58418c03deb920d2bcab",
+      "git_blob": "38f0e584fc022180a48274611f16c521b3b13161",
+      "bytes": 2290,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/vector_stores/lancedb.py",
+      "sha256": "b5db3c2e3014e2faf3d29ec89977e2ebcb0e139c1155a6f5aca563af712ea8f0",
+      "git_blob": "0c9ea17f546aefdc5ebac7c5d278ca95c4cc0d81",
+      "bytes": 4181,
+      "status": "verified"
+    },
+    {
+      "path": "graphrag/vector_stores/typing.py",
+      "sha256": "0780dbaa86f44121b6bb17ebfa9e74515e7ab1ef24e14e2ae76d4a756f455d70",
+      "git_blob": "0b5a5cd19552d5f55aa4840e94b1eea1a3e185ea",
+      "bytes": 1456,
+      "status": "verified"
+    },
+    {
+      "path": "poetry.lock",
+      "sha256": "157076812fe174e030afe7ff624f0abf938653ea253321edf2021cb4e77b3a73",
+      "git_blob": "a9c7fad1ca4635856d2aeb8317391671f8a63f54",
+      "bytes": 384274,
+      "status": "verified"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "2c3ecca781e93191a95106fc71466f8e03ea92fcefbd6126c7630c3e9c2c5fce",
+      "git_blob": "7605cf2a917e62163c3dc31545c133d878221ab7",
+      "bytes": 6533,
+      "status": "verified"
+    },
+    {
+      "path": "tests/fixtures/text/input/dulce.txt",
+      "sha256": "ba95fb002daffe8e6793d06461111f11327916c955fddc812776670599441093",
+      "git_blob": "95c9e3cd3af76b570f0550d69b2025d7cd6fafbb",
+      "bytes": 123461,
+      "status": "verified"
+    }
+  ]
+}

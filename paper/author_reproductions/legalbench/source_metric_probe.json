@@ -1,0 +1,33 @@
+{
+  "source_commit": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+  "model_requests": 0,
+  "source_changed": false,
+  "scope": "Source behavior vs independent arithmetic/protocol expectations; not legal accuracy",
+  "probes": [
+    {
+      "name": "numeric_decimal_representation",
+      "prediction": "$100.00",
+      "reference": "$100",
+      "expected_equal_numeric_value_score": 1.0,
+      "original_score": 0.0,
+      "reason": "Original removes decimal points before selecting the first integer."
+    },
+    {
+      "name": "ssla_perfect_two_item_set",
+      "prediction": "Alpha,Beta",
+      "reference": "Alpha,Beta",
+      "expected_set_f1": 1.0,
+      "original_score": 0.8,
+      "reason": "Original adds remaining false positives inside each reference-item iteration."
+    },
+    {
+      "name": "successor_dispatch_shadowing",
+      "prediction": "express agreement",
+      "reference": "express agreement,de facto merger",
+      "expected_set_f1": 0.6666666666666666,
+      "original_dispatch_score": 0.0,
+      "original_direct_set_f1": 0.6666666666666666,
+      "reason": "Task is in EXACT_MATCH_BALANCED_ACC_TASKS; evaluate() reaches that branch before its specialized F1 branch."
+    }
+  ]
+}

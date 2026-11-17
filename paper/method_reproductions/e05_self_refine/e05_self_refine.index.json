@@ -1,0 +1,146 @@
+{
+  "reproduction_name": "e05_self_refine",
+  "implementation_module": "screenshotlegal.method_reproductions.e05_self_refine",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e05_self_refine.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "author_controller_adaptation",
+  "reproduction_scope": "执行作者 responsegen 迭代控制器与三原生任务类调用；适配冻结来源案件输出、截图KIE及全图VQA；原benchmark未复现。",
+  "paper_sources": [
+    {
+      "paper_id": "A02",
+      "reference": "Madaan et al. (2023), *Self-Refine: Iterative Refinement with Self-Feedback*.",
+      "sources": [
+        "https://arxiv.org/abs/2303.17651"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "author_controller_integrated_case_kie_global_vqa_native_example_partial",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "author_controller_integrated_case_kie_global_vqa_native_example_partial",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "执行作者 responsegen 迭代控制器与三原生任务类调用；适配冻结来源案件输出、截图KIE及全图VQA；原benchmark未复现。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": true,
+    "author_benchmark_tracks": [
+      "kie_image",
+      "vqa_image_full"
+    ],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": true,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩",
+      "固定 Self-Refine 与 prompt-lib 提交；独立 Python 环境",
+      "修复未使用的 Anthropic 客户端构造兼容与 httpx 版本",
+      "本地受限 broker 保存实际 DeepSeek 身份，给原 SDK 返回兼容 engine alias",
+      "保留原 few-shot 提示，额外添加模型格式指令；禁用整轮自动付费重试",
+      "首次失败 1 次调用；随后原 Init/Feedback/Iterate 三类用 3 次调用完成一次修订",
+      "原responsegen控制器函数体经AST原样载入，禁用付费整轮重试；原三任务类__call__保留",
+      "任务模板改为KIE/VQA/CaseAnalysisOutput；JSON转义保护原字符；图像每步保持冻结输入",
+      "产品案件主链和KIE/全图VQA入口已接作者控制器；工程验证使用确定传输夹具，尚未新增真实调用"
+    ],
+    "blockers": [
+      "原缩写任务已完成一次三模块修订；原控制器真实完整运行尚待新增调用，未跑原数据集完整评测"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "A02",
+      "method": "Self-Refine",
+      "task": "同一模型先生成结果，再提供反馈并迭代修订；不同任务使用各自的原生模板。",
+      "input": "本轮选用作者 responsegen.run.iterative_response(context:str,max_attempts:int)：context是双人对话历史。历史原任务样例使用 acronym/run.py 的英文title与max_attempts；其他任务接收数学题、程序、概念集合或评论。",
+      "output": "responsegen控制器返回 {response文本: {n_attempts,scores,total_score,context}}；三个原生类分别返回(meta,response)、(meta,feedback)、(meta,revised_response)。缩写分支返回缩写及评分轨迹。均不直接返回本项目CaseAnalysisOutput/KIE/VQA schema。",
+      "benchmark": "论文七类任务：Yelp 情感反转、对话响应、PIE 代码优化、CodeNet 可读性、GSM8K、缩写生成、CommonGen；本次原生示例不是整套 benchmark。",
+      "innovation": "无需额外训练/外部反馈模型，由同一模型产生可执行反馈，再据反馈改写。",
+      "repo": "self_refine",
+      "source": "https://arxiv.org/html/2303.17651",
+      "fit": "可适配修订控制流；法律任务必须另定义引文/反证/缺证反馈标准。缩写自评分不能转为法律准确率。",
+      "pinned_author_source": {
+        "repository": "https://github.com/madaan/self-refine",
+        "commit": "9a206d41e5d2d0c241bb441f41eeadb945afaa55",
+        "local_path": "paper/upstream_sources/self_refine"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e05_self_refine"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e05_self_refine"
+    }
+  ]
+}

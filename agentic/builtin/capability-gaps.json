@@ -1,0 +1,32 @@
+[
+  {
+    "name": "事实、时间与金额表达",
+    "mechanism": "代码 + Prompt",
+    "implemented": "原文账本、Decimal 金额提及、时间精度、条件词提示、引用 Review",
+    "remaining": "复杂语义、否定范围与交易对应关系需模型候选分析及复核"
+  },
+  {
+    "name": "争点与竞争性解释",
+    "mechanism": "Planning + 阶段模型",
+    "implemented": "白名单分析重点、五阶段 Prompt、Responses 结构化推理、修复入口",
+    "remaining": "本次模型服务未联调；模型结论不等同事实或法律认证"
+  },
+  {
+    "name": "未知前提与补证",
+    "mechanism": "代码门禁 + 证据",
+    "implemented": "缺口分类和阻止推断关闭证据/人工项",
+    "remaining": "缺失原件、身份、时间、资金流必须由外部证据补充"
+  },
+  {
+    "name": "来源和执行可追溯",
+    "mechanism": "代码",
+    "implemented": "Run/Task/Trace、来源/Prompt 哈希、Checkpoint、事件与 HTML",
+    "remaining": "文本哈希不认证原件；未提供图片/OCR、跨来源实体消歧"
+  },
+  {
+    "name": "V3 研究与专业认证",
+    "mechanism": "独立评测 + 人工",
+    "implemented": "保留 docs/ai_docs_center 的缺口边界，不自动宣告关闭",
+    "remaining": "校准、独立复核、充分性/最小性认证及留出评测仍需专项验收"
+  }
+]

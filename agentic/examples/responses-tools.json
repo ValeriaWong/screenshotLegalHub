@@ -1,0 +1,222 @@
+[
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_get_run",
+    "description": "Read an owned run",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "run_id"
+      ],
+      "title": "RunID",
+      "type": "object"
+    }
+  },
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_cancel_run",
+    "description": "Cancel an owned run",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "run_id"
+      ],
+      "title": "RunID",
+      "type": "object"
+    }
+  },
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_events",
+    "description": "Read available ordered events after a cursor",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "after": {
+          "default": 0,
+          "minimum": 0,
+          "title": "After",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "run_id"
+      ],
+      "title": "EventsInput",
+      "type": "object"
+    }
+  },
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_list_skills",
+    "description": "Discover task abilities",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "title": "Empty",
+      "type": "object"
+    }
+  },
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_list_tools",
+    "description": "Discover permitted atomic operations",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "title": "Empty",
+      "type": "object"
+    }
+  },
+  {
+    "type": "function",
+    "strict": false,
+    "name": "harness_run_evidence_analysis",
+    "description": "独立五阶段证据分析：规划、事实、争点、缺口与报告数据；保留推断和待补证项",
+    "parameters": {
+      "$defs": {
+        "Source": {
+          "additionalProperties": false,
+          "properties": {
+            "source_id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_.:-]+$",
+              "title": "Source Id",
+              "type": "string"
+            },
+            "text": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "title": "Text",
+              "type": "string"
+            },
+            "speaker": {
+              "default": "未核实主体",
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Speaker",
+              "type": "string"
+            },
+            "time": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Time"
+            },
+            "time_precision": {
+              "default": "unknown",
+              "enum": [
+                "day",
+                "month",
+                "unknown"
+              ],
+              "title": "Time Precision",
+              "type": "string"
+            },
+            "kind": {
+              "default": "chat",
+              "enum": [
+                "chat",
+                "document",
+                "bank_record"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "locator": {
+              "default": "调用方文本",
+              "maxLength": 200,
+              "title": "Locator",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "text"
+          ],
+          "title": "Source",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.:-]+$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "question": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "synthetic": {
+          "default": false,
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "case_id",
+        "title",
+        "question",
+        "sources"
+      ],
+      "title": "CaseInput",
+      "type": "object"
+    }
+  }
+]

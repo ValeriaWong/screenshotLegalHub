@@ -1,0 +1,3080 @@
+{
+  "assessed_on": "2026-10-25",
+  "scope": "first-party Markdown plus project root READMEs; excludes docs center, dependencies and V3 snapshot byte copies",
+  "count": 439,
+  "documents": [
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/gpt61sol_low-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "c1d7da3c7bb8154debb3599a901bc5e6e54c69d9e8b10d444dd472925ce520d9",
+      "bytes": 633
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/kimi26_nonthinking/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "75faca0046761060c4e485d5a932f660df9cc370e30b8ca1db86f48999f462be",
+      "bytes": 940
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/kimi26_nonthinking-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "ba61459f7ac9950bde5052d572fb6b1214617fe60f8b7568d32c37b8974bea0c",
+      "bytes": 631
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/kimi3_low/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "34a84d5b708e8c2d50cb8951d37fbbcefbac5b660825f1f86bd83d11ce731405",
+      "bytes": 938
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/kimi3_low-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "b2ca68248a609a19c19bfeb80ef8935b064288c8425bb0b045e43269c3c7dc50",
+      "bytes": 629
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen38_thinking/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "8ea7044543e85079b649612d3d39b6bfd1c9e06730a20367ab53a0aba671392c",
+      "bytes": 947
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen38_thinking-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "657bb716da930415c4d30eab31e1a127baed64c0e22020c1fcc8366cf80c1571",
+      "bytes": 638
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen3vl_instruct/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "aa7f5e2dfc32f42f71cb850ea273993da82b035ae2787af39a125c52d1b4fcfd",
+      "bytes": 957
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen3vl_instruct-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "3b62ca8c3d292c77257ddac1effd53f809203ac1886191deb0ddf87c6d1bcaf3",
+      "bytes": 648
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen3vl_thinking/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "1de62070ec59abba425851b6e92236139bc48a83d9573f8f6b5c2c53ba6a481c",
+      "bytes": 957
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen3vl_thinking-smoke/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "6e2c201282666a088cb7b5875dac0951baf393a02b276c297faecbd6cc678217",
+      "bytes": 648
+    },
+    {
+      "path": "blocks/evaluator/artifacts/runs/20261004-vision-pilot/sf_qwen3vl_thinking_native/report.md",
+      "title": "v1 模型评测运行报告",
+      "category": "历史快照/验收证据",
+      "sha256": "8ce0e174207ed2202353235d05a19cac288acd73b93d46d869b759113b8207bc",
+      "bytes": 957
+    },
+    {
+      "path": "blocks/retriever/README.md",
+      "title": "本地检索与证据工作台",
+      "category": "现行入口/技术参考",
+      "sha256": "7037dad46249930ce401e6efc8185da0aa63930e83a7ca6491766c6c198ca46f",
+      "bytes": 4415
+    },
+    {
+      "path": "blocks/synthesizer/prompts/critic_v2_r1.md",
+      "title": "critic_v2_r1",
+      "category": "现行入口/技术参考",
+      "sha256": "e525f3516366e0e7b27d5bb92303db00881ba7fc55004360a1d9e9d19ffe71a7",
+      "bytes": 1745
+    },
+    {
+      "path": "blocks/synthesizer/prompts/critic_v2_r3.md",
+      "title": "逐案复核并做一次具体修订",
+      "category": "现行入口/技术参考",
+      "sha256": "d179347c3fbd06a9272740a564dfb7d0a74576a5b21f1bba34d0369349057be8",
+      "bytes": 1651
+    },
+    {
+      "path": "blocks/synthesizer/prompts/generate_v2_r1.md",
+      "title": "generate_v2_r1",
+      "category": "现行入口/技术参考",
+      "sha256": "926a598593c98b4e66ef1dfb217cac785b5dd1ff9c05c654b4c56701fada2195",
+      "bytes": 5083
+    },
+    {
+      "path": "blocks/synthesizer/prompts/generate_v2_r3.md",
+      "title": "中文案由覆盖：按用户认可的第二轮写作标准生成候选",
+      "category": "现行入口/技术参考",
+      "sha256": "c3c17ca0e8adc779e76a8d5d43c19ffdfb0c83d1e92977f361e80ac3841f536d",
+      "bytes": 4891
+    },
+    {
+      "path": "blocks/synthesizer/prompts/round_002_lessons.md",
+      "title": "第二轮实际写作得到的修订规则",
+      "category": "现行入口/技术参考",
+      "sha256": "b5e64969afc269a9bbf40928f589080c54ea0c88759e6cb6e1f478dc22b209be",
+      "bytes": 2030
+    },
+    {
+      "path": "blocks/synthesizer/README.md",
+      "title": "v2 独立合成 block",
+      "category": "现行入口/技术参考",
+      "sha256": "7dd5e0cefca5014926f378a6485ab843225492202793e5382dfe66d21b80d32a",
+      "bytes": 3196
+    },
+    {
+      "path": "datasets/v2.0.0/dependency_pilot_001/BUILD_INCOMPLETE.md",
+      "title": "未完成的开发构建，不能用于评测",
+      "category": "版本化开发候选",
+      "sha256": "7f89f670e13637395285b0116727df6def14fff9c6ab039790694c3163b17375",
+      "bytes": 478
+    },
+    {
+      "path": "datasets/v2.0.0/dependency_pilot_001_r1/README.md",
+      "title": "依赖验证候选集 v1，开发用途",
+      "category": "版本化开发候选",
+      "sha256": "e0431f239ee753afe50bba8b27ba25b0d7bda5f267c49345669db5cb97e639b7",
+      "bytes": 1431
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/en/en_charter_177/REVIEW.md",
+      "title": "en_charter_177 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "58df2a074fc574e0894da6b0b8fd5c1218c2fd64f0a14b1606f2f1ce9fff953f",
+      "bytes": 34406
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/en/en_loan_182/REVIEW.md",
+      "title": "en_loan_182 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "cdef3af2bc500db40c98a406eadaa0f652000218861cea56b4e529596c46fd24",
+      "bytes": 39493
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/en/en_probate_283/REVIEW.md",
+      "title": "en_probate_283 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "038ceff4f1a7304c785ef270f99c633571703099ef69d83a147d2c54cd3d00f6",
+      "bytes": 35482
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/REPORT.md",
+      "title": "v2.0.0 第一轮：中英文判决书 → 合成聊天 → 复核修订",
+      "category": "版本化开发候选",
+      "sha256": "ecf1f6781a0236574626d32ad8909b8ca18d97da799c603fd7f1b29da43fda17",
+      "bytes": 4809
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/zh/zh_employment_130/REVIEW.md",
+      "title": "zh_employment_130 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "645453768bf60fad5826b9b1b5d94b2903f61cc3fd7596110aa560e3b29e4090",
+      "bytes": 37783
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/zh/zh_loan_155/REVIEW.md",
+      "title": "zh_loan_155 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "b45dd8a9bcf5c6aea572ca6951f763e0803bf4ab7aaadb9f0d3479da612fb0da",
+      "bytes": 34438
+    },
+    {
+      "path": "datasets/v2.0.0/round_001/zh/zh_sales_146/REVIEW.md",
+      "title": "zh_sales_146 — 第一轮人工查看",
+      "category": "版本化开发候选",
+      "sha256": "1be5f5cce8244b997161c666b3fcc0e4232fcbbc83efa15b676bc3296b7c7dee",
+      "bytes": 27069
+    },
+    {
+      "path": "datasets/v2.0.0/round_002/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "版本化开发候选",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "datasets/v2.0.0/round_002/en/en_probate_283/REVIEW.md",
+      "title": "English · Probate / family WhatsApp",
+      "category": "版本化开发候选",
+      "sha256": "564bdaec4d4e1abbc0ceaa6d3b68b52b75bd72411a0788eb2d5adc72b1483e7a",
+      "bytes": 9784
+    },
+    {
+      "path": "datasets/v2.0.0/round_002/REPORT.md",
+      "title": "V2 第二轮：先把两案写好",
+      "category": "版本化开发候选",
+      "sha256": "b0fedf030b98b13d7ba906ae5c83d56471b76b5ded94c659748312ea544cf791",
+      "bytes": 4287
+    },
+    {
+      "path": "datasets/v2.0.0/round_002/zh/zh_sales_146/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ac8fb5d581fc5d98259091de3b05c8efe9bbd75443b4fbc190d8d00b7ed46b3c",
+      "bytes": 35325
+    },
+    {
+      "path": "datasets/v2.0.0/round_002/zh/zh_sales_146/REVIEW.md",
+      "title": "中文 · 买卖合同 / 水泵参数",
+      "category": "版本化开发候选",
+      "sha256": "3169684808176f873a0892054cb6d1fe94991f45514e3df6c0d1bade06873454",
+      "bytes": 12907
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/AGENT_WRITING.md",
+      "title": "中文判决逐案直接写作规则",
+      "category": "版本化开发候选",
+      "sha256": "9cc6c6f32b3820a1483227652ed1b64b2ebaf841aeacc8694a76d3f09d7a34a0",
+      "bytes": 5031
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "版本化开发候选",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/ITERATION_METHOD.md",
+      "title": "第三轮实际迭代方法",
+      "category": "版本化开发候选",
+      "sha256": "f1968a84ceda4afb3c36b705de00379ec6db3026e4efbdaa364096bb93810f79",
+      "bytes": 5605
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/QUALITY_REVIEW.md",
+      "title": "第三轮质量复核清单",
+      "category": "版本化开发候选",
+      "sha256": "9feaf211871112c079a6101f1e1b3234da7bcadccbf1cd469850dc71581195d8",
+      "bytes": 55705
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/REPORT.md",
+      "title": "中文案由覆盖 · 第三轮",
+      "category": "版本化开发候选",
+      "sha256": "bb415bf55e7082fea6b7e980d047c89bc9ff10d42153d60dd009d500a4d3b634",
+      "bytes": 22486
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/SOURCE_AUDIT.md",
+      "title": "中文来源核查",
+      "category": "版本化开发候选",
+      "sha256": "c45b412aa9bc75afda7b523acf375a0169ce41d1eb1d9c04554dc3c3833226aa",
+      "bytes": 18728
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/SOURCE_GAPS.md",
+      "title": "第三轮来源缺口",
+      "category": "版本化开发候选",
+      "sha256": "f44fd6549f4bf94e739f8697d4c608c2b2a2dea7a0916ccd8c931e5c286dedce",
+      "bytes": 50055
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0001/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e8ee27c75d444da08a6c1c5932effc9947ad13383c056ae685c27045d0b792be",
+      "bytes": 69140
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0002/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ba7b0da6392fb5842059837dc4ede906f39671778f951a65152bb06470d697b5",
+      "bytes": 22910
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0003/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "68b59e043910df3ff7db94054ecdf3a1e0427da8fff848899f67949c9147107e",
+      "bytes": 26848
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0006/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "20acc736e005d5b8b911f28332455028f4c5eab609bc2fb4513468edc8ec4d8b",
+      "bytes": 44119
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0007/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "14f0419d7b0a2d45817cf1abccc42d2a222e07379f5830b950852f5f244836c7",
+      "bytes": 27366
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0010/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f09962ac4e3228ce38ff57b190b202c21dfd2b4b286426fd28674ad9d535323c",
+      "bytes": 88717
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0011/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "4953bba020161d9b9781757e585a915a7e3bcbef10aaa717e21996654b7f9a58",
+      "bytes": 24942
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0013/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "105aa0a30f5fcff3474aebb45826b53f141c8e1ea6741b3d89dad95f05856846",
+      "bytes": 31063
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0015/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6f643c3c3655ed937d9e513461a253936cefc482d43fbbe77387824949803e28",
+      "bytes": 30541
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0017/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "2dcc0fffaa5a79718a66ee8b0e0e3a6ba0ed1d22894c50f42d6418ccaca407cb",
+      "bytes": 29766
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0018/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c11339e760569d00c22c6b198963f853d3b253bd66dc32e8743e78f6103f9ef5",
+      "bytes": 29158
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0020/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "2cf05633d98e41c4d82ddfd229773d130245fad46e37e9264fede0bddfa675c7",
+      "bytes": 43187
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0021/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "7513c699145c79a475bd6f62eea0c6a85fa95ccd0564ebe5fb7ed05e6c1a894f",
+      "bytes": 34555
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0022/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5598331e09487dbfc0b29b4f6cf4b513a207e3f654ee0ee7c1976d7b45af1b17",
+      "bytes": 33049
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0025/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "849d79e399369cb109f304e3021a9794c7745c27d8f70ae97ad97893eb7ff11c",
+      "bytes": 23062
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0026/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "79deeb73100f93c9a766c3ca680f8dd68948aa50747f1a0ccc20620a69fd9a38",
+      "bytes": 44222
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0028/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "4d50ef2b4a2e1ff33ff1d7dc478e80dd81127c95edbbc869ee6a390508d0ae6b",
+      "bytes": 52919
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0030/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9a26d51d55a956be21e05b350b54dd29d1a5a7d4637647cd80c7acc711b90237",
+      "bytes": 25373
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0033/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "7fa7262c26bbce2680574653d68571736c67dbb8c1852a6d5b9e39d7dc4e45bf",
+      "bytes": 18289
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0034/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "4f4888ec68c0c1cc2687c717e602a1a823011a1d1fb40710ba81b4e22e5873c4",
+      "bytes": 20262
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0036/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "85eff87524ebf6d76f384c14d325f3cb698d9ac0bcf50a3fb28f188087486b6f",
+      "bytes": 31914
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0039/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f319604ff3264f92551dceefc3378c6bc0d879e6ae08fdac92de971f156e2259",
+      "bytes": 18529
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0040/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5b5991977d0609d47c55674459c437792984c69eefc6b8e9d76022a48ba1be0c",
+      "bytes": 16080
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0041/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "bec81ec6c29e8d777887a5810e52c79bd581888346637146a4688cd9ab6b38e6",
+      "bytes": 31611
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0043/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a8e9fea9b6fe13b34d5ae27aa772809d575803f7f2c5c8df625f1039bf96faac",
+      "bytes": 24271
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0044/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6aa5225fa44d912ebc6a8fc9b4b4b60493e4301306942df9e617dfabd58f1439",
+      "bytes": 14235
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0047/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "910e2b980de7990bc50dd46c148183473136969d9646636d917c4bd49b412607",
+      "bytes": 50693
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0050/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c46c718843dc843da04a3a08fecadc71dc1272b44ab30687ef79ebdbaf959b5e",
+      "bytes": 27729
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0052/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "8a46cff083a4be0090372896dc620cd936a3be66c3902965eb267f1257aa7c00",
+      "bytes": 51142
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0054/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "90144efa2dd4fc5c0b02f42072ed56bfe510a09c903854a45f09f1b933ae0e70",
+      "bytes": 17216
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0055/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b540dcbd84b3456122d5056d314538ecbd2d26c8211570593d988fa77f5e3b57",
+      "bytes": 39109
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0058/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a941844a6b0abf32b76c0599cd8a39c9500697836d3abbedc44223fecdcc9036",
+      "bytes": 20253
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0059/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "13d2b139e288f1408c3256469a432946daf0354defbaa37e3a860596ca41fa7c",
+      "bytes": 17918
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0061/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3b3f7129c523d22f39463e75509c946d258091e58aaf4f7496819555b2b14791",
+      "bytes": 30099
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0063/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b706e8a155383373cbeb2a7ad90f8f20a48c8c027abbbde43a87338ab539144f",
+      "bytes": 36052
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0065/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c3fa684612a48acc7e85af3f83e12ea41f4f9682aa908aa96c970a24603cad77",
+      "bytes": 21693
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0068/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f0aa621392f98bdfe69266f11afbb29d62196294ba6d330541bbe45653d12041",
+      "bytes": 18003
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0069/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "272811988ec2f7a38c9e2181a6bc9d705ea31a87478449bc40791226cc2eeab4",
+      "bytes": 64856
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0071/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "dbf134106f6346b799d54d0d277a6a17765dddf9aedbc50206fa6efa53d2b758",
+      "bytes": 25018
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0073/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f9f9fe7189b8fd5225c129236bd01acf167bfcc208d3ead92886579fac581a64",
+      "bytes": 15733
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0074/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b0fa199d30eb75774978815e884ae75476f87bc418297e55399439ae8aa0ace7",
+      "bytes": 18539
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0076/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "feea2b2736d2241231670a2183adf95d82fa603e1c2cd67c62f14d98c8e04ae2",
+      "bytes": 24751
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0078/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e6c8289383c52c2c8d07e871de79747e43aabb1413a26dde655d92fe814f4e70",
+      "bytes": 48235
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0080/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "660f397e1017cfeb8b73653c03b26c55fb09c82dfe6cae11872243f5663cf599",
+      "bytes": 52143
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0083/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "80645916bb806bd9dde181f620dc855df8ae418d5ff705d282f39dc7e13c86f7",
+      "bytes": 53590
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0087/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "996863ad87a9dff32bd7910dfe9a7b787abd394e864457b45f4433b69c4204cb",
+      "bytes": 20024
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0091/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c9627ff8cac2af1dabb0ed9c6793ffd96d9ba96bdd3b8293bc6d778ab480e2b5",
+      "bytes": 22593
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0092/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6b26a988b3d28f21ae01efdb1cf7a4b358efa2c4cd8cf64d314df371c80c4836",
+      "bytes": 26251
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0094/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "2afdc62ed54cb9ce23e4a1ecf8f35e77ad9bbb305fe568f468eea17b1dbfec66",
+      "bytes": 20494
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0097/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "724dea2e2e137e060439aeb45a98a13e5447dadf4e5c582f31cb67648b6e5f1b",
+      "bytes": 21622
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0098/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f05cb1965aaf417f7685f23ba08ed7def7b5641ce99062ced242494acd116241",
+      "bytes": 26137
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0104/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9d66d4c0b49698d85a0e5dcad685a68e8d3fa7c92db5fa91ac0ac917dd0f4d06",
+      "bytes": 71852
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0105/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ad2e7932fa8401e5c34f2581be3b34c5b4f8baed14c0ab57b634134db0343899",
+      "bytes": 31865
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0106/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c4eb1705988ee679a26c680d08441710e96989d1e5b32b565cb303dc6929d34b",
+      "bytes": 38103
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0108/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "102e73c08f878327af0ac8c44cf7fa3bd52d83d14911a856e0a4dfd60737fb7f",
+      "bytes": 13043
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0111/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "42158b9271f4b66ded8e17a68cc44a761794d62a0259805f8f965729c1cf9edf",
+      "bytes": 32277
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0112/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "45849df6f156f96e0f393deac6c8721d2eddf5e7ba52c7bccb32f357026b2bbf",
+      "bytes": 17214
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0116/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6325ff0baaea904dc6e5f75749e38520f34f532819954fbe0ed50289c95ddab8",
+      "bytes": 43787
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0118/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b7126904972e27de6a47bcfa1a619844a832db812d9f0ea15f3ebbad42d33943",
+      "bytes": 20980
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0122/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e09fe9a8c91afc451fd879c28337dfb9f8b0d5328a42e7667d87e064ca5cbd02",
+      "bytes": 19073
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0123/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "009c6f1edcb3fde6a7ff70aec0a8b5434a967c647ac98edfd084aef327917435",
+      "bytes": 17210
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0125/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b5089dbae14532f010965a450d17db1766357f3d381be6085207b2ced2103c21",
+      "bytes": 16329
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0127/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "397a7518b058616672c504dd32efbee674b35bc4d698a0b39db11890a862b62d",
+      "bytes": 10879
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0129/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b073a815ca3adeb0dfc4d9c5ce20652f57840907a5e51d7fa01e89a40ba9c7f3",
+      "bytes": 21614
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0130/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b54239076ffaa371b98b5170cd378855b6f2892acbc065578d28eb082056afc5",
+      "bytes": 23219
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0132/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "787138ba97ea14382a03746836227b7fdd935ff5fe3081ec78954198e4a4b919",
+      "bytes": 28939
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0135/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b6ddb5aed1665cdf3b3b201aee70defb64a0e4bfc16a8fe3414e0aa153b53124",
+      "bytes": 21090
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0137/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "950a033bc88d14c9a3c5fcb77c82a7ddc708e01910a0a7798712f0aa128e754c",
+      "bytes": 27867
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0139/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "671030764a747005b4f1bf7530e24d2f3ebf30851f27b91465a2af882dd5c596",
+      "bytes": 14575
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0141/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d784487a96d570c7befc7b84967f9f4e393bf7386a27be6c4b6cad05c52758a3",
+      "bytes": 18172
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0143/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0f7e4505e1546058f4fa7a124412a85384ac2e28630951bcf1e6258a200be578",
+      "bytes": 15474
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0144/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "629ef3bb200ead4a6010648d8e87be4743dbd9838fe391d3b36d7a32c10e3b09",
+      "bytes": 42596
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0145/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6629d75eae68243363e0128e4602883ec64a5661686cc1523ed41d425aaa05cd",
+      "bytes": 44983
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0146/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a3d830aaf08974709bf58a8b60f95d468f3b5ae3cc551d22f82a19e14584d25d",
+      "bytes": 35610
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0151/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e50745cd10e06237efbbaf2cb819f81686742b286eed32c280ae8398ca70e3c9",
+      "bytes": 24834
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0152/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b18b9508bd8830318814c884c46f7423efd7aea750beda205e95b43e0c30654b",
+      "bytes": 49961
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0153/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5838259520b9c8f0dbd6ae18a4451b4d618f464be863d88942ed13828be42abf",
+      "bytes": 22584
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0156/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9ffac3cb6ce504cee1d314f0b415c2cd6afbac3751756888f3d75891b08d2af3",
+      "bytes": 14334
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0157/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c025a2718565f24f6c399d789732bd45420c8dced89ac0d66f4f5f38c276dcd9",
+      "bytes": 51645
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0159/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "21d178562b3396456494d694b5d722694096bc484708a7a193bbfea3b186587a",
+      "bytes": 34383
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0162/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "91180a2253e5267564efe80ad37a19b2cf911d202faf739b6199767a87139137",
+      "bytes": 18673
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0163/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a5f254583e54cf813cae5c20d99e5cdcdbd3fb10627403e2aae99e0fb8348010",
+      "bytes": 42307
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0166/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "c2cd89ec86163b8d91f7e4a204d2c4cee1f986935d057ed5db96a5ddcf198601",
+      "bytes": 27543
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0168/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5d915fad2ec1f59c8b241bff4b8adc4636d4b7512dbfcdb886bd58c06f108b23",
+      "bytes": 24282
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0169/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0e64a6a91926380dadb949f5322223a551a0d93643d2a14b1960a6396cd20b54",
+      "bytes": 53016
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0171/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3e8326586824dcc4467c06e0df1294da1d109a36e2dc543044ce7512a2936e98",
+      "bytes": 31405
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0172/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3f331b870367e540f26c653365cc25cf846b9e0762d9cea96146ca3eb2872746",
+      "bytes": 27722
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0173/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "18c6cad8b497cde0c4b49f0c3dd70964e664cec1a1983d6773e866fdab02f0fa",
+      "bytes": 41881
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0174/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "317425dda1f4f1fa5bbe2930e34497cb0fef204801a6eb6909a7698253f19eb7",
+      "bytes": 16117
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0175/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "fe54f422dd07e682fb1176e0091a2df26be3a344d896d4856f615ac79eecd5ba",
+      "bytes": 61901
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0177/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5a3c048e419d1d1f11a2a4aff9f023aa39e1eb60c265606bc875566d7bf4cd27",
+      "bytes": 43358
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0179/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0416263a8af8a3740fd2c489d682fd65001221e31e72ada65e6fe0baf94002c4",
+      "bytes": 20791
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0180/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "78d1c1f6c8c95c2608207c9aeb73e48d7d1b112ee6286eb7b31d93840522fe44",
+      "bytes": 23735
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0182/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "36ecf8aea69db03fd48fe0455087e45f2b7400854c5e0a2fc6fdf31a0ef0059b",
+      "bytes": 16996
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0184/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "96b58e5f5f947071ca03089060dfb62e8562f713cda52cfbe11c478ee4057ba3",
+      "bytes": 17064
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0186/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "dd3d8bf86ad02c997568eb8b7137336abd25c82cb338af43de439a2c7fbbeeae",
+      "bytes": 33530
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0187/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "598682338cd953ce15acacecc5c3a31b711e7e763b72317868a108eea14c8877",
+      "bytes": 23082
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0188/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "7c1d2979ebdf59924f344fd0608748f32c8d51e646780c7f3626c225541932e8",
+      "bytes": 39032
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0191/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "fd0af7d274ecd51263621b8d4e4d65948fb56dc2d5a3f0d584369b291ce18ea2",
+      "bytes": 17748
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0193/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d06744daf8246bdc7114dc9a77ecc000cf28b051ff75306d645fa21c2ef7544b",
+      "bytes": 17084
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0195/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b0b434f09b0d941145f067c2ed77af8098388606d0f503477d4d741add8857a3",
+      "bytes": 35031
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0197/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e4f9a2dd9cc518c68403ea551624248a8c12f427e4f0300f2138fc8cbf7800d7",
+      "bytes": 28526
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0199/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "14a22edbc645a7c6b00d5fead72b91ab2267d6345349fb59b31d43fbc1713301",
+      "bytes": 30758
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0201/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f34a179748fbefa78ba904ad482fcb157faa9b795835f23ff8971cbe1ed94939",
+      "bytes": 22452
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0202/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "150bc30e55532fc14fd4a72f49a6cb8795a198c648baebb33fcdafb992482012",
+      "bytes": 33401
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0204/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "65c7040bf72bc9455c6ada86588582cfea8c424fccc364794d3e9560a7151693",
+      "bytes": 20854
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0205/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "46b1029ade71ebe0cbd29187acb191e69c2de5f0e8103b4fc5138a705f9a7e19",
+      "bytes": 61525
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0209/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "2195a6f4ed347f16c5aab981e220e517c99480a108dbce8f3e38206fd8d3dbe7",
+      "bytes": 15225
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0211/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ca21f0e6327a075b626326e18a005e1ce630a8d5e7614b5168c2418d0d2d4b60",
+      "bytes": 10560
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0213/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d2a24c43a222e18a9cf6f88ffe9d5b499840da734d28350a1cd5444419f45144",
+      "bytes": 37705
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0214/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "711be0dc91cfc9a2a62025e5d36b48157432f2dd85ccd915e45da53c0859f6f9",
+      "bytes": 26188
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0217/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "1fd8499109b475c6afc5531413139aea6deefffb46fc5955b624bba56ec2704c",
+      "bytes": 20463
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0221/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e8206174d657cf93c2822689ee53344b9bd77b1415477a45df2a51fe5a395a2a",
+      "bytes": 9584
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0223/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b8d56c988d4930dbcc35f416e600b9a69a24ca6d4b875203128120f2e2b22369",
+      "bytes": 18906
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0226/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a931da1a814fcad0aa8dfb5181fd59c434edcd38f96311491634c8885ec28f6f",
+      "bytes": 15535
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0231/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ba921db47564c6dae541d0b75d3281eb3cef38b8e86de17df99af9aaa7213670",
+      "bytes": 26762
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0232/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "41b3c1d20f7a81a978fa3400067234735e6a9d2d2f8e6af1fc7057a64c68e66a",
+      "bytes": 44488
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0235/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "fd2ec6a8b817f1f0095ba84bb8f1c1d81bea9fbf067fd166ed2453b814848a8b",
+      "bytes": 24895
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0238/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "7efa96dd813c972c9b0f3028086dfef179293176add45edc5276beb459570173",
+      "bytes": 44811
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0241/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0feae9f652b552f5f0644510b26abe84a065e386dfe82d7291093542b65af4c5",
+      "bytes": 35506
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0244/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a76d200f9270a47fda185500afea4083a240c5e4aec8ee479cb9de2c0f7f1fee",
+      "bytes": 26144
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0246/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0269b37a4a7d5368e181911645ee353d3b22d467285005aab954690880743f4b",
+      "bytes": 17829
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0247/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f7f13620673d24ef4886093e5348791fcc013d0d221e5e04762b9635c742d8ab",
+      "bytes": 15844
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0249/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9964c26df5b64184235e416a03f222b03ba4a4162eb91bd2bfa402b32b11728e",
+      "bytes": 29225
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0252/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f83d1cdb99a35954e2808c01b2f666ce86b8c39fbc0770bd8367cf9d0e8c28e4",
+      "bytes": 18887
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0253/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "56e586dd84b65858768a0390738cb6e556f1cc83f77ac297ed4be829c7a8e8ff",
+      "bytes": 17540
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0258/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "1389d6119b1f5d437726e6736288a951dbe66e0692f094f596419e63461f71a4",
+      "bytes": 16516
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0265/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "26794e30cb9f70d3e929440a1e54b7e32023026d887c4a6b5354ebd9f6bf01ae",
+      "bytes": 18724
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0266/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "60049a411be95946be10e8da0e4a69a8cd8f467350c3822a6875a5c3f0fa5bed",
+      "bytes": 61586
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0270/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "64f1b7979be0f8b8e88d0206a4204c3826c9fea3ae89d9448c7126a82c9ffda3",
+      "bytes": 27205
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0272/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "1ff7bec938195e1fc94ec3f44c41fa7aa2a35288bb3bcd9295628db20e85a6f5",
+      "bytes": 27404
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0274/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f29d66ec7d0ef1fa2b655fdbc1afd57e285ce54a4b99a808de3de31e491e7563",
+      "bytes": 24155
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0275/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3fa8b97bef398b2efffc9bdb3aaa6a73907f848632c90edaf7404bb4eb8a0681",
+      "bytes": 26250
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0278/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6555f640cb487c5de4d9a428762abc5dca0f33e5128264b88ff4f7c25174f8ab",
+      "bytes": 22598
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0280/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ce1d635a1cec26f8e8662a43e995d1770af63ec27108c3fc0a68afcf60c7ae3c",
+      "bytes": 15060
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0282/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "99dcb84f5d5f88508427f3b258fcf275209ed9d92f08ca956bb15d37c56f3a83",
+      "bytes": 12940
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0284/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "1509f0f61c18ff3b9a743ee602735ed55b19f5fd409fc9b36ae004f718047275",
+      "bytes": 19039
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0286/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "624790a2321e6bc4c2c77bbea6339a7691e56e6251fc025972563e3862760886",
+      "bytes": 18051
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0288/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "ad2c80e5bf5ed3dcf63079e37c0d47e665b748db960f34f803ae377332161979",
+      "bytes": 53032
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0290/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a65b4704b3b573463e33d6593a5563791352c77597bbe70ee25765218f2847a5",
+      "bytes": 23835
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0291/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "eb21b2ef126fe5c26fc50e7b9d5e8d7e426b9c1ee6af32e325453de9f0632a13",
+      "bytes": 47005
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0294/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "47d902d5e937156c485c1f23d594460f713ba807570256b2cc1de3feb72b9a10",
+      "bytes": 34126
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0297/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "bf1e894b6cea41f136a4a8dfb1e951d88f89011f2bbd23399d80a27255450af9",
+      "bytes": 14677
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0300/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b9bd902f4dc72c8b4d137562509ab780980c818ec30fcb8e59fe87180610a6ec",
+      "bytes": 37505
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0303/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e33330b2ebbedbf9d2bff167611ca0cc09dcffec7c1d6c8422fe433a460e130e",
+      "bytes": 26260
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0304/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0533f05f9f5afccaacb69034732504c53f1bb05d0fbc111a16c35c9344a52786",
+      "bytes": 31603
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0306/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "58c902d257b6208785ab9f837c758acf696cb2c72ed5dc3f1cbbc9fc9e714843",
+      "bytes": 19416
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0308/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6b938b131f957cb6cebf1c41c5eef9a6516f15658986836908bece2e625078b9",
+      "bytes": 25744
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0310/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0eff6dabacf0bc8ebf8690650e1cb7f3ff45ff7969f1a48648ae2af041bf5c06",
+      "bytes": 34201
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0311/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6002516f50636981850c70c0527904cb708e6484c025c3f97e8369dac1a79c2c",
+      "bytes": 28925
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0313/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "dcafaaf449225c476f9adb2b0aca0c00a83b3ab1038e87317b8347fa6b390527",
+      "bytes": 36828
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0314/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "cbb5e7ec2d09659e60279567a511b10fd420ae36dc6dbd4b28ff9d83cf934ce8",
+      "bytes": 33785
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0315/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "947005ee6014e61cc35407b5cac662af886b2f1b31d54b2eb27a413586c4eb0e",
+      "bytes": 65441
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0317/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b3daae23f75ee1a71bb846aa36e0da03b851fec6e03799d846fcf97bf05a24d6",
+      "bytes": 15746
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0318/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a928a71056d0018d4777cc9091d6fba67d12ed83ab84b932fc5bd5e269c17124",
+      "bytes": 14416
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0319/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "df490ecdea48a73c56126a8ef626311dbdc7444b52025856baabd2a2724751f3",
+      "bytes": 45363
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0322/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0d8e03c62b8e4ad4b1752d2005e7ceb65e48a99b8ff31956dd7761f2ad306577",
+      "bytes": 18212
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0324/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f05cc0e815ac36afddd9439769ac5e4e6f5a9e7f3ebb17171dfe06b3496f1927",
+      "bytes": 25773
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0326/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "247c0d5802bbcd6d9627c80711f2f7eae92d5f698365aa884b89b807783364ca",
+      "bytes": 32358
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0332/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "7b6dafbd8ff368163da2e2dd82564a751d33a4519d73af34dda9fb8f488248a3",
+      "bytes": 50072
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0336/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "232495276f46db573ea5e9d9448431e42f50894b73eec535aef2896d563b322c",
+      "bytes": 19368
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0337/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0f2cdb95b6e86fe4a7a80436f33461ab74916855e7b973b8a3893fce097dfa37",
+      "bytes": 24876
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0339/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "db0b29554f6a2738b7c2af9a997cfe2d1b9204da935f31b597dbc1a62000c103",
+      "bytes": 52784
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0342/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "aeb58990134450535661fc4e1244df9bdf478a792c5de89a49be8ab0ae381668",
+      "bytes": 23521
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0346/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3855e31cff4deed2bab013fcb6ff3c3903a4459ac95b471eb20a6332804e2154",
+      "bytes": 25475
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_0349/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9ef3e430862b8bd6e82aa9520c038382893f13554de64074c1a21f3ddab3f629",
+      "bytes": 7282
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0088/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a6b2501f8a8cd18c419895e94d9d5e0d004e7b8c7d29bd45d7662a97da1f5f2c",
+      "bytes": 18164
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0120/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e43bbc681c97124321143772aa84d3e672129b0da4d9b128a50b0a0909ff59d2",
+      "bytes": 41241
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0161/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "05d192eb60b2f640a35407618d1263bf7d7c03642d317c02f1d4bef63ad8bd6e",
+      "bytes": 31763
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0215/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "b6a729e334407dcedeb2d2a16eed8a9fa9d70d91bd1fa3e9625b74be5afd97d4",
+      "bytes": 21882
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0236/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "94db802ec55e9c697aba4b9cd1aec2534835a0816b3fd94170bc2df013edb4bd",
+      "bytes": 23478
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0255/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "2110aa68493a2dd14283a4c3452ec30c04b3e8132ae52200e3c1369bb3703411",
+      "bytes": 23168
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0277/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0b8ace85666b255d114cc30754538742fa0a8138e86c6776c80e0c63d17c0087",
+      "bytes": 33366
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0298/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6ee28a154c9fcfe6999dd69a44181261fe5bc3a0e9008bf7344852bf7f023ec4",
+      "bytes": 32954
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0328/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "0e4608692e6e10622732a7a186d892ccaf3ca3741aa2518204b0fa7dac0ffe15",
+      "bytes": 39081
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0330/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "325287a6b1e41dbc1289954c94eaa70e6076aece18b75c768997be834d6d97b6",
+      "bytes": 19022
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0340/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "64770bc10f1488821622c484c2c71352fac4684231b54b74da46529f782ac7ce",
+      "bytes": 10814
+    },
+    {
+      "path": "datasets/v2.0.0/round_003/zh/zh_alt_0345/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "f1b068b4885637b4ef3d5582db366a128030b36248ff81fe575e216e2c3c4634",
+      "bytes": 7988
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/acquisition/REPORT.md",
+      "title": "证据不足案件扩充：来源获取状态",
+      "category": "版本化开发候选",
+      "sha256": "a5b42581857e752ef64f3b21d2afe6cdb6736e4786ab9c8f4b422786906b8368",
+      "bytes": 4058
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/AUTHORING.md",
+      "title": "本轮作者、指令与复现边界",
+      "category": "版本化开发候选",
+      "sha256": "27affef633252902bce1b0384e596602f945e1ee3738f95709250724acbec221",
+      "bytes": 1903
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/REPORT.md",
+      "title": "第四轮：证据能否支持主张",
+      "category": "版本化开发候选",
+      "sha256": "4674f04a42054700ceaa542e37ef3f578f200554b799ee9771666b56a5935684",
+      "bytes": 2664
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/REPRODUCIBILITY.md",
+      "title": "第四轮复现说明",
+      "category": "版本化开发候选",
+      "sha256": "60030b42570ba667b09dfbe3211262e75fbb0768a00ef4acb5e83c2ac3b27257",
+      "bytes": 2479
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_web_001/JUDGMENT.md",
+      "title": "联网判决原文",
+      "category": "版本化开发候选",
+      "sha256": "d4d1071569d7e0ae3e7620f86c261d067b0f086f342f2f3120805db75522ee0b",
+      "bytes": 7858
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_web_003/JUDGMENT.md",
+      "title": "联网判决原文",
+      "category": "版本化开发候选",
+      "sha256": "7d12d84cda45c361e2d2e811b7149c593ced6be0df751426f8c084e65c656f4f",
+      "bytes": 27932
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0001/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6fdc0d2441a93c3d8ba389588e0605133586fd07c4148134e722391e4a8c037f",
+      "bytes": 68101
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0019/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "e0536aba823286c5ff943e5521dba60f276713973e65721b46848ddb09783a65",
+      "bytes": 21667
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0029/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d118f2b308de42b2f930073a3075268f67b4b1cafc3363b77e274883d23cccaf",
+      "bytes": 14260
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0031/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "778b8feec391a5540534fadabd19c16881725160dfeed677b9acae13315ab9b3",
+      "bytes": 16827
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0034/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "bd9bf60201ea10c83fa00e1c56de10c18be24622043fd22f53957da58d7615d7",
+      "bytes": 19870
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0075/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "4c7afe3aef7dca6ca3c168419c4fd26e75dcbfa8ed2c404d514257b09afb99a9",
+      "bytes": 14782
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0077/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "9ab254d54f27afb2f07ae3ded79ee50e296d7e8f72fffee7df8459836a9743b5",
+      "bytes": 15284
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0116/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "46ff0b392c16b553502c52f73fd6633ab85844da62ce098ffdcd92cc3672db01",
+      "bytes": 43685
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0124/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "1d885305fa5f015c015346390792bc222bdd218198d33d4f83d4aefcce9c4e80",
+      "bytes": 8620
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0134/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "42f0483135b976168530628139620885f209d8135c558253b1d70399762a4780",
+      "bytes": 20909
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0136/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "a20717840e56687700de7b47a171056c4a2dc072ad0280c91c0de39e79042e1c",
+      "bytes": 15621
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0143/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "95b96b3e07fb733f3eaafbc9f6027dbc8e0bf8ffa6993bb7f901c39e9c219b0f",
+      "bytes": 13195
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0201/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "5d5607320b7e0767990bee3faf40d1b50aa97e23d26ab88e653846219d568d66",
+      "bytes": 22207
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0206/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "09059cc59db7a6976951bd3fa53b36f8811615012eefb13cf69ea9e97b66e543",
+      "bytes": 20300
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0214/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6a6368052a5f5f6fc0e014f83d95cbcafb4ef51e82b6e87a6851e633dcefe8ae",
+      "bytes": 25711
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0224/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d82d9b7ecfb6c09819df23f7026b11a683c454846259b52914fc2adf0800069b",
+      "bytes": 20345
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0234/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "3e3680ece18ed8ac72bd878777fc64af97f5856255f05d0a0ef888596762ea24",
+      "bytes": 22608
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0240/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "4570d8816d0bd3b67b9aa1e7004c64753c6ba68971fc6df4c0276b115e595b0c",
+      "bytes": 22913
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0244/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "85c31972b7a2063f613c0e445757174b0a88b45c4ff3e1ea7f11c149b39fed8e",
+      "bytes": 26711
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0253/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "45b11f954c7ce5a28c62238134e18626433579421d74f56f615fdd4824e2e47d",
+      "bytes": 16451
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0257/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6fac62000fd59f81118432c48aadddc3a3622383ba82fd5a0922b5d4744de803",
+      "bytes": 8042
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0265/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d824a7537a7f028b252392bdc4501ee569b0ed4b7c9cd8872632b83066d56fff",
+      "bytes": 18715
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0281/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "6b902b0405e0b06e7f3d5f8bc8aa730cbf97f7c0384950cebdb693723f03e729",
+      "bytes": 13005
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0294/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "aaf88983934638df8c0ae024e59d82c23bfdfe5e742111f02c4578646444b036",
+      "bytes": 34231
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0313/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "bdad36df4dd3cea2ae5f8960b0131ed2eb55ce40bc71bab08de8b26db206b2ae",
+      "bytes": 37422
+    },
+    {
+      "path": "datasets/v2.0.0/round_004/zh/r4_zh_0314/JUDGMENT.md",
+      "title": "判决原文与聊天依据",
+      "category": "版本化开发候选",
+      "sha256": "d3b5df8aaa85ab08d70bf837735f4e4fdad7131e88808522da2517405755ea92",
+      "bytes": 34397
+    },
+    {
+      "path": "datasets/v2.0.0/round_005/REPORT.md",
+      "title": "V2 第五轮：200条本地清单处置报告",
+      "category": "版本化开发候选",
+      "sha256": "9fd357b7ef894c93a8bd2231f704e8372e1390d9928188d52bc715b138a02f1a",
+      "bytes": 5296
+    },
+    {
+      "path": "datasets/v2.0.0/round_005/SOURCE_GAPS.md",
+      "title": "第五轮来源缺口：62条",
+      "category": "版本化开发候选",
+      "sha256": "5b41964e9edc07ec19535a8c106417b04e82c7837146fcf97457d96beabdec1a",
+      "bytes": 26269
+    },
+    {
+      "path": "datasets/v2.0.0/round_006/CHANGELOG.md",
+      "title": "第六轮逐案变更",
+      "category": "版本化开发候选",
+      "sha256": "3de593815c971ca74e15f543b2f4671cf3ea7f5bae5d97e44bf82f799b7ca465",
+      "bytes": 21464
+    },
+    {
+      "path": "datasets/v2.0.0/round_006/REPORT.md",
+      "title": "V2 第六轮：全量清单的并行全文复核",
+      "category": "版本化开发候选",
+      "sha256": "170be77fd5bc05025915e8764647f7db2872dbbf2f6fa49a702e421f72585736",
+      "bytes": 5081
+    },
+    {
+      "path": "datasets/v2.0.0/round_006/SOURCE_GAPS.md",
+      "title": "第六轮：当前62条私有通信来源缺口",
+      "category": "版本化开发候选",
+      "sha256": "bc0f42e1cb480d4af0f6380d5d87fde1f1cfbe1fa3816dddcfc6a9a5561d52f0",
+      "bytes": 17970
+    },
+    {
+      "path": "datasets/v2.0.0/round_skill_forwardtest/acquisition/REPORT.md",
+      "title": "Source state",
+      "category": "版本化开发候选",
+      "sha256": "d059c9012aee44a06ff048246d7d5604262356c788869a2fddeabc0d4ec12877",
+      "bytes": 128
+    },
+    {
+      "path": "datasets/v2.0.0/round_skill_forwardtest/REPORT.md",
+      "title": "第四轮：证据能否支持主张",
+      "category": "版本化开发候选",
+      "sha256": "2f414672495501e78070ed7380d8bdf7531c99aa2b2ee120cabaeb7171f5121d",
+      "bytes": 1354
+    },
+    {
+      "path": "datasets/v2.0.0/round_skill_forwardtest/REPRODUCIBILITY.md",
+      "title": "Archived-input replay",
+      "category": "版本化开发候选",
+      "sha256": "d5ca5cb5888dc83fad1d7b090d7214c736c2f2d5f46d65c005deb71ef6c20baf",
+      "bytes": 261
+    },
+    {
+      "path": "datasets/v2.0.0/round_skill_forwardtest/zh/r4_web_001/JUDGMENT.md",
+      "title": "联网判决原文",
+      "category": "版本化开发候选",
+      "sha256": "d4d1071569d7e0ae3e7620f86c261d067b0f086f342f2f3120805db75522ee0b",
+      "bytes": 7858
+    },
+    {
+      "path": "datasets/v3.0.0/baseline_20261022_001/inherited_gaps.md",
+      "title": "本批继承缺口",
+      "category": "V3准备快照",
+      "sha256": "b53ed62b7259d742756eecb7eaf60322388cd21bc665321799566451697bb3dd",
+      "bytes": 3095
+    },
+    {
+      "path": "datasets/v3.0.0/baseline_20261023_001/inherited_gaps.md",
+      "title": "本批继承缺口",
+      "category": "V3准备快照",
+      "sha256": "01ee691a08fe7a04bffea36ab3e0935b97e59d5b03fb4259c2b751ea371fb9ab",
+      "bytes": 3283
+    },
+    {
+      "path": "docs/agency-agents/design-ui-designer.md",
+      "title": "UI Designer Agent Personality",
+      "category": "外部角色参考",
+      "sha256": "295e19e7002c5082ab8fa1eacb551b6e75e8fdaf206c9197dedf517b05ced813",
+      "bytes": 13340
+    },
+    {
+      "path": "docs/agency-agents/engineering-backend-architect.md",
+      "title": "Backend Architect Agent Personality",
+      "category": "外部角色参考",
+      "sha256": "18f237d054fa91f72a5dcda46a52ddcf7354ea3a3e39e0247629f4ea0f446917",
+      "bytes": 10928
+    },
+    {
+      "path": "docs/agency-agents/engineering-frontend-developer.md",
+      "title": "Frontend Developer Agent Personality",
+      "category": "外部角色参考",
+      "sha256": "76b12c3dda779387d4733398ea3fbc52ca3784085447a5fef8b61f88bbe61164",
+      "bytes": 9284
+    },
+    {
+      "path": "docs/architecture/REFACTOR_PROPOSAL.md",
+      "title": "仓库架构盘点与重构建议",
+      "category": "现行入口/技术参考",
+      "sha256": "4e95bfeec30da0d38b84f99ce3c37bbe82f547db36323774abd107bff64ac5b0",
+      "bytes": 19339
+    },
+    {
+      "path": "docs/architecture.md",
+      "title": "ScreenshotLegalHub 重启架构",
+      "category": "现行入口/技术参考",
+      "sha256": "523e105f6d20574ef2cd02e55b5d732994dcf662eb15a390ea89d07d8b99f0f6",
+      "bytes": 6539
+    },
+    {
+      "path": "docs/coordinate-retrieval-evaluation.md",
+      "title": "坐标、代码检索与证据回溯评测",
+      "category": "现行入口/技术参考",
+      "sha256": "a2a93af0b5c6fce8de7f23e4c4ae35173d80bea4a092af74e603ad4ff3bc5daa",
+      "bytes": 11932
+    },
+    {
+      "path": "docs/data-contracts.md",
+      "title": "数据与运行契约",
+      "category": "现行入口/技术参考",
+      "sha256": "7c85c443867140b1c091c49854834f4281e56879e5fdd0e23c562c15ac3ae102",
+      "bytes": 6810
+    },
+    {
+      "path": "docs/products/CONSOLE_CLARITY.md",
+      "title": "面向新协作人员的控制台说明与验收",
+      "category": "现行入口/技术参考",
+      "sha256": "c272bd10a11b8361f4a9d0c3a58ad12a0da82e57c711d8ba448ae0a6834cbdfa",
+      "bytes": 4819
+    },
+    {
+      "path": "docs/products/EVALUATION_HISTORY.md",
+      "title": "评测台运行历史",
+      "category": "现行入口/技术参考",
+      "sha256": "c6ee54cc125bcdc5bc7183080e3c117a8e5b465a98a7d62d41f481081a2e9dcc",
+      "bytes": 1244
+    },
+    {
+      "path": "docs/products/KIE_VQA_FIELD_MAPPING.md",
+      "title": "KIE / VQA 字段映射规格",
+      "category": "现行入口/技术参考",
+      "sha256": "4dc57c4eb3ea95e6de85b92c7231ba1c0753fd4434ff4626683725bec908cc9d",
+      "bytes": 10608
+    },
+    {
+      "path": "docs/products/KIE_VQA_MIGRATION.md",
+      "title": "KIE / VQA 迁移使用说明",
+      "category": "现行入口/技术参考",
+      "sha256": "472eadc9a87763e0fb522bdb94a0746949a2572270e098c2d47b07b6293c37e2",
+      "bytes": 5856
+    },
+    {
+      "path": "docs/products/KIE_VQA_PIPELINE.md",
+      "title": "按图 KIE → 关联 → VQA 操作说明",
+      "category": "现行入口/技术参考",
+      "sha256": "eeaa88f49051bb6e3910904d5155affb9f7e5cb87e21af4cb4960479ca4adc7b",
+      "bytes": 7341
+    },
+    {
+      "path": "docs/products/KIE_VQA_PIPELINE_ACCEPTANCE.md",
+      "title": "KIE → IoU → VQA 验收策略",
+      "category": "现行入口/技术参考",
+      "sha256": "29eba78ad8241eb78f900048786861b30fa323568c60ca73cd51d5c8a9163e43",
+      "bytes": 25968
+    },
+    {
+      "path": "docs/products/KIE_VQA_SCORING_PROTOCOL.md",
+      "title": "KIE / VQA 评分协议草案",
+      "category": "现行入口/技术参考",
+      "sha256": "4d71f1503222228902a0cbfca2a8e32907fb685bcc76809b82955518dcb91510",
+      "bytes": 8744
+    },
+    {
+      "path": "docs/products/OPEN_ISSUES_FIXES.md",
+      "title": "开放问题修复后的使用说明",
+      "category": "现行入口/技术参考",
+      "sha256": "a20b461cb6eb2d73caef4b18a660a80cab494935b4a5ce76fcfb80e6d5d36a5a",
+      "bytes": 3454
+    },
+    {
+      "path": "docs/products/OPERATIONS_OBSERVABILITY.md",
+      "title": "模型配置与流程审计",
+      "category": "现行入口/技术参考",
+      "sha256": "23c494f194971fc615d99e933095e279b5cec55ea62652998e37adf215b7c8bc",
+      "bytes": 1778
+    },
+    {
+      "path": "docs/products/PRODUCT_BOUNDARIES.md",
+      "title": "四产品边界与用户工作台 MVP",
+      "category": "现行入口/技术参考",
+      "sha256": "942ded1b49c3180251928bf5045efca995660e6bd17a01b0b31d3f9068ca3d6b",
+      "bytes": 12496
+    },
+    {
+      "path": "docs/products/RELIABILITY_AUDIT.md",
+      "title": "审核可靠性与操作审计",
+      "category": "现行入口/技术参考",
+      "sha256": "5a0719f03f2d4343c69ef26bde980983fd423ade8ce10c71fae560101569e06c",
+      "bytes": 4941
+    },
+    {
+      "path": "docs/products/RESEARCH_MVP.md",
+      "title": "评测台、合成生成台、数据审核台 MVP",
+      "category": "现行入口/技术参考",
+      "sha256": "61a6c37c48ee9bde00f756dd5dc0f6d5a6841156fa2cdd539825223dcb609465",
+      "bytes": 8449
+    },
+    {
+      "path": "docs/products/REVIEW_CANVAS.md",
+      "title": "图片审核、判决书侧栏与审核评论",
+      "category": "现行入口/技术参考",
+      "sha256": "dfbeda1a1ed90f283c98be0d33aad36209745b50c6a37b71439a9818eba11ac4",
+      "bytes": 3914
+    },
+    {
+      "path": "docs/README.md",
+      "title": "项目文档入口",
+      "category": "现行入口/技术参考",
+      "sha256": "8c488b7887c59c9c782a3dda79cbb1a59ac94a8b079a7eae9aae7361f81e43e5",
+      "bytes": 1807
+    },
+    {
+      "path": "docs/RESTART_ARCHITECTURE.md",
+      "title": "重启架构、资产接入与缺口（历史快照）",
+      "category": "历史快照/验收证据",
+      "sha256": "25b3c2f97a4aff6215b5a4f4dc453b000af113096085e8688abc9b07960664da",
+      "bytes": 12068
+    },
+    {
+      "path": "docs/screenshot-rendering.md",
+      "title": "截图生成与样式排版修改指南",
+      "category": "现行入口/技术参考",
+      "sha256": "319168febfb030e6cb043ee17baf8649b2bbd3dd43db15a24011ad67b1e7913e",
+      "bytes": 6011
+    },
+    {
+      "path": "docs/ScreenshotLegal_Implementation_Specification.md",
+      "title": "ScreenshotLegal Product v1.1 Implementation Specification",
+      "category": "现行入口/技术参考",
+      "sha256": "a10ea0bab3148eca1a735f0255458973cf6415255ec107d5f9dad47aa6c04f86",
+      "bytes": 46518
+    },
+    {
+      "path": "docs/skill-map.md",
+      "title": "Skill 拆分",
+      "category": "现行入口/技术参考",
+      "sha256": "661ab61960fdbb1b4f91e89a168c4444fc79361f7fdcada5ddc19114f2433337",
+      "bytes": 1729
+    },
+    {
+      "path": "docs/v1.2.0_review_design.md",
+      "title": "Evidence workspace · v1.2.0 review design",
+      "category": "现行入口/技术参考",
+      "sha256": "39968f6351ab78e44de57ae5332bbaae5e91815a7643d0173648bb7efbf06114",
+      "bytes": 10575
+    },
+    {
+      "path": "docs/v3.0.0/CALIBRATION_HANDOFF.md",
+      "title": "四场景校准与人工复核交接",
+      "category": "V3计划与交接",
+      "sha256": "e3257315e19e118902cedf827c2a1ab742537d333dbdc6095e93a3a85ee2f023",
+      "bytes": 5519
+    },
+    {
+      "path": "docs/v3.0.0/READINESS.md",
+      "title": "v3.0.0 准备与交接清单",
+      "category": "V3计划与交接",
+      "sha256": "ff9b70c29b9596bdb7f77e225bd5a1260ce4e88bd86c3fd4427b984b0725945c",
+      "bytes": 5494
+    },
+    {
+      "path": "docs/v3.0.0/S0_BASELINE.md",
+      "title": "S0 首批输入冻结",
+      "category": "V3计划与交接",
+      "sha256": "bbf7b23cdf4e4cf3b409337832f4e3e91b93bce283eec83229de248301d177c4",
+      "bytes": 4707
+    },
+    {
+      "path": "docs/v3.0.0/SOURCE_CLOSURE.md",
+      "title": "S0 来源补齐与核对（T02）",
+      "category": "V3计划与交接",
+      "sha256": "c43c53f8d75ed79b42fae48fcb1cf5b64a46ef38820de6eaceb14efc06a7c566",
+      "bytes": 4657
+    },
+    {
+      "path": "evidence_workbench_v1/docs/ENVIRONMENT_AND_PITFALLS.md",
+      "title": "本机环境与配置踩坑",
+      "category": "历史快照/验收证据",
+      "sha256": "d77e5afad6d7dac6e98bd5a1c00feac0d69b9800b1a667ad7cd8931ff4fe4ae9",
+      "bytes": 3106
+    },
+    {
+      "path": "evidence_workbench_v1/docs/MIGRATION_INVENTORY.md",
+      "title": "现有功能迁移清单",
+      "category": "历史快照/验收证据",
+      "sha256": "a823aa97eccb76cddc5108d31bca520a2d2b4485b92f21662e7d7d8de4d23ac3",
+      "bytes": 2277
+    },
+    {
+      "path": "evidence_workbench_v1/README.md",
+      "title": "Evidence Workbench v1",
+      "category": "历史快照/验收证据",
+      "sha256": "611313769eb501eabbb0a943cef6353efbe81ea94f50d081e6ad5b463dff64d4",
+      "bytes": 3210
+    },
+    {
+      "path": "paper/README.md",
+      "title": "论文工作区",
+      "category": "论文工作稿",
+      "sha256": "e352e0439b64d4aab25f6b7c18bff22fbd0f461357d0b1a684bd2b3562f2b595",
+      "bytes": 1741
+    },
+    {
+      "path": "product_v1/data/research/benchmarks/blobs/5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3.md",
+      "title": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "category": "现行入口/技术参考",
+      "sha256": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "bytes": 1046
+    },
+    {
+      "path": "product_v1/docs/ACCEPTANCE.md",
+      "title": "v1.1 验收映射",
+      "category": "现行入口/技术参考",
+      "sha256": "ebd8fb9ef9b1326d9eb25c883638066abf9547e55c53dd15c9df60c99589df25",
+      "bytes": 5225
+    },
+    {
+      "path": "product_v1/docs/API.md",
+      "title": "API",
+      "category": "现行入口/技术参考",
+      "sha256": "c7cba89fa0985d97fca0c55a5099ac0bb37d8d48cfa895c5f8d41ccd87558a86",
+      "bytes": 3973
+    },
+    {
+      "path": "product_v1/docs/ARCHITECTURE.md",
+      "title": "系统架构",
+      "category": "现行入口/技术参考",
+      "sha256": "2016946b78558e57e1845aa9bb7612d128663ebe8145572842bd7dc7cfd74473",
+      "bytes": 1890
+    },
+    {
+      "path": "product_v1/docs/CONDA_LINUX_SETUP.md",
+      "title": "Conda 环境与 Linux 启动配置记录",
+      "category": "现行入口/技术参考",
+      "sha256": "1134a48399a07c47ee00e19baca372d437df927a6e6af874f4073427f18b1e9d",
+      "bytes": 6215
+    },
+    {
+      "path": "product_v1/docs/DESIGN_SYSTEM.md",
+      "title": "可替换的前端设计系统",
+      "category": "现行入口/技术参考",
+      "sha256": "3730873f8c244664364c08a3fba443f166b8d479f6522d3534b4c480deba6974",
+      "bytes": 1845
+    },
+    {
+      "path": "product_v1/docs/HOLMES_REFERENCE.md",
+      "title": "Holmes 参考边界",
+      "category": "现行入口/技术参考",
+      "sha256": "003058cfa2f8b60a09fd602c679e140d09aad2783b91a163dd9960392dc6778e",
+      "bytes": 928
+    },
+    {
+      "path": "product_v1/docs/IMPLEMENTATION_REPORT.md",
+      "title": "实现报告",
+      "category": "现行入口/技术参考",
+      "sha256": "8c2cd521e456b1b2b6306430245af3126f20547ef2e2eb6013d89367f1aa14cc",
+      "bytes": 2192
+    },
+    {
+      "path": "product_v1/docs/INGESTION_ACCOUNTS_MODELS.md",
+      "title": "批量证据导入、账户权限和模型配置",
+      "category": "现行入口/技术参考",
+      "sha256": "813b222c1db882eb8662edc2e7f9d9dd486e2a8b2af11dbb4fe1e77bcccf4336",
+      "bytes": 6784
+    },
+    {
+      "path": "product_v1/docs/LOCAL_RUN_VERIFICATION.md",
+      "title": "本地运行验证",
+      "category": "现行入口/技术参考",
+      "sha256": "e53696e52be4029681dff5f6fb4267222ccb46ad9416a459fc772368bf5e2800",
+      "bytes": 3265
+    },
+    {
+      "path": "product_v1/docs/MATTER_PACK_AUTHORING.md",
+      "title": "Matter Pack 编写",
+      "category": "现行入口/技术参考",
+      "sha256": "1f38a3639af59458a9f2950577f916fe17429c690882cd2024e7f1c9a1f35002",
+      "bytes": 1280
+    },
+    {
+      "path": "product_v1/docs/MIGRATION.md",
+      "title": "仓库案件与旧数据迁移",
+      "category": "现行入口/技术参考",
+      "sha256": "bdeb0e7f97d52dbc951380fc70d4c394708416f60de33fd5558947c72b1c29e3",
+      "bytes": 5563
+    },
+    {
+      "path": "product_v1/docs/PLUGIN_TRUST.md",
+      "title": "插件信任",
+      "category": "现行入口/技术参考",
+      "sha256": "e360ea3f879837d2396e7172e42eae7e9d22e9d627f014dd4f75a48d59ca3a02",
+      "bytes": 664
+    },
+    {
+      "path": "product_v1/docs/REQUIREMENTS.md",
+      "title": "实现范围",
+      "category": "现行入口/技术参考",
+      "sha256": "4e6b02b60005182d3df7e5cbc76b390a7abdba213b93a8fe844108e9790cf324",
+      "bytes": 1388
+    },
+    {
+      "path": "product_v1/docs/RUNTIME.md",
+      "title": "Runtime",
+      "category": "现行入口/技术参考",
+      "sha256": "306ef1cf3239bf3e851bb77ae03cd59ad5fde2672af0cea7baa36d211bf56c3b",
+      "bytes": 1971
+    },
+    {
+      "path": "product_v1/docs/SCHEMA.md",
+      "title": "数据契约",
+      "category": "现行入口/技术参考",
+      "sha256": "68ab3766c11b1d3c352f0c182dfeb2d6e918587df8ba7eaefca58edbc64cb60c",
+      "bytes": 2420
+    },
+    {
+      "path": "product_v1/docs/SECURITY.md",
+      "title": "本地安全边界",
+      "category": "现行入口/技术参考",
+      "sha256": "61d85fa8c84ba0c12bf41b71d985c0c6f21e235c2bbdee11a6ddada3ebbb43a3",
+      "bytes": 2090
+    },
+    {
+      "path": "product_v1/docs/SKILLS.md",
+      "title": "Skills",
+      "category": "现行入口/技术参考",
+      "sha256": "f8de155e4813c7bd8f61695c0c9bb739e4af2cb1d9f493ab7c36e3fbdec997dd",
+      "bytes": 1470
+    },
+    {
+      "path": "product_v1/docs/TROUBLESHOOTING.md",
+      "title": "实际遇到的配置与踩坑",
+      "category": "现行入口/技术参考",
+      "sha256": "17a396fc3501c8ca2e4d1bf50f1d405eff58cf6ab069496b00394ef7015126aa",
+      "bytes": 5446
+    },
+    {
+      "path": "product_v1/README.md",
+      "title": "ScreenshotLegal Product v1",
+      "category": "现行入口/技术参考",
+      "sha256": "255878ec24f0eee601c2e95a096a2a78de610c3e206333f04f2bb0319536e81b",
+      "bytes": 16421
+    },
+    {
+      "path": "product_v1/reports/conda-2026-10-13/REPORT.md",
+      "title": "Conda test report",
+      "category": "现行入口/技术参考",
+      "sha256": "bbc475003dfa190f0fef5509c06e47382b3b12e7b48b685841d8c6851667dc32",
+      "bytes": 2276
+    },
+    {
+      "path": "product_v1/reports/connectivity-2026-10-23/REPORT.md",
+      "title": "Connectivity test repair — 2026-10-23",
+      "category": "现行入口/技术参考",
+      "sha256": "0a681be795e29cec4bf1ebd4d8ba4ebbfe22d34807450dad432e4dd1e0250f0a",
+      "bytes": 1981
+    },
+    {
+      "path": "product_v1/reports/console-clarity-2026-10-24/REPORT.md",
+      "title": "控制台可理解性迭代 RP10",
+      "category": "现行入口/技术参考",
+      "sha256": "df92ca5d66b7a6828d41cb624efb9ec6d96b3040252e533a9d77f50c038186f3",
+      "bytes": 4728
+    },
+    {
+      "path": "product_v1/reports/critical-review-2026-10-24/REPORT.md",
+      "title": "当前研究产品实现的批判性评审",
+      "category": "现行入口/技术参考",
+      "sha256": "5c865c3a6cd290a84ec57ff39b250276c737aa3d85a92625bf9b60ee4aee1b8c",
+      "bytes": 13390
+    },
+    {
+      "path": "product_v1/reports/deepseek-full-flow-2026-10-24/REPORT.md",
+      "title": "DeepSeek 六样本真实流程试跑",
+      "category": "现行入口/技术参考",
+      "sha256": "c81960d9ffde54472d9a9f9cb62c547d334064b50696624cde5064488a19519d",
+      "bytes": 6130
+    },
+    {
+      "path": "product_v1/reports/deepseek-full-flow-2026-10-24/review-prompt-history.md",
+      "title": "deepseek-initial-20261024 · v1",
+      "category": "现行入口/技术参考",
+      "sha256": "b5528f01749d721c971aaaad1e2677afc7078bd801c6d517d7b78875564d9928",
+      "bytes": 2676
+    },
+    {
+      "path": "product_v1/reports/deepseek-full-flow-2026-10-24/studio-prompt-history.md",
+      "title": "deepseek-initial-20261024 · v1",
+      "category": "现行入口/技术参考",
+      "sha256": "78a0f880221333eaeca530adf8e73a4d8b768c2a391127000b905e194ab8399b",
+      "bytes": 3486
+    },
+    {
+      "path": "product_v1/reports/evaluation-history-2026-10-24/REPORT.md",
+      "title": "评测台运行历史遗漏试跑的修复",
+      "category": "现行入口/技术参考",
+      "sha256": "c00b4d0193a5270f005e095e1b2bdbeb524409c2d9c101c452338489bcc1ae27",
+      "bytes": 4090
+    },
+    {
+      "path": "product_v1/reports/full-actual-test-2026-10-24/CRITICAL_REVIEW.md",
+      "title": "本轮实际测试的批判性评估",
+      "category": "现行入口/技术参考",
+      "sha256": "6fbcd3fce4c086a6a4a485a8a5836f70101b96f8db9c5efda7235a12f8ee3896",
+      "bytes": 3915
+    },
+    {
+      "path": "product_v1/reports/full-actual-test-2026-10-24/REPORT.md",
+      "title": "13样本全量实际测试报告",
+      "category": "现行入口/技术参考",
+      "sha256": "8faa61ad29de55f016e15c13dbcf1dc2de1eba3eb6fd3de01a7d84ca296b66f9",
+      "bytes": 6472
+    },
+    {
+      "path": "product_v1/reports/full-actual-test-2026-10-24/review-prompt-history.md",
+      "title": "full-actual-13-20261024 · v1",
+      "category": "现行入口/技术参考",
+      "sha256": "41128e1cad7822b2423704600e472e2cadeeb820402c188b9ea42621b17b011b",
+      "bytes": 4853
+    },
+    {
+      "path": "product_v1/reports/full-actual-test-2026-10-24/RUNBOOK.md",
+      "title": "13样本全量实际测试计划",
+      "category": "现行入口/技术参考",
+      "sha256": "d8562336a7fa1ab3371442677f95ffafb0f85cefb5ecd19d5d0bcd95612cad26",
+      "bytes": 1663
+    },
+    {
+      "path": "product_v1/reports/full-actual-test-2026-10-24/studio-prompt-history.md",
+      "title": "full-actual-13-20261024 · v1",
+      "category": "现行入口/技术参考",
+      "sha256": "9b78d2b6c4fe5a34802874ab6f6bdc5c7b4a5365db602332595e37694b163ff0",
+      "bytes": 4892
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-budget-ux-2026-10-25/REPORT.md",
+      "title": "评测调用上限提示修复（2026-10-25）",
+      "category": "现行入口/技术参考",
+      "sha256": "46875b41ffb6d7029903759c4ec5ecf0c99f8453e6b5d3e8560990a646fb3468",
+      "bytes": 1664
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-interaction-2026-10-25/REPORT.md",
+      "title": "评测台交互重整",
+      "category": "现行入口/技术参考",
+      "sha256": "4fad0a485c65543e1d0cd941a420cd470257afd2faa2da83e1bd3149de3c48a5",
+      "bytes": 4315
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-migration-2026-10-24/CRITICAL_REVIEW.md",
+      "title": "本轮迁移的批判性复核",
+      "category": "现行入口/技术参考",
+      "sha256": "636d8ce87bfc169acbf9fc52d7588584682846b8f7cf4fe07cc8456e128e0c4d",
+      "bytes": 2653
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-migration-2026-10-24/isolated-data/research/benchmarks/blobs/5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3.md",
+      "title": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "category": "现行入口/技术参考",
+      "sha256": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "bytes": 1046
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-migration-2026-10-24/isolated-final-data/research/benchmarks/blobs/5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3.md",
+      "title": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "category": "现行入口/技术参考",
+      "sha256": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "bytes": 1046
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-migration-2026-10-24/REPORT.md",
+      "title": "KIE / VQA 迁移交付",
+      "category": "现行入口/技术参考",
+      "sha256": "0c9bda9a220af11018eb64c6b6b529e6dba3efcf12bb5e27be0b7c938bfead7e",
+      "bytes": 4122
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-migration-2026-10-24/RUNBOOK.md",
+      "title": "本轮迁移边界与复现",
+      "category": "现行入口/技术参考",
+      "sha256": "2ab47d422dadb1d9c6d0ed318bf5bb56262e5f4f26938b6dcf443fc980b448a5",
+      "bytes": 1817
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-pipeline-2026-10-25/REPORT.md",
+      "title": "KIE → IoU → VQA：A阶段实现与验收",
+      "category": "现行入口/技术参考",
+      "sha256": "abd4b24345da889c339ff86626a7766775f8448b2d2136ec53836aafd1b9a5e9",
+      "bytes": 7840
+    },
+    {
+      "path": "product_v1/reports/kie-vqa-sample-workflow-2026-10-25/REPORT.md",
+      "title": "默认按样本完整评测：实现与验收",
+      "category": "现行入口/技术参考",
+      "sha256": "90043e7f63d158989f781676e2cb96be38e1d59d758eb5a696c2562183a860ba",
+      "bytes": 5780
+    },
+    {
+      "path": "product_v1/reports/multi-upload-auth-2026-10-13/REPORT.md",
+      "title": "Conda test report",
+      "category": "现行入口/技术参考",
+      "sha256": "4db2aeefbe441ac7c51af94cdbdaa32d25ef87164b1adb143ca82a0636ad3829",
+      "bytes": 2609
+    },
+    {
+      "path": "product_v1/reports/open-issues-fixes-2026-10-24/PLAN.md",
+      "title": "开放问题修复计划",
+      "category": "现行入口/技术参考",
+      "sha256": "1bf5f2b9bf677dfa3ed788fef0dfa8741b16ca8c8f70999480b2b3a91d4b4620",
+      "bytes": 437
+    },
+    {
+      "path": "product_v1/reports/open-issues-fixes-2026-10-24/REPORT.md",
+      "title": "开放问题软件修复与本地验证",
+      "category": "现行入口/技术参考",
+      "sha256": "d31bb1b38e39fe37d93f4e1bfb5153c3c599691a2594f309f1734ea9be493620",
+      "bytes": 7015
+    },
+    {
+      "path": "product_v1/reports/operations-observability-2026-10-24/CRITICAL_REVIEW.md",
+      "title": "本轮真实试跑与实现的批判性评估",
+      "category": "现行入口/技术参考",
+      "sha256": "cf74b4cb5cd6856fd33e775638d3b079b5bbadb4842abe80bf6d18a07c5b4bfb",
+      "bytes": 3933
+    },
+    {
+      "path": "product_v1/reports/operations-observability-2026-10-24/REPORT.md",
+      "title": "模型配置、流程结果与审计检索交付",
+      "category": "现行入口/技术参考",
+      "sha256": "bfe4a4d33f91379cc407ca5a61897bcb8493187044c33b47495533f408184595",
+      "bytes": 3648
+    },
+    {
+      "path": "product_v1/reports/reliability-audit-2026-10-24/before/docs/products/PRODUCT_BOUNDARIES.md",
+      "title": "四产品边界与用户工作台 MVP",
+      "category": "现行入口/技术参考",
+      "sha256": "5bb1cbb95dd62c86fa9161387e4642b51d5b30769453cb075236d7d313ef0f91",
+      "bytes": 11978
+    },
+    {
+      "path": "product_v1/reports/reliability-audit-2026-10-24/before/docs/products/RESEARCH_MVP.md",
+      "title": "评测台、合成生成台、数据审核台 MVP",
+      "category": "现行入口/技术参考",
+      "sha256": "4d858f6b3db36319cc7aa6658e5f0fffb37e47205f44c703b4491cf660022bb0",
+      "bytes": 7986
+    },
+    {
+      "path": "product_v1/reports/reliability-audit-2026-10-24/REPORT.md",
+      "title": "研究产品可靠性与操作审计交付",
+      "category": "现行入口/技术参考",
+      "sha256": "939fcdcd28456c31353842635a431c64036b64760d4382ecffc0ffe754664853",
+      "bytes": 5791
+    },
+    {
+      "path": "product_v1/reports/research-products-mvp-2026-10-24/PRODUCT_BOUNDARIES.before.md",
+      "title": "四产品边界与用户工作台 MVP",
+      "category": "现行入口/技术参考",
+      "sha256": "ee8dfc71e2636da2e4473bf8c30d3359d920cf3bbfe2c0e4d57ceba2824ba85f",
+      "bytes": 11067
+    },
+    {
+      "path": "product_v1/reports/research-products-mvp-2026-10-24/REPORT.md",
+      "title": "三个研究产品 MVP 实现与验证",
+      "category": "现行入口/技术参考",
+      "sha256": "77e6d6d6ec7fccda0e276e8c2eaf9b885b1c7a0707372d05d301de00cc79edf9",
+      "bytes": 6020
+    },
+    {
+      "path": "product_v1/reports/review-canvas-2026-10-24/REPORT.md",
+      "title": "审核台图片交互与评论迭代",
+      "category": "现行入口/技术参考",
+      "sha256": "d833dc3a7076e4658b312890b8bc0b8fc3f06f9d3d3cc9229e0e643fc16e5695",
+      "bytes": 3425
+    },
+    {
+      "path": "product_v1/reports/text-image-connectivity-2026-10-24/REPORT.md",
+      "title": "Text and image connectivity — 2026-10-24",
+      "category": "现行入口/技术参考",
+      "sha256": "9382313cfea33b8f92d208d103cd54a2dec48776fcc7d01d27d301894d5e39ce",
+      "bytes": 2168
+    },
+    {
+      "path": "product_v1/reports/user-workbench-mvp-2026-10-24/REPORT.md",
+      "title": "用户工作台 MVP 与四产品边界 — 2026-10-24",
+      "category": "现行入口/技术参考",
+      "sha256": "73697ea8038a853caea59687667bb4dbc82874ac97dccfcee3a95fde27c79e59",
+      "bytes": 3631
+    },
+    {
+      "path": "product_v1/THIRD_PARTY_NOTICES.md",
+      "title": "Third-party notices",
+      "category": "现行入口/技术参考",
+      "sha256": "0d88effae610fd8694931b655527ac0d182c1c9a21d664ce55b26b2f3c20d58c",
+      "bytes": 481
+    },
+    {
+      "path": "PROJECT_RESTART_BLUEPRINT.md",
+      "title": "微信聊天截图法律证据项目：重启蓝图",
+      "category": "现行入口/技术参考",
+      "sha256": "4ab6cbaf54697d01bc5f09deaafd011354d666a3cbd787d8c433a4f0ce327895",
+      "bytes": 44077
+    },
+    {
+      "path": "projects/Batch/README.md",
+      "title": "Batch",
+      "category": "历史来源/上游项目",
+      "sha256": "e3281ae03ef9b49b7e90e222c303524456a88925a21c03d23b716c3bcc4a95a4",
+      "bytes": 2600
+    },
+    {
+      "path": "projects/crawler-law/README.md",
+      "title": "crawler-law",
+      "category": "历史来源/上游项目",
+      "sha256": "ff5c2af5dfc8f4d8b4c245d1cfe73f0438d25d1b508ae01aad3748537ca59b28",
+      "bytes": 2522
+    },
+    {
+      "path": "projects/labelU-Kit/README.md",
+      "title": "labelU-Kit",
+      "category": "历史来源/上游项目",
+      "sha256": "10b9182c13a22666bae78a80f96fe33a2960d1f5a3e029cbdb6d6edcb34e66f8",
+      "bytes": 5424
+    },
+    {
+      "path": "projects/labelU-Kit/README.upstream.md",
+      "title": "README.upstream",
+      "category": "历史来源/上游项目",
+      "sha256": "6666c2714afcc50d00856b4fd8c8dda5395297a3b45e526803f9eda26e7bad31",
+      "bytes": 2824
+    },
+    {
+      "path": "projects/labelU-Kit/README_en-US.md",
+      "title": "README_en-US",
+      "category": "历史来源/上游项目",
+      "sha256": "b944f823dee6d86a0546099d0b3c2d9c3ea255c1c67e4187189aa15ff6e4781c",
+      "bytes": 3150
+    },
+    {
+      "path": "projects/llm_evluator/README.md",
+      "title": "llm_evluator",
+      "category": "历史来源/上游项目",
+      "sha256": "b1b39a30f91b430bdd6912dd69a5ce566488c2614b26c39b9289622301540196",
+      "bytes": 3999
+    },
+    {
+      "path": "projects/quiz-collector/README.md",
+      "title": "quiz-collector",
+      "category": "历史来源/上游项目",
+      "sha256": "1daaf4c01df6ae607293328912296cb1429b0f95aaf1fedd71a7248d7b29be44",
+      "bytes": 3770
+    },
+    {
+      "path": "projects/ScreenshotLegalBench_v2/README.md",
+      "title": "ScreenshotLegalBench_v2",
+      "category": "历史来源/上游项目",
+      "sha256": "31069c51f80968ad289408d36a1bddd7fb3dacc75c84e9dcb6c9eda6838aa6a7",
+      "bytes": 3753
+    },
+    {
+      "path": "projects/silicon-pool/README.md",
+      "title": "silicon-pool",
+      "category": "历史来源/上游项目",
+      "sha256": "4a226a1186311f66a4f36af86c47c42259dd92316f04142f54d4a494a3f3c705",
+      "bytes": 6895
+    },
+    {
+      "path": "projects/silicon-pool/README.upstream.md",
+      "title": "简介",
+      "category": "历史来源/上游项目",
+      "sha256": "67dd9801536258ff41ec87c6a1d760bc7789b32d972a6054c4fb5616eec79f06",
+      "bytes": 4777
+    },
+    {
+      "path": "README.before_startup_update.md",
+      "title": "screenshotLegalHub",
+      "category": "历史快照/验收证据",
+      "sha256": "c594d8a6b18438861ec2f9175a8183c766464748e28a7c6f14cd05a6a6987b47",
+      "bytes": 3849
+    },
+    {
+      "path": "README.md",
+      "title": "screenshotLegalHub",
+      "category": "现行入口/技术参考",
+      "sha256": "fdaf6fb29852abc24e7e0d489eb4e456f146403636fb86a3ac9218f23a736a59",
+      "bytes": 6937
+    },
+    {
+      "path": "reports/admin_case_inventory_20261024/README.md",
+      "title": "admin 全仓库案件同步（2026-10-24）",
+      "category": "历史快照/验收证据",
+      "sha256": "5bcdaf3fe8f9af454e49b41791a3599f61049293ad51b622ad3fdf012b1de017",
+      "bytes": 4391
+    },
+    {
+      "path": "reports/coordinate_audit_20261024/README.md",
+      "title": "坐标接入、代码检索与评测准备（2026-10-24）",
+      "category": "历史快照/验收证据",
+      "sha256": "987ab3e596ae33aa2f6b19ae29013530421b36afa0bf26d8573e4aea120ee3f4",
+      "bytes": 2897
+    },
+    {
+      "path": "reports/kie_vqa_budget_ux_20261025/REPORT.md",
+      "title": "评测调用上限提示修复（2026-10-25）",
+      "category": "历史快照/验收证据",
+      "sha256": "07774eb02d860f766f002c36e274d8e67b2b2a6905945dc77ffa44b8c59b9e35",
+      "bytes": 1661
+    },
+    {
+      "path": "reports/kie_vqa_interaction_redesign_20261025/REPORT.md",
+      "title": "评测台交互重整",
+      "category": "历史快照/验收证据",
+      "sha256": "f3c7dd1da9199870c063b86b0b88f8975b07c6753e66f79fa74c218ce9fa845c",
+      "bytes": 4312
+    },
+    {
+      "path": "reports/kie_vqa_migration_20261024/REPORT.md",
+      "title": "KIE、VQA 与 IoU 源目录完整性审计",
+      "category": "历史快照/验收证据",
+      "sha256": "116ab5c26d37ee2d2b729eeeaad74ca30d8ae797b8b23556bb389a040fd7152e",
+      "bytes": 8985
+    },
+    {
+      "path": "reports/kie_vqa_migration_20261024/source_snapshot/kie_prompt.md",
+      "title": "kie_prompt",
+      "category": "历史快照/验收证据",
+      "sha256": "5643e6408565dc9491e28bc159069eaee23d592e215db393f91829f8a04307f3",
+      "bytes": 1046
+    },
+    {
+      "path": "reports/kie_vqa_online_smoke_20261025_173000/REPORT.md",
+      "title": "单样本真实在线完整流程试跑",
+      "category": "历史快照/验收证据",
+      "sha256": "a3139793fba1420795d45c78c46eb9f41bdf59df3a08ca8fbbed9c78d51630e9",
+      "bytes": 3427
+    },
+    {
+      "path": "reports/kie_vqa_pipeline_implementation_20261024/REPORT.md",
+      "title": "KIE → IoU → VQA：A阶段实现与验收",
+      "category": "历史快照/验收证据",
+      "sha256": "4610253d7196820f143ffe3b5cda743c2fdcc34207364758a0455c3c0058cc5c",
+      "bytes": 8335
+    },
+    {
+      "path": "reports/kie_vqa_pipeline_plan_20261024/REPORT.md",
+      "title": "KIE → 新IoU → VQA：批判性评估与计划交付",
+      "category": "历史快照/验收证据",
+      "sha256": "c5f10dd8404a43dea0db14e98ca5631f28c77cbc9432fcde3481d0f1fa4f66c8",
+      "bytes": 5129
+    },
+    {
+      "path": "reports/kie_vqa_pipeline_plan_revision_20261024/CRITICAL_REVIEW.md",
+      "title": "第二轮批判性评估：公平计分之外还缺什么",
+      "category": "历史快照/验收证据",
+      "sha256": "35b4a99ff0464e06d5b9ed6ef66032e8e225509db09539ff3d0c0011c00bdd95",
+      "bytes": 6189
+    },
+    {
+      "path": "reports/kie_vqa_pipeline_plan_revision_20261024/REPORT.md",
+      "title": "RP14开发计划v2补充与第二轮批判评估",
+      "category": "历史快照/验收证据",
+      "sha256": "61bfff6b3bfcde01a864ce803635271cf445793629de22e7e733e358371ab62d",
+      "bytes": 3814
+    },
+    {
+      "path": "reports/kie_vqa_sample_workflow_20261025/REPORT.md",
+      "title": "默认按样本完整评测：实现与验收",
+      "category": "历史快照/验收证据",
+      "sha256": "fa3727073427e7c695a052d2311f18b965433e493d203abd02a4885cbf45ef40",
+      "bytes": 5774
+    },
+    {
+      "path": "reports/README.md",
+      "title": "报告入口",
+      "category": "历史快照/验收证据",
+      "sha256": "b95b71414e33018ae8e0a17ab26e38b955475dbf844f3b721490201734546b81",
+      "bytes": 2377
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_dependency_certification_v1/CERTIFICATION_PLAN.md",
+      "title": "多跳依赖与最小充分证据集：第一版认证方案",
+      "category": "历史快照/验收证据",
+      "sha256": "b78328e1c1339106b838c27ab94d3947a5fc6c2f1743350739f99ddbddfba32c",
+      "bytes": 10139
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_dependency_design_r2/RESEARCH_PROTOCOL.md",
+      "title": "中间判断、去图验证与难度迭代方案 r2",
+      "category": "历史快照/验收证据",
+      "sha256": "3627a2cec87aa27bd631ae34918f3729b7de605fc16885bf83799b6e7f5c6029",
+      "bytes": 12071
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_dependency_pilot_v1/RESULTS.md",
+      "title": "依赖候选集 v1：真实调用与认证状态",
+      "category": "历史快照/验收证据",
+      "sha256": "2c82f08a13a7d8a2e2ccb8f2fa8543d7f90a8354095657644afc0b8a381e0be3",
+      "bytes": 8397
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_dependency_r2/RESULTS.md",
+      "title": "四道多图题的去图及中间判断实验 r2",
+      "category": "历史快照/验收证据",
+      "sha256": "d6f3d4e2f2d2a63ead1473a995b925c6d44d2c66c02301c1987a09b0b3f64f47",
+      "bytes": 7109
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_dependency_scope_probe_v2/RESULTS.md",
+      "title": "历史时序范围澄清：独立六请求对照",
+      "category": "历史快照/验收证据",
+      "sha256": "bce2e5d092ca9edb003cd8edf04e27819cf8317fe895086dcac525ea96abab0e",
+      "bytes": 1863
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_pilot_r1/LEGAL_REVIEW.md",
+      "title": "法律答案复核：现有试跑集第一轮",
+      "category": "历史快照/验收证据",
+      "sha256": "80dd7bd2adf41f76c4409d47f4bd16b7d3260cca6f3069c575e424dc1f948fe9",
+      "bytes": 10318
+    },
+    {
+      "path": "reports/research/legal_answer_review/20261004_pilot_r1/VALIDATION_PROTOCOL.md",
+      "title": "去图实验、最小证据集与多跳难度验证",
+      "category": "历史快照/验收证据",
+      "sha256": "b5f4f675b7aea9d8c778a5850f325a5f92fa39c023126ba7cabb362cc15286a3",
+      "bytes": 9797
+    },
+    {
+      "path": "reports/research/RESTART_FINDINGS.md",
+      "title": "项目重启：资产整合、缺口与论文迭代",
+      "category": "历史快照/验收证据",
+      "sha256": "6f5ee7b19149fc8b00d34263bc437d9185113831a6a09ee46534e0f5ea7d654c",
+      "bytes": 11976
+    },
+    {
+      "path": "reports/research/REVIEW_AND_REBUTTAL.md",
+      "title": "论文评审与 rebuttal 工作矩阵",
+      "category": "历史快照/验收证据",
+      "sha256": "eef7e5d38cf0110fbc0530da2d5b7bea540d4c63e920fb8789b64e11bdc41e9f",
+      "bytes": 4445
+    },
+    {
+      "path": "reports/restart/archive_text/ScreenshotLegalBench 打分标准迭代经验分享.md",
+      "title": "ScreenshotLegalBench 打分标准迭代经验分享",
+      "category": "历史来源/上游项目",
+      "sha256": "8f965152a55509fdbe071385f35651d78bbfdf96be38f88af25d8762e7730135",
+      "bytes": 9593
+    },
+    {
+      "path": "reports/restart/archive_text/screenshotlegalbench论文数据代码路径一览.md",
+      "title": "screenshotlegalbench论文数据代码路径一览",
+      "category": "历史来源/上游项目",
+      "sha256": "0368d8e6a9f5852536dd7b5ccc6cc501c45c058be2f9fae187dcbdfaab1f0e9c",
+      "bytes": 41743
+    },
+    {
+      "path": "reports/restart/archive_text/Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models.md",
+      "title": "Visual Evidence Prompting Mitigates Hallucinations in Large Vision\\-Language Models",
+      "category": "历史来源/上游项目",
+      "sha256": "22c3fcf1dcc120608b85329371d47a76758a0ba37ef96a6443605cbefef6c5fa",
+      "bytes": 7096
+    },
+    {
+      "path": "reports/restart/archive_text/多篇论文roadmap.md",
+      "title": "多篇论文roadmap",
+      "category": "历史来源/上游项目",
+      "sha256": "615480011c54e5c3b3483b15cb2456c66971fe5b46e8066351cb05cdd0c8e563",
+      "bytes": 6540
+    },
+    {
+      "path": "reports/restart/archive_text/局部问题聊天截图论文.md",
+      "title": "局部问题聊天截图论文",
+      "category": "历史来源/上游项目",
+      "sha256": "aa8118e12e9342d2188837c83c566b1554ae2ece0e5c25cc9dcebf328c1e0720",
+      "bytes": 4084
+    },
+    {
+      "path": "reports/restart/archive_text/微信聊天截图高质量证据筛选规则.md",
+      "title": "微信聊天截图高质量证据筛选规则",
+      "category": "历史来源/上游项目",
+      "sha256": "f83af20b8707e70945d370a3b3cc8fc9b895839a3d9419ce7efb8483d89e47a7",
+      "bytes": 23246
+    },
+    {
+      "path": "reports/restart/archive_text/模型prompt测试对比.md",
+      "title": "模型prompt测试对比",
+      "category": "历史来源/上游项目",
+      "sha256": "3a7daa3424a79b66956e1487bf74687c972d56ec02e763bb7c5aac2e35dad32a",
+      "bytes": 74544
+    },
+    {
+      "path": "reports/restart/archive_text/证据理解流程图.md",
+      "title": "证据理解流程图",
+      "category": "历史来源/上游项目",
+      "sha256": "f6258c478d3caa79a18c0ce8fd696e66290f8a31f9327d749605f754df19ad73",
+      "bytes": 5328
+    },
+    {
+      "path": "reports/restart/archive_text/评估prompt.md",
+      "title": "评估prompt",
+      "category": "历史来源/上游项目",
+      "sha256": "c231814b28312d8ecf640a621eff589a84a373cd6a62c2f73ee1c4bce818442e",
+      "bytes": 2733
+    },
+    {
+      "path": "reports/restart/archive_text/迭代prompt.md",
+      "title": "迭代prompt",
+      "category": "历史来源/上游项目",
+      "sha256": "a96dd4951dc81d92019bc11a526df8e0999f701e37766f1a8f6a5769faa3830b",
+      "bytes": 96065
+    },
+    {
+      "path": "reports/restart/ASSET_RESTART.md",
+      "title": "v1.0.0 资产核验与执行边界",
+      "category": "历史快照/验收证据",
+      "sha256": "1a36fe5c4adfa62d0e6646a876cc8c6c16c1c5b5447116a71c1a20d5becbbf84",
+      "bytes": 4821
+    },
+    {
+      "path": "reports/ScreenshotLegalBench_v2/项目对应关系说明.md",
+      "title": "ScreenshotLegalBench_v2：相关项目对应关系与作用说明",
+      "category": "历史快照/验收证据",
+      "sha256": "52597273391a26b8f55e52b4c971bb3d3be811284e979c47d7a435c7ca852794",
+      "bytes": 27437
+    },
+    {
+      "path": "reports/v1.0.0_case_legal_workspace.md",
+      "title": "会话分类、左右核对、i18n 与法律大事记",
+      "category": "历史快照/验收证据",
+      "sha256": "356cbb2a64add9d0c8ddfe545257ecc45b07d4a7a37835f84d98b0aff2e703c8",
+      "bytes": 7018
+    },
+    {
+      "path": "reports/v1.0.0_case_timeline.md",
+      "title": "单案时间轴与双向证据定位",
+      "category": "历史快照/验收证据",
+      "sha256": "68aa57b16aaa81e5c7693a39090d2f13ddca3dd1414498dfb3da52159323c60c",
+      "bytes": 5461
+    },
+    {
+      "path": "reports/v1.0.0_evaluation_analysis.md",
+      "title": "v1.0.0 首轮评估分析与改进建议",
+      "category": "历史快照/验收证据",
+      "sha256": "a39ea8239de333472e74cb57ff8aba3fa3f26fc8240e2e7b8b237aee69213257",
+      "bytes": 6641
+    },
+    {
+      "path": "reports/v1.0.0_extractor_coordinate_trial.md",
+      "title": "显式归一化坐标开发实验",
+      "category": "历史快照/验收证据",
+      "sha256": "da8b7fe14a5e6eea5acda410acb164382fb25b25930e8dea9b668b148fd2315e",
+      "bytes": 1225
+    },
+    {
+      "path": "reports/v1.0.0_extractor_development_check.md",
+      "title": "证据抽取开发集检查",
+      "category": "历史快照/验收证据",
+      "sha256": "0d242d4783bdfc0f875059b07f44b9b4a86995105407dbb93c3d10e94650142c",
+      "bytes": 773
+    },
+    {
+      "path": "reports/v1.0.0_iteration_analysis.md",
+      "title": "v1 本轮结果分析与实施",
+      "category": "历史快照/验收证据",
+      "sha256": "6ab3ea5352448af68f0b4369c5104087a28cdacdb2a10a5df547bb0ff5266e25",
+      "bytes": 6276
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p2_development_structured-credential-repair.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "94b03ad1ec72b26cb5f5cb662cc8241b448ba6697fc6ef9cddd9095d373885c9",
+      "bytes": 1554
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p2_development_structured-format-repair.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "4ce0e0cfc0d9a2989e4668c88aec34b4e319312abd9b99a5b907d803675923bf",
+      "bytes": 1423
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p2_development_structured.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "6231e9ac1ed66e57b33cb19134af2e401b6e5eb12c235e0ba78d489abe4f7ffe",
+      "bytes": 1666
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p2_holdout_structured.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "3702e2918b3fa5cabb019e6494c1279415f24e41c5ce13efa95e3dafed602196",
+      "bytes": 2215
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p3_development_structured.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "70ea66975ba5ff02bcf208aa7aac649ebd68286a5a86dd46a592b9959be2b033",
+      "bytes": 2063
+    },
+    {
+      "path": "reports/v1.0.0_iteration_p3_holdout_structured.md",
+      "title": "v1.0.0 第二轮评测",
+      "category": "历史快照/验收证据",
+      "sha256": "75fd67a58a0cfa5aac4d71f681a17507741f0e290da9b799ed99ceb15406629f",
+      "bytes": 2078
+    },
+    {
+      "path": "reports/v1.0.0_model_evaluation.md",
+      "title": "v1.0.0 模型评测：首轮真实视觉 API 对照",
+      "category": "历史快照/验收证据",
+      "sha256": "60f35c173fd81d19782b82dd89ebd58a43434163e5eb3eb5adc80bbffd9e310f",
+      "bytes": 9684
+    },
+    {
+      "path": "reports/v1.0.0_one_case.md",
+      "title": "单案闭环：服装选购与转款沟通",
+      "category": "历史快照/验收证据",
+      "sha256": "395a2e176c4c3d71d0f472bc5877d1a9834040102d41e3d24b6cf8d639f27f34",
+      "bytes": 6962
+    },
+    {
+      "path": "reports/v1.0.0_protocol_audit.md",
+      "title": "输入协议核对与版本修正",
+      "category": "历史快照/验收证据",
+      "sha256": "958543548afc7507938176f4012e00ebb741661212c686749a80ef2dd1faaa50",
+      "bytes": 3673
+    },
+    {
+      "path": "reports/v1.0.0_software_iteration.md",
+      "title": "v1 软件本轮实施与验收",
+      "category": "历史快照/验收证据",
+      "sha256": "2247a3b8f02aceae4bcd4022a21bc2a61e04edb6a5533980ee7fc0f8cb0423a7",
+      "bytes": 6333
+    },
+    {
+      "path": "reports/v1.1.0_case_qa_evaluation.md",
+      "title": "v1.1.0 案件问答小样本评估",
+      "category": "历史快照/验收证据",
+      "sha256": "5b0657bd57310c8c3281b89937b1b3a2fa03a1012e1cb8328be75056ca452092",
+      "bytes": 5495
+    },
+    {
+      "path": "reports/v1.1.0_multi_case_workspace.md",
+      "title": "v1.1.0 多案工作台与实际运行验收",
+      "category": "历史快照/验收证据",
+      "sha256": "266ce6029aed982dee8d1800bdb04ed566bc36a359f22cf86a15b6bddf09cfb5",
+      "bytes": 7422
+    },
+    {
+      "path": "reports/v1.2.0_legal_review_workspace.md",
+      "title": "v1.2.0 法律批注工作台",
+      "category": "历史快照/验收证据",
+      "sha256": "2f320525b89bf5980d47b6ceaae7713bd6977c8327a087737fbd330a0f5b6037",
+      "bytes": 5475
+    },
+    {
+      "path": "reports/v3.0.0/calibration_20261023_001/README.md",
+      "title": "四场景校准检查记录",
+      "category": "V3执行检查",
+      "sha256": "1372d0a6a86d37e47904bd9ae620a1fafe950ff232984956b5068bc2d9a8790c",
+      "bytes": 1265
+    },
+    {
+      "path": "reports/v3.0.0/import_atomicity_20261023_001/README.md",
+      "title": "旧案导入原子性与真实语料回归",
+      "category": "V3执行检查",
+      "sha256": "0f6aff122235dff18fb83e96e838fba6ca8972052253c513333f3177ef351a7c",
+      "bytes": 1632
+    },
+    {
+      "path": "reports/v3.0.0/runtime_reproduction_20261023_001/first/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "V3执行检查",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "reports/v3.0.0/runtime_reproduction_20261023_001/repeat/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "V3执行检查",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "reports/v3.0.0/runtime_reproduction_20261023_002/first/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "V3执行检查",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "reports/v3.0.0/runtime_reproduction_20261023_002/README.md",
+      "title": "S0环境与渲染复现",
+      "category": "V3执行检查",
+      "sha256": "88c5ae129f6cf5baf17b9b41688d0fd46408246d3c678c96abb7ed87b88da7a7",
+      "bytes": 1675
+    },
+    {
+      "path": "reports/v3.0.0/runtime_reproduction_20261023_002/repeat/assets/PROVENANCE.md",
+      "title": "渲染资源来源",
+      "category": "V3执行检查",
+      "sha256": "8c56787500e54874e39be388eb7cb3568936d3836068884d4d98a93bde949703",
+      "bytes": 335
+    },
+    {
+      "path": "reports/v3.0.0/s0_baseline_20261022_001/README.md",
+      "title": "S0 首批冻结验证",
+      "category": "V3执行检查",
+      "sha256": "be4f0deaccdd8955907a22392f35a887cc9e17a5a943521f96e8e8af6ea77918",
+      "bytes": 1827
+    },
+    {
+      "path": "reports/v3.0.0/source_closure_20261023_001/README.md",
+      "title": "T02 来源补齐验证",
+      "category": "V3执行检查",
+      "sha256": "96a8977682102c1f33a82a36ac650e794206755d8bf2d13cef585540574f6cd3",
+      "bytes": 1884
+    },
+    {
+      "path": "skills/judgment-chat-dataset/references/protocol.md",
+      "title": "Authoring and evaluation protocol",
+      "category": "工作流Skill",
+      "sha256": "577b832d6d66683b106ef86b123c2b9bd53716df40aec5b9494457f910c58f47",
+      "bytes": 5022
+    },
+    {
+      "path": "skills/judgment-chat-dataset/references/reproduction.md",
+      "title": "Reproduction in this repository",
+      "category": "工作流Skill",
+      "sha256": "d5f435b225dfe092534262bf9fabf87b2cf6d96b433403ae99cd203df2ad688c",
+      "bytes": 5470
+    },
+    {
+      "path": "skills/judgment-chat-dataset/SKILL.md",
+      "title": "Judgment chat dataset",
+      "category": "工作流Skill",
+      "sha256": "d05e6052a24d1aded0a97fe1097dd2f3b94e883438ea90ffeb094d03f6f87dab",
+      "bytes": 4166
+    },
+    {
+      "path": "skills/legal-assets/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "2a66f6f5823b6ed3f00eba282ce2b346935ed43a23a8de7a0c6e707964ffd637",
+      "bytes": 1374
+    },
+    {
+      "path": "skills/legal-benchmark/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "9ac3e467abf5126d13e5df40894fa7fca67675071aca6be6d5f559d372fc6c87",
+      "bytes": 1633
+    },
+    {
+      "path": "skills/legal-evidence/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "65ff7f383be3720e2ad8b80520a750f361a2b9dc2e16a5737e4b12ef28331787",
+      "bytes": 1539
+    },
+    {
+      "path": "skills/legal-exports/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "0ebb880be2e98e9fb848dd74b5192d445f36c67c72017f66f516d82f2a9d5628",
+      "bytes": 1237
+    },
+    {
+      "path": "skills/legal-lawyer-review/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "8fc980e8e820f337d5eb577429a9dc4fbf350f4b1805c0e0fe2b4d70b2320b06",
+      "bytes": 1072
+    },
+    {
+      "path": "skills/legal-paper/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "6fb204d7ec39f649de6fdd99de245853686cd6bdf7786985c2829cfb2c19126b",
+      "bytes": 2017
+    },
+    {
+      "path": "skills/legal-quality-loop/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "0d73b13b4cb833665ff45096dc1ff7a200a3e20b3ee40575c0842f4c4b2e274e",
+      "bytes": 1348
+    },
+    {
+      "path": "skills/legal-reconcile/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "926f301ed62b7bf90fd3225329031eb3711c35f655e4b776ec4838d1b7b3e1e7",
+      "bytes": 1137
+    },
+    {
+      "path": "skills/legal-synthesis/SKILL.md",
+      "title": "SKILL",
+      "category": "工作流Skill",
+      "sha256": "489b7b197852125a26a2c6cd66181d2f88153de4a1339651a01f7f82690a6653",
+      "bytes": 1323
+    },
+    {
+      "path": "V3.0.0_PLAN.md",
+      "title": "v3.0.0 改进与优化计划",
+      "category": "V3计划与交接",
+      "sha256": "43bf566a4852d6552084a58f4159f8af98d7abb1f99b274613abfdd17292c036",
+      "bytes": 23215
+    }
+  ]
+}

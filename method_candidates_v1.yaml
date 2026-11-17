@@ -1,0 +1,213 @@
+schema_version: '1.0'
+registry_version: '2026-10-26'
+project: ScreenshotLegalBench
+review_document: ScreenshotLegal_学术方案比较与Agent评测候选_2026-10-26.md
+notes:
+  - "This registry describes proposed experimental configurations, NOT reproduced systems."
+  - "In paper reports, distinguish faithful_reproduction vs paper_inspired_reimplementation."
+  - "Reference names do not imply that third-party source code or model weights are installed."
+common_contract:
+  input: FrozenCaseInput
+  output: CaseAnalysisOutput
+  required_provenance: [evidence_id, source_ref_id, run_id]
+  fixed_factors: [case_group_split, perception_snapshot, legal_corpus_digest, matterpack_digest, base_model_revision, tools, total_token_budget]
+  record: [input_digest, output_digest, model_response, tool_calls, latency_ms, token_usage, errors]
+  official_metrics: [claim_macro_f1, element_coverage, burden_accuracy, evidence_link_f1, citation_support_accuracy, unsupported_claim_rate, critical_error_rate, human_review_minutes, latency_ms, total_tokens]
+candidates:
+  - id: E00
+    title: Single-shot direct answer
+    priority: P0
+    family: single_agent
+    reproduction: generic_baseline
+    references: []
+    changes: [single_pass_without_external_matterpack]
+  - id: E01
+    title: Single agent with controlled tools
+    priority: P0
+    family: dynamic_agent
+    reproduction: paper_inspired_reimplementation
+    references: [A01]
+    changes: [react_style_tool_use]
+  - id: E02
+    title: Fixed workflow without Matter Pack
+    priority: P0
+    family: workflow
+    reproduction: ours_implementation
+    references: [A04]
+    changes: [staged_dag]
+  - id: E03
+    title: Fixed workflow with Matter Pack
+    priority: P0
+    family: structured_legal_workflow
+    reproduction: ours_implementation
+    references: [L07, L09]
+    changes: [external_matterpack]
+  - id: E04
+    title: Structured workflow with symbolic verifier
+    priority: P1
+    family: neuro_symbolic
+    reproduction: paper_inspired_reimplementation
+    references: [L05]
+    changes: [deterministic_rule_verification]
+  - id: E05
+    title: Self feedback refine
+    priority: P0
+    family: single_agent_reflection
+    reproduction: paper_inspired_reimplementation
+    references: [A02]
+    changes: [self_refine]
+  - id: E06
+    title: Independent verification
+    priority: P0
+    family: verification
+    reproduction: paper_inspired_reimplementation
+    references: [L04, L08]
+    changes: [separate_verifier]
+  - id: E07
+    title: Plaintiff defendant adversarial
+    priority: P0
+    family: multi_agent_debate
+    reproduction: paper_inspired_reimplementation
+    references: [L01, L10]
+    changes: [one_round_adversarial]
+  - id: E08
+    title: Adversarial with judge aggregation
+    priority: P0
+    family: multi_agent_debate
+    reproduction: paper_inspired_reimplementation
+    references: [L01, L10]
+    changes: [judge_aggregation]
+  - id: E09
+    title: L-MAD hybrid consensus and ranked voting
+    priority: P0
+    family: multi_agent_debate
+    reproduction: paper_specification_with_cited_upstream_components
+    references: [L10, A08]
+    changes: [hybrid_consensus, ranked_borda, binary_source_support, immutable_verified_facts]
+    reference_scope: L10_method_A08_design_citation_only
+  - id: E10
+    title: Factor aware legal retrieval
+    priority: P0
+    family: structural_retrieval
+    reproduction: paper_inspired_reimplementation
+    references: [L09, L14]
+    changes: [issue_factor_queries]
+  - id: E11
+    title: Agentic legal retrieval
+    priority: P0
+    family: dynamic_retrieval
+    reproduction: paper_inspired_reimplementation
+    references: [L11]
+    changes: [source_routing, retrieval_stop]
+    warning: "Not the trained original Legal-R1 unless its checkpoint/training procedure are actually reproduced."
+  - id: E12
+    title: Corrective retrieval gate
+    priority: P1
+    family: retrieval_correction
+    reproduction: paper_inspired_reimplementation
+    references: [R02]
+    changes: [retrieval_quality_gate]
+  - id: E13
+    title: GraphReader long case
+    priority: P1
+    family: long_context
+    reproduction: paper_inspired_reimplementation
+    references: [A07]
+    changes: [graph_navigation]
+  - id: E14
+    title: CoA paper-algorithm reimplementation
+    priority: P1
+    family: long_context
+    reproduction: paper_algorithm_reimplementation
+    references: [A06]
+    changes: [token_window_chunks, sequential_cumulative_CU, last_CU_only_manager, frozen_KIE_text_VQA]
+  - id: E15
+    title: RAPTOR retrieval
+    priority: P1
+    family: long_context
+    reproduction: paper_inspired_reimplementation
+    references: [R03]
+    changes: [hierarchical_summary_retrieval]
+  - id: E16
+    title: LightRAG retrieval
+    priority: P1
+    family: graph_retrieval
+    reproduction: paper_inspired_reimplementation
+    references: [R05]
+    changes: [graph_retrieval]
+  - id: E17
+    title: Human review gates
+    priority: P1
+    family: human_in_loop
+    reproduction: ours_implementation
+    references: [L03]
+    changes: [review_gate]
+  - id: E18
+    title: JurisMA Algorithm 1 inference (training deferred)
+    priority: P1
+    family: structured_dynamic
+    reproduction: paper_algorithm_inference_adaptation
+    references: [L07]
+    changes: [legal_element_graph, dynamic_task_routing]
+  - id: E19
+    title: SCALE style factor hierarchy
+    priority: P1
+    family: structured_legal_retrieval
+    reproduction: paper_inspired_reimplementation
+    references: [L09]
+    changes: [issue_factor_hierarchy]
+  - id: E20
+    title: VERDICT style iterative correction
+    priority: P1
+    family: iterative_verification
+    reproduction: paper_inspired_reimplementation
+    references: [L08]
+    changes: [draft_verify_revise]
+  - id: E21
+    title: Reflexion author episodic memory
+    priority: P0
+    family: verbal_reflection
+    reproduction: author_algorithm_adaptation
+    references: [A03]
+    changes: [author_cot_context_controller, schema_or_literal_feedback]
+
+  - id: E22
+    title: MetaGPT author SOP evidence adaptation
+    priority: P1
+    family: software_sop_domain_adaptation
+    reproduction: author_framework_domain_adaptation
+    references: [A04]
+    changes: [author_team_message_subscriptions, structured_action_outputs, evidence_review]
+
+  - id: E23
+    title: LegalAgentBench author controllers with frozen evidence tools
+    priority: P1
+    family: legal_tool_benchmark_baselines
+    reproduction: author_controller_with_explicit_tool_adaptation
+    references: [B01]
+    changes: [author_react, author_plan_and_solve, author_plan_and_execute, frozen_text_tools]
+
+  - id: E24
+    title: GraphRAG author global search with frozen-text indexing
+    priority: P1
+    family: hierarchical_graph_global_search
+    reproduction: author_global_api_index_and_query
+    references: [R04]
+    changes: [author_index_workflows, leiden_communities, community_reports, scored_map_reduce, separate_product_projection]
+
+
+  - id: E25
+    title: Legal Reasoning Paths paper graph-construction branch
+    priority: P1
+    family: scoped_legal_reasoning_graph
+    reproduction: paper_pipeline_reimplementation_with_author_prompts_ontology
+    references: [L06]
+    changes: [author_prompts_and_ontology, canonical_provisions, scoped_history_edges, typed_rdf_graph, embedding_retrieval_pending, separate_product_projection]
+
+benchmark_tracks:
+  - id: V-Perception
+    methods: [raw_image, generic_ocr, mineru, paddleocr_vl, wechat_structured, gold_perception]
+  - id: E-EvidenceRetrieval
+    methods: [bm25, bm25_rerank, legal_factor_query, dynamic_legal_search, hierarchical_longdoc]
+  - id: A-AgentWorkflow
+    methods: [E00, E01, E02, E03, E05, E06, E07, E08, E09, E10, E11]

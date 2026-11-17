@@ -1,0 +1,1 @@
+# Python 3.12 standard library only; MALLM selected source definitions, no torch/embeddings/model SDK.

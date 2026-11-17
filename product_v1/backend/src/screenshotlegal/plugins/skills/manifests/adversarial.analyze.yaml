@@ -1,0 +1,33 @@
+id: adversarial.analyze.generic.v1
+capability: adversarial.analyze
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions:
+  - '*'
+  matters:
+  - '*'
+  practice_areas:
+  - '*'
+input_schema:
+- proof_graph
+- matter
+output_schema:
+- defense
+grounding:
+  require_source_refs: false
+dependencies:
+- evidence.gap
+- contradiction.detect
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: true
+  authority_search: false
+stage: 7

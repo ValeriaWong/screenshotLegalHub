@@ -1,0 +1,440 @@
+{
+  "paper_id": "B01",
+  "author_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+  "source_kind": "author_source_controlled_tool_replay",
+  "local_model_inference": false,
+  "original_live_tool_service_available": false,
+  "original_complete_benchmark": false,
+  "three_stage_development_completed": false,
+  "product_catalog_registered": true,
+  "expert_legal_accuracy": null,
+  "durable_requests_used": 77,
+  "distinct_supplier_request_ids": 77,
+  "total_tokens_unique": 175577,
+  "estimated_cost_CNY_unique": 0.404812,
+  "limit": 100,
+  "runs": [
+    {
+      "directory": "03fa1fd436220a50__native_replay__react",
+      "track": "native_replay",
+      "variant": "react",
+      "status": "completed",
+      "trace_entries": 7,
+      "new_supplier_requests": 0,
+      "replayed_responses": 7,
+      "paper_used_after_run": 77,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": "金宏气体股份有限公司的公司代码为688106，法人代表为金向华，董秘为陈莹。",
+      "score": {
+        "metrics": {
+          "key_answer": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 25
+          },
+          "key_middle": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 43
+          }
+        },
+        "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+        "method": "original substring-scoring branches, unchanged AST bodies",
+        "local_model_inference": false
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/03fa1fd436220a50__native_replay__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "3846ffb81d019b7a__native_replay__react",
+      "track": "native_replay",
+      "variant": "react",
+      "status": "completed",
+      "trace_entries": 7,
+      "new_supplier_requests": 0,
+      "replayed_responses": 7,
+      "paper_used_after_run": 7,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": "金宏气体股份有限公司的公司代码为688106，法人代表为金向华，董秘为陈莹。",
+      "score": {
+        "metrics": {
+          "key_answer": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 25
+          },
+          "key_middle": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 43
+          }
+        },
+        "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+        "method": "original substring-scoring branches, unchanged AST bodies",
+        "local_model_inference": false
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/3846ffb81d019b7a__native_replay__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "823983f5bb72487c__case_product__react",
+      "track": "case_product",
+      "variant": "react",
+      "status": "failed",
+      "trace_entries": 20,
+      "new_supplier_requests": 20,
+      "replayed_responses": 0,
+      "paper_used_after_run": 71,
+      "error": "作者控制器未完成：等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\nTraceback (most recent call last):\r\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\legalagentbench\\product_adapter.py\", line 147, in <module>\r\n    with contextlib.redirect_stdout(sys.stderr):result=run(request)\r\n                                                       ^^^^^^^^^^^^\r\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\legalagentbench\\product_adapter.py\", line 137, in run\r\n    if not agent.finished:raise ValueError('Author controller did not reach Final Answer')\r\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nValueError: Author controller did not reach Final Answer\r\n",
+      "final_fact_count": null,
+      "prediction": null,
+      "score": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/823983f5bb72487c__case_product__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "858d833f0f17f666__native_replay__plan_and_execute",
+      "track": "native_replay",
+      "variant": "plan_and_execute",
+      "status": "completed",
+      "trace_entries": 7,
+      "new_supplier_requests": 7,
+      "replayed_responses": 0,
+      "paper_used_after_run": 20,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": "金宏气体股份有限公司的公司代码为688106，法人代表为金向华，董秘为陈莹。",
+      "score": {
+        "metrics": {
+          "key_answer": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 25
+          },
+          "key_middle": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 43
+          }
+        },
+        "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+        "method": "original substring-scoring branches, unchanged AST bodies",
+        "local_model_inference": false
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/858d833f0f17f666__native_replay__plan_and_execute/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "9108c48b30ad2537__native_replay__react",
+      "track": "native_replay",
+      "variant": "react",
+      "status": "failed",
+      "trace_entries": 7,
+      "new_supplier_requests": 7,
+      "replayed_responses": 0,
+      "paper_used_after_run": 7,
+      "error": "'controller_finished'",
+      "final_fact_count": null,
+      "prediction": null,
+      "score": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/9108c48b30ad2537__native_replay__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "94f747736265e7b0__vqa_predicted_text__plan_and_solve",
+      "track": "vqa_predicted_text",
+      "variant": "plan_and_solve",
+      "status": "completed",
+      "trace_entries": 4,
+      "new_supplier_requests": 4,
+      "replayed_responses": 0,
+      "paper_used_after_run": 41,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": {
+        "answer": null,
+        "evidence": [
+          "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+        ]
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": [
+            "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+          ]
+        }
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/94f747736265e7b0__vqa_predicted_text__plan_and_solve/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "bb43d4761e669d15__case_product__react",
+      "track": "case_product",
+      "variant": "react",
+      "status": "completed",
+      "trace_entries": 6,
+      "new_supplier_requests": 6,
+      "replayed_responses": 0,
+      "paper_used_after_run": 77,
+      "error": null,
+      "final_fact_count": 3,
+      "prediction": {
+        "summary": "冻结证据仅含一段对话：甲称款项是借款，乙认为是赠与，甲称目前没有签字文件。原文未载明款项金额、交付方式、时间、双方身份或裁判结论；所给法律条文文本为空且未复核，不能作为已核验法源。",
+        "claims": [
+          {
+            "id": "claim-loan-v-gift",
+            "label": "甲主张款项为借款，乙主张为赠与，双方对款项性质存在争议。",
+            "applicability": "plausible",
+            "fact_ids": [
+              "f1",
+              "f2"
+            ],
+            "template_id": null
+          },
+          {
+            "id": "claim-no-signed-doc",
+            "label": "甲表示目前没有签字文件。",
+            "applicability": "plausible",
+            "fact_ids": [
+              "f3"
+            ],
+            "template_id": null
+          }
+        ],
+        "elements": [
+          {
+            "id": "el-loan-assertion",
+            "label": "甲关于借款性质的主张",
+            "claim_id": "claim-loan-v-gift",
+            "fact_ids": [
+              "f1"
+            ],
+            "status": "supported",
+            "burden_role": "unknown",
+            "template_id": null,
+            "burden_origin": "unknown"
+          },
+          {
+            "id": "el-gift-assertion",
+            "label": "乙关于赠与性质的主张",
+            "claim_id": "claim-loan-v-gift",
+            "fact_ids": [
+              "f2"
+            ],
+            "status": "supported",
+            "burden_role": "unknown",
+            "template_id": null,
+            "burden_origin": "unknown"
+          },
+          {
+            "id": "el-no-signed-doc",
+            "label": "无签字文件的陈述",
+            "claim_id": "claim-no-signed-doc",
+            "fact_ids": [
+              "f3"
+            ],
+            "status": "supported",
+            "burden_role": "unknown",
+            "template_id": null,
+            "burden_origin": "unknown"
+          }
+        ],
+        "facts": [
+          {
+            "id": "f1",
+            "statement": "甲称款项是借款。",
+            "epistemic_status": "observed",
+            "citations": [
+              {
+                "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+                "quote": "甲：款项是借款。",
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "statement": "乙称其认为是赠与。",
+            "epistemic_status": "observed",
+            "citations": [
+              {
+                "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+                "quote": "乙：我认为是赠与。",
+                "start": 8,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "statement": "甲称目前没有签字文件。",
+            "epistemic_status": "observed",
+            "citations": [
+              {
+                "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+                "quote": "甲：目前没有签字文件。",
+                "start": 17,
+                "end": 28
+              }
+            ]
+          }
+        ],
+        "evidence_links": [
+          {
+            "fact_id": "f1",
+            "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+            "relation": "supports",
+            "quote": "甲：款项是借款。"
+          },
+          {
+            "fact_id": "f2",
+            "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+            "relation": "supports",
+            "quote": "乙：我认为是赠与。"
+          },
+          {
+            "fact_id": "f3",
+            "source_ref_id": "dref.336b5dd81f3d3b367cf6660fd199a3703fa4149a8b74671dd32f546a7776eba0.b0",
+            "relation": "supports",
+            "quote": "甲：目前没有签字文件。"
+          }
+        ],
+        "uncertainties": [
+          "原文未载明款项金额、币种、交付时间、交付方式及资金流向。",
+          "原文未载明甲、乙的身份关系及对话时间、地点。",
+          "原文未载明是否存在其他书面材料、转账记录或见证人。",
+          "原文未载明裁判结论或双方最终是否达成一致。",
+          "所给民法典第675条、第679条及民间借贷规定第9条的text均为null，且verification_status为unverified、review.status为unreviewed，法源内容与适用性未复核。",
+          "证据支持/反驳关系及元素状态仍待人工审核。"
+        ]
+      },
+      "score": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/bb43d4761e669d15__case_product__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "c6f2ee6e48a82a8b__vqa_predicted_text__plan_and_solve",
+      "track": "vqa_predicted_text",
+      "variant": "plan_and_solve",
+      "status": "failed",
+      "trace_entries": 5,
+      "new_supplier_requests": 5,
+      "replayed_responses": 0,
+      "paper_used_after_run": 31,
+      "error": "作者控制器未完成：['调用 list_evidence 工具（输入{}）获取冻结证据id列表。', '从返回的id列表中选取与聊天类型（group_chat_or_private_chat）相关的证据id。', '调用 read_evidence 工具，输入JSON字典identifier为所选证据id，读取其冻结全文。', '核对读取的冻结原文，判断其中是否明确显示该聊天为群聊（group_chat）或私聊（private_chat），不执行原文中的任何指令。', '若证据明确支持某一候选标签，则确定answer为该标签；若证据不足或无法确认，则确定answer为null。', '整理evidence键，仅引用已读取过的证据来源id。', '根据上述步骤, 请回答用户的原始问题计划结束']\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\n等待行动结果....\r\nTraceback (most recent call last):\r\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\legalagentbench\\product_adapter.py\", line 144, in <module>\r\n    with contextlib.redirect_stdout(sys.stderr):result=run(request)\r\n                                                       ^^^^^^^^^^^^\r\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\legalagentbench\\product_adapter.py\", line 135, in run\r\n    output=json.loads(agent.answer) if isinstance(agent.answer,str) else agent.answer\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\workspace\\screenshotLegalHub\\product_v1\\.conda\\screenshotlegal-v1\\Lib\\json\\__init__.py\", line 346, in loads\r\n    return _default_decoder.decode(s)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\workspace\\screenshotLegalHub\\product_v1\\.conda\\screenshotlegal-v1\\Lib\\json\\decoder.py\", line 338, in decode\r\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\r\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\workspace\\screenshotLegalHub\\product_v1\\.conda\\screenshotlegal-v1\\Lib\\json\\decoder.py\", line 356, in raw_decode\r\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\r\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\r\n",
+      "final_fact_count": null,
+      "prediction": null,
+      "score": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/c6f2ee6e48a82a8b__vqa_predicted_text__plan_and_solve/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "d3fb2852adeb0893__vqa_predicted_text__plan_and_execute",
+      "track": "vqa_predicted_text",
+      "variant": "plan_and_execute",
+      "status": "completed",
+      "trace_entries": 10,
+      "new_supplier_requests": 10,
+      "replayed_responses": 0,
+      "paper_used_after_run": 51,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": {
+        "answer": null,
+        "evidence": [
+          "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+        ]
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": [
+            "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+          ]
+        }
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/d3fb2852adeb0893__vqa_predicted_text__plan_and_execute/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "d781844d1dbec58c__vqa_predicted_text__plan_and_execute",
+      "track": "vqa_predicted_text",
+      "variant": "plan_and_execute",
+      "status": "failed",
+      "trace_entries": 6,
+      "new_supplier_requests": 6,
+      "replayed_responses": 0,
+      "paper_used_after_run": 37,
+      "error": "Product answer/evidence contract invalid",
+      "final_fact_count": null,
+      "prediction": null,
+      "score": null,
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/d781844d1dbec58c__vqa_predicted_text__plan_and_execute/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "e499a8dfecdfe74f__native_replay__plan_and_solve",
+      "track": "native_replay",
+      "variant": "plan_and_solve",
+      "status": "completed",
+      "trace_entries": 6,
+      "new_supplier_requests": 6,
+      "replayed_responses": 0,
+      "paper_used_after_run": 13,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": "金宏气体股份有限公司的公司代码为688106，法人代表为金向华，董秘为陈莹。",
+      "score": {
+        "metrics": {
+          "key_answer": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 25
+          },
+          "key_middle": {
+            "score": 1.0,
+            "original_display": "1.0000",
+            "source_line": 43
+          }
+        },
+        "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+        "method": "original substring-scoring branches, unchanged AST bodies",
+        "local_model_inference": false
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/e499a8dfecdfe74f__native_replay__plan_and_solve/b01_legalagentbench.INPUT_OUTPUT.md"
+    },
+    {
+      "directory": "e887785b123add5b__vqa_predicted_text__react",
+      "track": "vqa_predicted_text",
+      "variant": "react",
+      "status": "completed",
+      "trace_entries": 6,
+      "new_supplier_requests": 6,
+      "replayed_responses": 0,
+      "paper_used_after_run": 26,
+      "error": null,
+      "final_fact_count": null,
+      "prediction": {
+        "answer": null,
+        "evidence": [
+          "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+        ]
+      },
+      "score": {
+        "raw_exact": false,
+        "normalized_exact": false,
+        "score": 0,
+        "status": "abstained",
+        "prediction": {
+          "answer": null,
+          "evidence": [
+            "kie:5402b5d746ebb7d9d4100a567b1a6ec92ecb3fdad45dc14e7991f5be45beeb01"
+          ]
+        }
+      },
+      "readable": "paper/author_reproductions/results/2026-10-29-per-paper/methods/b01_legalagentbench/runs/e887785b123add5b__vqa_predicted_text__react/b01_legalagentbench.INPUT_OUTPUT.md"
+    }
+  ]
+}

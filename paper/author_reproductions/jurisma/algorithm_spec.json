@@ -1,0 +1,18 @@
+{
+  "paper_url": "https://arxiv.org/html/2604.10470v1",
+  "section": "3.2–3.4 / Algorithm 1",
+  "max_iterations": 5,
+  "order": [
+    "Element(q)->G",
+    "Draft([serialize(G);q])->r0",
+    "for t<5: Manager(r)",
+    "Pass/empty->break",
+    "if FormatCheck: Suggestions(r); Draft.apply(r,s)",
+    "if LawSearch: retrieve(q,current r); Draft.integrate(r,l)",
+    "ContentCheck(q,revised r) always"
+  ],
+  "maximum_inference_requests": 28,
+  "exact_author_prompts_available": false,
+  "DPO": false,
+  "whole_paper_completed": false
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "demo-lending-001",
+  "title": "一笔款项的两种解释",
+  "question": "这些材料能说明什么？请梳理时间、金额和借款/投资争议，区分可以推断的内容与需要补证的前提。",
+  "synthetic": true,
+  "sources": [
+    {
+      "source_id": "M001",
+      "speaker": "李四（身份未核实）",
+      "time": "2024-01-05",
+      "time_precision": "day",
+      "kind": "chat",
+      "locator": "合成演示会话 · 第 1 条",
+      "text": "向你借50000元，月底归还。"
+    },
+    {
+      "source_id": "M002",
+      "speaker": "张三（身份未核实）",
+      "time": "2024-01-05",
+      "time_precision": "day",
+      "kind": "chat",
+      "locator": "合成演示会话 · 第 2 条",
+      "text": "已转账50000元，请查收。"
+    },
+    {
+      "source_id": "M003",
+      "speaker": "李四（身份未核实）",
+      "time": "2024-01-05",
+      "time_precision": "day",
+      "kind": "chat",
+      "locator": "合成演示会话 · 第 3 条",
+      "text": "收到50000元，月底归还。"
+    },
+    {
+      "source_id": "M004",
+      "speaker": "李四（身份未核实）",
+      "time": "2024-02-01",
+      "time_precision": "day",
+      "kind": "chat",
+      "locator": "合成演示会话 · 第 4 条",
+      "text": "这笔是投资款，不是借款。"
+    },
+    {
+      "source_id": "M005",
+      "speaker": "李四（身份未核实）",
+      "time": null,
+      "time_precision": "unknown",
+      "kind": "chat",
+      "locator": "合成演示会话 · 第 5 条，未提供时间",
+      "text": "下周先还10000元，余款以后再谈。"
+    }
+  ]
+}

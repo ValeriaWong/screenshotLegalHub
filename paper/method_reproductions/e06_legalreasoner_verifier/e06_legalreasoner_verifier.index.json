@@ -1,0 +1,157 @@
+{
+  "reproduction_name": "e06_legalreasoner_verifier",
+  "implementation_module": "screenshotlegal.method_reproductions.e06_legalreasoner_verifier",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e06_legalreasoner_verifier.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现独立上下文核查后修订；未训练 LegalReasoner 过程验证器，未实现完整 VERDICT。",
+  "paper_sources": [
+    {
+      "paper_id": "L04",
+      "reference": "Shi et al. (2025), *LegalReasoner: Step-wised Verification-Correction for Legal Judgment Reasoning*.",
+      "sources": [
+        "https://arxiv.org/abs/2506.07443"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    },
+    {
+      "paper_id": "L08",
+      "reference": "Liao et al. (2026), *VERDICT: Verifiable Evolving Reasoning with Directive-Informed Collegial Teams for Legal Judgment Prediction*.",
+      "sources": [
+        "https://arxiv.org/abs/2603.19306"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现独立上下文核查后修订；未训练 LegalReasoner 过程验证器，未实现完整 VERDICT。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "LegalReasoner：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L04",
+      "method": "LegalReasoner",
+      "task": "从案件请求和事实进行逐步法律推理，并对推理步骤验证、归因和纠正。",
+      "input": "案件 claims/facts 与法律背景；LegalHK 包含香港案件，CMDL 为大陆刑事案件。",
+      "output": "裁判结论与逐步验证/纠错记录；原训练含争点和过程验证标注。",
+      "benchmark": "LegalHK、CMDL，论文采用各自训练/验证/测试划分；不与我们的合成聊天夹具同分布。",
+      "innovation": "争点分解、过程验证器的多维检查及按问题类型选择修正策略；包含训练数据与验证器。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2506.07443v1",
+      "fit": "条件可适配核查思想；未取得/运行对应作者验证器时，同一底座的新上下文不能算原方法。需重新标注民事证据问题并核对法域。",
+      "pinned_author_source": null
+    },
+    {
+      "paper_id": "L08",
+      "method": "VERDICT",
+      "task": "基于刑事案情预测适用法条、罪名和刑期，使用合议反馈与演化记忆。",
+      "input": "作者 CAIL 环境接收 configs['task'] 案情文本和 configs['expected'] 评分标签；模型任务文本只由 task 构造。训练监督与测试模式须分别配置。",
+      "output": "原格式为 Finish[JSON]，字段 relevant_articles、accusation、term_of_imprisonment；刑期子字段 death_penalty、life_imprisonment、imprisonment。",
+      "benchmark": "CAIL2018（CAIL-Small）、未来时间划分 CJO2025；当前作者 CLI 仅暴露 cail2018。",
+      "innovation": "五角色监督式 Pass/Reject 修订与 Hybrid Jurisprudential Memory / Micro-Directives 演化；不是普通多轮改写。",
+      "repo": "verdict",
+      "source": "https://github.com/luckyhui235/VERDICT",
+      "fit": "不能直接把刑事预测指标用于民事证据链。需重写任务环境/标签/规范检索，并隔离训练记忆与留出案件；E20 未复现 HJM/专家对齐模型。 源码训练验证分支可读取 expected；适配留出评测必须 mode=test 且关闭 training_mode_verification，并另审计 expected/正确性反馈是否经记忆回流。该边界尚未端到端验证。",
+      "pinned_author_source": {
+        "repository": "https://github.com/luckyhui235/VERDICT",
+        "commit": "1b6c9d6ecfbe95900076cbfd2eedf94aecaaf952",
+        "local_path": "paper/upstream_sources/verdict"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e06_legalreasoner_verifier"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e06_legalreasoner_verifier"
+    }
+  ]
+}

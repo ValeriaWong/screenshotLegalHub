@@ -1,0 +1,118 @@
+import { test, expect } from "./fixtures";
+import fs from "node:fs";
+import path from "node:path";
+const key = () => crypto.randomUUID();
+test("image-first review, locked boxes, message comments, geometry resize and judgment drawer", async ({ page, request }) => {
+  const errors: string[] = []; page.on("pageerror", e => errors.push(e.message));
+  const created = await request.post("/v1/review/samples", { data: {
+    dataset: "canvas-e2e", content: { title: "图片审核用例", source_text: "判决书原文测试：当事人陈述收到300元，未提供分钟时间。",
+      messages: [{ id: "m1", speaker: "甲", text: "收到300元。" }, { id: "m2", speaker: "乙", text: "待核对。" }],
+      questions: [{ id: "q1", question: "陈述的金额？", answer: "300元", message_ids: ["m1"] }] }, note: "initial", idempotency_key: key(),
+  } });
+  expect(created.ok()).toBeTruthy(); const saved = await created.json(); const sid = saved.sample.id;
+  await page.goto("/review.html?sample=" + sid);
+  const editor = page.locator("section.card").filter({ has: page.getByRole("heading", { name: /图片审核/ }) });
+  await expect(editor.getByRole("button", { name: "编辑消息 m1 第1页", exact: true })).toBeEnabled();
+  await expect(editor.getByRole("checkbox", { name: "锁定坐标框", exact: true })).toBeChecked();
+  await expect(editor.locator(".review-region-handle")).toHaveCount(0);
+  await editor.getByRole("button", { name: "判决书原文", exact: true }).click();
+  await expect(page.getByRole("dialog", { name: "判决书原文", exact: true })).toContainText("判决书原文测试：当事人陈述收到300元");
+  await page.getByRole("dialog").getByRole("button", { name: "关闭", exact: true }).click();
+  await editor.getByRole("button", { name: "编辑消息 m1 第1页", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "审核消息 m1", exact: true });
+  await expect(dialog.getByRole("textbox", { name: "消息文本", exact: true })).toHaveValue("收到300元。");
+  await dialog.getByRole("textbox", { name: "审核评论", exact: true }).fill("下一轮生成不要补造分钟，语气自然一些。");
+  await dialog.getByRole("checkbox", { name: /适用于同源后续版本/ }).check();
+  await dialog.getByRole("button", { name: "仅保存评论", exact: true }).click();
+  await expect(dialog.getByRole("status")).toContainText("评论已保存");
+  const afterComment = await (await request.get("/v1/review/samples/" + sid)).json();
+  expect(afterComment.sample.revision).toBe(1);
+  expect(afterComment.comments[0].message_snapshot.text).toBe("收到300元。");
+  await dialog.getByRole("button", { name: "关闭", exact: true }).click();
+  await page.reload();
+  await editor.getByRole("button", { name: "编辑消息 m1 第1页", exact: true }).click();
+  await expect(dialog.getByRole("textbox", { name: "审核评论", exact: true })).toHaveValue("");
+  await expect(dialog.locator(".review-comment-history p").filter({ hasText: "下一轮生成不要补造分钟，语气自然一些。" })).toBeVisible();
+  await dialog.getByRole("button", { name: "关闭", exact: true }).click();
+  await editor.getByRole("checkbox", { name: "锁定坐标框", exact: true }).uncheck();
+  const handle = editor.getByRole("button", { name: "调整 m1 se 第1页", exact: true });
+  await handle.scrollIntoViewIfNeeded();
+  await expect(handle).toBeVisible();
+  const box = await handle.boundingBox(); expect(box).not.toBeNull();
+  await page.mouse.move(box!.x + box!.width / 2, box!.y + box!.height / 2);
+  await page.mouse.down(); await page.mouse.move(box!.x + 28, box!.y + 15, { steps: 8 }); await page.mouse.up();
+  const frame = editor.locator(".review-region").first();
+  const draftBox = await frame.evaluate(node => ({ left: node.style.left, top: node.style.top, width: node.style.width, height: node.style.height }));
+  await editor.getByRole("checkbox", { name: "锁定坐标框", exact: true }).check();
+  await editor.getByRole("button", { name: "编辑消息 m1 第1页", exact: true }).click();
+  await dialog.getByRole("textbox", { name: "消息文本", exact: true }).fill("收到400元，尚待核对。");
+  await dialog.getByRole("button", { name: "保存并重新渲染", exact: true }).click();
+  await expect(editor.getByRole("img", { name: /派生图 r2/ })).toBeVisible();
+  await expect(editor.getByRole("checkbox", { name: "锁定坐标框", exact: true })).toBeChecked();
+  await expect(editor.locator(".review-region-handle")).toHaveCount(0);
+  const actualBox = await frame.evaluate(node => ({ left: node.style.left, top: node.style.top, width: node.style.width, height: node.style.height }));
+  expect(actualBox).toEqual(draftBox);
+  const current = await (await request.get("/v1/review/samples/" + sid)).json();
+  expect(current.revision.content.messages[0].text).toBe("收到400元，尚待核对。");
+  expect(current.revision.layout[0].boxes[0].bbox[3]).toBeGreaterThan(179);
+  const prompt = await (await request.post("/v1/studio/prompts", { data: { name: "canvas-" + key(), markdown: "# 根据来源和审核意见生成", note: "initial", expected_version: 0, idempotency_key: key() } })).json();
+  const batch = await (await request.post("/v1/studio/batches", { data: { name: "评论迭代", dataset: "canvas-feedback", source_sample_id: sid, source_revision: 2, prompt_id: prompt.id, idempotency_key: key() } })).json();
+  expect(batch.review_feedback[0].body).toContain("不要补造分钟");
+  await page.screenshot({ path: "../artifacts/review-canvas-desktop.png", fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  await editor.getByRole("button", { name: "编辑消息 m1 第1页", exact: true }).click();
+  await expect(dialog).toBeVisible();
+  await page.screenshot({ path: "../artifacts/review-canvas-mobile.png", fullPage: true });
+  await dialog.getByRole("button", { name: "关闭", exact: true }).click();
+  const missing = await (await request.post("/v1/review/samples", { data: { dataset: "canvas", content: { title: "没有原文", messages: [] }, note: "initial", idempotency_key: key() } })).json();
+  await page.goto("/review.html?sample=" + missing.sample.id);
+  await page.getByRole("button", { name: "判决书原文", exact: true }).click();
+  await expect(page.getByRole("dialog")).toContainText("此样本未附判决书原文");
+  await page.screenshot({ path: "../artifacts/review-judgment-missing.png", fullPage: true });
+  expect(errors).toEqual([]);
+});
+
+test("failed render retains text and old image while unlocked resizing repairs the latest revision", async ({ page, request }) => {
+  const text = "长句".repeat(100);
+  const initial = await (await request.post("/v1/review/samples", { data: { dataset: "canvas-recovery", content: { title: "坐标修复", messages: [{ id: "m1", text }] }, note: "initial", idempotency_key: key() } })).json();
+  const sid = initial.sample.id;
+  await expect.poll(async () => (await (await request.get("/v1/review/samples/" + sid)).json()).sample.published_manifest).toBeTruthy();
+  const first = await (await request.get("/v1/review/samples/" + sid)).json();
+  const m = await (await request.get("/v1/review/manifests/" + first.sample.published_manifest)).json();
+  const layout = m.pages.map((p: any) => ({ page: p.page, width: p.width, height: p.height, boxes: p.boxes }));
+  layout[0].boxes[0].bbox = [30, 100, 78, 148];
+  const smaller = await request.put("/v1/review/samples/" + sid, { data: { content: first.revision.content, expected_revision: 1, layout, coordinates_unlocked: true, layout_manifest_id: m.id, note: "缩小框", idempotency_key: key() } });
+  expect(smaller.ok()).toBeTruthy();
+  await expect.poll(async () => { const d = await (await request.get("/v1/review/samples/" + sid)).json(); return d.jobs.find((j: any) => j.id === d.sample.render_job_id)?.status; }).toBe("failed");
+  await page.goto("/review.html?sample=" + sid);
+  await expect(page.getByText(/当前渲染失败，图片仍为上一成功版本/)).toBeVisible();
+  const lock = page.getByRole("checkbox", { name: "锁定坐标框", exact: true });
+  await expect(lock).toBeEnabled(); await lock.uncheck();
+  const handle = page.getByRole("button", { name: "调整 m1 se 第1页", exact: true });
+  await handle.scrollIntoViewIfNeeded(); await handle.focus();
+  for (let i = 0; i < 25; i++) { await page.keyboard.press("Shift+ArrowRight"); await page.keyboard.press("Shift+ArrowDown"); }
+  await page.getByRole("button", { name: "保存新版本并渲染", exact: true }).click();
+  await expect(page.getByRole("img", { name: /派生图 r3/ })).toBeVisible();
+  const recovered = await (await request.get("/v1/review/samples/" + sid)).json();
+  expect(recovered.revision.content.messages[0].text).toBe(text);
+  await page.screenshot({ path: "../artifacts/review-canvas-recovered.png", fullPage: true });
+});
+
+test("untranscribed original stays visible for comment-only review", async ({ page, request }) => {
+  const asset = await (await request.post("/v1/review/assets", { multipart: { file: { name: "original.png", mimeType: "image/png", buffer: fs.readFileSync(path.resolve("../fixtures/demo_private_lending/chat-1.png")) } } })).json();
+  const c = await (await request.post("/v1/review/samples", { data: { dataset: "original-canvas", content: { title: "未转录原图", kind: "original", original_assets: [asset], messages: [] }, note: "initial", idempotency_key: key() } })).json();
+  await page.goto("/review.html?sample=" + c.sample.id);
+  const image = page.getByRole("img", { name: "审核原图（尚无消息坐标）", exact: true });
+  await expect(image).toBeVisible();
+  await expect.poll(() => image.evaluate(n => (n as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(page.getByText(/原图尚无消息转录与坐标/)).toBeVisible();
+  await page.getByText("添加样本评论 / 查看评论（0）", { exact: true }).click();
+  await page.getByRole("textbox", { name: "审核评论", exact: true }).fill("请保留原图，后续补充转录，不需要先改文字。");
+  await page.getByRole("button", { name: "仅保存评论", exact: true }).click();
+  await expect(page.getByText(/评论已保存，可用于后续 AI 生成迭代/)).toBeVisible();
+  const detail = await (await request.get("/v1/review/samples/" + c.sample.id)).json();
+  expect(detail.sample.revision).toBe(1);
+  expect(detail.comments[0].message_id).toBeNull();
+  await page.screenshot({ path: "../artifacts/review-original-comment.png", fullPage: true });
+});

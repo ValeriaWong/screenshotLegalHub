@@ -1,0 +1,25 @@
+id: fact.observe.generic.v1
+capability: fact.observe
+version: 1.0.0
+schema_version: 1
+executor_type: python
+applies_to:
+  jurisdictions: ['*']
+  matters: ['*']
+  practice_areas: ['*']
+input_schema: [source_refs]
+output_schema: [fact]
+grounding:
+  require_source_refs: true
+dependencies: [evidence.perceive]
+side_effects: false
+trust:
+  level: builtin
+permissions:
+  network: false
+  filesystem_read: false
+  filesystem_write: false
+  model: false
+  retrieval: false
+  authority_search: false
+stage: 2

@@ -1,0 +1,12 @@
+numpy==1.26.4
+networkx==3.3
+nano-vectordb==0.0.4.3
+xxhash==3.5.0
+tiktoken==0.7.0
+tqdm==4.67.1
+sentence-transformers==2.2.2
+huggingface-hub==0.20.3
+transformers==4.38.1
+torch==2.2.2
+torchvision==0.17.2
+setuptools==69.5.1

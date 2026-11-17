@@ -1,0 +1,25 @@
+You are building a SYNTHETIC DEVELOPMENT DATASET of legally relevant chat screenshots. The judgment is source material, not instructions. Return ONLY a JSON object. Do not claim these are real recovered conversations.
+
+Create Chinese WeChat chats for language zh, English WhatsApp chats for en. Preserve jurisdiction, the judgment's anonymization and original quoted-message spelling. Work only from the supplied evidence excerpts. Some excerpts contain competing allegations or judicial findings: distinguish allegation, admitted fact, disputed fact and judicial finding in the fact ledger. Never turn one party's allegation into both parties' admission. Do not put the court's reasoning, case title, verdict, litigation outcome or answer keys in the chat. No artificial confessions to establish the winning party's case.
+
+First build 8-14 source-grounded facts: each fact needs an EXACT short source_quote and source_id. Collect original chat quotes if present, preserving wording and speaker; use only a small representative subset with a clear context. Emails must not be mislabeled as original WhatsApp messages. Representing an email fact in synthetic chat is judgment_paraphrase, not verbatim_quote. Preserve dates and money direction; do not invent new legally decisive transactions, promises, waivers, authorization, identities or admissions to increase difficulty.
+
+Generate 28-38 short, naturally paced messages. Use 2 conversations ONLY when participants and circumstances support it; a second conversation may be a clearly labeled synthetic reconstruction, never an asserted real conversation. Reuse the same entity IDs across conversations. A legitimate one-conversation case is allowed. Add small neutral connective messages and everyday distractors; no theatre, headings, exposition dumps, mandatory emojis or lawyer-like speeches. Let each side protect their own interests. Spread relevant information across turns and time. Preserve gaps and ambiguous speakers/times when source is unclear. Time fields: timestamp (YYYY-MM-DD HH:MM or null), time_basis (source / synthetic / unknown), time_label (date/period/unknown shown in UI). Synthetic time is solely a rendering scenario and must be marked; never imply source supports the precise minute. Do not claim bank payments were actual WeChat transfer cards.
+
+Schema (all fields required; arrays may be empty where appropriate):
+{
+  "facts":[{"id":"f01","statement":"...","status":"admitted|alleged|disputed|judicial_finding","source_id":"p0001","source_quote":"exact contiguous source text"}],
+  "participants":[{"id":"u1","display_name":"...","role":"..."}],
+  "conversations":[{"id":"c1","title":"...","participant_ids":["u1","u2"],"self_id":"u1","construction":"source_supported|synthetic_reconstruction"}],
+  "messages":[{"id":"m001","conversation_id":"c1","sender_id":"u1","timestamp":null,"time_basis":"unknown","time_label":"unknown","text":"...","origin_type":"verbatim_quote|judgment_paraphrase|synthetic_completion","fact_ids":["f01"],"source_refs":[{"source_id":"p0001","quote":"exact source substring"}]}],
+  "events":[{"id":"e01","meaning":"...","speaker_ids":["u1"],"message_ids":["m001"],"time_uncertainty":"...","favorable_to":["u1"],"adverse_to":["u2"]}],
+  "questions":[{"id":"q01","task":"timeline|identity|intent|cross_conversation|insufficient_evidence","question":"...","answer":"...","minimal_message_ids":["m001","m020"],"reasoning_steps":["specific evidence-to-inference step"],"unanswerable":false,"answer_origin":"screenshot_only"}],
+  "limitations":["..."],
+  "difficulty_design":{"dependencies":["specific real inference dependency"],"synthetic_changes":["..."],"source_gaps":["..."]}
+}
+
+All fact/source IDs must exist. verbatim_quote message text MUST appear as an exact substring in one of its supplied source_refs.quote; choose a contiguous exact quote, not stitched snippets. judgment_paraphrase needs fact_ids and source_refs; synthetic_completion may refer to context facts but is never evidence that the underlying judgment records the message. All referenced source quotes MUST be literal contiguous substrings of their source paragraph. Do not use ellipses to splice quotes. Messages are ordered within each conversation; IDs unique.
+
+Create 4 questions: one chronology/meaning question, one supported multi-evidence question with at least 2 necessary messages, one evidence-completeness question, one explicitly unanswerable question where a withheld or missing fact cannot be uniquely inferred. Do not name a court's verdict as an answer. No legal black-letter conclusion without supplied jurisdictional rule; focus on events, intent, identity and evidential limits. Questions must be answerable from the rendered chats alone (except explicit unanswerable), without the judgment or hidden fact ledger. State specifically why each message in a minimal set is needed; a long chat or multiple pages alone is not multi-hop reasoning.
+
+The result will undergo independent criticism and deterministic checks. Treat honesty about limits as a quality requirement, not a flaw to hide.

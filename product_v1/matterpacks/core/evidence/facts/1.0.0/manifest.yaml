@@ -1,0 +1,11 @@
+id: core.evidence.facts
+name_zh: 原文事实整理（不作法律归类）
+name_en: Source facts only
+jurisdiction: unspecified
+practice_area: evidence
+version: 1.0.0
+schema_version: 1
+status: draft
+expert_review:
+  status: not_applicable
+required_capabilities: [fact.observe]

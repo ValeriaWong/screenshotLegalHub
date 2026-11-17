@@ -1,0 +1,18 @@
+{
+  "method": "react",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "react",
+      "commit": "6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9",
+      "files_checked": 8
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 11,
+    "mismatches": {}
+  },
+  "resources": []
+}

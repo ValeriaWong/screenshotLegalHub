@@ -1,0 +1,19 @@
+{
+  "method": "graphrag",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "graphrag",
+      "commit": "a81efe58c7c21ff8b17aa9bf1cb78a0750f3065b",
+      "files_checked": 399,
+      "retrieval": "verified_fixed_commit_download"
+    }
+  ],
+  "environment": {
+    "python": "3.11.0",
+    "packages_checked": 101,
+    "mismatches": {}
+  },
+  "resources": []
+}

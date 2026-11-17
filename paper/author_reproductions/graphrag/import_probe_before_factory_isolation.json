@@ -1,0 +1,49 @@
+{
+  "python": "3.11.0",
+  "modules": [
+    {
+      "module": "graphrag.query.structured_search.global_search.search",
+      "status": "failed",
+      "error_type": "ImportError",
+      "message": "cannot import name 'VectorStoreFactory' from 'graphrag.vector_stores' (unknown location)",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\graphrag\\probe_imports.py\", line 10, in <module>\n    try:importlib.import_module(name);rows.append(dict(module=name,status='imported'))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\godli\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1206, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1178, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1149, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 690, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\query\\structured_search\\global_search\\search.py\", line 16, in <module>\n    from graphrag.index.utils.json import clean_up_json\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\__init__.py\", line 40, in <module>\n    from .run import run_pipeline, run_pipeline_with_config\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\run.py\", line 59, in <module>\n    from .verbs import *  # noqa\n    ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\__init__.py\", line 22, in <module>\n    from .text import chunk, text_embed, text_split, text_translate\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\__init__.py\", line 7, in <module>\n    from .embed import text_embed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\embed\\__init__.py\", line 6, in <module>\n    from .text_embed import TextEmbedStrategyType, text_embed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\embed\\text_embed.py\", line 15, in <module>\n    from graphrag.vector_stores import (\nImportError: cannot import name 'VectorStoreFactory' from 'graphrag.vector_stores' (unknown location)\n"
+    },
+    {
+      "module": "graphrag.query.structured_search.global_search.community_context",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.query.indexer_adapters",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.graph.graph_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.summarize.description_summary_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.verbs.graph.clustering.strategies.leiden",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.graph.extractors.community_reports.community_reports_extractor",
+      "status": "imported"
+    },
+    {
+      "module": "graphrag.index.run",
+      "status": "failed",
+      "error_type": "ImportError",
+      "message": "cannot import name 'VectorStoreFactory' from 'graphrag.vector_stores' (unknown location)",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\author_reproductions\\graphrag\\probe_imports.py\", line 10, in <module>\n    try:importlib.import_module(name);rows.append(dict(module=name,status='imported'))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\godli\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1206, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1178, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1128, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"<frozen importlib._bootstrap>\", line 1206, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1178, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1149, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 690, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\__init__.py\", line 40, in <module>\n    from .run import run_pipeline, run_pipeline_with_config\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\run.py\", line 59, in <module>\n    from .verbs import *  # noqa\n    ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\__init__.py\", line 22, in <module>\n    from .text import chunk, text_embed, text_split, text_translate\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\__init__.py\", line 7, in <module>\n    from .embed import text_embed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\embed\\__init__.py\", line 6, in <module>\n    from .text_embed import TextEmbedStrategyType, text_embed\n  File \"D:\\workspace\\screenshotLegalHub\\paper\\upstream_sources\\graphrag\\graphrag\\index\\verbs\\text\\embed\\text_embed.py\", line 15, in <module>\n    from graphrag.vector_stores import (\nImportError: cannot import name 'VectorStoreFactory' from 'graphrag.vector_stores' (unknown location)\n"
+    },
+    {
+      "module": "graphrag.index.create_pipeline_config",
+      "status": "imported"
+    }
+  ],
+  "neural_modules_loaded": [],
+  "model_requests": 0
+}

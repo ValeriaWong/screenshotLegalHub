@@ -1,0 +1,1904 @@
+[
+  {
+    "method_id": "E00",
+    "reproduction_name": "e00_single_shot",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e00_single_shot.py",
+    "original_contracts": [],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "not_applicable_project_baseline",
+      "adaptability": "非单篇论文复现的项目基线",
+      "current_project_implementation": "通用单次回答基线；不对应单篇论文，不声称作者系统复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E01",
+    "reproduction_name": "e01_react",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e01_react.py",
+    "original_contracts": [
+      {
+        "paper_id": "A01",
+        "method": "ReAct",
+        "task": "知识问答、事实核验及交互环境决策。",
+        "input": "问答为 question；交互任务为目标与环境 observation。结构示意：question='某人的出生地是什么？'。",
+        "output": "工具 action/observation 轨迹与最终答案或任务完成状态；不是带 SourceRef 的案件证明图。",
+        "benchmark": "HotpotQA、FEVER、ALFWorld、WebShop；原任务分别采用回答/核验或环境成功率指标。",
+        "innovation": "交替进行任务分析与工具行动，利用真实环境观察更新后续行动。",
+        "repo": "react",
+        "source": "https://arxiv.org/html/2210.03629",
+        "fit": "条件可适配工具决策层；须把案内证据读取与法源检索分开，并保留观察到的陈述而非默认其为真。",
+        "pinned_author_source": {
+          "repository": "https://github.com/ysymyth/ReAct",
+          "commit": "6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9",
+          "local_path": "paper/upstream_sources/react"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_controller_native_and_product_real_validated",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "案件run仍为项目受控工具原型；KIE/全图VQA的run_task执行作者Notebook webthink控制器，工具适配为冻结原图目录与像素局部读取；原benchmark未复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [
+        "kie_image",
+        "vqa_image_full"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩",
+        "独立gym/numpy环境；原WikiEnv与HotPotQAWrapper成功载入7405道dev题",
+        "原Notebook webthink函数体原样载入；截图变体用冻结原图目录和真实像素局部读取替换Wikipedia工具",
+        "KIE/全图VQA入口已接run_task；原图和局部图的哈希、坐标、逐步请求/响应保留，边界错误会停止",
+        "真实调用及失败记录：results/2026-10-29-per-paper/README.md；各论文100次持久上限共享原生/产品轨道"
+      ],
+      "blockers": [
+        "案件run(context)仍为项目原型；KIE/全图VQA为作者控制器"
+      ],
+      "native_verification": {
+        "checks": {
+          "author_controller_completed": true,
+          "answer_exact_match": true
+        },
+        "status": "completed",
+        "original_complete_benchmark": false,
+        "scope": "Native task/adapter execution; expert legal metrics deferred"
+      },
+      "real_product_tracks_completed": [
+        "kie_image",
+        "vqa_image_full"
+      ]
+    }
+  },
+  {
+    "method_id": "E02",
+    "reproduction_name": "e02_staged_without_matterpack",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e02_staged_without_matterpack.py",
+    "original_contracts": [
+      {
+        "paper_id": "A04",
+        "method": "MetaGPT",
+        "task": "软件开发SOP协作；E22执行作者Team/Role/Memory与软件原任务，E02保留项目流程基线。",
+        "input": "软件需求或带函数签名/测试约束的编程任务。",
+        "output": "需求/设计/代码/测试等软件产物；不是案件事实或法律分析。",
+        "benchmark": "HumanEval、MBPP、SoftwareDev。",
+        "innovation": "把角色分工、标准操作流程、结构化通信和可执行反馈组合到软件开发团队。",
+        "repo": "metagpt",
+        "source": "https://arxiv.org/html/2308.00352v7",
+        "fit": "作者通用团队、结构化ActionOutput与消息订阅可作领域迁移；E22显式替换四角色证据SOP。默认软件流程18次，额外作者审查1次后4项功能通过；原QaEngineer续跑19次仍有测试失败和最终未执行修订，累计45/100；交互终端和整篇方法未验收。",
+        "pinned_author_source": {
+          "repository": "https://github.com/FoundationAgents/MetaGPT",
+          "commit": "820fee5df6697b4e85e90c787940de111c3ed05b",
+          "local_path": "paper/upstream_sources/metagpt"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "not_applicable_project_baseline",
+      "adaptability": "非单篇论文复现的项目基线",
+      "current_project_implementation": "本项目固定三阶段工作流；参考 MetaGPT 的流程分工，不含其软件开发角色或原任务。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E03",
+    "reproduction_name": "e03_staged_with_matterpack",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e03_staged_with_matterpack.py",
+    "original_contracts": [
+      {
+        "paper_id": "L07",
+        "method": "JurisMA",
+        "task": "中文法律咨询问答；查询转法律要素图，再动态协作与内容修订。",
+        "input": "用户法律咨询问题，可能长、非正式且存在多个争点；不要求先输入截图或 ProofGraph。",
+        "output": "面向用户的咨询答复和法律依据；要素图是中间结构。",
+        "benchmark": "修订版 LawBench；JurisCQAD 用于训练/DPO。另有 LegalBench-RuleQA 小样本迁移实验。",
+        "innovation": "实体/事件/意图/争点结构、动态任务路由、法条 grounding 与内容修订，并构建咨询偏好数据。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2604.10470v1",
+        "fit": "可将论文§3.2–3.4/Algorithm 1推理算法适配为远程API咨询、冻结预测KIE文本VQA和案件结构映射；DPO与本地检查点暂缓，非作者代码/完整论文复现。",
+        "pinned_author_source": null
+      },
+      {
+        "paper_id": "L09",
+        "method": "SCALE",
+        "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+        "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+        "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+        "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+        "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+        "repo": "scale",
+        "source": "https://aclanthology.org/2026.emnlp-main.36/",
+        "fit": "可适配冻结法律文本的案例证据研究。产品case_product已执行作者组件；中国法规集合替代ECHR判例指南，层级为未复核模型派生结果，不能验证原论文先例覆盖收益；不支持直接像素KIE。",
+        "pinned_author_source": {
+          "repository": "https://github.com/khatrimann/SCALE",
+          "commit": "1700924ca8c448af56c854e5e4c9ae693e86beb3",
+          "local_path": "paper/upstream_sources/scale"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "not_applicable_project_baseline",
+      "adaptability": "非单篇论文复现的项目基线",
+      "current_project_implementation": "本项目三阶段工作流加领域模板；参考 JurisMA/SCALE 的结构化知识，不等于两篇作者系统。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "JurisMA：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+      ]
+    }
+  },
+  {
+    "method_id": "E04",
+    "reproduction_name": "e04_symbolic_verifier",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e04_symbolic_verifier.py",
+    "original_contracts": [
+      {
+        "paper_id": "L05",
+        "method": "SOLAR / On Verifiable Legal Reasoning",
+        "task": "形式化法条并将案件事实映射为可验证的符号推理。",
+        "input": "SARA numeric 的美国税法条文和纳税人事实，例如收入/报税身份/扣除项。",
+        "output": "规则/本体中间表示及税额等结论；Stage II 使用预先构建的 TBox。",
+        "benchmark": "LegalBench 的 SARA numeric，论文研究 96 个税务计算案例；不是民事证明责任数据。",
+        "innovation": "知识获取与知识应用分离，用 TBox/ABox 及符号推理约束生成和计算。",
+        "repo": "solar",
+        "source": "https://arxiv.org/html/2509.00710",
+        "fit": "不能直接用于通用聊天证据判断。独立作者Stage II已运行，Stage I原图已生成SARA TBox并停在真实人工审核输入处；新解释器/训练反馈及中国民事规则域未完成。E04案件主链尚未接入，不能将SARA税法本体作为中国截图KIE/VQA规则包。",
+        "pinned_author_source": {
+          "repository": "https://github.com/albsadowski/solar",
+          "commit": "067f8f78b128dc7647c8a54b2560a612fae91a87",
+          "local_path": "paper/upstream_sources/solar"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_stage_ii_and_stage_i_pre_review_executed_pending_review_and_product",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+      "current_project_implementation": "尚未实现形式化规则表示及符号验证器；文件仅登记出处，不能运行。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "独立Python3.13.14、49个锁定依赖；无本地权重",
+        "原Stage II真实2次；新增Stage I真实4次，累计6/100",
+        "原校验反馈date类型3问题，原整合修订后问题0；完整输入输出和待审TBox均保存",
+        "保留原human_review输入门槛，没有自动批准或将其写成产品适配完成"
+      ],
+      "blockers": [
+        "Stage I已生成24类/71属性/21规则并通过原结构校验，等待原作者human_review输入；新解释器/训练反馈未执行",
+        "固定SARA税法规则不能直接用于中国截图任务，须建立相应规则域"
+      ],
+      "native_verification": "SARA Stage II真实执行完成；精确数值未命中，论文10%容差命中；Stage I原抽取/整合/校验已运行至实际人工输入边界",
+      "native_acquisition_verification": {
+        "status": "awaiting_human_review",
+        "checks": {
+          "original_pre_review_graph_executed": true,
+          "original_human_review_body_executed": true,
+          "original_input_intercepted": true,
+          "tbox_validator_issues": [],
+          "interpreter_generated": false,
+          "training_evaluated": false,
+          "product_adaptation_completed": false,
+          "local_model_inference": false,
+          "original_complete_benchmark": false
+        },
+        "original_complete_benchmark": false
+      }
+    }
+  },
+  {
+    "method_id": "E05",
+    "reproduction_name": "e05_self_refine",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e05_self_refine.py",
+    "original_contracts": [
+      {
+        "paper_id": "A02",
+        "method": "Self-Refine",
+        "task": "同一模型先生成结果，再提供反馈并迭代修订；不同任务使用各自的原生模板。",
+        "input": "本轮选用作者 responsegen.run.iterative_response(context:str,max_attempts:int)：context是双人对话历史。历史原任务样例使用 acronym/run.py 的英文title与max_attempts；其他任务接收数学题、程序、概念集合或评论。",
+        "output": "responsegen控制器返回 {response文本: {n_attempts,scores,total_score,context}}；三个原生类分别返回(meta,response)、(meta,feedback)、(meta,revised_response)。缩写分支返回缩写及评分轨迹。均不直接返回本项目CaseAnalysisOutput/KIE/VQA schema。",
+        "benchmark": "论文七类任务：Yelp 情感反转、对话响应、PIE 代码优化、CodeNet 可读性、GSM8K、缩写生成、CommonGen；本次原生示例不是整套 benchmark。",
+        "innovation": "无需额外训练/外部反馈模型，由同一模型产生可执行反馈，再据反馈改写。",
+        "repo": "self_refine",
+        "source": "https://arxiv.org/html/2303.17651",
+        "fit": "可适配修订控制流；法律任务必须另定义引文/反证/缺证反馈标准。缩写自评分不能转为法律准确率。",
+        "pinned_author_source": {
+          "repository": "https://github.com/madaan/self-refine",
+          "commit": "9a206d41e5d2d0c241bb441f41eeadb945afaa55",
+          "local_path": "paper/upstream_sources/self_refine"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_controller_native_and_product_real_validated",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "执行作者 responsegen 迭代控制器与三原生任务类调用；适配冻结来源案件输出、截图KIE及全图VQA；原benchmark未复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "kie_image",
+        "vqa_image_full"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": true,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩",
+        "固定 Self-Refine 与 prompt-lib 提交；独立 Python 环境",
+        "修复未使用的 Anthropic 客户端构造兼容与 httpx 版本",
+        "本地受限 broker 保存实际 DeepSeek 身份，给原 SDK 返回兼容 engine alias",
+        "保留原 few-shot 提示，额外添加模型格式指令；禁用整轮自动付费重试",
+        "首次失败 1 次调用；随后原 Init/Feedback/Iterate 三类用 3 次调用完成一次修订",
+        "原responsegen控制器函数体经AST原样载入，禁用付费整轮重试；原三任务类__call__保留",
+        "任务模板改为KIE/VQA/CaseAnalysisOutput；JSON转义保护原字符；图像每步保持冻结输入",
+        "产品案件主链和KIE/全图VQA入口已接作者控制器；作者原样例与真实KIE/全图VQA已执行",
+        "真实调用及失败记录：results/2026-10-29-per-paper/README.md；各论文100次持久上限共享原生/产品轨道"
+      ],
+      "blockers": [],
+      "native_verification": {
+        "checks": {
+          "author_controller_completed": true
+        },
+        "status": "completed",
+        "original_complete_benchmark": false,
+        "scope": "Native task/adapter execution; expert legal metrics deferred"
+      },
+      "real_product_tracks_completed": [
+        "kie_image",
+        "vqa_image_full"
+      ]
+    }
+  },
+  {
+    "method_id": "E06",
+    "reproduction_name": "e06_legalreasoner_verifier",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e06_legalreasoner_verifier.py",
+    "original_contracts": [
+      {
+        "paper_id": "L04",
+        "method": "LegalReasoner",
+        "task": "从案件请求和事实进行逐步法律推理，并对推理步骤验证、归因和纠正。",
+        "input": "案件 claims/facts 与法律背景；LegalHK 包含香港案件，CMDL 为大陆刑事案件。",
+        "output": "裁判结论与逐步验证/纠错记录；原训练含争点和过程验证标注。",
+        "benchmark": "LegalHK、CMDL，论文采用各自训练/验证/测试划分；不与我们的合成聊天夹具同分布。",
+        "innovation": "争点分解、过程验证器的多维检查及按问题类型选择修正策略；包含训练数据与验证器。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2506.07443v1",
+        "fit": "条件可适配核查思想；未取得/运行对应作者验证器时，同一底座的新上下文不能算原方法。需重新标注民事证据问题并核对法域。",
+        "pinned_author_source": null
+      },
+      {
+        "paper_id": "L08",
+        "method": "VERDICT",
+        "task": "基于刑事案情预测适用法条、罪名和刑期，使用合议反馈与演化记忆。",
+        "input": "作者 CAIL 环境接收 configs['task'] 案情文本和 configs['expected'] 评分标签；模型任务文本只由 task 构造。训练监督与测试模式须分别配置。",
+        "output": "原格式为 Finish[JSON]，字段 relevant_articles、accusation、term_of_imprisonment；刑期子字段 death_penalty、life_imprisonment、imprisonment。",
+        "benchmark": "CAIL2018（CAIL-Small）、未来时间划分 CJO2025；当前作者 CLI 仅暴露 cail2018。",
+        "innovation": "五角色监督式 Pass/Reject 修订与 Hybrid Jurisprudential Memory / Micro-Directives 演化；不是普通多轮改写。",
+        "repo": "verdict",
+        "source": "https://github.com/luckyhui235/VERDICT",
+        "fit": "不能直接把刑事预测指标用于民事证据链。需重写任务环境/标签/规范检索，并隔离训练记忆与留出案件；E20 未复现 HJM/专家对齐模型。 源码训练验证分支可读取 expected；适配留出评测必须 mode=test 且关闭 training_mode_verification，并另审计 expected/正确性反馈是否经记忆回流。该边界尚未端到端验证。",
+        "pinned_author_source": {
+          "repository": "https://github.com/luckyhui235/VERDICT",
+          "commit": "1b6c9d6ecfbe95900076cbfd2eedf94aecaaf952",
+          "local_path": "paper/upstream_sources/verdict"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现独立上下文核查后修订；未训练 LegalReasoner 过程验证器，未实现完整 VERDICT。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "LegalReasoner：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+        "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+      ]
+    }
+  },
+  {
+    "method_id": "E07",
+    "reproduction_name": "e07_agentscourt_adversarial",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e07_agentscourt_adversarial.py",
+    "original_contracts": [
+      {
+        "paper_id": "L01",
+        "method": "AgentsCourt",
+        "task": "从给定案情模拟法庭辩论、检索法律知识并生成裁判分析。",
+        "input": "SimuCourt 中的案情与案件类型/审级等任务信息，通常是已整理的案件叙述。",
+        "output": "案件分析、适用法条、裁判结果；刑事任务涉及罪名、刑期和罚金。",
+        "benchmark": "SimuCourt，420 份中文裁判文书，涉及民事、行政、刑事及审级设置；配套 Legal-KB。",
+        "innovation": "法庭辩论模拟、法律资源增强与裁判迭代结合；不等于增加两个对立角色。",
+        "repo": "agentscourt",
+        "source": "https://aclanthology.org/2024.findings-emnlp.549/",
+        "fit": "仅条件适配辩论机制。聊天中的主张/否认必须保留认识状态，不能先改成法院已认定事实；裁判标签也不能直接充当证据链 Gold。",
+        "pinned_author_source": {
+          "repository": "https://github.com/Zhitao-He/AgentsCourt",
+          "commit": "7c14d6960abfdfdd7366250905da8dbcb416d6d6",
+          "local_path": "paper/upstream_sources/agentscourt"
+        }
+      },
+      {
+        "paper_id": "L10",
+        "method": "L-MAD (Nguyen et al., 2026)",
+        "task": "法条premise与法律hypothesis之间的二分类蕴含判断；比较三persona的混合共识与固定轮次排名投票。",
+        "input": "原COLIEE每题Relevant article、Query、Answer。只把法条与问题送给模型；原答案仅评分。本轮原任务为论文2.1节Article9官方英文翻译示例，不是R05/R06/R07年度数据集。",
+        "output": "正文固定Answer:Y/N与简短公开说明；附录日文提示却要求判断:Y/N，二者分别解析。协议还产生AGREE/DISAGREE、排名与收敛/平局/未知轨迹。",
+        "benchmark": "COLIEE Task4 R05/R06/R07分别109/73/82条，accuracy。原Qwen3/Llama模型、本地bfloat16和完整年度成绩未复现。",
+        "innovation": "在两轮滑动记忆下比较共识与排名投票，保持分歧和最多一轮平局补充讨论，研究协议/规模对法律判断的影响。",
+        "repo": null,
+        "cited_framework_repo": "mallm",
+        "source": "https://arxiv.org/html/2607.09099v1",
+        "fit": "论文协议调度＋实际所引MALLM提示/共识/排名组件；未核实L-MAD作者仓库。混合参数按论文配置，不能直接用不同的MALLM默认值。DeepSeek替换原本地模型、固定附录persona、原示例英文语言差异均披露。二分类KIE文本VQA双向验候选，N不自动推出相反标签；案件先核验最多2项有原文锚点的陈述，再修订，不能由共识推定法律正确。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现双方独立意见、一轮交换和起草者整合；未复现作者训练、知识增强和原始判决任务。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "L-MAD (Nguyen et al., 2026)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+        "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+      ],
+      "native_component_verification": "SimuCourt首例庭辩组件真实执行完成；完整Legal-KB检索和判决未完成；产品入口仍为原型"
+    }
+  },
+  {
+    "method_id": "E08",
+    "reproduction_name": "e08_agentscourt_judge",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e08_agentscourt_judge.py",
+    "original_contracts": [
+      {
+        "paper_id": "L01",
+        "method": "AgentsCourt",
+        "task": "从给定案情模拟法庭辩论、检索法律知识并生成裁判分析。",
+        "input": "SimuCourt 中的案情与案件类型/审级等任务信息，通常是已整理的案件叙述。",
+        "output": "案件分析、适用法条、裁判结果；刑事任务涉及罪名、刑期和罚金。",
+        "benchmark": "SimuCourt，420 份中文裁判文书，涉及民事、行政、刑事及审级设置；配套 Legal-KB。",
+        "innovation": "法庭辩论模拟、法律资源增强与裁判迭代结合；不等于增加两个对立角色。",
+        "repo": "agentscourt",
+        "source": "https://aclanthology.org/2024.findings-emnlp.549/",
+        "fit": "仅条件适配辩论机制。聊天中的主张/否认必须保留认识状态，不能先改成法院已认定事实；裁判标签也不能直接充当证据链 Gold。",
+        "pinned_author_source": {
+          "repository": "https://github.com/Zhitao-He/AgentsCourt",
+          "commit": "7c14d6960abfdfdd7366250905da8dbcb416d6d6",
+          "local_path": "paper/upstream_sources/agentscourt"
+        }
+      },
+      {
+        "paper_id": "L10",
+        "method": "L-MAD (Nguyen et al., 2026)",
+        "task": "法条premise与法律hypothesis之间的二分类蕴含判断；比较三persona的混合共识与固定轮次排名投票。",
+        "input": "原COLIEE每题Relevant article、Query、Answer。只把法条与问题送给模型；原答案仅评分。本轮原任务为论文2.1节Article9官方英文翻译示例，不是R05/R06/R07年度数据集。",
+        "output": "正文固定Answer:Y/N与简短公开说明；附录日文提示却要求判断:Y/N，二者分别解析。协议还产生AGREE/DISAGREE、排名与收敛/平局/未知轨迹。",
+        "benchmark": "COLIEE Task4 R05/R06/R07分别109/73/82条，accuracy。原Qwen3/Llama模型、本地bfloat16和完整年度成绩未复现。",
+        "innovation": "在两轮滑动记忆下比较共识与排名投票，保持分歧和最多一轮平局补充讨论，研究协议/规模对法律判断的影响。",
+        "repo": null,
+        "cited_framework_repo": "mallm",
+        "source": "https://arxiv.org/html/2607.09099v1",
+        "fit": "论文协议调度＋实际所引MALLM提示/共识/排名组件；未核实L-MAD作者仓库。混合参数按论文配置，不能直接用不同的MALLM默认值。DeepSeek替换原本地模型、固定附录persona、原示例英文语言差异均披露。二分类KIE文本VQA双向验候选，N不自动推出相反标签；案件先核验最多2项有原文锚点的陈述，再修订，不能由共识推定法律正确。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现双方交换后增加中立汇总者；未复现作者训练、原始角色与评价基准。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "L-MAD (Nguyen et al., 2026)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+        "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+      ],
+      "native_component_verification": "SimuCourt首例庭辩组件真实执行完成；完整Legal-KB检索和判决未完成；产品入口仍为原型"
+    }
+  },
+  {
+    "method_id": "E09",
+    "reproduction_name": "e09_l_mad",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e09_l_mad.py",
+    "original_contracts": [
+      {
+        "paper_id": "L10",
+        "method": "L-MAD (Nguyen et al., 2026)",
+        "task": "法条premise与法律hypothesis之间的二分类蕴含判断；比较三persona的混合共识与固定轮次排名投票。",
+        "input": "原COLIEE每题Relevant article、Query、Answer。只把法条与问题送给模型；原答案仅评分。本轮原任务为论文2.1节Article9官方英文翻译示例，不是R05/R06/R07年度数据集。",
+        "output": "正文固定Answer:Y/N与简短公开说明；附录日文提示却要求判断:Y/N，二者分别解析。协议还产生AGREE/DISAGREE、排名与收敛/平局/未知轨迹。",
+        "benchmark": "COLIEE Task4 R05/R06/R07分别109/73/82条，accuracy。原Qwen3/Llama模型、本地bfloat16和完整年度成绩未复现。",
+        "innovation": "在两轮滑动记忆下比较共识与排名投票，保持分歧和最多一轮平局补充讨论，研究协议/规模对法律判断的影响。",
+        "repo": null,
+        "cited_framework_repo": "mallm",
+        "source": "https://arxiv.org/html/2607.09099v1",
+        "fit": "论文协议调度＋实际所引MALLM提示/共识/排名组件；未核实L-MAD作者仓库。混合参数按论文配置，不能直接用不同的MALLM默认值。DeepSeek替换原本地模型、固定附录persona、原示例英文语言差异均披露。二分类KIE文本VQA双向验候选，N不自动推出相反标签；案件先核验最多2项有原文锚点的陈述，再修订，不能由共识推定法律正确。",
+        "pinned_author_source": null
+      },
+      {
+        "paper_id": "A08",
+        "method": "Towards a Science of Scaling Agent Systems",
+        "task": "跨不同 agentic benchmark 比较单/多 agent 的结构、成本与成功率。",
+        "input": "各原生环境的工具任务，接口随 benchmark 变化。",
+        "output": "任务完成结果、轨迹与成本指标；不是一个固定法律推理算法。",
+        "benchmark": "当前核对版本包含 BrowseComp-Plus、Finance-Agent、PlanCraft、WorkBench，并报告 SWE-bench Verified、Terminal-Bench 小规模扩展。",
+        "innovation": "研究任务分解性、协调开销与模型能力对多 agent 收益的约束。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2512.08296",
+        "fit": "可借鉴同预算实验设计，E09 轮次参数不等于复现该研究或其六类 benchmark。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "LMAD_author_code_unverified_cited_MALLM_components_executed",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "L-MAD论文协议调度＋原MALLM共识/排名/提示组件；三persona、两轮上下文、严格Y/N、混合共识与排名投票；非L-MAD作者源码或原检查点。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "固定MALLM 11个原文件；AST载入原共识/排名/提示组件，无Torch/嵌入依赖",
+        "原混合默认值与L-MAD论文不同，显式配置论文阈值",
+        "正文Answer和附录判断分别解析；严格排名和单次平局补充，无自动付费格式重试",
+        "双向候选蕴含避免把未获支持自动当作相反标签；案件保留原文锚点和已核验fact集合",
+        "原任务与产品按协议分组留存，历史/失败/未知共用100次预算"
+      ],
+      "blockers": [],
+      "source_kind": "paper_specification_with_cited_upstream_components",
+      "LMAD_author_code_executed": false,
+      "cited_upstream_code_executed": true,
+      "paper_algorithm_interface_connected_to_product": true,
+      "paper_algorithm_native_real_run_passed": true,
+      "native_paper_example_only": true,
+      "native_verification_by_protocol": {
+        "hybrid": {
+          "status": "completed",
+          "checks": {
+            "published_native_task_executed": true,
+            "scope": "published official-English-translation illustration; not a COLIEE R05/R06/R07 dataset evaluation",
+            "correct": true,
+            "strict_main_label_parsed": true,
+            "reference_sent_to_model": false,
+            "protocol": "hybrid",
+            "local_model_inference": false,
+            "source_kind": "paper_specification_with_cited_upstream_components",
+            "LMAD_author_code_executed": false,
+            "expert_legal_accuracy": null
+          },
+          "original_complete_benchmark": false
+        },
+        "ranked": {
+          "status": "completed",
+          "checks": {
+            "published_native_task_executed": true,
+            "scope": "published official-English-translation illustration; not a COLIEE R05/R06/R07 dataset evaluation",
+            "correct": true,
+            "strict_main_label_parsed": true,
+            "reference_sent_to_model": false,
+            "protocol": "ranked",
+            "local_model_inference": false,
+            "source_kind": "paper_specification_with_cited_upstream_components",
+            "LMAD_author_code_executed": false,
+            "expert_legal_accuracy": null
+          },
+          "original_complete_benchmark": false
+        }
+      },
+      "real_product_tracks_completed": [
+        "case_product",
+        "vqa_predicted_text"
+      ],
+      "real_product_protocols": [
+        "hybrid",
+        "ranked"
+      ],
+      "paper_algorithm_benchmark_tracks": [
+        "vqa_predicted_text (binary only)"
+      ],
+      "local_model_inference": false,
+      "real_run_summary": {
+        "paper": "L10",
+        "source_kind": "paper_specification_with_cited_upstream_components",
+        "author_LMAD_code_executed": false,
+        "original_complete_benchmark": false,
+        "expert_legal_accuracy": null,
+        "local_model_inference": false,
+        "requests_used_including_failures": 92,
+        "limit": 100
+      },
+      "real_product_results": [
+        {
+          "directory": "1814043722ca8211__vqa_predicted_text__hybrid",
+          "track": "vqa_predicted_text",
+          "protocol": "hybrid",
+          "status": "completed",
+          "requests": 17,
+          "prediction": {
+            "answer": null,
+            "evidence": [
+              {
+                "candidate": "group_chat",
+                "entailed": "N",
+                "decision": true
+              },
+              {
+                "candidate": "private_chat",
+                "entailed": null,
+                "decision": false
+              }
+            ]
+          },
+          "score": {
+            "raw_exact": false,
+            "normalized_exact": false,
+            "score": 0,
+            "status": "abstained",
+            "prediction": {
+              "answer": null,
+              "evidence": [
+                {
+                  "candidate": "group_chat",
+                  "entailed": "N",
+                  "decision": true
+                },
+                {
+                  "candidate": "private_chat",
+                  "entailed": null,
+                  "decision": false
+                }
+              ]
+            }
+          },
+          "final_fact_count": null
+        },
+        {
+          "directory": "1a6a5128c2ffd31d__case_product__hybrid",
+          "track": "case_product",
+          "protocol": "hybrid",
+          "status": "failed",
+          "requests": 16,
+          "prediction": null,
+          "score": null,
+          "final_fact_count": null
+        },
+        {
+          "directory": "b075523bcd722ec1__case_product__hybrid",
+          "track": "case_product",
+          "protocol": "hybrid",
+          "status": "completed",
+          "requests": 11,
+          "prediction": null,
+          "score": null,
+          "final_fact_count": 0
+        },
+        {
+          "directory": "d60074513de5d1a1__vqa_predicted_text__ranked",
+          "track": "vqa_predicted_text",
+          "protocol": "ranked",
+          "status": "completed",
+          "requests": 30,
+          "prediction": {
+            "answer": null,
+            "evidence": [
+              {
+                "candidate": "group_chat",
+                "entailed": null,
+                "decision": false
+              },
+              {
+                "candidate": "private_chat",
+                "entailed": "N",
+                "decision": true
+              }
+            ]
+          },
+          "score": {
+            "raw_exact": false,
+            "normalized_exact": false,
+            "score": 0,
+            "status": "abstained",
+            "prediction": {
+              "answer": null,
+              "evidence": [
+                {
+                  "candidate": "group_chat",
+                  "entailed": null,
+                  "decision": false
+                },
+                {
+                  "candidate": "private_chat",
+                  "entailed": "N",
+                  "decision": true
+                }
+              ]
+            }
+          },
+          "final_fact_count": null
+        },
+        {
+          "directory": "df63d7f9b390e5d5__case_product__hybrid",
+          "track": "case_product",
+          "protocol": "hybrid",
+          "status": "failed",
+          "requests": 1,
+          "prediction": null,
+          "score": null,
+          "final_fact_count": null
+        }
+      ],
+      "adaptation_limitations": [
+        "未核实L-MAD作者源码；仅所引MALLM组件实际执行",
+        "原任务仅论文英文示例，不是年度COLIEE数据集；DeepSeek/固定persona替换明确披露",
+        "产品二分类文本VQA与事实支持性，不是像素KIE或法律准确率",
+        "A08仅设计引用，其原实验未复现",
+        "本轮两VQA均弃答0；案件最终facts为空，摘要仍有复述陈述的质量风险；仅执行与结构校验通过，非有效事实提取"
+      ]
+    }
+  },
+  {
+    "method_id": "E10",
+    "reproduction_name": "e10_factor_guided_retrieval",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e10_factor_guided_retrieval.py",
+    "original_contracts": [
+      {
+        "paper_id": "L09",
+        "method": "SCALE",
+        "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+        "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+        "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+        "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+        "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+        "repo": "scale",
+        "source": "https://aclanthology.org/2026.emnlp-main.36/",
+        "fit": "可适配冻结法律文本的案例证据研究。产品case_product已执行作者组件；中国法规集合替代ECHR判例指南，层级为未复核模型派生结果，不能验证原论文先例覆盖收益；不支持直接像素KIE。",
+        "pinned_author_source": {
+          "repository": "https://github.com/khatrimann/SCALE",
+          "commit": "1700924ca8c448af56c854e5e4c9ae693e86beb3",
+          "local_path": "paper/upstream_sources/scale"
+        }
+      },
+      {
+        "paper_id": "L14",
+        "method": "Legal-DC / LegRAG",
+        "task": "中文法律文档咨询与检索器/生成器联合评测。",
+        "input": "法律文档集合与 question；标注带条款级引用。",
+        "output": "检索条款及依据文档的咨询答案。",
+        "benchmark": "Legal-DC：480 份法律文档、2,475 个问答，条款级标注；不是聊天真实性或举证责任测试集。",
+        "innovation": "条款完整性的索引与双路径自反思检验，配套检索/回答联合评测。",
+        "repo": "legal_dc",
+        "source": "https://arxiv.org/html/2603.11772v1",
+        "fit": "适合法源/文档检索层的条件适配；E10 当前词项查询没有实现 LegRAG 的原索引/双路径反思。",
+        "pinned_author_source": {
+          "repository": "https://github.com/legal-dc/Legal-DC",
+          "commit": "1f4422e4a9de4ce7bb311ebf926f61c1b077d50a",
+          "local_path": "paper/upstream_sources/legal_dc"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现按要件提问后闭域检索与阶段分析；当前词项检索，不含向量训练、重排或完整 SCALE 指南层级。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E11",
+    "reproduction_name": "e11_legal_r1",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e11_legal_r1.py",
+    "original_contracts": [
+      {
+        "paper_id": "L11",
+        "method": "Legal-R1",
+        "task": "法律问题上的主动法源选择、检索充分性判断和证据轨迹回答。",
+        "input": "作者 infer_pipeline.py 默认读训练/RL JSON；实际取 row['Open-ended Verifiable Question']。同一行还含 Ground-True Answer、Complex_CoT，仅可保留作评测/参考，不能混入用户问题。规范库/类案库另行加载。",
+        "output": "原 rollout 保存 original_question、turns、final_answer 及参考标签字段；最终回答从轨迹生成。它不是原图解析或带字符坐标的 ProofGraph。",
+        "benchmark": "LawBench、LexEval；法条检索另有 provision-oriented 查询。原规范库与 LeCaRDv2 类案库须版本匹配。",
+        "innovation": "训练 Lawyer 检索策略（masked SFT、轨迹强化学习），结合 authority/diversity-aware Assistant 和 Judge。",
+        "repo": "legal_r1",
+        "source": "https://arxiv.org/html/2610.18611v1",
+        "fit": "可条件迁移法源检索，但案内证据必须另轨读取。未载入作者训练模型/检索库就不能算原 Legal-R1；当前 E11 是项目路由原型。 原入口的默认训练数据路径并非 LawBench/LexEval 的完整评测入口；需要另行配置原 benchmark 与评分器。",
+        "pinned_author_source": {
+          "repository": "https://github.com/killerqueen-wonder/Legal-R1",
+          "commit": "a2bf5054841a108b5f1a3be10fe1cd8a336ed806",
+          "local_path": "paper/upstream_sources/legal_r1"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现 Lawyer 检索规划、冻结工具执行与 Judge 读取轨迹；未执行 masked SFT、GRPO、MMR/PSI 或作者检查点。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+      ]
+    }
+  },
+  {
+    "method_id": "E12",
+    "reproduction_name": "e12_crag",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e12_crag.py",
+    "original_contracts": [
+      {
+        "paper_id": "R02",
+        "method": "CRAG",
+        "task": "评估检索质量，按 correct/incorrect/ambiguous 调用纠正和知识精炼后生成。",
+        "input": "question 与初始检索 passages。",
+        "output": "答案/标签和纠正后知识；原流程含训练的 T5 evaluator、知识分解重组与 Web 搜索。",
+        "benchmark": "PopQA、Biography、PubHealth、ARC-Challenge；分别使用任务准确率或 FactScore 等原指标。",
+        "innovation": "以轻量检索评估器触发不同纠错动作，并结合细粒度知识精炼与必要的外部搜索。",
+        "repo": "crag",
+        "source": "https://arxiv.org/html/2401.15884v3",
+        "fit": "闭域案内证据不能从 Web 补造。现有 E12 同底座三分类不等于原 T5 evaluator；若禁网会成为明确的 CRAG 变体。",
+        "pinned_author_source": {
+          "repository": "https://github.com/HuskyInSalt/CRAG",
+          "commit": "de7c2961ae624a1483a138c5798e1f6d0c4fb0e0",
+          "local_path": "paper/upstream_sources/crag"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现 correct/incorrect/ambiguous 检索质量动作与闭域纠正；无专用训练 evaluator、Web 扩展和细粒度知识重组。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "未运行原 T5 evaluator 与细粒度知识精炼；闭域变体不能等同允许 Web 搜索的原 CRAG"
+      ]
+    }
+  },
+  {
+    "method_id": "E13",
+    "reproduction_name": "e13_graphreader",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e13_graphreader.py",
+    "original_contracts": [
+      {
+        "paper_id": "A07",
+        "method": "GraphReader",
+        "task": "把长文构造成 key elements/atomic facts 图，由 agent 按计划探索后回答。",
+        "input": "长文档与 question。",
+        "output": "图探索/笔记及问答结果。",
+        "benchmark": "LongBench 的 HotpotQA、2WikiMultihopQA、MuSiQue、NarrativeQA；LV-Eval HotpotWikiQA-mixup。",
+        "innovation": "图构建、原子事实、邻居/原块读取、反思与笔记支撑粗到细探索。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2406.14550",
+        "fit": "可用于长证据检索层，但图中压缩事实不是已证明事实，须回溯原文。E13 未实现该图与探索 agent。",
+        "resource_dependency": "第3.2节所引InsTag归一化包含语义嵌入、DBSCAN和关联聚合；当前本地权重分支按用户指令暂缓，远程嵌入配置未核实。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+      "current_project_implementation": "尚未实现 GraphReader 图构建与图导航；文件仅登记出处，不能运行。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "GraphReader：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+        "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+      ]
+    }
+  },
+  {
+    "method_id": "E14",
+    "reproduction_name": "e14_chain_of_agents",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e14_chain_of_agents.py",
+    "original_contracts": [
+      {
+        "paper_id": "A06",
+        "method": "Chain of Agents (Zhang et al., 2024)",
+        "task": "完整长上下文问答、摘要与代码补全；worker顺序更新累计CU，独立manager只接收最后CU。",
+        "input": "完整长文本x、可选问题q、task requirement；初始CU为空。原任务本轮为官方LongBench HotpotQA第0条完整54062字符上下文。",
+        "output": "答案/摘要/代码文本及逐轮CU；不直接包含截图坐标或CaseAnalysisOutput。",
+        "benchmark": "HotpotQA、MuSiQue、NarrativeQA、Qasper、QuALITY、QMSum、GovReport、BookSum、RepoBench-P。原QA F1、摘要ROUGE与代码相似度分轨记录；未跑完整benchmark。",
+        "innovation": "顺序交错阅读和跨片段CU交接，以独立manager仅基于最终累计知识作答；不是独立分块摘要后拼接或RAG。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2406.02818v1",
+        "fit": "按公开Algorithm 1和Table 9/10重实现；未核实到作者发布的源码入口，不用OPPO同名项目冒充。DeepSeek替换Vertex模型，cl100k_base作为显式分词代理；产品增加JSON、原文引用保留。支持冻结KIE预测文本VQA和案件文本，不直接抽取图像。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "not_executed_no_verified_author_repository",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "论文Algorithm 1与Tables 9/10重实现：完整token分块、顺序CU、last-CU-only manager；DeepSeek/分词器和产品JSON为显式适配。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "按Algorithm 1及Tables 9/10实现，不执行未经核实的同名仓库",
+        "完整token文本覆盖、Unicode无损分块、逐轮CU与last-CU-only manager通过工程验证",
+        "旧字符分块计划拒绝以新代码运行；模型输出cap与温度向网关实际传递",
+        "冻结KIE文本VQA与案例JSON引用契约单独适配，无本地权重"
+      ],
+      "blockers": [],
+      "source_kind": "paper_algorithm_reimplementation",
+      "paper_algorithm_interface_connected_to_product": true,
+      "paper_algorithm_native_real_run_passed": true,
+      "native_verification": {
+        "status": "completed",
+        "checks": {
+          "whole_source_covered": true,
+          "worker_count": 2,
+          "separate_manager": true,
+          "manager_last_CU_only": true,
+          "source_context_truncated": false,
+          "official_longbench_qa_f1": 0.3333333333333333,
+          "reference_sent_to_model": false,
+          "local_model_inference": false,
+          "source_kind": "paper_algorithm_reimplementation",
+          "author_code_executed": false,
+          "expert_legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "real_product_tracks_completed": [
+        "case_product",
+        "vqa_predicted_text"
+      ],
+      "native_qa_reference_result": "first answer differs from reference; official QA F1=1/3; not an accuracy pass",
+      "paper_algorithm_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "local_model_inference": false,
+      "adaptation_limitations": [
+        "论文算法重实现，非作者源码执行",
+        "DeepSeek替换Vertex模型；cl100k代理不等于供应商分词器",
+        "产品增加JSON与引用契约；没有像素KIE抽取或专家法律准确率"
+      ]
+    }
+  },
+  {
+    "method_id": "E15",
+    "reproduction_name": "e15_raptor",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e15_raptor.py",
+    "original_contracts": [
+      {
+        "paper_id": "R03",
+        "method": "RAPTOR",
+        "task": "对长文递归聚类与摘要建树，跨层检索后回答。",
+        "input": "待索引文档集合与 question。",
+        "output": "摘要树、检索节点/文本与最终答案。",
+        "benchmark": "NarrativeQA、QASPER、QuALITY。",
+        "innovation": "递归摘要形成多层语义索引，结合软聚类，在不同抽象层次检索。",
+        "repo": "raptor",
+        "source": "https://arxiv.org/html/2401.18059",
+        "fit": "可适配冻结KIE文本全局VQA和案件证据检索；不能直接做像素KIE。摘要节点下溯冻结原文叶子；独立来源ID随树记录。",
+        "pinned_author_source": {
+          "repository": "https://github.com/parthsarthi03/raptor",
+          "commit": "7da1d48a7e1d7dec61a63c9d9aae84e2dfaa5767",
+          "local_path": "paper/upstream_sources/raptor"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_algorithm_product_adapter",
+      "adaptability": "可适配冻结KIE文本全局VQA和案件证据检索；不能直接做像素KIE。摘要节点下溯冻结原文叶子；独立来源ID随树记录。",
+      "current_project_implementation": "作者UMAP/GMM软聚类、摘要树与跨层检索；原任务真实执行完成；产品真实执行轨道：vqa_predicted_text；原论文完整benchmark未复现",
+      "required_adaptation": [
+        "保留冻结来源映射；派生摘要/图描述不能当独立证据",
+        "记录原参数、有效参数及逐次输入输出；模型/嵌入替换与原基准分开"
+      ],
+      "our_input_shape": "FrozenCaseInput sources",
+      "our_output_shape": "CaseAnalysisOutput 或 VQA JSON",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "native_task_answer_validated": false,
+      "native_verification": {
+        "author_controller_completed": true,
+        "summary_layers": 3,
+        "answer_quality": "manual_review_required"
+      },
+      "real_product_tracks_completed": [
+        "vqa_predicted_text"
+      ],
+      "completed_debugging": [
+        "锁定作者源码/独立环境，实际执行原类和函数",
+        "真实输入、模型回复、工具产物和输出见 results/2026-10-29-per-paper/README.md"
+      ],
+      "deferred_evaluation": "专家法律金标后补，不作为环境/适配阻塞；完整原benchmark另行验证",
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E16",
+    "reproduction_name": "e16_lightrag",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e16_lightrag.py",
+    "original_contracts": [
+      {
+        "paper_id": "R05",
+        "method": "LightRAG",
+        "task": "建立实体/关系图与文本索引，以低层/高层双级检索增强回答。",
+        "input": "文档集合与 query。",
+        "output": "图/文本检索上下文及生成答案。",
+        "benchmark": "UltraDomain 中 Agriculture、CS、Legal、Mix 四域。",
+        "innovation": "图索引和双层检索结合，支持增量更新及综合/具体问题的知识获取。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2410.05779",
+        "fit": "可适配冻结KIE文本全局VQA和案件检索；不直接做像素KIE。实体关系是模型派生内容，保留chunk来源映射。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_algorithm_product_adapter",
+      "adaptability": "可适配冻结KIE文本全局VQA和案件检索；不直接做像素KIE。实体关系是模型派生内容，保留chunk来源映射。",
+      "current_project_implementation": "作者实体关系抽取与合并、图存储和双层检索；原任务真实执行完成；产品真实执行轨道：vqa_predicted_text；原论文完整benchmark未复现",
+      "required_adaptation": [
+        "保留冻结来源映射；派生摘要/图描述不能当独立证据",
+        "记录原参数、有效参数及逐次输入输出；模型/嵌入替换与原基准分开"
+      ],
+      "our_input_shape": "FrozenCaseInput sources",
+      "our_output_shape": "CaseAnalysisOutput 或 VQA JSON",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "native_task_answer_validated": false,
+      "native_verification": {
+        "author_controller_completed": true,
+        "graph_nodes": 335,
+        "graph_edges": 657,
+        "reference": [
+          "The procedure for indemnification involves the Indemnified Party promptly notifying the Indemnifying Party of the claim, the Indemnifying Party having the right to assume the defense, and the Indemnified Party having the right to participate in the defense with its own counsel at its own expense."
+        ],
+        "answer_quality": "manual_review_required"
+      },
+      "real_product_tracks_completed": [
+        "vqa_predicted_text"
+      ],
+      "completed_debugging": [
+        "锁定作者源码/独立环境，实际执行原类和函数",
+        "真实输入、模型回复、工具产物和输出见 results/2026-10-29-per-paper/README.md"
+      ],
+      "deferred_evaluation": "专家法律金标后补，不作为环境/适配阻塞；完整原benchmark另行验证",
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E17",
+    "reproduction_name": "e17_lawflow_review",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e17_lawflow_review.py",
+    "original_contracts": [
+      {
+        "paper_id": "L03",
+        "method": "LawFlow",
+        "task": "采集并模拟真实商业实体设立场景中的完整律师工作流。",
+        "input": "客户业务/实体设立情景及后续约束、信息需求。",
+        "output": "动态、模块化、会回退修订的法律工作流记录；不是单一判断标签。",
+        "benchmark": "LawFlow 工作流数据及人类与 LLM 工作流比较；不是现有截图案件的法律准确率 benchmark。",
+        "innovation": "记录端到端律师流程与分支/修订行为，比较人类和模型工作流结构。",
+        "repo": "lawflow",
+        "source": "https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/",
+        "fit": "可借鉴人工介入和回退评测，但 E17 目前没有实现该数据/协议；现有审核 UI 不等于 LawFlow 复现。",
+        "pinned_author_source": {
+          "repository": "https://github.com/minnesotanlp/LawFlow",
+          "commit": "0a3f0327c7d44f0c38d27b1f6d5e0362b72f1d64",
+          "local_path": "paper/upstream_sources/lawflow"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+      "current_project_implementation": "尚未实现受控人工反馈评测协议；不把现有审核页面视作 LawFlow 复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+      ]
+    }
+  },
+  {
+    "method_id": "E18",
+    "reproduction_name": "e18_jurisma",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e18_jurisma.py",
+    "original_contracts": [
+      {
+        "paper_id": "L07",
+        "method": "JurisMA",
+        "task": "中文法律咨询问答；查询转法律要素图，再动态协作与内容修订。",
+        "input": "用户法律咨询问题，可能长、非正式且存在多个争点；不要求先输入截图或 ProofGraph。",
+        "output": "面向用户的咨询答复和法律依据；要素图是中间结构。",
+        "benchmark": "修订版 LawBench；JurisCQAD 用于训练/DPO。另有 LegalBench-RuleQA 小样本迁移实验。",
+        "innovation": "实体/事件/意图/争点结构、动态任务路由、法条 grounding 与内容修订，并构建咨询偏好数据。",
+        "repo": null,
+        "source": "https://arxiv.org/html/2604.10470v1",
+        "fit": "可将论文§3.2–3.4/Algorithm 1推理算法适配为远程API咨询、冻结预测KIE文本VQA和案件结构映射；DPO与本地检查点暂缓，非作者代码/完整论文复现。",
+        "pinned_author_source": null
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "not_executed_no_verified_author_repository",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "实现论文§3.2–3.4/Algorithm 1推理控制流与独立产品投影；作者源码未核实，DPO与本地检查点暂缓，整篇未完成。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "独立Python3.12.15、0额外依赖，无本地权重/训练/嵌入",
+        "按论文Algorithm 1实现T=5、双动作格式先于法条检索、Pass/空动作停止后仍执行ContentCheck",
+        "法条目录选ID后读取真实原文；拒绝未知ID与未检索/缩略法条冒充全文",
+        "原任务初次最后全文校验失败保留；逐请求精确缓存恢复，只新增ContentCheck调用",
+        "最终修订额外提供已检索法条附录，为显式项目适配；案件/VQA结构投影单独记录"
+      ],
+      "blockers": [
+        "作者源码未核实；DPO与本地训练检查点按用户指令暂缓；推理API分支不能替代整篇训练系统与原benchmark"
+      ],
+      "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+      "paper_algorithm_interface_connected_to_product": true,
+      "paper_algorithm_native_real_run_passed": true,
+      "native_verification": {
+        "status": "completed",
+        "checks": {
+          "published_consultation_query_executed": true,
+          "manager_rounds": 5,
+          "stop_reason": "iteration_limit",
+          "maximum_rounds": 5,
+          "content_check_executed": true,
+          "retrieved_statutes": 3,
+          "full_article_literal_checks": true,
+          "training_reproduced": false,
+          "native_full_method_completed": false,
+          "expert_legal_accuracy": null,
+          "complete_inference_algorithm_execution": true,
+          "local_model_inference": false,
+          "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+          "author_code_executed": false
+        },
+        "original_complete_benchmark": false
+      },
+      "real_product_tracks_completed": [
+        "case_product",
+        "vqa_predicted_text"
+      ],
+      "paper_algorithm_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "local_model_inference": false,
+      "native_full_method_completed": false,
+      "training_reproduced": false,
+      "adaptation_limitations": [
+        "论文推理重实现，不是作者代码或JurisCQAD DPO检查点",
+        "提示为本项目编写，DeepSeek替代原训练模型；法条目录后端不同",
+        "原任务仅论文附录C咨询示例，航空院校审查依据缺失；没有专家法律准确率",
+        "支持冻结KIE预测文本全局VQA，不支持像素KIE；整个L07保持部分完成"
+      ]
+    }
+  },
+  {
+    "method_id": "E19",
+    "reproduction_name": "e19_scale",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e19_scale.py",
+    "original_contracts": [
+      {
+        "paper_id": "L09",
+        "method": "SCALE",
+        "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+        "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+        "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+        "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+        "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+        "repo": "scale",
+        "source": "https://aclanthology.org/2026.emnlp-main.36/",
+        "fit": "可适配冻结法律文本的案例证据研究。产品case_product已执行作者组件；中国法规集合替代ECHR判例指南，层级为未复核模型派生结果，不能验证原论文先例覆盖收益；不支持直接像素KIE。",
+        "pinned_author_source": {
+          "repository": "https://github.com/khatrimann/SCALE",
+          "commit": "1700924ca8c448af56c854e5e4c9ae693e86beb3",
+          "local_path": "paper/upstream_sources/scale"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_native_and_case_product_real_validated",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "作者问题/因素选择、段落检索和迭代分析；冻结中国法源及结构化输出任务适配。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": true,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "作者StageProcessing(3/4)、ReasoningStage及段落函数体不变",
+        "Stage I/II原提示仅处理独立法源；中文研究提示及JSON投影差异完整保存",
+        "官方法源原文、快照及SHA256补齐；仍为unverified/unreviewed",
+        "实际AIPING产品6步完成；原生与产品共享100次账本"
+      ],
+      "blockers": [],
+      "native_verification": {
+        "status": "completed",
+        "checks": {
+          "author_controller_completed": true,
+          "articles_processed": [
+            "1_PROTOCOL_1",
+            "6_CIVIL"
+          ],
+          "issue_factor_guide_paths_preserved": true,
+          "product_adaptation_completed": false,
+          "answer_quality": "expert_review_deferred"
+        },
+        "original_complete_benchmark": false,
+        "new_supplier_requests_on_resume": 33,
+        "replayed_responses": 14
+      },
+      "real_product_tracks_completed": [
+        "case_product"
+      ],
+      "product_verification": {
+        "status": "completed",
+        "checks": {
+          "author_controller_completed": true,
+          "product_case_output_schema_valid": true,
+          "literal_citations_valid": true,
+          "guide_reference_path_preserved": true,
+          "independent_guide_source_only": true,
+          "local_model_inference": false,
+          "expert_legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "local_model_inference": false,
+      "adaptation_limitations": [
+        "中国法规集合替代ECHR判例指南，不验证原论文先例覆盖收益",
+        "仅案例产品轨道；没有像素KIE接口或专家法律准确率"
+      ]
+    }
+  },
+  {
+    "method_id": "E20",
+    "reproduction_name": "e20_verdict",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e20_verdict.py",
+    "original_contracts": [
+      {
+        "paper_id": "L08",
+        "method": "VERDICT",
+        "task": "基于刑事案情预测适用法条、罪名和刑期，使用合议反馈与演化记忆。",
+        "input": "作者 CAIL 环境接收 configs['task'] 案情文本和 configs['expected'] 评分标签；模型任务文本只由 task 构造。训练监督与测试模式须分别配置。",
+        "output": "原格式为 Finish[JSON]，字段 relevant_articles、accusation、term_of_imprisonment；刑期子字段 death_penalty、life_imprisonment、imprisonment。",
+        "benchmark": "CAIL2018（CAIL-Small）、未来时间划分 CJO2025；当前作者 CLI 仅暴露 cail2018。",
+        "innovation": "五角色监督式 Pass/Reject 修订与 Hybrid Jurisprudential Memory / Micro-Directives 演化；不是普通多轮改写。",
+        "repo": "verdict",
+        "source": "https://github.com/luckyhui235/VERDICT",
+        "fit": "不能直接把刑事预测指标用于民事证据链。需重写任务环境/标签/规范检索，并隔离训练记忆与留出案件；E20 未复现 HJM/专家对齐模型。 源码训练验证分支可读取 expected；适配留出评测必须 mode=test 且关闭 training_mode_verification，并另审计 expected/正确性反馈是否经记忆回流。该边界尚未端到端验证。",
+        "pinned_author_source": {
+          "repository": "https://github.com/luckyhui235/VERDICT",
+          "commit": "1b6c9d6ecfbe95900076cbfd2eedf94aecaaf952",
+          "local_path": "paper/upstream_sources/verdict"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "original_benchmark_not_reproduced",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "复现 clerk/assistant/judge/collegial/presiding 角色链与退回修订；无专家对齐模型、HJM 标准/微指令记忆演化。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": false,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+      ],
+      "blockers": [
+        "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+      ]
+    }
+  },
+  {
+    "method_id": "E21",
+    "reproduction_name": "e21_reflexion",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e21_reflexion.py",
+    "original_contracts": [
+      {
+        "paper_id": "A03",
+        "method": "Reflexion",
+        "task": "根据任务环境反馈形成跨尝试反思记忆",
+        "input": "HotpotQA question, supporting context, evaluator answer key; 原文还包括 ALFWorld 和编程任务",
+        "output": "Finish[answer]、环境二元反馈、反思记忆与后续尝试",
+        "benchmark": "HotpotQA、ALFWorld、HumanEval等；本适配选择作者CoT_context分支",
+        "innovation": "根据失败反馈形成语言反思并存入 episodic memory，在下一次尝试复用，不训练权重",
+        "repo": "reflexion",
+        "source": "https://arxiv.org/html/2303.11366",
+        "fit": "可附加原图或冻结KIE文本；产品没有答案键，改用schema/坐标或引文机械检查反馈，不能当作准确率",
+        "pinned_author_source": {
+          "repository": "https://github.com/noahshinn/reflexion",
+          "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+          "local_path": "paper/upstream_sources/reflexion"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_algorithm_product_adapter",
+      "adaptability": "可附加原图或冻结KIE文本；产品没有答案键，改用schema/坐标或引文机械检查反馈，不能当作准确率",
+      "current_project_implementation": "作者CoTAgent反思、跨尝试记忆与重试控制器；原任务真实执行完成；产品真实执行轨道：kie_image、vqa_image_full；原论文完整benchmark未复现",
+      "required_adaptation": [
+        "保留冻结来源映射；派生摘要/图描述不能当独立证据",
+        "记录原参数、有效参数及逐次输入输出；模型/嵌入替换与原基准分开"
+      ],
+      "our_input_shape": "FrozenCaseInput sources，或原图及KIE/VQA question",
+      "our_output_shape": "CaseAnalysisOutput 或 KIE/VQA JSON",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "kie_image",
+        "vqa_image_full",
+        "vqa_predicted_text"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "native_task_answer_validated": true,
+      "native_verification": {
+        "author_controller_completed": true,
+        "answer_exact_match": true
+      },
+      "real_product_tracks_completed": [
+        "kie_image",
+        "vqa_image_full"
+      ],
+      "completed_debugging": [
+        "锁定作者源码/独立环境，实际执行原类和函数",
+        "真实输入、模型回复、工具产物和输出见 results/2026-10-29-per-paper/README.md"
+      ],
+      "deferred_evaluation": "专家法律金标后补，不作为环境/适配阻塞；完整原benchmark另行验证",
+      "blockers": []
+    }
+  },
+  {
+    "method_id": "E22",
+    "reproduction_name": "e22_metagpt",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/e22_metagpt.py",
+    "original_contracts": [
+      {
+        "paper_id": "A04",
+        "method": "MetaGPT",
+        "task": "软件开发SOP协作；E22执行作者Team/Role/Memory与软件原任务，E02保留项目流程基线。",
+        "input": "软件需求或带函数签名/测试约束的编程任务。",
+        "output": "需求/设计/代码/测试等软件产物；不是案件事实或法律分析。",
+        "benchmark": "HumanEval、MBPP、SoftwareDev。",
+        "innovation": "把角色分工、标准操作流程、结构化通信和可执行反馈组合到软件开发团队。",
+        "repo": "metagpt",
+        "source": "https://arxiv.org/html/2308.00352v7",
+        "fit": "作者通用团队、结构化ActionOutput与消息订阅可作领域迁移；E22显式替换四角色证据SOP。默认软件流程18次，额外作者审查1次后4项功能通过；原QaEngineer续跑19次仍有测试失败和最终未执行修订，累计45/100；交互终端和整篇方法未验收。",
+        "pinned_author_source": {
+          "repository": "https://github.com/FoundationAgents/MetaGPT",
+          "commit": "820fee5df6697b4e85e90c787940de111c3ed05b",
+          "local_path": "paper/upstream_sources/metagpt"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_software_sop_and_case_product_validated_native_qa_executed_with_failures",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "作者SOP消息与结构化输出机制，四角色法律证据任务适配；不加载本地模型权重。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [],
+      "native_author_controller_real_run_passed": true,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "独立Python3.11、166个作者源文件与25依赖锁定；无本地权重",
+        "真实软件原流程18次调用，Windows编码收集失败后0调用恢复",
+        "原游戏缺occupied方法；独立功能探针触发1次原WriteCodeReview，核心4检查通过；首次失败保留",
+        "中间阶段与最终Schema冲突修正；首次产品3次失败与后续4步成功均保存",
+        "两层Tenacity完全unwrap；失败只调用一次测试通过",
+        "原Team/Environment/Role/Memory/Action结构化解析执行；四角色案件SOP及机械引用反馈"
+      ],
+      "blockers": [
+        "v0.3.0原QA续跑19次；2/7测试文件最后执行失败，main最终截断修订未重跑；原Engineer不支持自主开发代码修复；交互终端未验收"
+      ],
+      "native_qa_verification": {
+        "status": "completed",
+        "checks": {
+          "original_qa_role_scheduled": true,
+          "qa_rounds": 5,
+          "expected_test_files": [
+            "tests/test_config.py",
+            "tests/test_food.py",
+            "tests/test_game.py",
+            "tests/test_input_handler.py",
+            "tests/test_main.py",
+            "tests/test_renderer.py",
+            "tests/test_snake.py"
+          ],
+          "generated_test_files": 7,
+          "execution_attempts": 9,
+          "latest_actual_pass": {
+            "tests/test_config.py": true,
+            "tests/test_food.py": true,
+            "tests/test_game.py": false,
+            "tests/test_input_handler.py": true,
+            "tests/test_main.py": false,
+            "tests/test_renderer.py": true,
+            "tests/test_snake.py": true
+          },
+          "all_generated_tests_passed": false,
+          "development_source_unchanged": true,
+          "development_source_hashes": {
+            "snake_game/snake_game/config.py": "7fbf75fc901af1a4bd9d1742894678642de77624181778934d440aabff0a1fe7",
+            "snake_game/snake_game/food.py": "f5965a29cc5f01843647479c010e51d46ff38b3f1152d34fca6ac1546f199cfa",
+            "snake_game/snake_game/game.py": "94c51a78f4c1a77195650bcc1fa10007592e67308897488427eb8844525abf54",
+            "snake_game/snake_game/input_handler.py": "c616522a2c778fc1ea677f1f2bba17eeaad43a548566f36a29835b73f8ff6351",
+            "snake_game/snake_game/main.py": "a9164be8622d4864b457ae905db852799683690c242b0a7bff110140a73d3449",
+            "snake_game/snake_game/renderer.py": "ad40580cc517c65db47908e72953c1c8c973c8af460f5610d142daa802d4c1da",
+            "snake_game/snake_game/snake.py": "27d6802dbaa0f841a75508182ffcc117746c50ee4eabe02db2cd9d66c216a046"
+          },
+          "unhandled_engineer_feedback": [],
+          "local_model_inference": false,
+          "original_complete_benchmark": false,
+          "seed_after_harness_selected_review": true,
+          "qa_control_flow_completed": true,
+          "fresh_full_startup": false,
+          "legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "native_verification": {
+        "status": "completed",
+        "checks": {
+          "author_controller_completed": true,
+          "all_software_stages_run": true,
+          "written_python_files": 7,
+          "syntax": {
+            "snake_game/snake_game/config.py": true,
+            "snake_game/snake_game/food.py": true,
+            "snake_game/snake_game/game.py": true,
+            "snake_game/snake_game/input_handler.py": true,
+            "snake_game/snake_game/main.py": true,
+            "snake_game/snake_game/renderer.py": true,
+            "snake_game/snake_game/snake.py": true
+          },
+          "all_requests_completed": true,
+          "local_model_inference": false,
+          "artifact_recovery_without_inference": true,
+          "functional_task_validation": "pending generated-code review",
+          "original_benchmark_score": null
+        },
+        "original_complete_benchmark": false
+      },
+      "real_product_tracks_completed": [
+        "case_product"
+      ],
+      "product_verification": {
+        "status": "completed",
+        "checks": {
+          "author_controller_completed": true,
+          "product_case_output_schema_valid": true,
+          "literal_citations_valid": true,
+          "subscriptions_preserved": true,
+          "structured_messages": 5,
+          "local_model_inference": false,
+          "expert_legal_accuracy": null
+        },
+        "original_complete_benchmark": false
+      },
+      "local_model_inference": false,
+      "native_full_method_completed": false,
+      "adaptation_limitations": [
+        "软件任务Action替换为证据任务，非原软件benchmark条件",
+        "原QA已执行但仍有失败；从额外作者审查后的项目续跑，非fresh startup；最终测试版本未执行不得沿用旧通过"
+      ]
+    }
+  },
+  {
+    "method_id": "E23",
+    "reproduction_name": "b01_legalagentbench",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/b01_legalagentbench.py",
+    "original_contracts": [
+      {
+        "paper_id": "B01",
+        "method": "LegalAgentBench author baseline controllers",
+        "task": "在17个法律/企业语料库与37个工具上完成中文1至5跳和写作任务；作者提供ReAct、Plan-and-Solve、Plan-and-Execute三条基线。",
+        "input": "自然语言question；工具描述和表格schema为公开上下文。原数据另有answer/key/key_middle，仅评分端读取。",
+        "output": "Final Answer、scratchpad、过滤后的答案和过程摘要；原key_answer/key_middle分别对关键词做包含率评分。",
+        "benchmark": "300个原任务；success/progress substring匹配，另有远程BERTScore分支。不是截图KIE或专家案件金标。",
+        "innovation": "法律场景17库37工具、分层任务构造及过程进度率；三条作者基线是对照控制器，不冒称新的法律推理方法。",
+        "repo": "legalagentbench",
+        "source": "https://aclanthology.org/2025.acl-long.116/",
+        "fit": "作者控制器/提示/模式/解析函数真实执行，DeepSeek替换原API。原工具服务拒绝连接，首任务仅回放作者日志的精确工具观察，不等于在线17库复现。产品改为冻结KIE文本list/read工具并在各步保持JSON契约；像素KIE不适配，专家法律准确率未评测。",
+        "pinned_author_source": {
+          "repository": "https://github.com/CSHaitao/LegalAgentBench",
+          "commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+          "local_path": "paper/upstream_sources/legalagentbench"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_controller_controlled_replay_live_service_unavailable",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "LegalAgentBench作者三基线控制器及原提示/解析实际执行；原工具回放与冻结文本工具分开，在线17库和完整benchmark未复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "native_author_controller_real_run_passed": false,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "锁定16原文件，独立Pydantic1.10环境；原三类/提示/解析函数经AST执行",
+        "原post_request参数不匹配由显式传输修复；只允许JSON动作进入解析，eval备用路径不可达",
+        "产品替换冻结KIE/案件文本工具；每步保留输出契约，PS/PE早期格式失败保留",
+        "最终事件封装错误通过严格匹配原七条响应零调用恢复；所有变体共享100次上限"
+      ],
+      "blockers": [
+        "作者在线法律工具服务拒绝连接；原首任务只回放原日志精确工具观察，不等于17库/37工具端到端复现"
+      ],
+      "source_kind": "author_controller_with_explicit_tool_adaptation",
+      "controlled_native_replay_passed": true,
+      "controlled_native_replay_by_variant": {
+        "react": {
+          "status": "completed",
+          "checks": {
+            "original_controller_finished": true,
+            "tool_observation_replayed": true,
+            "reference_sent_to_model": false,
+            "live_service_validated": false,
+            "scope": "same task as original CLI; exact author-log tool observation replay only",
+            "metrics": {
+              "metrics": {
+                "key_answer": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 25
+                },
+                "key_middle": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 43
+                }
+              },
+              "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+              "method": "original substring-scoring branches, unchanged AST bodies",
+              "local_model_inference": false
+            },
+            "local_model_inference": false,
+            "original_complete_benchmark": false
+          },
+          "original_complete_benchmark": false
+        },
+        "plan_and_solve": {
+          "status": "completed",
+          "checks": {
+            "original_controller_finished": true,
+            "tool_observation_replayed": true,
+            "reference_sent_to_model": false,
+            "live_service_validated": false,
+            "scope": "same task as original CLI; exact author-log tool observation replay only",
+            "metrics": {
+              "metrics": {
+                "key_answer": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 25
+                },
+                "key_middle": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 43
+                }
+              },
+              "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+              "method": "original substring-scoring branches, unchanged AST bodies",
+              "local_model_inference": false
+            },
+            "local_model_inference": false,
+            "original_complete_benchmark": false
+          },
+          "original_complete_benchmark": false
+        },
+        "plan_and_execute": {
+          "status": "completed",
+          "checks": {
+            "original_controller_finished": true,
+            "tool_observation_replayed": true,
+            "reference_sent_to_model": false,
+            "live_service_validated": false,
+            "scope": "same task as original CLI; exact author-log tool observation replay only",
+            "metrics": {
+              "metrics": {
+                "key_answer": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 25
+                },
+                "key_middle": {
+                  "score": 1.0,
+                  "original_display": "1.0000",
+                  "source_line": 43
+                }
+              },
+              "source_commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+              "method": "original substring-scoring branches, unchanged AST bodies",
+              "local_model_inference": false
+            },
+            "local_model_inference": false,
+            "original_complete_benchmark": false
+          },
+          "original_complete_benchmark": false
+        }
+      },
+      "real_product_variants_by_track": {
+        "vqa_predicted_text": [
+          "plan_and_execute",
+          "plan_and_solve",
+          "react"
+        ],
+        "case_product": [
+          "react"
+        ]
+      },
+      "original_live_corpora_available": false,
+      "real_product_tracks_completed": [
+        "case_product",
+        "vqa_predicted_text"
+      ],
+      "local_model_inference": false,
+      "adaptation_limitations": [
+        "原服务不可用，工具观察回放不等于在线原任务通过",
+        "三种VQA开发样本均弃答0；原关键词1.0只覆盖同一首任务且无中间关键词",
+        "不是像素KIE或专家法律准确率；完整300题benchmark未复现"
+      ]
+    }
+  },
+  {
+    "method_id": "E24",
+    "reproduction_name": "r04_graphrag",
+    "source": "product_v1/backend/src/screenshotlegal/method_reproductions/r04_graphrag.py",
+    "original_contracts": [
+      {
+        "paper_id": "R04",
+        "method": "GraphRAG",
+        "task": "面向整篇语料的全局sensemaking/QFS问答，先建实体关系图与层级社区报告，再评分map与reduce。",
+        "input": "索引输入为文本语料；查询输入为全局问题、社区报告和实体元数据。官方原例为Operation Dulce预计算索引与主角/冲突问题。",
+        "output": "自然语言全局答案及报告ID引用；中间含文本块、实体关系、Leiden社区、报告与带分数map结果。",
+        "benchmark": "Behind the Tech播客与MultiHop-RAG新闻的全局问题；LLM成对覆盖度、多样性、赋能和直接性。官方Notebook原例不是原百万token benchmark。",
+        "innovation": "把图的层级社区预总结为可复用报告，再对全局问题生成并按分数归并部分答案，补足单纯向量近邻检索。",
+        "repo": "graphrag",
+        "source": "https://arxiv.org/html/2404.16130v1",
+        "fit": "可适配冻结KIE预测文本全局VQA与案件陈述总结；不直接读像素。关闭不必要嵌入分支，保留作者原图/社区/查询控制流，最终Schema投影单列。",
+        "pinned_author_source": {
+          "repository": "https://github.com/microsoft/graphrag",
+          "commit": "a81efe58c7c21ff8b17aa9bf1cb78a0750f3065b",
+          "local_path": "paper/upstream_sources/graphrag"
+        }
+      }
+    ],
+    "adaptation": {
+      "original_paper_reproduced": false,
+      "author_code_execution": "author_global_query_and_no_embedding_index_workflows",
+      "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+      "current_project_implementation": "直接运行GraphRAG v0.1.1无嵌入索引和全局map/reduce；原Notebook查询使用完整预计算索引，产品冻结文本单独建图；完整原benchmark未复现。",
+      "required_adaptation": [
+        "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+        "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+        "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+      ],
+      "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+      "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+      "author_native_interface_connected_to_product": true,
+      "author_benchmark_tracks": [
+        "vqa_predicted_text"
+      ],
+      "native_author_controller_real_run_passed": true,
+      "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+      "native_author_component_example_passed": false,
+      "completed_debugging": [
+        "固定官方v0.1.1提交，399个源码/原示例文件逐Git blob校验",
+        "Windows使用Python3.11与作者锁依赖，无本地权重；未用向量后端注册隔离，原基类与工厂类保留",
+        "原Notebook层级过滤保留全部217实体/5选中报告，真实2次完成map/reduce",
+        "作者14个无嵌入索引工作流通过确定传输验证；不是编写简化图替代原算法",
+        "原LLM模板替换/历史跟踪保留；禁用传输重试与付费JSON重格式化，失败逐条保存",
+        "案件与冻结预测KIE文本单独索引，最终产品Schema投影另列"
+      ],
+      "blockers": [],
+      "source_kind": "author_global_api_index_and_query",
+      "native_verification": {
+        "status": "completed",
+        "checks": {
+          "native_original_global_query_executed": true,
+          "author_index_precomputed": true,
+          "native_index_regenerated": false,
+          "selected_reports": 5,
+          "selected_entities": 217,
+          "positive_map_points": 3,
+          "original_map_reduce_executed": true,
+          "author_code_executed": true,
+          "local_model_inference": false,
+          "neural_modules_loaded": [],
+          "expert_legal_accuracy": null,
+          "source_kind": "author_global_api_index_and_query"
+        },
+        "original_complete_benchmark": false
+      },
+      "real_product_tracks_completed": [
+        "case_product",
+        "vqa_predicted_text"
+      ],
+      "local_model_inference": false,
+      "native_scope": "exact author Operation Dulce query and full precomputed index tables; native index not regenerated",
+      "native_full_method_completed": false,
+      "adaptation_limitations": [
+        "原查询使用作者预计算索引；没有重建该原索引或百万token benchmark",
+        "DeepSeek替代原GPT-4；产品实体类型含platform/message，分块1200/overlap100/one gleaning",
+        "禁用原嵌入/布局/可选claims；仅无向量global分支，不支持像素KIE或本地搜索",
+        "产品投影额外读取冻结锚点，不是未适配原benchmark结果",
+        "真实文本VQA弃答、旧开发参考分0；案件摘要三方陈述与两名说话人/三条陈述不一致，原回复保留",
+        "逐字引用校验不等于模型事实或法律质量，专家评测后补"
+      ]
+    }
+  }
+]

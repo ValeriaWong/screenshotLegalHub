@@ -1,0 +1,547 @@
+{
+  "version": "2026-10-23.1",
+  "status": "author_draft_internal_only",
+  "source_baseline": "datasets/v3.0.0/baseline_20261023_001",
+  "scenarios": [
+    {
+      "id": "zh_sales",
+      "language": "zh",
+      "source": 0,
+      "template": "account_link_then_aggregate",
+      "question": "仅按所给聊天，P-17 账单所述汇款金额合计是否达到单据总额？说明账号关联和计算依据，并区分转账陈述与实际到账。",
+      "people": [
+        "陈会计",
+        "李经理"
+      ],
+      "dates": [
+        "2023-09-12",
+        "2023-09-12",
+        "2023-10-27",
+        "2024-03-28"
+      ],
+      "units": [
+        [
+          [
+            "a",
+            "公司尾号4821的汇款都记在P-17这张单上，别跟别的项目合并。"
+          ],
+          [
+            "b",
+            "好，我按这个编号对账。"
+          ]
+        ],
+        [
+          [
+            "b",
+            "P-17这张泵设备单总额28万元。"
+          ],
+          [
+            "a",
+            "总额记下了，我分次安排。"
+          ]
+        ],
+        [
+          [
+            "a",
+            "尾号4821的账户，9月14日转了8万4，今天又转了6万。"
+          ],
+          [
+            "b",
+            "我先把你报的数字记上。"
+          ]
+        ],
+        [
+          [
+            "a",
+            "尾号4821今天转了13万6。"
+          ],
+          [
+            "b",
+            "收到了你的消息，到账记录还得查银行。"
+          ]
+        ]
+      ],
+      "anchors": [
+        "m010",
+        "m011",
+        "m014",
+        "m016"
+      ],
+      "counterfactual": {
+        "unit": 4,
+        "message": 0,
+        "before": "13万6",
+        "after": "12万6",
+        "variable": "last_reported_transfer_amount",
+        "expected": "reported_sum_short_by_10000"
+      },
+      "distractor": [
+        [
+          "a",
+          "另外P-99那张单，我用尾号7750转了2万元。"
+        ],
+        [
+          "b",
+          "那笔另记，不并到P-17。"
+        ]
+      ],
+      "nodes": [
+        {
+          "id": "link",
+          "units": [
+            1
+          ],
+          "answer": "尾号4821按陈会计所述关联P-17；未认证真实账号身份。",
+          "operation": "account_to_matter"
+        },
+        {
+          "id": "total",
+          "units": [
+            2
+          ],
+          "answer": "李经理称P-17总额280000元。",
+          "operation": "extract_amount"
+        },
+        {
+          "id": "payments",
+          "units": [
+            3,
+            4
+          ],
+          "answer": "陈会计陈述84000、60000、136000元，共280000元。",
+          "counterfactual_answer": "陈会计陈述84000、60000、126000元，共270000元。",
+          "operation": "aggregate"
+        },
+        {
+          "id": "comparison",
+          "depends_on": [
+            "link",
+            "total",
+            "payments"
+          ],
+          "answer": "按账号关联后的转账陈述合计等于单据总额；实际到账仍未证明。",
+          "counterfactual_answer": "按账号关联后的转账陈述合计比单据总额少10000元；实际到账仍未证明。",
+          "operation": "conditional_comparison"
+        }
+      ],
+      "witnesses": [
+        "缺账号关联时，4821款项可能属于另一个项目。",
+        "缺总额时，无法判断是否达到单据金额。",
+        "缺任一组转账陈述时，现有金额不能替代完整合计。"
+      ],
+      "period": "2023-09-12/2024-03-28"
+    },
+    {
+      "id": "zh_employment",
+      "language": "zh",
+      "source": 1,
+      "template": "notice_revision_and_speech_act",
+      "question": "这些聊天中，哪份通知给出更新后的报到日期？员工对该通知表达了什么态度？材料是否足以确定实际报到情况？分别引用依据。",
+      "people": [
+        "人事小张",
+        "小郭"
+      ],
+      "dates": [
+        "2024-04-12",
+        "2024-04-13",
+        "2024-04-14",
+        "2024-04-16"
+      ],
+      "units": [
+        [
+          [
+            "a",
+            "N1通知：请在4月15日上午9点到兰州中心报到。"
+          ],
+          [
+            "b",
+            "文件我看到了。"
+          ]
+        ],
+        [
+          [
+            "a",
+            "发你更新的N2：报到改为4月16日上午9点，地点仍是兰州中心。N2替代N1。"
+          ],
+          [
+            "b",
+            "新文件已收到。"
+          ]
+        ],
+        [
+          [
+            "b",
+            "N2我收到了，但我不同意调岗。"
+          ],
+          [
+            "a",
+            "你的回复我记下了。"
+          ]
+        ],
+        [
+          [
+            "a",
+            "我这里还没查到你的现场签到记录，是否到场还得核查。"
+          ],
+          [
+            "b",
+            "请把核查结果发给我。"
+          ]
+        ]
+      ],
+      "anchors": [
+        "m016",
+        "m019",
+        "m029"
+      ],
+      "counterfactual": {
+        "unit": 3,
+        "message": 0,
+        "before": "但我不同意调岗",
+        "after": "我同意按N2调岗",
+        "variable": "employee_expressed_assent",
+        "expected": "expressed_assent_changes_actual_attendance_unknown"
+      },
+      "distractor": [
+        [
+          "a",
+          "小周的通知是N8，4月17日到另一中心。"
+        ],
+        [
+          "b",
+          "那不是我的通知。"
+        ]
+      ],
+      "nodes": [
+        {
+          "id": "old_notice",
+          "units": [
+            1
+          ],
+          "answer": "N1写4月15日9点。",
+          "operation": "extract_superseded_notice",
+          "optional": true
+        },
+        {
+          "id": "current_notice",
+          "units": [
+            2
+          ],
+          "answer": "N2明确替代N1，报到要求改为4月16日9点，兰州中心。",
+          "operation": "resolve_explicit_revision"
+        },
+        {
+          "id": "stance",
+          "units": [
+            3
+          ],
+          "answer": "员工确认收到N2，但明确不同意调岗；收到与同意不同。",
+          "counterfactual_answer": "员工确认收到N2并明确表达同意按N2调岗。",
+          "operation": "speech_act"
+        },
+        {
+          "id": "attendance",
+          "units": [
+            4
+          ],
+          "answer": "人事仅称未查到记录、仍待核查；不能把缺记录当作已证明没到场，也不能证明到场。",
+          "operation": "absence_of_evidence"
+        },
+        {
+          "id": "scope",
+          "depends_on": [
+            "current_notice",
+            "stance",
+            "attendance"
+          ],
+          "answer": "分别报告最新要求、回复态度和实际报到未知；不判断调岗或解除是否合法。",
+          "operation": "separate_obligation_statement_and_occurrence"
+        }
+      ],
+      "witnesses": [
+        "仅有N1不能发现已被更新。",
+        "确认收件可以与反对调岗并存。",
+        "没有已查到的签到记录既可能未到场，也可能记录尚未整理。"
+      ],
+      "period": "2024-04-12/2024-04-16"
+    },
+    {
+      "id": "en_probate",
+      "language": "en",
+      "source": 2,
+      "template": "proposal_endorsement_and_hearsay",
+      "question": "Who visibly endorses the proposal about Papa, and do these messages contain Papa's own approval? Distinguish the proposal, the replies, and any later report of what he wanted.",
+      "people": [
+        "Sara",
+        "Maya",
+        "Lee"
+      ],
+      "dates": [
+        "2016-07-03",
+        "2016-07-20",
+        "2016-07-21",
+        "2017-12-03"
+      ],
+      "units": [
+        [
+          [
+            "a",
+            "This group is just us three siblings: Sara, Maya and Lee. Papa is not in this group."
+          ],
+          [
+            "b",
+            "Thanks, easier to keep updates together."
+          ]
+        ],
+        [
+          [
+            "a",
+            "I am thinking of asking Papa about making a will in Mum's favour. What do you two think?"
+          ],
+          [
+            "c",
+            "I have read your suggestion."
+          ]
+        ],
+        [
+          [
+            "b",
+            "I am in favour of that proposal."
+          ],
+          [
+            "c",
+            "I favour Sara's proposal."
+          ]
+        ],
+        [
+          [
+            "b",
+            "Papa told me years ago that he wanted me to have the cottage."
+          ],
+          [
+            "a",
+            "I have not seen a message from him about this proposal."
+          ]
+        ]
+      ],
+      "anchors": [
+        "m001",
+        "m006",
+        "m007",
+        "m008",
+        "m019"
+      ],
+      "counterfactual": {
+        "unit": 3,
+        "message": 0,
+        "before": "I am in favour of that proposal.",
+        "after": "I have not decided about that proposal.",
+        "variable": "maya_endorsement",
+        "expected": "only_lee_explicit_endorsement_papa_approval_unknown"
+      },
+      "distractor": [
+        [
+          "c",
+          "Can we book Mum's birthday dinner for Saturday?"
+        ],
+        [
+          "b",
+          "Yes, I agree to that dinner booking."
+        ]
+      ],
+      "nodes": [
+        {
+          "id": "accounts",
+          "units": [
+            1
+          ],
+          "answer": "The displayed participants describe themselves as three siblings; Papa is not a participant. Real identities are unverified.",
+          "operation": "speaker_scope"
+        },
+        {
+          "id": "proposal",
+          "units": [
+            2
+          ],
+          "answer": "Sara proposes asking Papa about a will in Mum's favour; this is a proposal, not Papa's own instruction.",
+          "operation": "speech_act"
+        },
+        {
+          "id": "endorsement",
+          "units": [
+            2,
+            3
+          ],
+          "answer": "Maya and Lee expressly favour Sara's proposal.",
+          "counterfactual_answer": "Only Lee expressly favours the proposal; Maya says she has not decided.",
+          "operation": "resolve_reply_target"
+        },
+        {
+          "id": "later_report",
+          "units": [
+            4
+          ],
+          "answer": "Maya reports what Papa allegedly said years earlier about the cottage; this is a later attributed report, not his visible approval of the proposal.",
+          "operation": "direct_vs_reported_statement"
+        },
+        {
+          "id": "scope",
+          "depends_on": [
+            "accounts",
+            "proposal",
+            "endorsement",
+            "later_report"
+          ],
+          "answer": "No visible approval by Papa is established. Do not infer capacity, execution, distribution rights or legal validity.",
+          "operation": "bound_conclusion"
+        }
+      ],
+      "witnesses": [
+        "A sibling's approval can coexist with Papa disagreeing.",
+        "The cottage statement might concern a different occasion or proposal.",
+        "Receipt of a suggestion does not imply endorsement."
+      ],
+      "period": "2016-07-03/2017-12-03"
+    },
+    {
+      "id": "en_charter",
+      "language": "en",
+      "source": 3,
+      "template": "relay_path_then_temporal_comparison",
+      "question": "According to the displayed reports, was the Owners' stated objection relayed to Dee before Dee's message about lifting subjects? Trace the parties and times, and distinguish reported sending from proven receipt or a binding contract.",
+      "people": [
+        "Ben",
+        "Cara",
+        "Dee"
+      ],
+      "dates": [
+        "2023-02-06",
+        "2023-02-06",
+        "2023-02-06",
+        "2023-02-06"
+      ],
+      "units": [
+        [
+          [
+            "a",
+            "For this fixture, I relay messages for the Owners. Cara relays for the Charterers, and Dee is their contact."
+          ],
+          [
+            "b",
+            "Yes, that is how we are handling this fixture."
+          ]
+        ],
+        [
+          [
+            "a",
+            "10:27 — message from the Owners: \"We have not agreed terms and do not want to proceed.\""
+          ],
+          [
+            "b",
+            "I have read the words you forwarded."
+          ]
+        ],
+        [
+          [
+            "b",
+            "I forwarded Ben's quoted Owners message to Dee at 10:42."
+          ],
+          [
+            "a",
+            "Thanks for the update."
+          ]
+        ],
+        [
+          [
+            "c",
+            "10:49 — email sent: \"We hereby lift all subjects and fully fix the deal.\""
+          ],
+          [
+            "b",
+            "I have seen your message here."
+          ]
+        ]
+      ],
+      "anchors": [
+        "m026",
+        "m027",
+        "m029",
+        "m031"
+      ],
+      "counterfactual": {
+        "unit": 3,
+        "message": 0,
+        "before": "10:42",
+        "after": "10:52",
+        "variable": "reported_forwarding_time_to_dee",
+        "expected": "reported_forwarding_after_1049_actual_receipt_unknown"
+      },
+      "distractor": [
+        [
+          "a",
+          "For the other vessel, Northwind, the Owners approved terms at 10:30."
+        ],
+        [
+          "b",
+          "Separate fixture; I will keep that out of this thread's recap."
+        ]
+      ],
+      "nodes": [
+        {
+          "id": "roles",
+          "units": [
+            1
+          ],
+          "answer": "Ben says he relays for Owners; Cara for Charterers, with Dee as their contact. These are displayed role statements.",
+          "operation": "party_alignment"
+        },
+        {
+          "id": "objection",
+          "units": [
+            2
+          ],
+          "answer": "Ben reports an Owners objection at 10:27: terms not agreed and unwilling to proceed.",
+          "operation": "attribute_relayed_content"
+        },
+        {
+          "id": "route",
+          "units": [
+            2,
+            3
+          ],
+          "answer": "Cara says she forwarded Ben's quoted Owners message to Dee at 10:42.",
+          "counterfactual_answer": "Cara says she forwarded Ben's quoted Owners message to Dee at 10:52.",
+          "operation": "follow_forwarding_path"
+        },
+        {
+          "id": "lifting",
+          "units": [
+            4
+          ],
+          "answer": "Dee reports sending a lifting-subjects email at 10:49.",
+          "operation": "extract_comparison_time"
+        },
+        {
+          "id": "comparison",
+          "depends_on": [
+            "roles",
+            "objection",
+            "route",
+            "lifting"
+          ],
+          "answer": "The reported relay to Dee at 10:42 is before the reported 10:49 email. Actual receipt and contract formation are not established.",
+          "counterfactual_answer": "The reported relay to Dee at 10:52 is after the reported 10:49 email. Actual receipt and contract formation are not established.",
+          "operation": "temporal_comparison"
+        }
+      ],
+      "witnesses": [
+        "An Owners message staying with Ben would not establish a relay to Dee.",
+        "A relay without its time could have occurred before or after 10:49.",
+        "A report of sending does not prove receipt or a contract."
+      ],
+      "period": "2023-02-06/2023-02-06"
+    }
+  ],
+  "global_scope": "All new conversations are explicitly synthetic adaptations inspired by four distinct source cases. New names, account/order IDs, notice revision N2 and dialogue are invented for controlled tasks. Neither original conversations nor factual reconstructions of those judgments. Only supplied screenshots are admissible; source judgments and author notes are reviewer-only. No legal-consequence questions.",
+  "independent_review_status": "not_started"
+}

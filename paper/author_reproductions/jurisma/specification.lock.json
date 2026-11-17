@@ -1,0 +1,12 @@
+{
+  "paper_id": "L07",
+  "source_kind": "paper_algorithm_inference_reimplementation_training_deferred",
+  "paper_url": "https://arxiv.org/html/2604.10470v1",
+  "author_repository_verified": false,
+  "whole_paper_completed": false,
+  "files": {
+    "paper_v1.html": "6a3378ca7333535a8433c30ff3466b0ff956387e08f8ca728c7d8925ff9da936",
+    "algorithm_spec.json": "d2b3a56d33592b56a18247d06f2ced88dce1a47ff74cef1595ac4fb2c70b47af",
+    "prompts.json": "b4942cb291e8a9327c043c400174c71851bb7e3ea1caca26ab65f541fad1ab47"
+  }
+}

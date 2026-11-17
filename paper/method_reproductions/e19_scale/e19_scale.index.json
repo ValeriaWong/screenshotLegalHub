@@ -1,0 +1,132 @@
+{
+  "reproduction_name": "e19_scale",
+  "implementation_module": "screenshotlegal.method_reproductions.e19_scale",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e19_scale.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现独立 Issue–Factor 层级选择关联指南；需要已冻结独立法律指南，现有领域包缺失时阻止执行。",
+  "paper_sources": [
+    {
+      "paper_id": "L09",
+      "reference": "Khatri et al. (2026), *SCALE: Structured Case-law-guided Anticipatory Legal Reasoning*. EMNLP 2026:",
+      "sources": [
+        "https://aclanthology.org/2026.emnlp-main.36/"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现独立 Issue–Factor 层级选择关联指南；需要已冻结独立法律指南，现有领域包缺失时阻止执行。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "SCALE：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "缺少独立且经审查的中国民事法律指南与 Issue–Factor→guide 映射"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L09",
+      "method": "SCALE",
+      "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+      "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+      "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+      "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+      "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+      "repo": null,
+      "source": "https://aclanthology.org/2026.emnlp-main.36/",
+      "fit": "仅结构机制可迁移。中国民事任务需要独立审查的指南和 factor→guide 映射；当前缺失，因此 E19 会阻止启动。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e19_scale"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "blocked_prerequisite": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e19_scale/e19_scale.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e19_scale"
+    }
+  ]
+}

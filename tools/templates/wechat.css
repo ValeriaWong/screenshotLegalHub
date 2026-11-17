@@ -1,0 +1,100 @@
+/* WeChat screenshot skin, 2026-11-06.
+ * Visual reference: gaopengbin/wechat-dialog-generator, PhonePreview.css.
+ * Locally implemented for the existing 430 x 932 renderer; see SOURCES.md.
+ * Scope to .wechat so neutral transcripts and WhatsApp retain their styles.
+ */
+.phone.wechat {
+  --chat-bg: #ededed;
+  --incoming: #ffffff;
+  --outgoing: #95ec69;
+  --transfer: #f79c46;
+  position: relative;
+  background: var(--chat-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: #111;
+}
+.wechat .status {
+  height: 50px;
+  padding: 6px 28px 0 35px;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: -.3px;
+}
+.wechat .status .icons {gap: 6px}
+.wechat .header {
+  height: 50px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+.wechat .header .title {text-align: center; font-size: 19px; font-weight: 500}
+.wechat .header .chevron {width: 11px; height: 11px; margin-left: 3px; border-width: 2px}
+.wechat .header .dots {display: flex; justify-content: flex-end; gap: 5px}
+.wechat .header .dots i {width: 4px; height: 4px; border-radius: 50%; background: #111}
+.wechat .content {min-height: 0; padding: 12px 14px 8px}
+.wechat .row {margin-bottom: 20px}
+.wechat .stamp {margin: 9px 0 20px; font-size: 12px; line-height: 18px; color: #999}
+.wechat .line {gap: 12px}
+.wechat .avatar {width: 44px; height: 44px; flex-basis: 44px; border-radius: 5px; overflow: hidden; background: #dbe5df}
+.wechat .avatar svg {display: block; width: 100%; height: 100%}
+.wechat .bubble-column {max-width: 284px}
+.wechat .bubble {
+  max-width: 284px;
+  min-height: 44px;
+  min-width: 40px;
+  padding: 10px 13px;
+  border-radius: 5px;
+  background: var(--incoming);
+  font-size: 18px;
+  line-height: 25px;
+  box-shadow: none;
+  overflow-wrap: anywhere;
+}
+.wechat .out .bubble {background: var(--outgoing)}
+.wechat .bubble:before {
+  width: 8px;
+  height: 8px;
+  top: 18px;
+  left: -4px;
+  border: 0;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  background: inherit;
+}
+.wechat .out .bubble:before {left: auto; right: -4px; border: 0}
+.phone.wechat .bubble-column > .sender {color: #999; margin: 0 0 5px 1px; line-height: 15px; font-size: 12px}
+.wechat .input {height: 62px; padding: 9px 12px; gap: 12px; background: #f7f7f7; border-top: 1px solid #d8d8d8}
+.wechat .input-box {height: 42px; border-radius: 5px; min-width: 0}
+.wechat .toolbar-icon {width: 29px; height: 29px; flex: 0 0 29px; color: #191919}
+.wechat .toolbar-icon svg {display: block; width: 100%; height: 100%}
+.wechat .home-indicator {height: 34px; flex: 0 0 34px; background: #f7f7f7; position: relative}
+.wechat .home-indicator:after {content: ""; position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); width: 154px; height: 5px; border-radius: 4px; background: #111}
+.phone.wechat .footnote {bottom: 20px; font-size: 9px; line-height: 12px; letter-spacing: .5px; color: #999}
+.wechat .bubble.transfer-bubble {
+  width: 270px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  overflow: visible;
+  background: var(--transfer);
+  color: #fff;
+  white-space: normal;
+}
+.wechat .transfer-top {min-height: 78px; padding: 14px 12px; gap: 12px}
+.wechat .transfer-icon {width: 40px; height: 40px; flex: 0 0 40px; border: 0; border-radius: 0}
+.wechat .transfer-icon svg {width: 40px; height: 40px}
+.wechat .transfer-details {min-width: 0}
+.wechat .transfer-amount {font: 24px/30px Arial, sans-serif; white-space: nowrap}
+.wechat .transfer-label {font-size: 13px; line-height: 19px}
+.wechat .transfer-footer {background: transparent; border-top: 1px solid #ffffff35; color: #ffedda; font-size: 12px; line-height: 25px; padding: 0 12px}
+.wechat .bubble.transfer-received, .wechat .bubble.transfer-expired {background: #f8c992}
+.wechat .bubble.file-bubble {background: #fff; padding: 13px; width: 270px; max-width: 100%; white-space: normal}
+.wechat .file {min-width: 0; gap: 12px; flex-direction: row-reverse; justify-content: space-between}
+.wechat .file > div:not(.doc) {min-width: 0; flex: 1}
+.wechat .filename {font-size: 16px; line-height: 23px; overflow-wrap: anywhere}
+.wechat .doc {width: 42px; height: 48px; border-radius: 3px; font-size: 12px}
+.wechat .bubble.picture-bubble {background: #fff; padding: 3px; max-width: 100%}
+.wechat .picture-bubble:before {display: none}
+.wechat .excerpt {min-width: 0; width: 270px; max-width: 100%}

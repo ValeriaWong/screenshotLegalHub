@@ -1,0 +1,18 @@
+{
+  "method": "legalagentbench",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "legalagentbench",
+      "commit": "ec14d8ab1fc439bfd99cbefba08d8e27dafca534",
+      "files_checked": 16
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 2,
+    "mismatches": {}
+  },
+  "resources": []
+}

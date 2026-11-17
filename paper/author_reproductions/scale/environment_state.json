@@ -1,0 +1,18 @@
+{
+  "method": "scale",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "scale",
+      "commit": "1700924ca8c448af56c854e5e4c9ae693e86beb3",
+      "files_checked": 34
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 10,
+    "mismatches": {}
+  },
+  "resources": []
+}

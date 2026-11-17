@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "CitationJudgment": {
+      "additionalProperties": false,
+      "properties": {
+        "output_digest": {
+          "title": "Output Digest",
+          "type": "string"
+        },
+        "fact_id": {
+          "title": "Fact Id",
+          "type": "string"
+        },
+        "citation_index": {
+          "minimum": 0,
+          "title": "Citation Index",
+          "type": "integer"
+        },
+        "supported": {
+          "title": "Supported",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "output_digest",
+        "fact_id",
+        "citation_index",
+        "supported"
+      ],
+      "title": "CitationJudgment",
+      "type": "object"
+    },
+    "GoldBurden": {
+      "additionalProperties": false,
+      "properties": {
+        "element_label": {
+          "title": "Element Label",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "claimant",
+            "defendant",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "element_label",
+        "role"
+      ],
+      "title": "GoldBurden",
+      "type": "object"
+    },
+    "GoldClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "applicability": {
+          "enum": [
+            "plausible",
+            "unsupported",
+            "uncertain"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "applicability"
+      ],
+      "title": "GoldClaim",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "case-gold.v1",
+      "default": "case-gold.v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "case_group_id": {
+      "title": "Case Group Id",
+      "type": "string"
+    },
+    "input_digest": {
+      "title": "Input Digest",
+      "type": "string"
+    },
+    "source_file_hashes": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Source File Hashes",
+      "type": "array"
+    },
+    "split": {
+      "enum": [
+        "development",
+        "holdout"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "approved",
+        "adjudicated"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "reviewers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reviewers",
+      "type": "array"
+    },
+    "reviewed_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewed At"
+    },
+    "claims_complete": {
+      "default": false,
+      "title": "Claims Complete",
+      "type": "boolean"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/GoldClaim"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "burdens": {
+      "items": {
+        "$ref": "#/$defs/GoldBurden"
+      },
+      "title": "Burdens",
+      "type": "array"
+    },
+    "citation_judgments": {
+      "items": {
+        "$ref": "#/$defs/CitationJudgment"
+      },
+      "title": "Citation Judgments",
+      "type": "array"
+    }
+  },
+  "required": [
+    "case_group_id",
+    "input_digest",
+    "source_file_hashes",
+    "split"
+  ],
+  "title": "CaseGold",
+  "type": "object"
+}

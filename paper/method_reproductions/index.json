@@ -1,0 +1,2695 @@
+{
+  "method_count": 21,
+  "methods": [
+    {
+      "reproduction_name": "e00_single_shot",
+      "implementation_module": "screenshotlegal.method_reproductions.e00_single_shot",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e00_single_shot.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "generic_baseline",
+      "reproduction_scope": "通用单次回答基线；不对应单篇论文，不声称作者系统复现。",
+      "paper_sources": [],
+      "original_paper_reproduced": false,
+      "author_code_status": "not_applicable_project_baseline",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "not_applicable_project_baseline",
+        "adaptability": "非单篇论文复现的项目基线",
+        "current_project_implementation": "通用单次回答基线；不对应单篇论文，不声称作者系统复现。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": []
+      },
+      "original_paper_contracts": [],
+      "documentation": "e00_single_shot/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e00_single_shot"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e00_single_shot/e00_single_shot.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e00_single_shot"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e01_react",
+      "implementation_module": "screenshotlegal.method_reproductions.e01_react",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e01_react.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "案件run仍为项目受控工具原型；KIE/全图VQA的run_task执行作者Notebook webthink控制器，工具适配为冻结原图目录与像素局部读取；原benchmark未复现。",
+      "paper_sources": [
+        {
+          "paper_id": "A01",
+          "reference": "Yao et al. (2022/23), *ReAct: Synergizing Reasoning and Acting in Language Models*.",
+          "sources": [
+            "https://arxiv.org/abs/2210.03629"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "author_controller_integrated_kie_global_vqa_native_agent_model_run_pending",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "author_controller_integrated_kie_global_vqa_native_agent_model_run_pending",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "案件run仍为项目受控工具原型；KIE/全图VQA的run_task执行作者Notebook webthink控制器，工具适配为冻结原图目录与像素局部读取；原benchmark未复现。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [
+          "kie_image",
+          "vqa_image_full"
+        ],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩",
+          "独立gym/numpy环境；原WikiEnv与HotPotQAWrapper成功载入7405道dev题",
+          "原Notebook webthink函数体原样载入；截图变体用冻结原图目录和真实像素局部读取替换Wikipedia工具",
+          "KIE/全图VQA入口已接run_task；原图和局部图的哈希、坐标、逐步请求/响应保留，边界错误会停止"
+        ],
+        "blockers": [
+          "独立环境和原任务已加载；原Notebook控制器的真实模型HotpotQA样例尚未运行，图像适配待真实模型验证"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "A01",
+          "method": "ReAct",
+          "task": "知识问答、事实核验及交互环境决策。",
+          "input": "问答为 question；交互任务为目标与环境 observation。结构示意：question='某人的出生地是什么？'。",
+          "output": "工具 action/observation 轨迹与最终答案或任务完成状态；不是带 SourceRef 的案件证明图。",
+          "benchmark": "HotpotQA、FEVER、ALFWorld、WebShop；原任务分别采用回答/核验或环境成功率指标。",
+          "innovation": "交替进行任务分析与工具行动，利用真实环境观察更新后续行动。",
+          "repo": "react",
+          "source": "https://arxiv.org/html/2210.03629",
+          "fit": "条件可适配工具决策层；须把案内证据读取与法源检索分开，并保留观察到的陈述而非默认其为真。",
+          "pinned_author_source": {
+            "repository": "https://github.com/ysymyth/ReAct",
+            "commit": "6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9",
+            "local_path": "paper/upstream_sources/react"
+          }
+        }
+      ],
+      "documentation": "e01_react/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e01_react"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e01_react/e01_react.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e01_react"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e02_staged_without_matterpack",
+      "implementation_module": "screenshotlegal.method_reproductions.e02_staged_without_matterpack",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e02_staged_without_matterpack.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_baseline",
+      "reproduction_scope": "本项目固定三阶段工作流；参考 MetaGPT 的流程分工，不含其软件开发角色或原任务。",
+      "paper_sources": [
+        {
+          "paper_id": "A04",
+          "reference": "Hong et al. (2023), *MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework*.",
+          "sources": [
+            "https://arxiv.org/abs/2308.00352"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "not_applicable_project_baseline",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "not_applicable_project_baseline",
+        "adaptability": "非单篇论文复现的项目基线",
+        "current_project_implementation": "本项目固定三阶段工作流；参考 MetaGPT 的流程分工，不含其软件开发角色或原任务。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "MetaGPT：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "A04",
+          "method": "MetaGPT",
+          "task": "软件开发协作；E02 只是借鉴流程化分工的本项目基线。",
+          "input": "软件需求或带函数签名/测试约束的编程任务。",
+          "output": "需求/设计/代码/测试等软件产物；不是案件事实或法律分析。",
+          "benchmark": "HumanEval、MBPP、SoftwareDev。",
+          "innovation": "把角色分工、标准操作流程、结构化通信和可执行反馈组合到软件开发团队。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2308.00352",
+          "fit": "不能把法律三阶段工作流称为 MetaGPT 复现；只可借鉴流程组织，原代码/原编程 benchmark 应单独验证。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e02_staged_without_matterpack/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e02_staged_without_matterpack"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e02_staged_without_matterpack"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e03_staged_with_matterpack",
+      "implementation_module": "screenshotlegal.method_reproductions.e03_staged_with_matterpack",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e03_staged_with_matterpack.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_baseline",
+      "reproduction_scope": "本项目三阶段工作流加领域模板；参考 JurisMA/SCALE 的结构化知识，不等于两篇作者系统。",
+      "paper_sources": [
+        {
+          "paper_id": "L07",
+          "reference": "Lu et al. (2026), *From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation* (JurisMA).",
+          "sources": [
+            "https://arxiv.org/abs/2604.10470"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "L09",
+          "reference": "Khatri et al. (2026), *SCALE: Structured Case-law-guided Anticipatory Legal Reasoning*. EMNLP 2026:",
+          "sources": [
+            "https://aclanthology.org/2026.emnlp-main.36/"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "not_applicable_project_baseline",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "not_applicable_project_baseline",
+        "adaptability": "非单篇论文复现的项目基线",
+        "current_project_implementation": "本项目三阶段工作流加领域模板；参考 JurisMA/SCALE 的结构化知识，不等于两篇作者系统。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "JurisMA：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "SCALE：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L07",
+          "method": "JurisMA",
+          "task": "中文法律咨询问答；查询转法律要素图，再动态协作与内容修订。",
+          "input": "用户法律咨询问题，可能长、非正式且存在多个争点；不要求先输入截图或 ProofGraph。",
+          "output": "面向用户的咨询答复和法律依据；要素图是中间结构。",
+          "benchmark": "修订版 LawBench；JurisCQAD 用于训练/DPO。另有 LegalBench-RuleQA 小样本迁移实验。",
+          "innovation": "实体/事件/意图/争点结构、动态任务路由、法条 grounding 与内容修订，并构建咨询偏好数据。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2604.10470v1",
+          "fit": "结构层条件可适配，但需保持陈述/推断/未知的区别。未核实作者代码/训练检查点入口，当前 E18 只有项目机制原型。",
+          "pinned_author_source": null
+        },
+        {
+          "paper_id": "L09",
+          "method": "SCALE",
+          "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+          "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+          "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+          "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+          "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+          "repo": null,
+          "source": "https://aclanthology.org/2026.emnlp-main.36/",
+          "fit": "仅结构机制可迁移。中国民事任务需要独立审查的指南和 factor→guide 映射；当前缺失，因此 E19 会阻止启动。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e03_staged_with_matterpack/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-deepseek-pilot",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 2
+          },
+          "planned": 2,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/protocol-simple",
+          "kind": "real_model",
+          "statuses": {
+            "completed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/protocol-simple/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/protocol-simple/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/without-thinking-simple",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e03_staged_with_matterpack"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e03_staged_with_matterpack/e03_staged_with_matterpack.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e03_staged_with_matterpack"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e04_symbolic_verifier",
+      "implementation_module": "screenshotlegal.method_reproductions.e04_symbolic_verifier",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e04_symbolic_verifier.py",
+      "implementation_status": "planned",
+      "reproduction_level": "not_implemented",
+      "reproduction_scope": "尚未实现形式化规则表示及符号验证器；文件仅登记出处，不能运行。",
+      "paper_sources": [
+        {
+          "paper_id": "L05",
+          "reference": "Sadowski & Chudziak (2025), *On Verifiable Legal Reasoning: A Multi-Agent Framework with Formalized Knowledge Representations*.",
+          "sources": [
+            "https://arxiv.org/abs/2509.00710"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+        "current_project_implementation": "尚未实现形式化规则表示及符号验证器；文件仅登记出处，不能运行。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L05",
+          "method": "SOLAR / On Verifiable Legal Reasoning",
+          "task": "形式化法条并将案件事实映射为可验证的符号推理。",
+          "input": "SARA numeric 的美国税法条文和纳税人事实，例如收入/报税身份/扣除项。",
+          "output": "规则/本体中间表示及税额等结论；Stage II 使用预先构建的 TBox。",
+          "benchmark": "LegalBench 的 SARA numeric，论文研究 96 个税务计算案例；不是民事证明责任数据。",
+          "innovation": "知识获取与知识应用分离，用 TBox/ABox 及符号推理约束生成和计算。",
+          "repo": "solar",
+          "source": "https://arxiv.org/html/2509.00710",
+          "fit": "不能直接适配为通用聊天证据判断。须有专家审查的民事规则与可形式化前提；E04 尚无符号验证实现。",
+          "pinned_author_source": {
+            "repository": "https://github.com/albsadowski/solar",
+            "commit": "067f8f78b128dc7647c8a54b2560a612fae91a87",
+            "local_path": "paper/upstream_sources/solar"
+          }
+        }
+      ],
+      "documentation": "e04_symbolic_verifier/README.md",
+      "evidence": []
+    },
+    {
+      "reproduction_name": "e05_self_refine",
+      "implementation_module": "screenshotlegal.method_reproductions.e05_self_refine",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e05_self_refine.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "author_controller_adaptation",
+      "reproduction_scope": "执行作者 responsegen 迭代控制器与三原生任务类调用；适配冻结来源案件输出、截图KIE及全图VQA；原benchmark未复现。",
+      "paper_sources": [
+        {
+          "paper_id": "A02",
+          "reference": "Madaan et al. (2023), *Self-Refine: Iterative Refinement with Self-Feedback*.",
+          "sources": [
+            "https://arxiv.org/abs/2303.17651"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "author_controller_integrated_case_kie_global_vqa_native_example_partial",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "author_controller_integrated_case_kie_global_vqa_native_example_partial",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "执行作者 responsegen 迭代控制器与三原生任务类调用；适配冻结来源案件输出、截图KIE及全图VQA；原benchmark未复现。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": true,
+        "author_benchmark_tracks": [
+          "kie_image",
+          "vqa_image_full"
+        ],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": true,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩",
+          "固定 Self-Refine 与 prompt-lib 提交；独立 Python 环境",
+          "修复未使用的 Anthropic 客户端构造兼容与 httpx 版本",
+          "本地受限 broker 保存实际 DeepSeek 身份，给原 SDK 返回兼容 engine alias",
+          "保留原 few-shot 提示，额外添加模型格式指令；禁用整轮自动付费重试",
+          "首次失败 1 次调用；随后原 Init/Feedback/Iterate 三类用 3 次调用完成一次修订",
+          "原responsegen控制器函数体经AST原样载入，禁用付费整轮重试；原三任务类__call__保留",
+          "任务模板改为KIE/VQA/CaseAnalysisOutput；JSON转义保护原字符；图像每步保持冻结输入",
+          "产品案件主链和KIE/全图VQA入口已接作者控制器；工程验证使用确定传输夹具，尚未新增真实调用"
+        ],
+        "blockers": [
+          "原缩写任务已完成一次三模块修订；原控制器真实完整运行尚待新增调用，未跑原数据集完整评测"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "A02",
+          "method": "Self-Refine",
+          "task": "同一模型先生成结果，再提供反馈并迭代修订；不同任务使用各自的原生模板。",
+          "input": "本轮选用作者 responsegen.run.iterative_response(context:str,max_attempts:int)：context是双人对话历史。历史原任务样例使用 acronym/run.py 的英文title与max_attempts；其他任务接收数学题、程序、概念集合或评论。",
+          "output": "responsegen控制器返回 {response文本: {n_attempts,scores,total_score,context}}；三个原生类分别返回(meta,response)、(meta,feedback)、(meta,revised_response)。缩写分支返回缩写及评分轨迹。均不直接返回本项目CaseAnalysisOutput/KIE/VQA schema。",
+          "benchmark": "论文七类任务：Yelp 情感反转、对话响应、PIE 代码优化、CodeNet 可读性、GSM8K、缩写生成、CommonGen；本次原生示例不是整套 benchmark。",
+          "innovation": "无需额外训练/外部反馈模型，由同一模型产生可执行反馈，再据反馈改写。",
+          "repo": "self_refine",
+          "source": "https://arxiv.org/html/2303.17651",
+          "fit": "可适配修订控制流；法律任务必须另定义引文/反证/缺证反馈标准。缩写自评分不能转为法律准确率。",
+          "pinned_author_source": {
+            "repository": "https://github.com/madaan/self-refine",
+            "commit": "9a206d41e5d2d0c241bb441f41eeadb945afaa55",
+            "local_path": "paper/upstream_sources/self_refine"
+          }
+        }
+      ],
+      "documentation": "e05_self_refine/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e05_self_refine"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e05_self_refine/e05_self_refine.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e05_self_refine"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e06_legalreasoner_verifier",
+      "implementation_module": "screenshotlegal.method_reproductions.e06_legalreasoner_verifier",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e06_legalreasoner_verifier.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现独立上下文核查后修订；未训练 LegalReasoner 过程验证器，未实现完整 VERDICT。",
+      "paper_sources": [
+        {
+          "paper_id": "L04",
+          "reference": "Shi et al. (2025), *LegalReasoner: Step-wised Verification-Correction for Legal Judgment Reasoning*.",
+          "sources": [
+            "https://arxiv.org/abs/2506.07443"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "L08",
+          "reference": "Liao et al. (2026), *VERDICT: Verifiable Evolving Reasoning with Directive-Informed Collegial Teams for Legal Judgment Prediction*.",
+          "sources": [
+            "https://arxiv.org/abs/2603.19306"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现独立上下文核查后修订；未训练 LegalReasoner 过程验证器，未实现完整 VERDICT。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "LegalReasoner：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L04",
+          "method": "LegalReasoner",
+          "task": "从案件请求和事实进行逐步法律推理，并对推理步骤验证、归因和纠正。",
+          "input": "案件 claims/facts 与法律背景；LegalHK 包含香港案件，CMDL 为大陆刑事案件。",
+          "output": "裁判结论与逐步验证/纠错记录；原训练含争点和过程验证标注。",
+          "benchmark": "LegalHK、CMDL，论文采用各自训练/验证/测试划分；不与我们的合成聊天夹具同分布。",
+          "innovation": "争点分解、过程验证器的多维检查及按问题类型选择修正策略；包含训练数据与验证器。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2506.07443v1",
+          "fit": "条件可适配核查思想；未取得/运行对应作者验证器时，同一底座的新上下文不能算原方法。需重新标注民事证据问题并核对法域。",
+          "pinned_author_source": null
+        },
+        {
+          "paper_id": "L08",
+          "method": "VERDICT",
+          "task": "基于刑事案情预测适用法条、罪名和刑期，使用合议反馈与演化记忆。",
+          "input": "作者 CAIL 环境接收 configs['task'] 案情文本和 configs['expected'] 评分标签；模型任务文本只由 task 构造。训练监督与测试模式须分别配置。",
+          "output": "原格式为 Finish[JSON]，字段 relevant_articles、accusation、term_of_imprisonment；刑期子字段 death_penalty、life_imprisonment、imprisonment。",
+          "benchmark": "CAIL2018（CAIL-Small）、未来时间划分 CJO2025；当前作者 CLI 仅暴露 cail2018。",
+          "innovation": "五角色监督式 Pass/Reject 修订与 Hybrid Jurisprudential Memory / Micro-Directives 演化；不是普通多轮改写。",
+          "repo": "verdict",
+          "source": "https://github.com/luckyhui235/VERDICT",
+          "fit": "不能直接把刑事预测指标用于民事证据链。需重写任务环境/标签/规范检索，并隔离训练记忆与留出案件；E20 未复现 HJM/专家对齐模型。 源码训练验证分支可读取 expected；适配留出评测必须 mode=test 且关闭 training_mode_verification，并另审计 expected/正确性反馈是否经记忆回流。该边界尚未端到端验证。",
+          "pinned_author_source": {
+            "repository": "https://github.com/luckyhui235/VERDICT",
+            "commit": "1b6c9d6ecfbe95900076cbfd2eedf94aecaaf952",
+            "local_path": "paper/upstream_sources/verdict"
+          }
+        }
+      ],
+      "documentation": "e06_legalreasoner_verifier/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e06_legalreasoner_verifier"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e06_legalreasoner_verifier/e06_legalreasoner_verifier.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e06_legalreasoner_verifier"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e07_agentscourt_adversarial",
+      "implementation_module": "screenshotlegal.method_reproductions.e07_agentscourt_adversarial",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e07_agentscourt_adversarial.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现双方独立意见、一轮交换和起草者整合；未复现作者训练、知识增强和原始判决任务。",
+      "paper_sources": [
+        {
+          "paper_id": "L01",
+          "reference": "He et al. (2024), *AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation*. EMNLP Findings.",
+          "sources": [
+            "https://arxiv.org/abs/2403.02959"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "L10",
+          "reference": "Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.",
+          "sources": [
+            "https://arxiv.org/abs/2607.09099"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现双方独立意见、一轮交换和起草者整合；未复现作者训练、知识增强和原始判决任务。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "L-MAD：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L01",
+          "method": "AgentsCourt",
+          "task": "从给定案情模拟法庭辩论、检索法律知识并生成裁判分析。",
+          "input": "SimuCourt 中的案情与案件类型/审级等任务信息，通常是已整理的案件叙述。",
+          "output": "案件分析、适用法条、裁判结果；刑事任务涉及罪名、刑期和罚金。",
+          "benchmark": "SimuCourt，420 份中文裁判文书，涉及民事、行政、刑事及审级设置；配套 Legal-KB。",
+          "innovation": "法庭辩论模拟、法律资源增强与裁判迭代结合；不等于增加两个对立角色。",
+          "repo": "agentscourt",
+          "source": "https://aclanthology.org/2024.findings-emnlp.549/",
+          "fit": "仅条件适配辩论机制。聊天中的主张/否认必须保留认识状态，不能先改成法院已认定事实；裁判标签也不能直接充当证据链 Gold。",
+          "pinned_author_source": {
+            "repository": "https://github.com/Zhitao-He/AgentsCourt",
+            "commit": "7c14d6960abfdfdd7366250905da8dbcb416d6d6",
+            "local_path": "paper/upstream_sources/agentscourt"
+          }
+        },
+        {
+          "paper_id": "L10",
+          "method": "L-MAD",
+          "task": "法律文本蕴含判别，比较辩论拓扑和共识/投票决策协议。",
+          "input": "相关法条 premise 和案情/问题 query（hypothesis）。",
+          "output": "Answer:Y 或 Answer:N 及对应辩论记录，不是开放式 CaseAnalysisOutput。",
+          "benchmark": "COLIEE Task 4 多年度子集；原文 §4.1 说明 R05/R06/R07 和 formal-run/post-hoc 划分。指标为标签准确率。",
+          "innovation": "控制比较 agent persona、辩论结构和聚合协议，分析规模与轮次的收益/过度辩论。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2607.09099v1",
+          "fit": "可研究争点判别层，但须新建专家蕴含标签。现有 E09 只实现有界意见交换/汇总，没有复现原投票与共识对照。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e07_agentscourt_adversarial/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e07_agentscourt_adversarial"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e07_agentscourt_adversarial/e07_agentscourt_adversarial.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e07_agentscourt_adversarial"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e08_agentscourt_judge",
+      "implementation_module": "screenshotlegal.method_reproductions.e08_agentscourt_judge",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e08_agentscourt_judge.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现双方交换后增加中立汇总者；未复现作者训练、原始角色与评价基准。",
+      "paper_sources": [
+        {
+          "paper_id": "L01",
+          "reference": "He et al. (2024), *AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation*. EMNLP Findings.",
+          "sources": [
+            "https://arxiv.org/abs/2403.02959"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "L10",
+          "reference": "Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.",
+          "sources": [
+            "https://arxiv.org/abs/2607.09099"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现双方交换后增加中立汇总者；未复现作者训练、原始角色与评价基准。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "L-MAD：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L01",
+          "method": "AgentsCourt",
+          "task": "从给定案情模拟法庭辩论、检索法律知识并生成裁判分析。",
+          "input": "SimuCourt 中的案情与案件类型/审级等任务信息，通常是已整理的案件叙述。",
+          "output": "案件分析、适用法条、裁判结果；刑事任务涉及罪名、刑期和罚金。",
+          "benchmark": "SimuCourt，420 份中文裁判文书，涉及民事、行政、刑事及审级设置；配套 Legal-KB。",
+          "innovation": "法庭辩论模拟、法律资源增强与裁判迭代结合；不等于增加两个对立角色。",
+          "repo": "agentscourt",
+          "source": "https://aclanthology.org/2024.findings-emnlp.549/",
+          "fit": "仅条件适配辩论机制。聊天中的主张/否认必须保留认识状态，不能先改成法院已认定事实；裁判标签也不能直接充当证据链 Gold。",
+          "pinned_author_source": {
+            "repository": "https://github.com/Zhitao-He/AgentsCourt",
+            "commit": "7c14d6960abfdfdd7366250905da8dbcb416d6d6",
+            "local_path": "paper/upstream_sources/agentscourt"
+          }
+        },
+        {
+          "paper_id": "L10",
+          "method": "L-MAD",
+          "task": "法律文本蕴含判别，比较辩论拓扑和共识/投票决策协议。",
+          "input": "相关法条 premise 和案情/问题 query（hypothesis）。",
+          "output": "Answer:Y 或 Answer:N 及对应辩论记录，不是开放式 CaseAnalysisOutput。",
+          "benchmark": "COLIEE Task 4 多年度子集；原文 §4.1 说明 R05/R06/R07 和 formal-run/post-hoc 划分。指标为标签准确率。",
+          "innovation": "控制比较 agent persona、辩论结构和聚合协议，分析规模与轮次的收益/过度辩论。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2607.09099v1",
+          "fit": "可研究争点判别层，但须新建专家蕴含标签。现有 E09 只实现有界意见交换/汇总，没有复现原投票与共识对照。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e08_agentscourt_judge/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e08_agentscourt_judge"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e08_agentscourt_judge"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e09_l_mad",
+      "implementation_module": "screenshotlegal.method_reproductions.e09_l_mad",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e09_l_mad.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现 0–3 轮同步辩论与最终汇总；未照搬原论文 persona、投票与共识实验。",
+      "paper_sources": [
+        {
+          "paper_id": "L10",
+          "reference": "Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.",
+          "sources": [
+            "https://arxiv.org/abs/2607.09099"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "A08",
+          "reference": "Kim et al. (2025), *Towards a Science of Scaling Agent Systems*.",
+          "sources": [
+            "https://arxiv.org/abs/2512.08296"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现 0–3 轮同步辩论与最终汇总；未照搬原论文 persona、投票与共识实验。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "L-MAD：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "Towards a Science of Scaling Agent Systems：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "未复现原 Answer:Y/N 标签解析及共识/投票协议对照"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L10",
+          "method": "L-MAD",
+          "task": "法律文本蕴含判别，比较辩论拓扑和共识/投票决策协议。",
+          "input": "相关法条 premise 和案情/问题 query（hypothesis）。",
+          "output": "Answer:Y 或 Answer:N 及对应辩论记录，不是开放式 CaseAnalysisOutput。",
+          "benchmark": "COLIEE Task 4 多年度子集；原文 §4.1 说明 R05/R06/R07 和 formal-run/post-hoc 划分。指标为标签准确率。",
+          "innovation": "控制比较 agent persona、辩论结构和聚合协议，分析规模与轮次的收益/过度辩论。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2607.09099v1",
+          "fit": "可研究争点判别层，但须新建专家蕴含标签。现有 E09 只实现有界意见交换/汇总，没有复现原投票与共识对照。",
+          "pinned_author_source": null
+        },
+        {
+          "paper_id": "A08",
+          "method": "Towards a Science of Scaling Agent Systems",
+          "task": "跨不同 agentic benchmark 比较单/多 agent 的结构、成本与成功率。",
+          "input": "各原生环境的工具任务，接口随 benchmark 变化。",
+          "output": "任务完成结果、轨迹与成本指标；不是一个固定法律推理算法。",
+          "benchmark": "当前核对版本包含 BrowseComp-Plus、Finance-Agent、PlanCraft、WorkBench，并报告 SWE-bench Verified、Terminal-Bench 小规模扩展。",
+          "innovation": "研究任务分解性、协调开销与模型能力对多 agent 收益的约束。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2512.08296",
+          "fit": "可借鉴同预算实验设计，E09 轮次参数不等于复现该研究或其六类 benchmark。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e09_l_mad/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e09_l_mad"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e09_l_mad"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e10_factor_guided_retrieval",
+      "implementation_module": "screenshotlegal.method_reproductions.e10_factor_guided_retrieval",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e10_factor_guided_retrieval.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现按要件提问后闭域检索与阶段分析；当前词项检索，不含向量训练、重排或完整 SCALE 指南层级。",
+      "paper_sources": [
+        {
+          "paper_id": "L09",
+          "reference": "Khatri et al. (2026), *SCALE: Structured Case-law-guided Anticipatory Legal Reasoning*. EMNLP 2026:",
+          "sources": [
+            "https://aclanthology.org/2026.emnlp-main.36/"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        },
+        {
+          "paper_id": "L14",
+          "reference": "Li et al. (2026), *Legal-DC: Benchmarking Retrieval-Augmented Generation for Legal Documents* (LegRAG).",
+          "sources": [
+            "https://arxiv.org/abs/2603.11772"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现按要件提问后闭域检索与阶段分析；当前词项检索，不含向量训练、重排或完整 SCALE 指南层级。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "SCALE：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L09",
+          "method": "SCALE",
+          "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+          "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+          "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+          "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+          "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+          "repo": null,
+          "source": "https://aclanthology.org/2026.emnlp-main.36/",
+          "fit": "仅结构机制可迁移。中国民事任务需要独立审查的指南和 factor→guide 映射；当前缺失，因此 E19 会阻止启动。",
+          "pinned_author_source": null
+        },
+        {
+          "paper_id": "L14",
+          "method": "Legal-DC / LegRAG",
+          "task": "中文法律文档咨询与检索器/生成器联合评测。",
+          "input": "法律文档集合与 question；标注带条款级引用。",
+          "output": "检索条款及依据文档的咨询答案。",
+          "benchmark": "Legal-DC：480 份法律文档、2,475 个问答，条款级标注；不是聊天真实性或举证责任测试集。",
+          "innovation": "条款完整性的索引与双路径自反思检验，配套检索/回答联合评测。",
+          "repo": "legal_dc",
+          "source": "https://arxiv.org/html/2603.11772v1",
+          "fit": "适合法源/文档检索层的条件适配；E10 当前词项查询没有实现 LegRAG 的原索引/双路径反思。",
+          "pinned_author_source": {
+            "repository": "https://github.com/legal-dc/Legal-DC",
+            "commit": "1f4422e4a9de4ce7bb311ebf926f61c1b077d50a",
+            "local_path": "paper/upstream_sources/legal_dc"
+          }
+        }
+      ],
+      "documentation": "e10_factor_guided_retrieval/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e10_factor_guided_retrieval"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e10_factor_guided_retrieval/e10_factor_guided_retrieval.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e10_factor_guided_retrieval"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e11_legal_r1",
+      "implementation_module": "screenshotlegal.method_reproductions.e11_legal_r1",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e11_legal_r1.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现 Lawyer 检索规划、冻结工具执行与 Judge 读取轨迹；未执行 masked SFT、GRPO、MMR/PSI 或作者检查点。",
+      "paper_sources": [
+        {
+          "paper_id": "L11",
+          "reference": "Pang et al. (2026-10), *Legal-R1: Agentic Retrieval for Evidence-Based Legal Reasoning*.",
+          "sources": [
+            "https://arxiv.org/abs/2610.18611"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现 Lawyer 检索规划、冻结工具执行与 Judge 读取轨迹；未执行 masked SFT、GRPO、MMR/PSI 或作者检查点。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L11",
+          "method": "Legal-R1",
+          "task": "法律问题上的主动法源选择、检索充分性判断和证据轨迹回答。",
+          "input": "作者 infer_pipeline.py 默认读训练/RL JSON；实际取 row['Open-ended Verifiable Question']。同一行还含 Ground-True Answer、Complex_CoT，仅可保留作评测/参考，不能混入用户问题。规范库/类案库另行加载。",
+          "output": "原 rollout 保存 original_question、turns、final_answer 及参考标签字段；最终回答从轨迹生成。它不是原图解析或带字符坐标的 ProofGraph。",
+          "benchmark": "LawBench、LexEval；法条检索另有 provision-oriented 查询。原规范库与 LeCaRDv2 类案库须版本匹配。",
+          "innovation": "训练 Lawyer 检索策略（masked SFT、轨迹强化学习），结合 authority/diversity-aware Assistant 和 Judge。",
+          "repo": "legal_r1",
+          "source": "https://arxiv.org/html/2610.18611v1",
+          "fit": "可条件迁移法源检索，但案内证据必须另轨读取。未载入作者训练模型/检索库就不能算原 Legal-R1；当前 E11 是项目路由原型。 原入口的默认训练数据路径并非 LawBench/LexEval 的完整评测入口；需要另行配置原 benchmark 与评分器。",
+          "pinned_author_source": {
+            "repository": "https://github.com/killerqueen-wonder/Legal-R1",
+            "commit": "a2bf5054841a108b5f1a3be10fe1cd8a336ed806",
+            "local_path": "paper/upstream_sources/legal_r1"
+          }
+        }
+      ],
+      "documentation": "e11_legal_r1/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-deepseek-pilot",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 2
+          },
+          "planned": 2,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/protocol-counter",
+          "kind": "real_model",
+          "statuses": {
+            "completed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/protocol-counter/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/protocol-counter/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/without-thinking-simple",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e11_legal_r1"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e11_legal_r1/e11_legal_r1.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e11_legal_r1"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e12_crag",
+      "implementation_module": "screenshotlegal.method_reproductions.e12_crag",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e12_crag.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现 correct/incorrect/ambiguous 检索质量动作与闭域纠正；无专用训练 evaluator、Web 扩展和细粒度知识重组。",
+      "paper_sources": [
+        {
+          "paper_id": "R02",
+          "reference": "Yan et al. (2024), *Corrective Retrieval Augmented Generation*.",
+          "sources": [
+            "https://arxiv.org/abs/2401.15884"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现 correct/incorrect/ambiguous 检索质量动作与闭域纠正；无专用训练 evaluator、Web 扩展和细粒度知识重组。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "未运行原 T5 evaluator 与细粒度知识精炼；闭域变体不能等同允许 Web 搜索的原 CRAG"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "R02",
+          "method": "CRAG",
+          "task": "评估检索质量，按 correct/incorrect/ambiguous 调用纠正和知识精炼后生成。",
+          "input": "question 与初始检索 passages。",
+          "output": "答案/标签和纠正后知识；原流程含训练的 T5 evaluator、知识分解重组与 Web 搜索。",
+          "benchmark": "PopQA、Biography、PubHealth、ARC-Challenge；分别使用任务准确率或 FactScore 等原指标。",
+          "innovation": "以轻量检索评估器触发不同纠错动作，并结合细粒度知识精炼与必要的外部搜索。",
+          "repo": "crag",
+          "source": "https://arxiv.org/html/2401.15884v3",
+          "fit": "闭域案内证据不能从 Web 补造。现有 E12 同底座三分类不等于原 T5 evaluator；若禁网会成为明确的 CRAG 变体。",
+          "pinned_author_source": {
+            "repository": "https://github.com/HuskyInSalt/CRAG",
+            "commit": "de7c2961ae624a1483a138c5798e1f6d0c4fb0e0",
+            "local_path": "paper/upstream_sources/crag"
+          }
+        }
+      ],
+      "documentation": "e12_crag/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e12_crag"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e12_crag/e12_crag.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e12_crag"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e13_graphreader",
+      "implementation_module": "screenshotlegal.method_reproductions.e13_graphreader",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e13_graphreader.py",
+      "implementation_status": "planned",
+      "reproduction_level": "not_implemented",
+      "reproduction_scope": "尚未实现 GraphReader 图构建与图导航；文件仅登记出处，不能运行。",
+      "paper_sources": [
+        {
+          "paper_id": "A07",
+          "reference": "Li et al. (2024), *GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities*.",
+          "sources": [
+            "https://arxiv.org/abs/2406.14550"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+        "current_project_implementation": "尚未实现 GraphReader 图构建与图导航；文件仅登记出处，不能运行。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "GraphReader：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "A07",
+          "method": "GraphReader",
+          "task": "把长文构造成 key elements/atomic facts 图，由 agent 按计划探索后回答。",
+          "input": "长文档与 question。",
+          "output": "图探索/笔记及问答结果。",
+          "benchmark": "LongBench 的 HotpotQA、2WikiMultihopQA、MuSiQue、NarrativeQA；LV-Eval HotpotWikiQA-mixup。",
+          "innovation": "图构建、原子事实、邻居/原块读取、反思与笔记支撑粗到细探索。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2406.14550",
+          "fit": "可用于长证据检索层，但图中压缩事实不是已证明事实，须回溯原文。E13 未实现该图与探索 agent。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e13_graphreader/README.md",
+      "evidence": []
+    },
+    {
+      "reproduction_name": "e14_chain_of_agents",
+      "implementation_module": "screenshotlegal.method_reproductions.e14_chain_of_agents",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e14_chain_of_agents.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现顺序 worker 传递引用记忆到 manager；字符分块替代论文 token 窗口，未复现原基准。",
+      "paper_sources": [
+        {
+          "paper_id": "A06",
+          "reference": "Zhang et al. (2024), *Chain of Agents: Large Language Models Collaborating on Long-Context Tasks*.",
+          "sources": [
+            "https://arxiv.org/abs/2406.02818"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现顺序 worker 传递引用记忆到 manager；字符分块替代论文 token 窗口，未复现原基准。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "Chain of Agents (Zhang et al., 2024)：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "A06",
+          "method": "Chain of Agents (Zhang et al., 2024)",
+          "task": "长上下文问答、摘要与代码补全，worker 顺序通信后由 manager 整合。",
+          "input": "长文本＋问题；摘要可仅给文档；代码任务给代码上下文。",
+          "output": "答案、摘要或代码补全，以及 worker 传递的 communication units。",
+          "benchmark": "HotpotQA、MuSiQue、NarrativeQA、Qasper、QuALITY、QMSum、GovReport、RepoBench-P。",
+          "innovation": "交错阅读与通信，顺序 worker 聚合全局信息，以短窗口处理长输入。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2406.02818",
+          "fit": "可条件迁移长资料处理，但 communication units 必须附原文锚点。当前字符分块与新增引用契约均是适配改动；不能使用 OPPO 同名论文代码冒充该作者实现。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e14_chain_of_agents/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e14_chain_of_agents"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e14_chain_of_agents/e14_chain_of_agents.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e14_chain_of_agents"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e15_raptor",
+      "implementation_module": "screenshotlegal.method_reproductions.e15_raptor",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e15_raptor.py",
+      "implementation_status": "planned",
+      "reproduction_level": "not_implemented",
+      "reproduction_scope": "尚未实现 RAPTOR 层次聚类、摘要树与检索；文件仅登记出处，不能运行。",
+      "paper_sources": [
+        {
+          "paper_id": "R03",
+          "reference": "Sarthi et al. (2024), *RAPTOR*.",
+          "sources": [
+            "https://arxiv.org/abs/2401.18059"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+        "current_project_implementation": "尚未实现 RAPTOR 层次聚类、摘要树与检索；文件仅登记出处，不能运行。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "R03",
+          "method": "RAPTOR",
+          "task": "对长文递归聚类与摘要建树，跨层检索后回答。",
+          "input": "待索引文档集合与 question。",
+          "output": "摘要树、检索节点/文本与最终答案。",
+          "benchmark": "NarrativeQA、QASPER、QuALITY。",
+          "innovation": "递归摘要形成多层语义索引，结合软聚类，在不同抽象层次检索。",
+          "repo": "raptor",
+          "source": "https://arxiv.org/html/2401.18059",
+          "fit": "可作为检索层条件适配；摘要节点须能回溯原文叶子，不能把摘要字符位置冒充原文证据。E15 尚未实现。",
+          "pinned_author_source": {
+            "repository": "https://github.com/parthsarthi03/raptor",
+            "commit": "7da1d48a7e1d7dec61a63c9d9aae84e2dfaa5767",
+            "local_path": "paper/upstream_sources/raptor"
+          }
+        }
+      ],
+      "documentation": "e15_raptor/README.md",
+      "evidence": []
+    },
+    {
+      "reproduction_name": "e16_lightrag",
+      "implementation_module": "screenshotlegal.method_reproductions.e16_lightrag",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e16_lightrag.py",
+      "implementation_status": "planned",
+      "reproduction_level": "not_implemented",
+      "reproduction_scope": "尚未实现 LightRAG 图索引与双层检索；文件仅登记出处，不能运行。",
+      "paper_sources": [
+        {
+          "paper_id": "R05",
+          "reference": "Guo et al. (2024), *LightRAG*.",
+          "sources": [
+            "https://arxiv.org/abs/2410.05779"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+        "current_project_implementation": "尚未实现 LightRAG 图索引与双层检索；文件仅登记出处，不能运行。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "LightRAG：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "R05",
+          "method": "LightRAG",
+          "task": "建立实体/关系图与文本索引，以低层/高层双级检索增强回答。",
+          "input": "文档集合与 query。",
+          "output": "图/文本检索上下文及生成答案。",
+          "benchmark": "UltraDomain 中 Agriculture、CS、Legal、Mix 四域。",
+          "innovation": "图索引和双层检索结合，支持增量更新及综合/具体问题的知识获取。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2410.05779",
+          "fit": "条件可适配法源/文档检索；实体关系抽取不等于证据支持度，须保留 chunk→冻结原文映射。E16 尚未实现。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e16_lightrag/README.md",
+      "evidence": []
+    },
+    {
+      "reproduction_name": "e17_lawflow_review",
+      "implementation_module": "screenshotlegal.method_reproductions.e17_lawflow_review",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e17_lawflow_review.py",
+      "implementation_status": "planned",
+      "reproduction_level": "not_implemented",
+      "reproduction_scope": "尚未实现受控人工反馈评测协议；不把现有审核页面视作 LawFlow 复现。",
+      "paper_sources": [
+        {
+          "paper_id": "L03",
+          "reference": "Das et al. (2025), *LawFlow: Collecting and Simulating Lawyers�� Thought Processes*. Microsoft Research:",
+          "sources": [
+            "https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+        "current_project_implementation": "尚未实现受控人工反馈评测协议；不把现有审核页面视作 LawFlow 复现。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "LawFlow：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L03",
+          "method": "LawFlow",
+          "task": "采集并模拟真实商业实体设立场景中的完整律师工作流。",
+          "input": "客户业务/实体设立情景及后续约束、信息需求。",
+          "output": "动态、模块化、会回退修订的法律工作流记录；不是单一判断标签。",
+          "benchmark": "LawFlow 工作流数据及人类与 LLM 工作流比较；不是现有截图案件的法律准确率 benchmark。",
+          "innovation": "记录端到端律师流程与分支/修订行为，比较人类和模型工作流结构。",
+          "repo": null,
+          "source": "https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/",
+          "fit": "可借鉴人工介入和回退评测，但 E17 目前没有实现该数据/协议；现有审核 UI 不等于 LawFlow 复现。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e17_lawflow_review/README.md",
+      "evidence": []
+    },
+    {
+      "reproduction_name": "e18_jurisma",
+      "implementation_module": "screenshotlegal.method_reproductions.e18_jurisma",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e18_jurisma.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现法律要素结构、动态任务路由及修订；未执行 DPO 训练或作者原系统的完整测评。",
+      "paper_sources": [
+        {
+          "paper_id": "L07",
+          "reference": "Lu et al. (2026), *From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation* (JurisMA).",
+          "sources": [
+            "https://arxiv.org/abs/2604.10470"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现法律要素结构、动态任务路由及修订；未执行 DPO 训练或作者原系统的完整测评。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "JurisMA：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L07",
+          "method": "JurisMA",
+          "task": "中文法律咨询问答；查询转法律要素图，再动态协作与内容修订。",
+          "input": "用户法律咨询问题，可能长、非正式且存在多个争点；不要求先输入截图或 ProofGraph。",
+          "output": "面向用户的咨询答复和法律依据；要素图是中间结构。",
+          "benchmark": "修订版 LawBench；JurisCQAD 用于训练/DPO。另有 LegalBench-RuleQA 小样本迁移实验。",
+          "innovation": "实体/事件/意图/争点结构、动态任务路由、法条 grounding 与内容修订，并构建咨询偏好数据。",
+          "repo": null,
+          "source": "https://arxiv.org/html/2604.10470v1",
+          "fit": "结构层条件可适配，但需保持陈述/推断/未知的区别。未核实作者代码/训练检查点入口，当前 E18 只有项目机制原型。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e18_jurisma/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-deepseek-pilot",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 2
+          },
+          "planned": 2,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/without-thinking-simple",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e18_jurisma"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e18_jurisma/e18_jurisma.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e18_jurisma"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e19_scale",
+      "implementation_module": "screenshotlegal.method_reproductions.e19_scale",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e19_scale.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现独立 Issue–Factor 层级选择关联指南；需要已冻结独立法律指南，现有领域包缺失时阻止执行。",
+      "paper_sources": [
+        {
+          "paper_id": "L09",
+          "reference": "Khatri et al. (2026), *SCALE: Structured Case-law-guided Anticipatory Legal Reasoning*. EMNLP 2026:",
+          "sources": [
+            "https://aclanthology.org/2026.emnlp-main.36/"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现独立 Issue–Factor 层级选择关联指南；需要已冻结独立法律指南，现有领域包缺失时阻止执行。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "SCALE：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+          "缺少独立且经审查的中国民事法律指南与 Issue–Factor→guide 映射"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L09",
+          "method": "SCALE",
+          "task": "基于 ECHR 案例和条款特定的 Case Law Guides 进行结构化先例法律推理。",
+          "input": "案件事实、相关公约条款及独立指南派生的 Issue–Factor Hierarchy。",
+          "output": "关联指南片段支持的法律分析；不是从测试答案反推的要件树。",
+          "benchmark": "ECHR 案例上的专家评测及 LLM-as-a-Judge 对照；不同法域，不能直接作为中国民事案件 Gold。",
+          "innovation": "用 Issue–Factor 层级把法律问题/事实因素映射到指南段落，驱动检索与分析。",
+          "repo": null,
+          "source": "https://aclanthology.org/2026.emnlp-main.36/",
+          "fit": "仅结构机制可迁移。中国民事任务需要独立审查的指南和 factor→guide 映射；当前缺失，因此 E19 会阻止启动。",
+          "pinned_author_source": null
+        }
+      ],
+      "documentation": "e19_scale/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e19_scale"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "blocked_prerequisite": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e19_scale/e19_scale.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e19_scale"
+        }
+      ]
+    },
+    {
+      "reproduction_name": "e20_verdict",
+      "implementation_module": "screenshotlegal.method_reproductions.e20_verdict",
+      "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e20_verdict.py",
+      "implementation_status": "implemented",
+      "reproduction_level": "project_mechanism",
+      "reproduction_scope": "复现 clerk/assistant/judge/collegial/presiding 角色链与退回修订；无专家对齐模型、HJM 标准/微指令记忆演化。",
+      "paper_sources": [
+        {
+          "paper_id": "L08",
+          "reference": "Liao et al. (2026), *VERDICT: Verifiable Evolving Reasoning with Directive-Informed Collegial Teams for Legal Judgment Prediction*.",
+          "sources": [
+            "https://arxiv.org/abs/2603.19306"
+          ],
+          "verification": "paper_listing_verified_not_code_reproduced"
+        }
+      ],
+      "original_paper_reproduced": false,
+      "author_code_status": "original_benchmark_not_reproduced",
+      "adaptation_assessment": {
+        "original_paper_reproduced": false,
+        "author_code_execution": "original_benchmark_not_reproduced",
+        "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+        "current_project_implementation": "复现 clerk/assistant/judge/collegial/presiding 角色链与退回修订；无专家对齐模型、HJM 标准/微指令记忆演化。",
+        "required_adaptation": [
+          "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+          "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+          "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+        ],
+        "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+        "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+        "author_native_interface_connected_to_product": false,
+        "author_benchmark_tracks": [],
+        "native_author_controller_real_run_passed": false,
+        "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+        "native_author_component_example_passed": false,
+        "completed_debugging": [
+          "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+        ],
+        "blockers": [
+          "原训练模型/过程验证器/记忆机制或原任务资源未部署；同一底座 prompt 不能替代原训练"
+        ]
+      },
+      "original_paper_contracts": [
+        {
+          "paper_id": "L08",
+          "method": "VERDICT",
+          "task": "基于刑事案情预测适用法条、罪名和刑期，使用合议反馈与演化记忆。",
+          "input": "作者 CAIL 环境接收 configs['task'] 案情文本和 configs['expected'] 评分标签；模型任务文本只由 task 构造。训练监督与测试模式须分别配置。",
+          "output": "原格式为 Finish[JSON]，字段 relevant_articles、accusation、term_of_imprisonment；刑期子字段 death_penalty、life_imprisonment、imprisonment。",
+          "benchmark": "CAIL2018（CAIL-Small）、未来时间划分 CJO2025；当前作者 CLI 仅暴露 cail2018。",
+          "innovation": "五角色监督式 Pass/Reject 修订与 Hybrid Jurisprudential Memory / Micro-Directives 演化；不是普通多轮改写。",
+          "repo": "verdict",
+          "source": "https://github.com/luckyhui235/VERDICT",
+          "fit": "不能直接把刑事预测指标用于民事证据链。需重写任务环境/标签/规范检索，并隔离训练记忆与留出案件；E20 未复现 HJM/专家对齐模型。 源码训练验证分支可读取 expected；适配留出评测必须 mode=test 且关闭 training_mode_verification，并另审计 expected/正确性反馈是否经记忆回流。该边界尚未端到端验证。",
+          "pinned_author_source": {
+            "repository": "https://github.com/luckyhui235/VERDICT",
+            "commit": "1b6c9d6ecfbe95900076cbfd2eedf94aecaaf952",
+            "local_path": "paper/upstream_sources/verdict"
+          }
+        }
+      ],
+      "documentation": "e20_verdict/README.md",
+      "evidence": [
+        {
+          "study": "2026-10-28-deepseek-pilot",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 2
+          },
+          "planned": 2,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-deepseek-pilot/without-thinking-simple",
+          "kind": "real_model",
+          "statuses": {
+            "failed": 1
+          },
+          "planned": 1,
+          "report": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-deepseek-pilot/without-thinking-simple/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-final/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-final/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-mechanism-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-method-reproductions",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-named-methods",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-named-methods-final",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-reproducible-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e20_verdict"
+        },
+        {
+          "study": "2026-10-28-verified-smoke",
+          "kind": "demo",
+          "statuses": {
+            "completed": 3
+          },
+          "planned": 3,
+          "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e20_verdict/e20_verdict.REPORT.md",
+          "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e20_verdict"
+        }
+      ]
+    }
+  ]
+}

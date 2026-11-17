@@ -1,0 +1,131 @@
+{
+  "reproduction_name": "e02_staged_without_matterpack",
+  "implementation_module": "screenshotlegal.method_reproductions.e02_staged_without_matterpack",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e02_staged_without_matterpack.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_baseline",
+  "reproduction_scope": "本项目固定三阶段工作流；参考 MetaGPT 的流程分工，不含其软件开发角色或原任务。",
+  "paper_sources": [
+    {
+      "paper_id": "A04",
+      "reference": "Hong et al. (2023), *MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework*.",
+      "sources": [
+        "https://arxiv.org/abs/2308.00352"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "not_applicable_project_baseline",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "not_applicable_project_baseline",
+    "adaptability": "非单篇论文复现的项目基线",
+    "current_project_implementation": "本项目固定三阶段工作流；参考 MetaGPT 的流程分工，不含其软件开发角色或原任务。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "MetaGPT：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "A04",
+      "method": "MetaGPT",
+      "task": "软件开发协作；E02 只是借鉴流程化分工的本项目基线。",
+      "input": "软件需求或带函数签名/测试约束的编程任务。",
+      "output": "需求/设计/代码/测试等软件产物；不是案件事实或法律分析。",
+      "benchmark": "HumanEval、MBPP、SoftwareDev。",
+      "innovation": "把角色分工、标准操作流程、结构化通信和可执行反馈组合到软件开发团队。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2308.00352",
+      "fit": "不能把法律三阶段工作流称为 MetaGPT 复现；只可借鉴流程组织，原代码/原编程 benchmark 应单独验证。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e02_staged_without_matterpack"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e02_staged_without_matterpack/e02_staged_without_matterpack.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e02_staged_without_matterpack"
+    }
+  ]
+}

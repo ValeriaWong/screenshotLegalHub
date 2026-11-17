@@ -1,0 +1,25 @@
+{
+  "paper_id": "L05",
+  "stage": "I",
+  "source_commit": "067f8f78b128dc7647c8a54b2560a612fae91a87",
+  "source_file": "paper/upstream_sources/solar/solar/knowledge_acquisition.py",
+  "source_sha256": "1303c33adc9bc201c259620cbe5550107675a9c0975637d47b2d7f01efd83994",
+  "findings": [
+    "Original graph: tbox_validation -> human_review -> code_generation -> training_evaluation",
+    "human_review_node calls input(); only explicit approve proceeds to generated interpreter",
+    "Expert CaseGold deferral does not constitute approval of a newly generated TBox",
+    "Prepare actual TBox and validation artifacts before requesting this original review input; do not fabricate approval"
+  ],
+  "state": "awaiting_original_human_review",
+  "new_supplier_requests": 4,
+  "local_model_inference": false,
+  "cumulative_supplier_requests": 6,
+  "review_artifact": "paper/author_reproductions/solar/STAGE_I_REVIEW_2026-10-30.md",
+  "run": "c0d9a6be0adebf24__native_acquisition",
+  "classes": 24,
+  "properties": 71,
+  "rules": 21,
+  "original_validator_issues": [],
+  "interpreter_generated": false,
+  "training_evaluated": false
+}

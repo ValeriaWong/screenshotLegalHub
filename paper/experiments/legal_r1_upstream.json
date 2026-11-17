@@ -1,0 +1,16 @@
+{
+  "url": "https://github.com/killerqueen-wonder/Legal-R1/blob/main/infer_pipeline.py",
+  "git_blob_sha": "24ee38c1c33e240c49900d4f20d6c20d06aae3dc",
+  "encoding": "utf-8",
+  "code_sha256": "dd602a7fa9883097dc21cf86aa7f77456131eeeeb9905bb7f5dc90137fe6bbd2",
+  "read_at": "2026-10-28",
+  "original_entrypoint": "infer_pipeline.py",
+  "requirements": [
+    "Linux / bash",
+    "vLLM checkpoint and rerank checkpoint",
+    "law and precedent corpora",
+    "retrieval endpoint",
+    "multiple CUDA devices"
+  ],
+  "runtime_status": "source_inspected_not_executed"
+}

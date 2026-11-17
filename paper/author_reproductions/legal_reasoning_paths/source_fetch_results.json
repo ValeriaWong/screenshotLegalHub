@@ -1,0 +1,96 @@
+{
+  "commit": "918996f82037b7a9d6541ccbdc9553f0308a164d",
+  "files": [
+    {
+      "path": "intances/step3-法律-法規範-法適用-事実_all_2025-07-12_df_gyosei_tisai_2008_2022.xlsx",
+      "sha256": "63aba921336938a6ce50e086a14b44b62218f97322f632dd9b0d1e43cc3b095a",
+      "git_blob": "3e5eb09461c2cbaba893e6dbc17d02dd0d360b5b",
+      "bytes": 65356109,
+      "status": "verified"
+    },
+    {
+      "path": "lightweight_LKG_ontology.jsonld",
+      "sha256": "20079d607a7d0f774c58be808e0abb30201525c49b682bd8e0fca5e32eb4ad36",
+      "git_blob": "449b491a1b2f6b5751a06ff3b813c866b2c74878",
+      "bytes": 5396,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step1_en.txt",
+      "sha256": "bf477e115d7cf49f2e67475ee62a55fa22c09c976471ed1e1108fac6a227e51e",
+      "git_blob": "16db7919ad65cd1eea7f163958fe138378e37fdb",
+      "bytes": 2479,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step1_ja.txt",
+      "sha256": "f5dab6d980185e7678a7d3835f636cce554f1312056a3470017b20e03bfddeb6",
+      "git_blob": "d073636d8c87e402dd29db6b241200031c906d31",
+      "bytes": 2881,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step2_en.txt",
+      "sha256": "6dc2f66a11687cd034cb74efc65579628a310d4e4d09469f0992c0557010da91",
+      "git_blob": "2ec1156368d5c6738a26f31650cc7e4ac0c3e27f",
+      "bytes": 574,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step2_ja.txt",
+      "sha256": "a989115883b027a924f21a0f87469dfd7a6f160da6441824aa656d188aa041bb",
+      "git_blob": "5e91b71acd8996cec4d2f070442c1fc7ae417791",
+      "bytes": 537,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_fact_application_en.txt",
+      "sha256": "aed9792339f8c536d20902e8a805303f340f5d71a5a5802a83524800dfcd6411",
+      "git_blob": "eb7d50a3b04c7bb325973723da588863e6b58e89",
+      "bytes": 1313,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_fact_application_ja.txt",
+      "sha256": "f221b17fc3ec1c6a5e7394276b105420ac635250cf8b50895e46504eba87f424",
+      "git_blob": "c7011d72e65915479b09068e8e658911ca608063",
+      "bytes": 1087,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_law_norm_en.txt",
+      "sha256": "c2dcc6e6a5b7ff50236ab12f173c71d9fd20cffbd07abc3fd40353d5fe83f8f9",
+      "git_blob": "dea1df155492071475935fabb8c52bb85d7eb7e5",
+      "bytes": 1140,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_law_norm_ja.txt",
+      "sha256": "0ab0896cb4a056c00456702c8cc6a5569b42eeff293985f7c4da8e161ec12aa6",
+      "git_blob": "c97f60a4beb27f0e8564384fdfce4ea186e0db3e",
+      "bytes": 1133,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_norm_application_en.txt",
+      "sha256": "1fe2af2db4807d94229a03c006fc0fb54bf0bbcabbb4604b0bdaedb25dd2cfa6",
+      "git_blob": "6fe652d1930c57c54032f840d35818fad28d9877",
+      "bytes": 303,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/prompt_step3_norm_application_ja.txt",
+      "sha256": "7b8aaf78e85d23a5d57da1baacf326fda610a4f609a57fbc51930f68f29f74f7",
+      "git_blob": "26bdbbe151c8492aa93ffd9c2d10b04eaf8041c0",
+      "bytes": 274,
+      "status": "verified"
+    },
+    {
+      "path": "prompts/review_prompt_SCOPE_V6.txt",
+      "sha256": "70bb57c07928e63fbdfc869b40bd5f3d5460501f330a391cde357e2b2415a980",
+      "git_blob": "dddb5ab490753134418f87506334c5351e2ad9b0",
+      "bytes": 3035,
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+- id: civil-code-675
+  type: statute
+  title: 中华人民共和国民法典
+  article: 第675条
+  jurisdiction: CN
+  valid_from: '2021-01-01'
+  valid_to: null
+  source_url: https://www.cac.gov.cn/2020-06/01/c_15925617772683192.htm
+  source_digest: 965479feb3ff143507baeb65c97d57bd1ee5c64b7a40e6706fcd03fff2d739bf
+  verification_status: unverified
+  text: 第六百七十五条　借款人应当按照约定的期限返还借款。对借款期限没有约定或者约定不明确，依据本法第五百一十条的规定仍不能确定的，借款人可以随时返还；贷款人可以催告借款人在合理期限内返还。
+- id: civil-code-679
+  type: statute
+  title: 中华人民共和国民法典
+  article: 第679条
+  jurisdiction: CN
+  valid_from: '2021-01-01'
+  valid_to: null
+  source_url: https://www.cac.gov.cn/2020-06/01/c_15925617772683192.htm
+  source_digest: ec57f8c71247b0a4357e3c98f6ea6d561439edadd3d299654c9a67901511fc1f
+  verification_status: unverified
+  text: 第六百七十九条　自然人之间的借款合同，自贷款人提供借款时成立。
+- id: lending-9
+  type: judicial_interpretation
+  title: 最高人民法院关于审理民间借贷案件适用法律若干问题的规定（2020年第二次修正）
+  article: 第9条
+  jurisdiction: CN
+  valid_from: '2021-01-01'
+  valid_to: null
+  source_url: https://www.sdcourt.gov.cn/bzbxfy/374836/374849/6811951/index.html
+  source_digest: 3d22e056cd7b656e5b9acf50e228c1afaf0babab51927db3c478c151d82e888f
+  verification_status: unverified
+  text: '第九条 自然人之间的借款合同具有下列情形之一的，可以视为合同成立：
+
+    （一）以现金支付的，自借款人收到借款时；
+
+    （二）以银行转账、网上电子汇款等形式支付的，自资金到达借款人账户时；
+
+    （三）以票据交付的，自借款人依法取得票据权利时；
+
+    （四）出借人将特定资金账户支配权授权给借款人的，自借款人取得对该账户实际支配权时；
+
+    （五）出借人以与借款人约定的其他方式提供借款并实际履行完成时。'

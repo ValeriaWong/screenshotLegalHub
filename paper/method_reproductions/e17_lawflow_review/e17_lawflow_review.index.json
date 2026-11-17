@@ -1,0 +1,61 @@
+{
+  "reproduction_name": "e17_lawflow_review",
+  "implementation_module": "screenshotlegal.method_reproductions.e17_lawflow_review",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e17_lawflow_review.py",
+  "implementation_status": "planned",
+  "reproduction_level": "not_implemented",
+  "reproduction_scope": "尚未实现受控人工反馈评测协议；不把现有审核页面视作 LawFlow 复现。",
+  "paper_sources": [
+    {
+      "paper_id": "L03",
+      "reference": "Das et al. (2025), *LawFlow: Collecting and Simulating Lawyers�� Thought Processes*. Microsoft Research:",
+      "sources": [
+        "https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+    "current_project_implementation": "尚未实现受控人工反馈评测协议；不把现有审核页面视作 LawFlow 复现。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "LawFlow：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L03",
+      "method": "LawFlow",
+      "task": "采集并模拟真实商业实体设立场景中的完整律师工作流。",
+      "input": "客户业务/实体设立情景及后续约束、信息需求。",
+      "output": "动态、模块化、会回退修订的法律工作流记录；不是单一判断标签。",
+      "benchmark": "LawFlow 工作流数据及人类与 LLM 工作流比较；不是现有截图案件的法律准确率 benchmark。",
+      "innovation": "记录端到端律师流程与分支/修订行为，比较人类和模型工作流结构。",
+      "repo": null,
+      "source": "https://www.microsoft.com/en-us/research/publication/lawflow-collecting-and-simulating-lawyers-thought-processes/",
+      "fit": "可借鉴人工介入和回退评测，但 E17 目前没有实现该数据/协议；现有审核 UI 不等于 LawFlow 复现。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": []
+}

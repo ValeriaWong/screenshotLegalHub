@@ -1,0 +1,52 @@
+[
+  {
+    "repository": "legal_r1",
+    "entrypoint": "infer_pipeline.py",
+    "status": "entrypoint_preflight_only",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"infer_pipeline.py\", line 5, in <module>\n    import requests\nModuleNotFoundError: No module named 'requests'\n",
+    "model_requests": 0,
+    "original_benchmark_reproduced": false
+  },
+  {
+    "repository": "verdict",
+    "entrypoint": "legal-task/run.py",
+    "status": "entrypoint_preflight_only",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"legal-task/run.py\", line 7, in <module>\n    from tqdm import tqdm\nModuleNotFoundError: No module named 'tqdm'\n",
+    "model_requests": 0,
+    "original_benchmark_reproduced": false
+  },
+  {
+    "repository": "crag",
+    "entrypoint": "scripts/CRAG_Inference.py",
+    "status": "entrypoint_preflight_only",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"scripts/CRAG_Inference.py\", line 7, in <module>\n    from sklearn.utils import shuffle\nModuleNotFoundError: No module named 'sklearn'\n",
+    "model_requests": 0,
+    "original_benchmark_reproduced": false
+  },
+  {
+    "repository": "solar",
+    "entrypoint": "stage_two.py",
+    "status": "entrypoint_preflight_only",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"stage_two.py\", line 11, in <module>\n    import pandas as pd\nModuleNotFoundError: No module named 'pandas'\n",
+    "model_requests": 0,
+    "original_benchmark_reproduced": false
+  },
+  {
+    "repository": "agentscourt",
+    "entrypoint": "AgentsCourt/judge_final_once.py",
+    "status": "entrypoint_preflight_only",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"AgentsCourt/judge_final_once.py\", line 2, in <module>\n    import openai\nModuleNotFoundError: No module named 'openai'\n",
+    "model_requests": 0,
+    "original_benchmark_reproduced": false
+  }
+]

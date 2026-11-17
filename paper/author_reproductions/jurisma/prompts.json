@@ -1,0 +1,13 @@
+{
+  "origin": "project-authored prompts implementing paper role contracts; author exact prompts unavailable",
+  "templates": {
+    "element": "按论文§3.2构建法律要素图。只输出JSON对象，键entities、events、user_claims、key_facts、legal_questions、relationships均为数组；实体附角色、状态和时间，关系以实体/事件ID连接。区分用户陈述、否认、推断与未知，不将咨询者说法自动认定为事实。",
+    "draft": "你是Draft Agent。根据JSON序列化要素图和原问题生成初始咨询草稿。回应真实问题，保留缺失条件与时间边界；不要编造法条原文。输出草稿文本，不输出项目CaseAnalysisOutput。",
+    "manager": "你是Manager Agent。只评估当前草稿：结构、清晰度不足选FormatCheck；法条缺少或依据不足选LawSearch；已充分返回Pass。同一轮可同时选择两项。只输出JSON {\"actions\":[\"FormatCheck\",\"LawSearch\"]} 或 {\"actions\":\"Pass\"} 或 {\"actions\":[]}；不要选择其他动作，不为耗尽轮数而继续。",
+    "format": "你是FormatCheck Agent。仅针对当前草稿生成结构、清晰度、简洁性修订建议，不替代法条检索，不新增事实。输出建议文本。",
+    "apply": "你是Draft Agent.applySuggestions。根据建议改写当前草稿，保留法律立场、已知/未知及逐字证据，不新增事实。输出改写后的完整草稿。",
+    "search": "你是LawSearch Agent。根据原问题与当前草稿，从给定目录选择实际相关法源ID。仅输出JSON {\"source_ids\":[字符串]}。可为空；最多5项；不得编造目录外ID。目录不足时不得以模型记忆冒充已检索法规。选择后程序会读取固定原文。",
+    "integrate": "你是Draft Agent.integrateStatutes。将检索实际返回的法源与当前草稿整合；与事实/时间/法域不匹配者明确保留条件，不强行援引。法源原文与source_id逐字保留；无结果时明确依据缺口。输出完整草稿。",
+    "content": "你是ContentCheck Agent。只基于原问题与修订草稿做最后清晰、简洁、专业化修订，保持法律立场，不增加法律内容或事实。按论文双部分结果序列化为JSON：{\"response\":字符串,\"legal_basis\":[{\"source_id\":字符串,\"article_text\":逐字完整原文}],\"uncertainties\":[字符串]}。legal_basis只能含已经实际检索并纳入草稿的法条原文，否则留空；缺失录取/审查规则等依据时保留未知。 本项目适配额外提供retrieved_statutory_appendix，只有这里的ID与text可进入legal_basis。article_text必须逐字符复制完整text，包括条号、前导项和全部段落、标点；不要只提取引号内句子。附录不是新事实，不得据此改变原咨询立场。"
+  }
+}

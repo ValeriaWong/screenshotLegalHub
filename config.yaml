@@ -1,0 +1,30 @@
+project: screenshotLegalHub
+workflow: v2.0.0
+blocks:
+  curator:
+    entrypoint: python tools/restart_inventory.py
+    publishes: reports/restart/images_manifest.json
+  evaluator:
+    config: blocks/evaluator/config.yaml
+    depends_on: curator
+  evidence:
+    config: blocks/evidence/config.yaml
+    status: real_upload_extraction_retrieval_loop_passed_review_required
+    depends_on: evaluator
+  retriever:
+    config: blocks/retriever/config.yaml
+    status: local_code_search_running
+    depends_on: curator
+  reporter:
+    status: citation_csv_json_available_excel_ppt_pending
+    depends_on: evidence
+  synthesizer:
+    config: blocks/synthesizer/config.yaml
+    entrypoint: python blocks/synthesizer/scripts/run.py
+    status: round_001_ready_for_review
+    depends_on: curator
+    publishes: datasets/v2.0.0/round_001
+  research:
+    config: blocks/research/config.yaml
+    status: working_protocol_experiments_pending
+    depends_on: curator

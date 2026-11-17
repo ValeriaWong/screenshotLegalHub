@@ -1,0 +1,36 @@
+[
+  {
+    "paper_id": "B02",
+    "name": "b02_lawbench",
+    "module": "screenshotlegal.research.lawbench_scoring",
+    "native_validation_plan_id": "d0ad3fba76db4517",
+    "product_tracks": [
+      "product_scoring_kie_image",
+      "product_scoring_vqa_image_full"
+    ],
+    "development_completed": false,
+    "original_complete_benchmark": false
+  },
+  {
+    "paper_id": "B15",
+    "name": "b15_ragchecker",
+    "module": "screenshotlegal.research.ragchecker_scoring",
+    "native_validation_plan_id": "71538dc3aaf14bf6",
+    "product_tracks": [
+      "product_scoring_vqa_predicted_text"
+    ],
+    "development_completed": true,
+    "original_complete_benchmark": false
+  },
+  {
+    "paper_id": "B04",
+    "name": "b04_legalbench",
+    "module": "screenshotlegal.research.legalbench_scoring",
+    "native_validation_plan_id": "54416211eb315650",
+    "product_tracks": [
+      "product_scoring_vqa_image_full"
+    ],
+    "development_completed": true,
+    "original_complete_benchmark": false
+  }
+]

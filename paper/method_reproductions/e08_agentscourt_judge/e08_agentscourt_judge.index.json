@@ -1,0 +1,157 @@
+{
+  "reproduction_name": "e08_agentscourt_judge",
+  "implementation_module": "screenshotlegal.method_reproductions.e08_agentscourt_judge",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e08_agentscourt_judge.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现双方交换后增加中立汇总者；未复现作者训练、原始角色与评价基准。",
+  "paper_sources": [
+    {
+      "paper_id": "L01",
+      "reference": "He et al. (2024), *AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation*. EMNLP Findings.",
+      "sources": [
+        "https://arxiv.org/abs/2403.02959"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    },
+    {
+      "paper_id": "L10",
+      "reference": "Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.",
+      "sources": [
+        "https://arxiv.org/abs/2607.09099"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现双方交换后增加中立汇总者；未复现作者训练、原始角色与评价基准。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "L-MAD：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "作者 Legal-KB、原检索组件及 SimuCourt 原协议尚未端到端运行"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L01",
+      "method": "AgentsCourt",
+      "task": "从给定案情模拟法庭辩论、检索法律知识并生成裁判分析。",
+      "input": "SimuCourt 中的案情与案件类型/审级等任务信息，通常是已整理的案件叙述。",
+      "output": "案件分析、适用法条、裁判结果；刑事任务涉及罪名、刑期和罚金。",
+      "benchmark": "SimuCourt，420 份中文裁判文书，涉及民事、行政、刑事及审级设置；配套 Legal-KB。",
+      "innovation": "法庭辩论模拟、法律资源增强与裁判迭代结合；不等于增加两个对立角色。",
+      "repo": "agentscourt",
+      "source": "https://aclanthology.org/2024.findings-emnlp.549/",
+      "fit": "仅条件适配辩论机制。聊天中的主张/否认必须保留认识状态，不能先改成法院已认定事实；裁判标签也不能直接充当证据链 Gold。",
+      "pinned_author_source": {
+        "repository": "https://github.com/Zhitao-He/AgentsCourt",
+        "commit": "7c14d6960abfdfdd7366250905da8dbcb416d6d6",
+        "local_path": "paper/upstream_sources/agentscourt"
+      }
+    },
+    {
+      "paper_id": "L10",
+      "method": "L-MAD",
+      "task": "法律文本蕴含判别，比较辩论拓扑和共识/投票决策协议。",
+      "input": "相关法条 premise 和案情/问题 query（hypothesis）。",
+      "output": "Answer:Y 或 Answer:N 及对应辩论记录，不是开放式 CaseAnalysisOutput。",
+      "benchmark": "COLIEE Task 4 多年度子集；原文 §4.1 说明 R05/R06/R07 和 formal-run/post-hoc 划分。指标为标签准确率。",
+      "innovation": "控制比较 agent persona、辩论结构和聚合协议，分析规模与轮次的收益/过度辩论。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2607.09099v1",
+      "fit": "可研究争点判别层，但须新建专家蕴含标签。现有 E09 只实现有界意见交换/汇总，没有复现原投票与共识对照。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e08_agentscourt_judge"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e08_agentscourt_judge/e08_agentscourt_judge.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e08_agentscourt_judge"
+    }
+  ]
+}

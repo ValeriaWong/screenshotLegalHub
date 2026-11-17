@@ -1,0 +1,21 @@
+version: v2.0.0
+round: round_001
+split: development
+artifact_root: datasets/v2.0.0/round_001
+model_config: configs/models.local.yaml
+generator: kimi3_low
+critic: sf_qwen38_thinking
+generation_max_tokens: 14500
+critic_max_tokens: 7000
+timeout: 240
+inference_mode: cloud # change to local with a configured local endpoint and model alias
+source_character_budget: 26000
+chinese_source: projects/ScreenshotLegalBench_v2/generate_chat/output/wkinfo_samples_by_case.xlsx
+english_source: projects/Batch/england_court_dataset/results.enriched.jsonl
+cases:
+  - {id: zh_loan_155, language: zh, source_index: 155}
+  - {id: zh_sales_146, language: zh, source_index: 146}
+  - {id: zh_employment_130, language: zh, source_index: 130}
+  - {id: en_charter_177, language: en, source_index: 177, cause: "Commercial / Charterparty / Contract formation"}
+  - {id: en_loan_182, language: en, source_index: 182, cause: "Commercial / Loan / Alleged debt forgiveness and disclosure"}
+  - {id: en_probate_283, language: en, source_index: 283, cause: "Probate / Will validity / Capacity and undue influence"}

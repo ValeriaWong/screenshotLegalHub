@@ -1,0 +1,154 @@
+{
+  "reproduction_name": "e09_l_mad",
+  "implementation_module": "screenshotlegal.method_reproductions.e09_l_mad",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e09_l_mad.py",
+  "implementation_status": "implemented",
+  "reproduction_level": "project_mechanism",
+  "reproduction_scope": "复现 0–3 轮同步辩论与最终汇总；未照搬原论文 persona、投票与共识实验。",
+  "paper_sources": [
+    {
+      "paper_id": "L10",
+      "reference": "Nguyen et al. (2026), *L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning*.",
+      "sources": [
+        "https://arxiv.org/abs/2607.09099"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    },
+    {
+      "paper_id": "A08",
+      "reference": "Kim et al. (2025), *Towards a Science of Scaling Agent Systems*.",
+      "sources": [
+        "https://arxiv.org/abs/2512.08296"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链",
+    "current_project_implementation": "复现 0–3 轮同步辩论与最终汇总；未照搬原论文 persona、投票与共识实验。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "L-MAD：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "Towards a Science of Scaling Agent Systems：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "未复现原 Answer:Y/N 标签解析及共识/投票协议对照"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "L10",
+      "method": "L-MAD",
+      "task": "法律文本蕴含判别，比较辩论拓扑和共识/投票决策协议。",
+      "input": "相关法条 premise 和案情/问题 query（hypothesis）。",
+      "output": "Answer:Y 或 Answer:N 及对应辩论记录，不是开放式 CaseAnalysisOutput。",
+      "benchmark": "COLIEE Task 4 多年度子集；原文 §4.1 说明 R05/R06/R07 和 formal-run/post-hoc 划分。指标为标签准确率。",
+      "innovation": "控制比较 agent persona、辩论结构和聚合协议，分析规模与轮次的收益/过度辩论。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2607.09099v1",
+      "fit": "可研究争点判别层，但须新建专家蕴含标签。现有 E09 只实现有界意见交换/汇总，没有复现原投票与共识对照。",
+      "pinned_author_source": null
+    },
+    {
+      "paper_id": "A08",
+      "method": "Towards a Science of Scaling Agent Systems",
+      "task": "跨不同 agentic benchmark 比较单/多 agent 的结构、成本与成功率。",
+      "input": "各原生环境的工具任务，接口随 benchmark 变化。",
+      "output": "任务完成结果、轨迹与成本指标；不是一个固定法律推理算法。",
+      "benchmark": "当前核对版本包含 BrowseComp-Plus、Finance-Agent、PlanCraft、WorkBench，并报告 SWE-bench Verified、Terminal-Bench 小规模扩展。",
+      "innovation": "研究任务分解性、协调开销与模型能力对多 agent 收益的约束。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2512.08296",
+      "fit": "可借鉴同预算实验设计，E09 轮次参数不等于复现该研究或其六类 benchmark。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": [
+    {
+      "study": "2026-10-28-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-final/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-final/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-mechanism-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-mechanism-smoke/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-method-reproductions",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-method-reproductions/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-method-reproductions/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-named-methods",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-named-methods-final",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-named-methods-final/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-named-methods-final/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-reproducible-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-reproducible-smoke/methods/e09_l_mad"
+    },
+    {
+      "study": "2026-10-28-verified-smoke",
+      "kind": "demo",
+      "statuses": {
+        "completed": 3
+      },
+      "planned": 3,
+      "report": "../../experiments/results/2026-10-28-verified-smoke/methods/e09_l_mad/e09_l_mad.REPORT.md",
+      "named_directory": "../../experiments/results/2026-10-28-verified-smoke/methods/e09_l_mad"
+    }
+  ]
+}

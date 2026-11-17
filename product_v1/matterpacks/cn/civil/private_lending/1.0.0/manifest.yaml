@@ -1,0 +1,25 @@
+id: cn.civil.private_lending
+name_zh: 民间借贷
+name_en: Private Lending
+jurisdiction: CN
+practice_area: civil
+version: 1.0.0
+schema_version: 1
+status: draft
+valid_from: null
+valid_to: null
+expert_review:
+  status: unreviewed
+  reviewed_by: null
+  reviewed_at: null
+required_capabilities:
+- claim.identify
+- fact.instantiate
+- burden.assign
+- evidence.map
+- evidence.strength
+- evidence.gap
+- contradiction.detect
+- strategy.generate
+- strategy.verify
+- adversarial.analyze

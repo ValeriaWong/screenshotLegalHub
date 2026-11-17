@@ -1,0 +1,23 @@
+{
+  "method": "legalbench",
+  "status": "pinned_sources_and_environment_ready",
+  "model_requests": 0,
+  "sources": [
+    {
+      "name": "legalbench",
+      "commit": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+      "files_checked": 180
+    },
+    {
+      "name": "legalbench_data",
+      "commit": "daec8237410aa23e3faf4bc41ad8b3a7e1696826",
+      "files_checked": 23
+    }
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "packages_checked": 16,
+    "mismatches": {}
+  },
+  "resources": []
+}

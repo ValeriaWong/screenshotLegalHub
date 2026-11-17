@@ -1,0 +1,61 @@
+{
+  "reproduction_name": "e16_lightrag",
+  "implementation_module": "screenshotlegal.method_reproductions.e16_lightrag",
+  "implementation_file": "product_v1/backend/src/screenshotlegal/method_reproductions/e16_lightrag.py",
+  "implementation_status": "planned",
+  "reproduction_level": "not_implemented",
+  "reproduction_scope": "尚未实现 LightRAG 图索引与双层检索；文件仅登记出处，不能运行。",
+  "paper_sources": [
+    {
+      "paper_id": "R05",
+      "reference": "Guo et al. (2024), *LightRAG*.",
+      "sources": [
+        "https://arxiv.org/abs/2410.05779"
+      ],
+      "verification": "paper_listing_verified_not_code_reproduced"
+    }
+  ],
+  "original_paper_reproduced": false,
+  "author_code_status": "original_benchmark_not_reproduced",
+  "adaptation_assessment": {
+    "original_paper_reproduced": false,
+    "author_code_execution": "original_benchmark_not_reproduced",
+    "adaptability": "条件适配；原输入/标签/评价协议不能直接等同截图证据链；当前模块未实现",
+    "current_project_implementation": "尚未实现 LightRAG 图索引与双层检索；文件仅登记出处，不能运行。",
+    "required_adaptation": [
+      "将冻结的原文陈述/否认/未知保留为证据包，不提升为法院已认定事实",
+      "保持作者原任务入口与本项目适配入口分开；逐项记录 prompt、工具、模型、输出 schema 的改动",
+      "原 benchmark 使用原任务指标单独复核；适配任务另用案件组隔离的证据链 Gold 与成本/引用指标"
+    ],
+    "our_input_shape": "FrozenCaseInput/visible sources: id,text,speaker,timestamp,page_no,source_locator,citation_units；goal；可选 matterpack/legal_corpus",
+    "our_output_shape": "CaseAnalysisOutput: summary,claims,elements,facts.citations,evidence_links,uncertainties",
+    "author_native_interface_connected_to_product": false,
+    "author_benchmark_tracks": [],
+    "native_author_controller_real_run_passed": false,
+    "deferred_evaluation": "用户明确后补专家CaseGold；本轮先KIE/全局VQA，专家法律评测不作为环境/适配阻塞",
+    "native_author_component_example_passed": false,
+    "completed_debugging": [
+      "项目现有流程/预算/引用校验已运行；这些不是作者 benchmark 成绩"
+    ],
+    "blockers": [
+      "LightRAG：尚未固定/执行对应作者代码入口，不能用同名第三方项目替代",
+      "当前只有明确拒绝执行的登记文件，没有对应算法实现"
+    ]
+  },
+  "original_paper_contracts": [
+    {
+      "paper_id": "R05",
+      "method": "LightRAG",
+      "task": "建立实体/关系图与文本索引，以低层/高层双级检索增强回答。",
+      "input": "文档集合与 query。",
+      "output": "图/文本检索上下文及生成答案。",
+      "benchmark": "UltraDomain 中 Agriculture、CS、Legal、Mix 四域。",
+      "innovation": "图索引和双层检索结合，支持增量更新及综合/具体问题的知识获取。",
+      "repo": null,
+      "source": "https://arxiv.org/html/2410.05779",
+      "fit": "条件可适配法源/文档检索；实体关系抽取不等于证据支持度，须保留 chunk→冻结原文映射。E16 尚未实现。",
+      "pinned_author_source": null
+    }
+  ],
+  "evidence": []
+}

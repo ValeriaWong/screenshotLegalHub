@@ -1,0 +1,12 @@
+block: evaluator
+version: 1
+consumes:
+  images: reports/restart/images_manifest.json
+  legacy_annotations: projects/ScreenshotLegalBench_v2/process_local_evaluator/screenshot_legal_annotations (1).json
+  message_qa: projects/ScreenshotLegalBench_v2/process_local_evaluator/message_prompts_evaluate.json
+  case_qa: projects/quiz-collector/layout_vqa_case_text_options.json
+publishes:
+  dataset: blocks/evaluator/artifacts/dataset.json
+  runs: blocks/evaluator/artifacts/runs
+entrypoint: python -m legalhub.benchmark
+models_config: configs/models.local.yaml
